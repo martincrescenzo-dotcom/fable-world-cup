@@ -1,0 +1,33 @@
+[
+  {
+    "match": "Mexico-South Africa",
+    "date": "2026-06-11",
+    "outcome_picked_side": "Mexico",
+    "actual_score": [
+      2,
+      0
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ],
+    "note": "first calibration point; prior estimated 30.8% -> consistent (boundary)"
+  },
+  {
+    "match": "South Korea-Czech Republic",
+    "date": "2026-06-11",
+    "home": "South Korea",
+    "away": "Czech Republic",
+    "actual_score": [
+      2,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ],
+    "note": "CORRECTED by user from +30 to +20; prior est 26.8% -> VIOLATED (under-estimates herding)"
+  }
+]

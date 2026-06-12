@@ -1,0 +1,60 @@
+Group A:
+  Mexico                     raw=0.575  norm=0.563
+  South Korea                raw=0.210  norm=0.206
+  Czechia                    raw=0.175  norm=0.171
+  South Africa               raw=0.061  norm=0.060
+Group B:
+  Switzerland                raw=0.565  norm=0.554
+  Canada                     raw=0.305  norm=0.299
+  Bosnia and Herzegovina     raw=0.125  norm=0.122
+  Qatar                      raw=0.025  norm=0.025
+Group C:
+  Brazil                     raw=0.715  norm=0.704
+  Morocco                    raw=0.215  norm=0.212
+  Scotland                   raw=0.079  norm=0.077
+  Haiti                      raw=0.006  norm=0.006
+Group D:
+  Türkiye                    raw=0.375  norm=0.367
+  USA                        raw=0.375  norm=0.367
+  Paraguay                   raw=0.175  norm=0.171
+  Australia                  raw=0.098  norm=0.096
+Group E:
+  Germany                    raw=0.675  norm=0.662
+  Ecuador                    raw=0.215  norm=0.211
+  Ivory Coast                raw=0.128  norm=0.125
+  Curaçao                    raw=0.003  norm=0.002
+Group F:
+  Netherlands                raw=0.535  norm=0.528
+  Japan                      raw=0.275  norm=0.272
+  Sweden                     raw=0.145  norm=0.143
+  Tunisia                    raw=0.058  norm=0.057
+Group G:
+  Belgium                    raw=0.695  norm=0.682
+  Egypt                      raw=0.165  norm=0.162
+  Iran                       raw=0.123  norm=0.121
+  New Zealand                raw=0.035  norm=0.035
+Group H:
+  Spain                      raw=0.785  norm=0.771
+  Uruguay                    raw=0.195  norm=0.192
+  Saudi Arabia               raw=0.020  norm=0.020
+  Cape Verde                 raw=0.018  norm=0.017
+Group I:
+  France                     raw=0.655  norm=0.639
+  Norway                     raw=0.245  norm=0.239
+  Senegal                    raw=0.115  norm=0.112
+  Iraq                       raw=0.009  norm=0.009
+Group J:
+  Argentina                  raw=0.715  norm=0.708
+  Austria                    raw=0.185  norm=0.183
+  Algeria                    raw=0.095  norm=0.094
+  Jordan                     raw=0.015  norm=0.015
+Group K:
+  Portugal                   raw=0.625  norm=0.611
+  Colombia                   raw=0.325  norm=0.318
+  Congo DR                   raw=0.043  norm=0.042
+  Uzbekistan                 raw=0.031  norm=0.030
+Group L:
+  England                    raw=0.685  norm=0.686
+  Croatia                    raw=0.225  norm=0.225
+  Ghana                      raw=0.059  norm=0.060
+  Panama                     raw=0.029  norm=0.029

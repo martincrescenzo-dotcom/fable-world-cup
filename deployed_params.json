@@ -1,0 +1,9 @@
+{
+  "R": 9.503984125449325,
+  "GAMMA": 1.5,
+  "MAXG": 12,
+  "artifacts": {
+    "attdef.json": "88043feadeb9c1470776ff516bb35647d0bf316007b0a50eb53957d3427f852b",
+    "wc_to_canon.json": "1f75e51ea8d060b065f0d77ce09ec271a70949ce5c32f53e593cb988cfe72eaa"
+  }
+}

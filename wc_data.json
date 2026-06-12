@@ -1,0 +1,266 @@
+{
+  "A": [
+    {
+      "team": "Mexico",
+      "code": "MX",
+      "elo": 1875.0
+    },
+    {
+      "team": "South Africa",
+      "code": "ZA",
+      "elo": 1517.0
+    },
+    {
+      "team": "South Korea",
+      "code": "KR",
+      "elo": 1758.0
+    },
+    {
+      "team": "Czech Republic",
+      "code": "CZ",
+      "elo": 1740.0
+    }
+  ],
+  "B": [
+    {
+      "team": "Canada",
+      "code": "CA",
+      "elo": 1788.0
+    },
+    {
+      "team": "Bosnia and Herzegovina",
+      "code": "BA",
+      "elo": 1595.0
+    },
+    {
+      "team": "Qatar",
+      "code": "QA",
+      "elo": 1421.0
+    },
+    {
+      "team": "Switzerland",
+      "code": "CH",
+      "elo": 1891.0
+    }
+  ],
+  "C": [
+    {
+      "team": "Brazil",
+      "code": "BR",
+      "elo": 1991.0
+    },
+    {
+      "team": "Morocco",
+      "code": "MA",
+      "elo": 1827.0
+    },
+    {
+      "team": "Haiti",
+      "code": "HT",
+      "elo": 1548.0
+    },
+    {
+      "team": "Scotland",
+      "code": "SQ",
+      "elo": 1782.0
+    }
+  ],
+  "D": [
+    {
+      "team": "United States",
+      "code": "US",
+      "elo": 1726.0
+    },
+    {
+      "team": "Paraguay",
+      "code": "PY",
+      "elo": 1834.0
+    },
+    {
+      "team": "Australia",
+      "code": "AU",
+      "elo": 1777.0
+    },
+    {
+      "team": "Turkey",
+      "code": "TR",
+      "elo": 1911.0
+    }
+  ],
+  "E": [
+    {
+      "team": "Germany",
+      "code": "DE",
+      "elo": 1932.0
+    },
+    {
+      "team": "Curacao",
+      "code": "CW",
+      "elo": 1434.0
+    },
+    {
+      "team": "Ivory Coast",
+      "code": "CI",
+      "elo": 1695.0
+    },
+    {
+      "team": "Ecuador",
+      "code": "EC",
+      "elo": 1938.0
+    }
+  ],
+  "F": [
+    {
+      "team": "Netherlands",
+      "code": "NL",
+      "elo": 1948.0
+    },
+    {
+      "team": "Japan",
+      "code": "JP",
+      "elo": 1906.0
+    },
+    {
+      "team": "Sweden",
+      "code": "SE",
+      "elo": 1712.0
+    },
+    {
+      "team": "Tunisia",
+      "code": "TN",
+      "elo": 1628.0
+    }
+  ],
+  "G": [
+    {
+      "team": "Belgium",
+      "code": "BE",
+      "elo": 1894.0
+    },
+    {
+      "team": "Egypt",
+      "code": "EG",
+      "elo": 1696.0
+    },
+    {
+      "team": "Iran",
+      "code": "IR",
+      "elo": 1772.0
+    },
+    {
+      "team": "New Zealand",
+      "code": "NZ",
+      "elo": 1562.0
+    }
+  ],
+  "H": [
+    {
+      "team": "Spain",
+      "code": "ES",
+      "elo": 2157.0
+    },
+    {
+      "team": "Cape Verde",
+      "code": "CV",
+      "elo": 1578.0
+    },
+    {
+      "team": "Saudi Arabia",
+      "code": "SA",
+      "elo": 1576.0
+    },
+    {
+      "team": "Uruguay",
+      "code": "UY",
+      "elo": 1892.0
+    }
+  ],
+  "I": [
+    {
+      "team": "France",
+      "code": "FR",
+      "elo": 2063.0
+    },
+    {
+      "team": "Senegal",
+      "code": "SN",
+      "elo": 1860.0
+    },
+    {
+      "team": "Iraq",
+      "code": "IQ",
+      "elo": 1607.0
+    },
+    {
+      "team": "Norway",
+      "code": "NO",
+      "elo": 1914.0
+    }
+  ],
+  "J": [
+    {
+      "team": "Argentina",
+      "code": "AR",
+      "elo": 2115.0
+    },
+    {
+      "team": "Algeria",
+      "code": "DZ",
+      "elo": 1772.0
+    },
+    {
+      "team": "Austria",
+      "code": "AT",
+      "elo": 1830.0
+    },
+    {
+      "team": "Jordan",
+      "code": "JO",
+      "elo": 1680.0
+    }
+  ],
+  "K": [
+    {
+      "team": "Portugal",
+      "code": "PT",
+      "elo": 1989.0
+    },
+    {
+      "team": "DR Congo",
+      "code": "CD",
+      "elo": 1652.0
+    },
+    {
+      "team": "Uzbekistan",
+      "code": "UZ",
+      "elo": 1714.0
+    },
+    {
+      "team": "Colombia",
+      "code": "CO",
+      "elo": 1982.0
+    }
+  ],
+  "L": [
+    {
+      "team": "England",
+      "code": "EN",
+      "elo": 2024.0
+    },
+    {
+      "team": "Croatia",
+      "code": "HR",
+      "elo": 1912.0
+    },
+    {
+      "team": "Ghana",
+      "code": "GH",
+      "elo": 1510.0
+    },
+    {
+      "team": "Panama",
+      "code": "PA",
+      "elo": 1730.0
+    }
+  ]
+}

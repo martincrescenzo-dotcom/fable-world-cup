@@ -1,0 +1,94 @@
+"""Register realized bonus points -> calibrate the crowd model.
+Each time the user hits an exact score, the awarded bonus reveals the BAND of the true
+crowd share of that score (among correct-outcome pickers):
+  +20 -> (0.30, 1.0] | +30 -> (0.20, 0.30] | +50 -> (0.05, 0.20] | +70 -> (0.005, 0.05] | +100 -> (0, 0.005]
+Usage: edit NEW_OBS, run. With >=3 observations it grid-fits (beta, sal_strength) to put
+estimated shares inside realized bands; otherwise it just checks consistency."""
+import json, numpy as np
+from scipy.stats import nbinom
+
+NEW_OBS = [
+    # dict(match='X-Y', date='2026-06-..', home='X', away='Y', actual_score=(2,0), bonus_awarded=50),
+]
+
+BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}
+obs=json.load(open('crowd_obs.json'))
+seen={(o['match'],tuple(o['actual_score'])) for o in obs}
+for o in NEW_OBS:
+    key=(o['match'],tuple(o['actual_score']))
+    if key in seen:
+        print(f'SKIP duplicate: {key} already registered (re-run protection)')
+        continue
+    o['share_band']=list(BAND[o['bonus_awarded']])
+    obs.append(o); seen.add(key)
+json.dump(obs,open('crowd_obs.json','w'),indent=2)
+print(f'{len(obs)} observation(s) total.')
+
+AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); DP=json.load(open('deployed_params.json'))
+mug=AD['_meta']['mu_goals']; R=DP['R']; MAXG=DP['MAXG']; GAMMA=DP['GAMMA']
+SAL={(1,0):1.5,(2,0):1.5,(2,1):1.6,(3,0):1.0,(3,1):0.75,(4,0):0.45,(4,1):0.4,(3,2):0.5,
+     (1,1):1.7,(0,0):0.55,(2,2):0.9,(3,3):0.3}
+def lam_pair(th,ta):
+    lh=np.exp(mug+AD[W2C[th]]['ATT']-AD[W2C[ta]]['DEF']); la=np.exp(mug+AD[W2C[ta]]['ATT']-AD[W2C[th]]['DEF'])
+    M=0.5*(np.log(lh)+np.log(la)); D=0.5*(np.log(lh)-np.log(la))
+    return np.exp(M+GAMMA*D),np.exp(M-GAMMA*D)
+def nbv(lam):
+    p=R/(R+lam); v=nbinom.pmf(np.arange(MAXG+1),R,p); return v/v.sum()
+
+import os
+_SN=json.load(open('winamax_snapshots.json')) if os.path.exists('winamax_snapshots.json') else {}
+def share_est(o,beta,sstr):
+    """estimated crowd share of the actual score, on the SAME plausibility base matchday.py
+    deploys: de-vigged Winamax snapshot when one exists for the match, else model probs."""
+    th=o.get('home') or o['match'].split('-')[0]; ta=o.get('away') or o['match'].split('-')[1]
+    a0,b0=o['actual_score']
+    lh,la=lam_pair(th,ta); M=np.outer(nbv(lh),nbv(la)); M/=M.sum()
+    if a0>b0: cells=[(a,b) for a in range(MAXG+1) for b in range(MAXG+1) if a>b]
+    elif a0==b0: cells=[(a,a) for a in range(MAXG+1)]
+    else: cells=[(a,b) for a in range(MAXG+1) for b in range(MAXG+1) if a<b]
+    bk=None
+    key=f'{th}|{ta}'
+    if key in _SN:
+        s_=_SN[key][-1]
+        bk={tuple(map(int,sc.split('-'))):1.0/od for sc,od in s_['odds'].items() if sc!='Autre'}
+    plaus=[]
+    for a,b in cells:
+        if bk and (a,b) in bk: plaus.append(bk[(a,b)])
+        elif bk: plaus.append(M[a,b]*sum(bk.values())/(sum(M[x,y] for x,y in bk)))
+        else: plaus.append(M[a,b])
+    plaus=np.array(plaus)
+    def s(a,b):
+        v=SAL.get((a,b),SAL.get((b,a),0.25 if (a+b)>=5 else 0.6)); return v**sstr
+    cr=(plaus**beta)*np.array([s(a,b) for a,b in cells]); cr/=cr.sum()
+    return float(cr[cells.index((a0,b0))])
+
+def loss(beta,sstr):
+    L=0.0
+    for o in obs:
+        c=share_est(o,beta,sstr); lo,hi=o['share_band']
+        if c<lo: L+=(lo-c)**2
+        elif c>hi: L+=(c-hi)**2
+    return L
+
+cur=json.load(open('crowd_params.json'))
+print(f"current params beta={cur['beta']} sal_strength={cur['sal_strength']}  loss={loss(cur['beta'],cur['sal_strength']):.5f}")
+for o in obs:
+    c=share_est(o,cur['beta'],cur['sal_strength']); lo,hi=o['share_band']
+    ok='OK' if lo<=c<=hi else 'VIOLATED'
+    print(f"  {o['match']} {o['actual_score']}: est {c*100:.1f}% vs band [{lo*100:.1f},{hi*100:.1f}]%  {ok}")
+violated=any(not (o['share_band'][0]<=share_est(o,cur['beta'],cur['sal_strength'])<=o['share_band'][1]) for o in obs)
+if len(obs)>=3 or violated:
+    if violated and len(obs)<3: print('VIOLATION with <3 obs -> refit triggered early (data contradicts params).')
+    grid_b=[1.0,1.1,1.25,1.4,1.6,1.8]; grid_s=[0.5,0.75,1.0,1.25,1.5]
+    best=min(((loss(b,s),b,s) for b in grid_b for s in grid_s))
+    if best[0]<loss(cur['beta'],cur['sal_strength'])-1e-9:
+        cur['beta'],cur['sal_strength']=best[1],best[2]
+        json.dump(cur,open('crowd_params.json','w'),indent=2)
+        print(f"REFIT -> beta={best[1]} sal_strength={best[2]} (loss {best[0]:.5f}). matchday.py will use these.")
+        for o in obs:
+            c=share_est(o,cur['beta'],cur['sal_strength']); lo,hi=o['share_band']
+            print(f"  post-refit {o['match']} {o['actual_score']}: est {c*100:.1f}% vs [{lo*100:.0f},{hi*100:.0f}]%  {'OK' if lo<=c<=hi else 'STILL OUT'}")
+    else:
+        print('grid cannot improve — params kept; flag persists.')
+else:
+    print(f'({len(obs)} obs, none violated — refit activates at 3+.)')

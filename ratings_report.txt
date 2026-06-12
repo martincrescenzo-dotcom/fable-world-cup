@@ -1,0 +1,60 @@
+Group A
+  Mexico                   Elo   1875  blendR   1875  mkt 0.563  simWin 0.528  top2 0.806
+  South Africa             Elo   1517  blendR   1517  mkt 0.060  simWin 0.026  top2 0.110
+  South Korea              Elo   1758  blendR   1758  mkt 0.206  simWin 0.237  top2 0.566
+  Czech Republic           Elo   1740  blendR   1740  mkt 0.171  simWin 0.209  top2 0.519
+Group B
+  Canada                   Elo   1788  blendR   1788  mkt 0.299  simWin 0.317  top2 0.766
+  Bosnia and Herzegovina   Elo   1595  blendR   1595  mkt 0.122  simWin 0.068  top2 0.271
+  Qatar                    Elo   1421  blendR   1421  mkt 0.025  simWin 0.010  top2 0.065
+  Switzerland              Elo   1891  blendR   1891  mkt 0.554  simWin 0.605  top2 0.899
+Group C
+  Brazil                   Elo   1991  blendR   1991  mkt 0.704  simWin 0.626  top2 0.875
+  Morocco                  Elo   1827  blendR   1827  mkt 0.212  simWin 0.211  top2 0.584
+  Haiti                    Elo   1548  blendR   1548  mkt 0.006  simWin 0.015  top2 0.080
+  Scotland                 Elo   1782  blendR   1782  mkt 0.077  simWin 0.148  top2 0.461
+Group D
+  United States            Elo   1726  blendR   1726  mkt 0.367  simWin 0.114  top2 0.304
+  Paraguay                 Elo   1834  blendR   1834  mkt 0.171  simWin 0.266  top2 0.555
+  Australia                Elo   1777  blendR   1777  mkt 0.096  simWin 0.171  top2 0.416
+  Turkey                   Elo   1911  blendR   1911  mkt 0.367  simWin 0.450  top2 0.725
+Group E
+  Germany                  Elo   1932  blendR   1932  mkt 0.662  simWin 0.452  top2 0.845
+  Curacao                  Elo   1434  blendR   1434  mkt 0.002  simWin 0.004  top2 0.027
+  Ivory Coast              Elo   1695  blendR   1695  mkt 0.125  simWin 0.073  top2 0.276
+  Ecuador                  Elo   1938  blendR   1938  mkt 0.211  simWin 0.471  top2 0.852
+Group F
+  Netherlands              Elo   1948  blendR   1948  mkt 0.528  simWin 0.498  top2 0.819
+  Japan                    Elo   1906  blendR   1906  mkt 0.272  simWin 0.380  top2 0.753
+  Sweden                   Elo   1712  blendR   1712  mkt 0.143  simWin 0.084  top2 0.280
+  Tunisia                  Elo   1628  blendR   1628  mkt 0.057  simWin 0.037  top2 0.149
+Group G
+  Belgium                  Elo   1894  blendR   1894  mkt 0.682  simWin 0.566  top2 0.830
+  Egypt                    Elo   1696  blendR   1696  mkt 0.162  simWin 0.141  top2 0.406
+  Iran                     Elo   1772  blendR   1772  mkt 0.121  simWin 0.252  top2 0.605
+  New Zealand              Elo   1562  blendR   1562  mkt 0.035  simWin 0.040  top2 0.158
+Group H
+  Spain                    Elo   2157  blendR   2157  mkt 0.771  simWin 0.832  top2 0.986
+  Cape Verde               Elo   1578  blendR   1578  mkt 0.017  simWin 0.006  top2 0.102
+  Saudi Arabia             Elo   1576  blendR   1576  mkt 0.020  simWin 0.006  top2 0.100
+  Uruguay                  Elo   1892  blendR   1892  mkt 0.192  simWin 0.156  top2 0.812
+Group I
+  France                   Elo   2063  blendR   2063  mkt 0.639  simWin 0.610  top2 0.869
+  Senegal                  Elo   1860  blendR   1860  mkt 0.112  simWin 0.150  top2 0.460
+  Iraq                     Elo   1607  blendR   1607  mkt 0.009  simWin 0.012  top2 0.067
+  Norway                   Elo   1914  blendR   1914  mkt 0.239  simWin 0.229  top2 0.604
+Group J
+  Argentina                Elo   2115  blendR   2115  mkt 0.708  simWin 0.786  top2 0.945
+  Algeria                  Elo   1772  blendR   1772  mkt 0.094  simWin 0.069  top2 0.357
+  Austria                  Elo   1830  blendR   1830  mkt 0.183  simWin 0.118  top2 0.511
+  Jordan                   Elo   1680  blendR   1680  mkt 0.015  simWin 0.027  top2 0.186
+Group K
+  Portugal                 Elo   1989  blendR   1989  mkt 0.611  simWin 0.468  top2 0.835
+  DR Congo                 Elo   1652  blendR   1652  mkt 0.042  simWin 0.029  top2 0.128
+  Uzbekistan               Elo   1714  blendR   1714  mkt 0.030  simWin 0.053  top2 0.211
+  Colombia                 Elo   1982  blendR   1982  mkt 0.318  simWin 0.449  top2 0.825
+Group L
+  England                  Elo   2024  blendR   2024  mkt 0.686  simWin 0.616  top2 0.904
+  Croatia                  Elo   1912  blendR   1912  mkt 0.225  simWin 0.306  top2 0.764
+  Ghana                    Elo   1510  blendR   1510  mkt 0.060  simWin 0.006  top2 0.044
+  Panama                   Elo   1730  blendR   1730  mkt 0.029  simWin 0.071  top2 0.287

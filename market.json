@@ -1,0 +1,110 @@
+{
+  "A": {
+    "volume": 677457.9344949989,
+    "prices": {
+      "Mexico": 0.575,
+      "South Korea": 0.21,
+      "South Africa": 0.0615,
+      "Czechia": 0.175
+    }
+  },
+  "B": {
+    "volume": 323525.5186769999,
+    "prices": {
+      "Canada": 0.305,
+      "Qatar": 0.0255,
+      "Bosnia and Herzegovina": 0.125,
+      "Switzerland": 0.565
+    }
+  },
+  "C": {
+    "volume": 548205.761664001,
+    "prices": {
+      "Scotland": 0.0785,
+      "Brazil": 0.715,
+      "Haiti": 0.0065,
+      "Morocco": 0.215
+    }
+  },
+  "D": {
+    "volume": 386983.5970019992,
+    "prices": {
+      "Paraguay": 0.175,
+      "T\u00fcrkiye": 0.375,
+      "USA": 0.375,
+      "Australia": 0.098
+    }
+  },
+  "E": {
+    "volume": 234138.48330199992,
+    "prices": {
+      "Cura\u00e7ao": 0.0025,
+      "Ecuador": 0.215,
+      "Germany": 0.675,
+      "Ivory Coast": 0.1275
+    }
+  },
+  "F": {
+    "volume": 346833.54206899804,
+    "prices": {
+      "Tunisia": 0.0575,
+      "Japan": 0.275,
+      "Netherlands": 0.535,
+      "Sweden": 0.145
+    }
+  },
+  "G": {
+    "volume": 198792.925578,
+    "prices": {
+      "New Zealand": 0.0355,
+      "Iran": 0.1235,
+      "Egypt": 0.165,
+      "Belgium": 0.695
+    }
+  },
+  "H": {
+    "volume": 277382.00711899996,
+    "prices": {
+      "Cape Verde": 0.0175,
+      "Uruguay": 0.195,
+      "Spain": 0.785,
+      "Saudi Arabia": 0.02
+    }
+  },
+  "I": {
+    "volume": 391993.5230859998,
+    "prices": {
+      "Senegal": 0.115,
+      "Norway": 0.245,
+      "France": 0.655,
+      "Iraq": 0.0095
+    }
+  },
+  "J": {
+    "volume": 273569.2954159993,
+    "prices": {
+      "Algeria": 0.0945,
+      "Jordan": 0.015,
+      "Argentina": 0.715,
+      "Austria": 0.185
+    }
+  },
+  "K": {
+    "volume": 232715.64322899954,
+    "prices": {
+      "Colombia": 0.325,
+      "Congo DR": 0.0425,
+      "Portugal": 0.625,
+      "Uzbekistan": 0.031
+    }
+  },
+  "L": {
+    "volume": 128076.32063300005,
+    "prices": {
+      "England": 0.685,
+      "Ghana": 0.0595,
+      "Croatia": 0.225,
+      "Panama": 0.0285
+    }
+  }
+}

@@ -1,0 +1,14 @@
+https://github.com/openfootball
+https://github.com/statsbomb/open-data/tree/master/data
+https://soccerdata.readthedocs.io/en/latest/
+https://fbref.com/en/
+https://polymarket.com/fr/event/world-cup-group-a-winner
+https://polymarket.com/fr/event/world-cup-group-c-winner
+https://polymarket.com/fr/event/world-cup-group-i-winner
+https://polymarket.com/fr/event/world-cup-group-d-winner
+https://polymarket.com/fr/event/world-cup-group-f-winner
+https://polymarket.com/fr/event/world-cup-group-b-winner
+https://polymarket.com/fr/event/world-cup-group-h-winner
+https://polymarket.com/fr/event/world-cup-group-j-winner
+https://polymarket.com/fr/event/world-cup-group-e-winner
+https://polymarket.com/fr/event/world-cup-group-g-winner
