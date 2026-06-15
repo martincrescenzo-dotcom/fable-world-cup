@@ -13,10 +13,10 @@
 **Strategy (settled):** pure blend-EV-max — LEAGUE_MODE, **DIFF_BAND=0**, COARSE scores (modal/highest-p, step off 1-1 only).
 **X2 boost: HELD.** Use only on SIGNIFICANT + model-market-AGREED high-E match. Anytime incl. knockouts.
 **PENDING (ask user):** (1) Sweden-Tunisia tier; (2) MD2 reward tables + fresh Winamax/Polymarket.
-**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 11 obs / 6 violations — accumulate to 15 for refit.
+**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 12 obs / 6 violations — accumulate to 15 for refit. First DIRECT 0-0 obs (Spain-CV) landed at +50, model est 17.8% OK → 0-0 tier-50 thesis gets its first support.
 
 ## CHALLENGE AGENDA — stress-test assumptions as evidence accumulates; surface proactively at each trigger
-**1. Crowd model refit — trigger: ≥15 obs (currently 11)**
+**1. Crowd model refit — trigger: ≥15 obs (currently 12)**
 6/11 violations; beta/sal near-unidentified on a misfit form. At 15 obs: refit once, then test whether
 `plausibility^β × salience` can structurally fit the data or needs a richer form (per-score-type effects).
 Known failure modes: draw scores (1-1, 2-2) under-estimated; home-win 1-0 over-estimated.
@@ -54,6 +54,7 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-14 | Netherlands 2–2 Japan | Draw | MISS — model picked Japan W; market NL → we picked Japan (LEAGUE) | iconic draw; tier +20 |
 | 2026-06-14 | Côte d'Ivoire 1–0 Ecuador | CIV W | MISS — we picked Ecuador W (4-source model flag; Ecuador overrated confirmed) | tier +30 |
 | 2026-06-14 | Sweden 5–1 Tunisia | Sweden W | consistent (model+market favoured Sweden) | score missed (1-0 pick); tier PENDING (5-1 rare) |
+| 2026-06-15 | Spain 0–0 Cape Verde | Draw | **MAJOR UPSET** — model 93% Spain, market agreed; pick Spain 3-0 → base 0 | irreducible upset variance, NOT a model error (both sources lock Spain); 0-0 tier **+50** = FIRST DIRECT 0-0 obs |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
@@ -72,6 +73,7 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Germany–Curaçao | Germany | 4–0 | **7-1 GER ✅** | base (ask reward) | tier(7-1)=+100 obs#9; score missed |
 | Netherlands–Japan | Japan | 0–2 | **2-2 ❌** | 0 | tier(2-2)=+20 obs#10; outcome missed (draw) |
 | Sweden–Tunisia | **Sweden** | **1–0** | **5-1 SWE ✅** | 72 | score missed; tier PENDING (5-1, presumably rare) |
+| Spain–Cape Verde | Spain | 3–0 | **0-0 DRAW ❌** | 0 | major upset (Spain 93%); tier(0-0)=+50 obs#12 — FIRST DIRECT 0-0, validates tier-50 thesis |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
 +EV picks (Morocco/Japan = field-underpicked EV-competitive; Haiti-Draw = EV-max 9%-field; Sweden = EV-max
@@ -82,7 +84,8 @@ single-model-source contested — not used yet).
 **Running total: 165 pts (145 base + 20 bonus).**
 **NB:** realized bonus tiers are observable even for scores we didn't pick (obs #2 = Korea 2–1 earned +20 for whoever had it → >30% crowd). User to report the realized tier of EVERY played match → ~1 calibration obs per match.
 **Crowd calibration:** obs #2 VIOLATED the prior (est 26.8% vs realized >30%) → early refit: **beta 1.25→1.6, sal_strength 1.0→1.5** (crowd herds harder on iconic scores than assumed). Post-refit: Mexico OK (35.2%), Korea 29.0% — still 1pt below band edge; coarse-grid residual, expect resolution at obs #3. Strategic effect: iconic scores even MORE crowded → rare-score arbitrage (3-0/3-1 type, 50/70 tiers) STRONGER.
-**11 obs / 6 violations (2026-06-15):** model structurally misfit; params beta/sal near-unidentified. Notable new obs: Germany 7-1 → +100 (ultra-rare, model est 0.7% barely violates 0.5% ceiling); NL-Japan 2-2 → +20 (crowd herds hard on 2-2, model est only 17.4% vs >30% — draw iconic scores under-estimated); CIV-Ecuador 1-0 → +30 (model over-estimated 1-0 home win herding, 41.9% vs 20-30% actual). Pattern: draw scores (1-1, 2-2) dramatically under-estimated by model; home-win 1-0 over-estimated. Refit GATED to 15 obs.
+**12 obs / 6 violations (2026-06-15):** model structurally misfit; params beta/sal near-unidentified. Notable new obs: Germany 7-1 → +100 (ultra-rare, model est 0.7% barely violates 0.5% ceiling); NL-Japan 2-2 → +20 (crowd herds hard on 2-2, model est only 17.4% vs >30% — draw iconic scores under-estimated); CIV-Ecuador 1-0 → +30 (model over-estimated 1-0 home win herding, 41.9% vs 20-30% actual). Pattern: draw scores (1-1, 2-2) dramatically under-estimated by model; home-win 1-0 over-estimated. Refit GATED to 15 obs.
+**★ FIRST DIRECT 0-0 OBSERVATION (Spain-Cape Verde, obs#12, 2026-06-15):** 0-0 realized +50 (5-20% among Draw-pickers); model est 17.8% → **OK, inside band**. The 0-0 under-picking edge was INFERRED until now (zero direct obs, demoted 2026-06-12); this is its FIRST direct support — confirms 0-0 sits at tier-50 with our p-estimate well-calibrated, vindicating the MD1 0-0-cluster tier-50 assumption. NB single obs (Verify-Std #7): one point, not a validated finding — but it points the right way (unlike the iconic-draw 1-1/2-2 under-estimates). Note 0-0 here ALSO fits the "draws under-picked by crowd" pattern but model p was accurate, so no violation.
 
 **X2 status: HELD** (usable anytime incl. KO — bar raised accordingly). Candidates auto-flagged by `matchday.py`.
 **Standing (2026-06-12):** ~230,000th / >1M with 2nd-best-possible score (165) → top is dense; rare-score

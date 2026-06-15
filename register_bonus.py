@@ -14,6 +14,8 @@ NEW_OBS = [
          away='Japan', actual_score=(2,2), bonus_awarded=20),
     dict(match='Ivory Coast-Ecuador', date='2026-06-14', home='Ivory Coast',
          away='Ecuador', actual_score=(1,0), bonus_awarded=30),
+    dict(match='Spain-Cape Verde', date='2026-06-15', home='Spain',
+         away='Cape Verde', actual_score=(0,0), bonus_awarded=50),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}

@@ -164,5 +164,20 @@
       0.2,
       0.3
     ]
+  },
+  {
+    "match": "Spain-Cape Verde",
+    "date": "2026-06-15",
+    "home": "Spain",
+    "away": "Cape Verde",
+    "actual_score": [
+      0,
+      0
+    ],
+    "bonus_awarded": 50,
+    "share_band": [
+      0.05,
+      0.2
+    ]
   }
 ]
