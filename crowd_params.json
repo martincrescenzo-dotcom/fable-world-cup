@@ -1,5 +1,5 @@
 {
-  "beta": 1.6,
-  "sal_strength": 1.5,
+  "beta": 1.0,
+  "sal_strength": 1.0,
   "comment": "beta: crowd concentration exponent on plausibility; sal_strength: exponent on salience weights (1=full judgment prior, 0=no salience). Refit by register_bonus.py when >=3 observations."
 }

@@ -29,5 +29,140 @@
       1.0
     ],
     "note": "CORRECTED by user from +30 to +20; prior est 26.8% -> VIOLATED (under-estimates herding)"
+  },
+  {
+    "match": "Canada-Bosnia and Herzegovina",
+    "date": "2026-06-12",
+    "home": "Canada",
+    "away": "Bosnia and Herzegovina",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "United States-Paraguay",
+    "date": "2026-06-12",
+    "home": "United States",
+    "away": "Paraguay",
+    "actual_score": [
+      4,
+      1
+    ],
+    "bonus_awarded": 100,
+    "share_band": [
+      0.0,
+      0.005
+    ]
+  },
+  {
+    "match": "Qatar-Switzerland",
+    "date": "2026-06-13",
+    "home": "Qatar",
+    "away": "Switzerland",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "Brazil-Morocco",
+    "date": "2026-06-13",
+    "home": "Brazil",
+    "away": "Morocco",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "Haiti-Scotland",
+    "date": "2026-06-13",
+    "home": "Haiti",
+    "away": "Scotland",
+    "actual_score": [
+      0,
+      1
+    ],
+    "bonus_awarded": 50,
+    "share_band": [
+      0.05,
+      0.2
+    ]
+  },
+  {
+    "match": "Australia-Turkey",
+    "date": "2026-06-14",
+    "home": "Australia",
+    "away": "Turkey",
+    "actual_score": [
+      2,
+      0
+    ],
+    "bonus_awarded": 50,
+    "share_band": [
+      0.05,
+      0.2
+    ]
+  },
+  {
+    "match": "Germany-Curacao",
+    "date": "2026-06-14",
+    "home": "Germany",
+    "away": "Curacao",
+    "actual_score": [
+      7,
+      1
+    ],
+    "bonus_awarded": 100,
+    "share_band": [
+      0.0,
+      0.005
+    ]
+  },
+  {
+    "match": "Netherlands-Japan",
+    "date": "2026-06-14",
+    "home": "Netherlands",
+    "away": "Japan",
+    "actual_score": [
+      2,
+      2
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "Ivory Coast-Ecuador",
+    "date": "2026-06-14",
+    "home": "Ivory Coast",
+    "away": "Ecuador",
+    "actual_score": [
+      1,
+      0
+    ],
+    "bonus_awarded": 30,
+    "share_band": [
+      0.2,
+      0.3
+    ]
   }
 ]

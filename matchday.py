@@ -21,27 +21,30 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [
- dict(home='Canada', away='Bosnia and Herzegovina', rewards=[65,117,125], date='2026-06-12',
-      overlay=(-0.08,-0.02,0,0), flags=''),   # Davies OUT (partially priced), Flores
- dict(home='United States', away='Paraguay', rewards=[74,113,115], date='2026-06-12'),
- dict(home='Qatar', away='Switzerland', rewards=[172,141,33], date='2026-06-13'),
- dict(home='Brazil', away='Morocco', rewards=[55,122,140], date='2026-06-13',
-      overlay=(-0.13,-0.08,0,-0.06), flags=''),  # Neymar doubt+Rodrygo/Estevao/Militao; Aguerd out (MAR)
- dict(home='Haiti', away='Scotland', rewards=[154,131,44], date='2026-06-13'),
- dict(home='Germany', away='Curacao', rewards=[15,179,222], date='2026-06-14'),
- dict(home='Australia', away='Turkey', rewards=[126,115,66], date='2026-06-14'),
- dict(home='Netherlands', away='Japan', rewards=[74,115,113], date='2026-06-14',
-      overlay=(-0.08,-0.10,-0.12,0)),  # NL: Simons/DeLigt/Timber; JPN: Mitoma
- dict(home='Ivory Coast', away='Ecuador', rewards=[108,101,85], date='2026-06-14'),
- dict(home='Sweden', away='Tunisia', rewards=[72,110,122], date='2026-06-14'),
+MATCHES = [   # MD2 slate 2026-06-15 (fieldpct=[H,D,A] = real pick shares from reward CSV Pct_joueurs).
+ # overlay=(dATT_h,dDEF_h,dATT_a,dDEF_a) log units. Model-blind scan 2026-06-15:
+ dict(home='Belgium', away='Egypt', rewards=[57,122,135], date='2026-06-15', fieldpct=[.81,.14,.05],
+      overlay=(0,0,-0.07,0)),   # Egypt: Salah (hamstring) starting but not fully fit -> mild ATT down (halved, priced)
+ dict(home='Saudi Arabia', away='Uruguay', rewards=[146,125,50], date='2026-06-15', fieldpct=[.06,.14,.81]),
+ dict(home='Iran', away='New Zealand', rewards=[63,116,130], date='2026-06-15', fieldpct=[.35,.44,.21],
+      overlay=(-0.05,0,0,0)),   # Iran: Jahanbakhsh (muscle) + Eckert/Torabi out -> mild ATT down (halved, priced)
+ dict(home='Spain', away='Cape Verde', rewards=[16,166,217], date='2026-06-15', fieldpct=[.88,.10,.02],
+      overlay=(-0.05,0,0,0)),   # Spain: Yamal+N.Williams (hamstring) BENCHED -> token ATT down (huge depth, priced).
+                                # NB score grid = 6/12 EARLY-money Winamax (no fresh full-time pull this match).
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile
-WINAMAX_VALID_THROUGH = '2026-06-14'   # covered by 'until 14th' CSV (ingested 2026-06-12-v2):
-                                       # valid through Sunday-night matches; raise on next fresh CSV
-VAR_TIEBREAK_EV = 1.5       # rank strategy (230k/1M, dense top): among scores within this EV of the
-                            # best, prefer the LOWER-crowd one — rarer points shared with fewer rivals
+WINAMAX_VALID_THROUGH = '2026-06-15'   # fresh CSV 'Cotes Winamax ... 20260615' ingested 2026-06-15
+                                       # (Belgium/SaudiArabia/Iran matches); raise on next fresh CSV
+VAR_TIEBREAK_EV = 1.5       # rank strategy: among scores within this EV of the best, prefer LOWER-crowd
+LEAGUE_MODE = True          # objective = TOP-2 of 13-person league over ~100 remaining matches.
+DIFF_BAND = 0.0            # HORIZON-CORRECTED (league_sim2, K=12 ~100 matches): pure blend-EV-max wins
+                          # (45% top-2); ANY EV sacrifice for differentiation hurts over the long horizon
+                          # (b=1:41%, b=2:37%, b=3:33%). Differentiation comes FREE when EV-max is
+                          # field-underpicked; never pay EV for it. Was 2.0 (correct only for ~8-match horizon).
+BONUS_MODE = 'coarse'      # 2026-06-14: crowd model unconverged at n=8 -> RETIRE fine E[bonus] opt (noise+thrash).
+                          # Score = MODAL (highest-p) within outcome = max hit-prob; step off 1-1 ONLY (the one
+                          # cell with rock-solid >30% over-herding, 3/3 obs). Model-free; ignores fine tier rank.
 
 # ------------------------------------------------------------------ engine (v6, frozen)
 AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json'))
@@ -140,9 +143,11 @@ def analyse(m):
                              tiers=tiers,boundary=(len(set(tiers))>1),ebonus=eb,div=div))
         rows.sort(key=lambda r:-r['ebonus'])
         # rank-strategy tie-break: within VAR_TIEBREAK_EV of best AND keeping >=50% of the best's
-        # hit probability, prefer the rarer (lower-crowd) score. The p-floor stops variance-chasing
-        # from drifting into the unvalidated deep tail of the crowd curve.
-        if len(rows)>1:
+        # hit probability, prefer the rarer (lower-crowd) score.
+        # NOTE: this extra rarity bias is for the MEGA-FIELD (1M) — in a 13-person league the bonus
+        # TIER already prices rarity, and shaving crowd 6%->3% buys ~0 rank vs 12 rivals. So under
+        # LEAGUE_MODE we DISABLE it and just take max E[bonus]. (Audit finding 2026-06-13.)
+        if len(rows)>1 and not LEAGUE_MODE:
             # tiers list order = [optimistic(crowd*0.7), mid, pessimistic(crowd*1.43)]
             pess=lambda x: x['p']*x['tiers'][2]
             near=[x for x in rows if rows[0]['ebonus']-x['ebonus']<=VAR_TIEBREAK_EV
@@ -151,6 +156,16 @@ def analyse(m):
                 pick0=min(near,key=lambda x:x['crowd'])
                 if pick0 is not rows[0]:
                     rows.remove(pick0); rows.insert(0,pick0)
+        if BONUS_MODE=='coarse' and len(rows)>1:
+            # Layer-1 only (CLAUDE.md 2026-06-14): take the modal (highest-p) score = max hit-probability,
+            # the one reliably-validated lever (score model is OOS-validated; crowd model is NOT). Step off
+            # 1-1 ONLY -- the single cell with rock-solid >30% over-herding (3/3 obs). All other tiers are
+            # match-dependent and the crowd model is unconverged, so do NOT second-guess the modal.
+            by_p=sorted(rows,key=lambda r:-r['p']); pick_s=by_p[0]
+            if pick_s['score']==(1,1) and len(by_p)>1:
+                pick_s=by_p[1]
+            if pick_s is not rows[0]:
+                rows.remove(pick_s); rows.insert(0,pick_s)
         base_ev=pm[oi]*rew[oi]
         res['outcomes'][oi]=dict(base_ev=base_ev,total_ev=base_ev+rows[0]['ebonus'],rows=rows)
     pick=max(range(3),key=lambda oi:res['outcomes'][oi]['total_ev'])
@@ -174,6 +189,20 @@ def analyse(m):
                                      maxgap=float(max(abs(pm[i]-pmkt[i]) for i in range(3))))
     except Exception as e:
         print('  (pm_check failed:',repr(e)[:50],')')
+    # LEAGUE MODE: re-select outcome to maximise P(win league) = disciplined differentiation.
+    # blend-EV (0.5 model + 0.5 market); among outcomes within DIFF_BAND of max, take least field-crowded.
+    res['league']=None
+    fp=m.get('fieldpct')
+    if LEAGUE_MODE and fp:
+        mkt=res['pm_check']['p'] if res.get('pm_check') else pm
+        blend=[0.5*(pm[i]+mkt[i]) for i in range(3)]
+        bev=[blend[i]*rew[i] for i in range(3)]
+        emax=max(bev)
+        cand=[i for i in range(3) if bev[i]>=emax-DIFF_BAND]
+        lpick=min(cand,key=lambda i: fp[i])
+        res['league']=dict(blend_ev=bev,cand=cand,fieldpct=fp,prev=pick,pick=lpick,
+                           differentiated=(lpick!=int(np.argmax(bev))))
+        res['pick']=lpick
     # X2 evaluation
     o=res['outcomes'][pick]
     edge=pm[pick]/imp[pick]
@@ -192,9 +221,14 @@ for m in MATCHES:
     print(f"=== {m['home']} vs {m['away']} ===  model W/D/L {pm[0]*100:.0f}/{pm[1]*100:.0f}/{pm[2]*100:.0f}  (xG {r['lams'][0]:.2f}-{r['lams'][1]:.2f})")
     if m.get('overlay',(0,0,0,0))!=(0,0,0,0): print(f"  overlay applied: {m['overlay']}")
     if not r['used_bookie']: print('  (NO market data — crowd tiers on model-prob base; LOWER confidence)')
+    lg=r.get('league')
     for oi in range(3):
         oo=r['outcomes'][oi]; tag=' <== PICK' if oi==pick else ''
-        print(f"  {lab[oi]:<24} baseEV {oo['base_ev']:5.1f}  totalEV {oo['total_ev']:5.1f}{tag}")
+        fpx=f"  field {lg['fieldpct'][oi]*100:.0f}%  blendEV {lg['blend_ev'][oi]:4.1f}" if lg else ''
+        print(f"  {lab[oi]:<24} baseEV {oo['base_ev']:5.1f}  totalEV {oo['total_ev']:5.1f}{fpx}{tag}")
+    if lg and lg['differentiated']:
+        print(f"  >> LEAGUE: differentiated to {lab[lg['pick']]} (field {lg['fieldpct'][lg['pick']]*100:.0f}%) "
+              f"over EV-max {lab[int(__import__('numpy').argmax(lg['blend_ev']))]} — within {DIFF_BAND}EV, less crowded")
     if r['flip_warn']: print('  !! WARNING: bonus EV flipped the outcome pick vs pure base EV — review manually')
     a,b=best['score']
     bflag=' [BOUNDARY-tier risk]' if best['boundary'] else ''

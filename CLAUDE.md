@@ -17,12 +17,33 @@ share of correct-outcome pickers who chose that score:
 points (incl. rarity bonus) if the outcome is correct. Policy: HOLD through groups; bar = must beat the
 expected best knockout opportunity (~E_total ≥ 45+, no dead-rubber/rotation flags, prefer contrarian).
 
-**FIELD CONTEXT (2026-06-12):** >1M players; user ranked ~230,000th holding the SECOND-BEST POSSIBLE
-score (165/185) ⇒ ~23% of field near-perfect after MD1 ⇒ **chalk cannot climb; rare-score bonuses are
-the primary separating instrument.** Encoded as VAR_TIEBREAK rule in matchday.py: among scores within
-1.5 EV of best AND ≥50% of its hit prob, prefer lowest-crowd (p-floor stops drift into the unvalidated
-deep tail). User also 1st ex-aequo in a 4-person friends league; same picks serve both for now. User
-updates rank as it evolves → adjust variance mode.
+**TRUE OBJECTIVE (updated 2026-06-13): TOP-2 of the 13-person friends league, over 104 total matches
+(~100 remaining).** REAL standings: 376/280/240/239/239/219/190/[USER 165]/143/123/123/96/49.
+**HORIZON FINDING (league_sim2, K=12≈100 matches w/ real standings, top-2 metric) — REVERSES earlier
+differentiation thesis:** over the long horizon, PURE BLEND-EV-MAX (DIFF_BAND=0) is BEST (45% top-2);
+EV sacrifice for differentiation monotonically HURTS (b1:41 b2:37 b3:33); DIFF/aggression near-WORST
+(31%); MARKET-follow worst-ish (31%). Differentiation only helped at the wrong (8-match) horizon. So:
+**DIFF_BAND=0 deployed — maximize blend-EV (0.5 model+0.5 market) every match, take free differentiation
+when EV-max is field-underpicked, NEVER pay EV for it; max-E[bonus] scores.** Blend-EV (45%) > pure-model
+EVMAX (37%) → blend the market IN, don't fade it. Caveat: horizon proxy repeats same 8 matches (LLN
+direction robust, magnitudes approximate). Don't-follow-market still holds (correlation).
+[superseded] earlier: user currently 8th/13 (165; leader ~250 ahead). `league_sim2.py` (Q6 CORRECTED — original league_sim.py was FLAWED: inconsistent score logic across
+strategies + overestimated deficit 251 vs true ~173 from user 2w1e=165). Corrected verdict, robust
+across model-vs-market truth weight (tw 0.3-0.7): MARKET-follow ROBUSTLY WORST (~5% even when market
+accurate — correlation kills rank); LOCKED/maximin middling (8%); EVMAX/DIFF/LEAGUE best (~10-12%).
+Differentiation > hedge > market-follow at ALL truth weights = robust. Magnitude modest (edge ~4pts if
+model right, ~1.5 if market right). Deployed LEAGUE b=2.0 validated (9.7%>LOCKED 8%); b=3 marginally
+better. AUDIT also fixed: VAR_TIEBREAK rarity-bias is MEGA-FIELD calibration, WRONG for 13-league
+(tier already prices rarity) → DISABLED under LEAGUE_MODE (max E[bonus]); fixed scores Germany 5-0→4-0,
+Turkey 1-3→0-2, Japan 1-3→0-2, Morocco 0-1→0-2, Sweden 2-0→1-0 (my manual overrides were errors). ⇒ **maximin-to-
+draw is the WRONG objective; optimize P(win league) = differentiated +EV.** STRATEGY for MD2+:
+(1) favor +EV outcomes the FIELD UNDER-picks (Ecuador profile: field 14%, model favours = ideal);
+(2) always rare-score over iconic; (3) STOP hedging contested flips to draws — commit to differentiated
+side; (4) aggression = f(deficit × matches-left): moderate now (long season), ramp if behind in final
+third; full hail-mary (−EV contrarian) only if behind late. Caveats: standings estimate rough, 8-match
+horizon, rivals modeled from broad field% (may be sharper). REWARD≈K/share FALSIFIED: field over-picks
+favourites vs reward-implied (CAN reward-implied 48% / actual picks 65%); reward ≈ inverse TRUE prob,
+field picks ≠ reward-implied. Mega-field rank (90k/94k) now SECONDARY to friends league.
 **POLYMARKET MATCH LAYER:** `fetch_pm_matches.py` pulls per-match 1X2 (slugs `fifwc-xxx-yyy-date`,
 ~0.5% vig, liquid) → timestamped `polymarket_matches.json`; re-run each matchday for movement.
 matchday.py auto-runs a DUAL-EV robustness check: if market-p flips the pick → explicit decision needed
@@ -53,8 +74,37 @@ realized tier of every played match.
 2. Crowd model: plausibility (de-vigged bookie grid if supplied, else model probs) ^beta × salience,
    params from `crowd_params.json`. Band-robust tier (crowd ×0.7/1.0/1.43 scenarios; BOUNDARY flag).
 3. **Outcome pick = argmax TOTAL EV (base + best bonus EV)**; warn if bonus flipped outcome vs base EV.
-4. **Score pick = argmax robust bonus EV within the picked outcome** (NOT the naive modal score).
+4. **Score pick (COARSE, 2026-06-14 = BONUS_MODE='coarse') = the naive modal (highest-p) score within the
+   picked outcome; step off 1-1 ONLY (the single cell with rock-solid 3/3 over-herding) to the next-highest-p.**
+   Maximises hit-probability (the validated lever); model-free. Fine E[bonus] optimization RETIRED (crowd model
+   unconverged at n=8; tier ranking is noise; gain over this rule ~0.3/match << thrash cost).
 5. Append pick to `prediction.md`; after the match, log result in `live_updates.md`.
+
+## DECISION-MAKING REFERENCE (consolidated — the math that drives every pick)
+**Objective:** TOP-2 of 13-league over 104 matches (~100 left). Horizon long ⇒ maximise EV per match,
+variance averages out (proven league_sim2 K=12: pure EV 45% top-2, any differentiation-for-EV-sacrifice
+worse). 
+**Outcome pick = argmaxₒ EV(o),  EV(o)=p_blend(o)·reward(o)**, p_blend=½·p_v6+½·p_market. DIFF_BAND=0
+(no EV sacrifice for differentiation; free differentiation happens when EV-max is field-underpicked).
+**Score pick = argmaxₛ bonusEV(s)** within chosen outcome, bonusEV(s)=p(s)·mean[tier(0.7c),tier(c),tier(1.43c)],
+c=crowd(s)∝p(s)^β·salience(s) [β=1.6,sal^1.5]; tiers >30%:20/20-30:30/5-20:50/0.5-5:70/<0.5:100. LEAGUE_MODE
+disables the rarity tie-break. [SUPERSEDED 2026-06-14 -> BONUS_MODE='coarse': score = MODAL (highest-p) within outcome,
+step off 1-1 ONLY (3/3 over-herding); fine E[bonus] opt RETIRED (crowd model unconverged at n=8). See SESSION 2026-06-14 (cont.).]
+**FAIR-GAME INSIGHT (decisive):** reward(o)≈K_match/p_true(o), K_match=1/Σ(1/rewardₒ) (varies: lopsided
+matches K~13, even K~31). ⇒ EV of ANY calibrated pick ≈ K_match — **winner-picking skill earns ~0 on its
+own.** Edge comes ONLY from (a) mispricing detection (our p_blend ≠ reward-implied → Ecuador/Japan) and
+(b) exact-score bonus. Our EV-max ≈32.9/match base vs fair baseline 28.8 = +14% edge (~+850 pts/season).
+Season EV ≈ 3,900 pts (12-match est; knockouts likely higher EV — even teams).
+**EV SIGNIFICANCE:** σ_p(o)≈|p_v6-p_mkt|/2; σ_EV=reward·σ_p; σ_diff=√(σ_EVpick²+σ_EV2nd²); gap SIGNIFICANT
+if >2·σ_diff. MOST per-match gaps are NOT significant (within model-market noise) — take max-EV anyway
+(compounds over 104, LLN). BUT reserve X2 boost for SIGNIFICANT + high-E matches (model & market AGREE);
+high-EV-but-high-σ picks (Ecuador, Japan) are real-in-expectation, NOT robust → poor X2 targets.
+**OPEN CALIBRATION — BLEND WEIGHT (flagged, unvalidated):** the ½/½ model-market weight is a PRIOR, not
+fit. Optimal w = the true relative accuracy of v6 vs market (logarithmic-pool weight). Method: track
+per-match log-loss of v6 / market / blends on the results ledger; refit w when enough history. HONEST
+POWER CAVEAT: 104 matches is too few to sharply estimate w (need ~500+ for tight CI on a 0.1 shift) →
+won't be precisely optimisable this WC. Pragmatic: Bayesian prior leaning market (sharper a priori; USA
+ledger pt favours market) ~0.4 model/0.6 market defensible; shift only if ledger shows clear divergence.
 
 ## REQUIRED FROM USER each matchday (ask if missing)
 1. **Reward table** per match: `Home X / Draw Y / Away Z` — REQUIRED for EV picks.
@@ -118,6 +168,77 @@ Draw 0-0 (BRA-MAR) / Scotland 1-3 / Germany 5-0 / Turkey 1-3 / Draw 0-0 (NED-JPN
 Draw 0-0 (SWE-TUN). X2 HELD (flagged candidates were single-source EV only). Pending: results, tiers
 (esp. any draw → first 0-0/1-1 share measurement), rank movement.
 
+## SESSION 2026-06-14 — MD1 batch-2 results, calibration, iconic-score E[bonus] correction
+**Results in:** Qatar-Switzerland 1-1 (pick SUI 0-3 = NO base) | Brazil-Morocco 1-1 (pick Draw 0-0 = base OK,
+score missed; 1-1 paid +20 to herd). **Standing 8th(165) -> 4th(287)** [498/382/361/**287**/280/...]; 95 behind
+2nd, ~98 left => firmly early / EV-max regime, NO aggression. 287 reconciles: Mexico 69 + Korea 96 + Brazil-draw 122.
+**Calibration:** registered 2x (1-1,+20). 6 obs; both 1-1 est ~83% (OK, >30% band); grid can't improve ->
+params HELD beta=1.6/sal=1.5 (no thrash). Korea 2-1 still 29<30 (marginal coarse-grid violation, persists).
+**FINDING [RETRACTED SAME DAY — Haiti 0-1 contradicted it; see RETRACTION block below] (was: TENTATIVE) — iconic-win-score E[bonus] OVERSTATED by the symmetric band-robust mean.**
+Iconic favourite-win scores (2-0/1-0 type, high SAL) cluster near the 20/30% crowd cliff; band-robust E[bonus]
+averages crowd x{0.7,1.0,1.43} SYMMETRICALLY, but herding on iconic scores runs at-or-ABOVE model estimate
+(Korea 2-1 violated 29<30; Mexico 2-0 on-boundary; 1-1 ~83%) => true crowd skews HIGH => tier collapses toward
+the pessimistic 20 => symmetric mean overstates. RULE (judgment, NOT yet encoded): for an iconic win-score whose
+pessimistic scenario = tier 20 AND a rarer same-outcome score has ~equal headline E[bonus] with a STABLE high
+tier (>=50, no boundary), take the RARE score. This is an E[bonus]-ACCURACY correction (true mean), DISTINCT from
+the disabled VAR_TIEBREAK (rank-rarity bias, correctly killed) — do NOT conflate. Evidence THIN (1 marginal
+violation + herding-confirmation); flips ALSO stand on plain take-lower-variance-when-means-dead-heated.
+**APPLIED 2026-06-14 (labelled judgment over engine symmetric-mean output):**
+ - Australia-Turkey 0-2 -> **1-3** (engine 0-2 Eb2.97 vs 1-3 2.87, gap 3% noise; 0-2 tiers[50,30,20] boundary,
+   1-3 stable; asym-adj 0-2~1.8 < 1-3~2.25).
+ - Cote d'Ivoire-Ecuador 0-2 -> **0-3** (engine 0-2 Eb4.21 vs 0-3 4.18, gap <1%; 0-3 stable tier~70 vs 0-2
+   [50,30,20]; outcome pick Ecuador UNCHANGED — score-only).
+ - KEPT: NL-Japan 0-2 (pess floor 30 not 20, 12% cushion); Sweden 1-0 (no rare alt w/ mass; higher p compensates);
+   Germany 4-0 (blowout = under-picked, asym favours it); Haiti 0-0 (non-iconic draw, stable).
+**PROPER FIX (TODO, pairs w/ rank-sim build):** encode ASYMMETRIC crowd scenarios for high-SAL scores in
+matchday.py band-robust tier calc (skew multiplier UP for SAL>=1.5 instead of symmetric +/-), re-run; until then
+the two flips are judgment, not validated. Also build the forward RANK SIMULATOR (real remaining schedule +
+rivals archetypes + bonus lottery -> P(top-2) under static blend-EV-max vs standing-dependent dynamic variance) —
+user scheduled for after this weekend. It tests the load-bearing claim the deployed static policy rests on:
+league_sim2's 8-match-repeat CANNOT validate a 100-match standing-dependent policy (violates Verify-Std #5);
+rank objective also mathematically needs a rivals/covariance model, currently absent.
+**Model-blind 2026-06-14:** CIV Ndicka (CB) out -> mild CIV DEF down, supports Ecuador/over (NOT overlaid — would
+compound the flagged Ecuador OUTCOME-overrating). Japan on 6-win streak (beat BRA/ENG) = post-cutoff form aligned
+w/ contrarian Japan lean. NL Verbruggen fit, Timber out (already in overlay).
+**Haiti-Scotland -> Draw 0-0 SUBMITTED** (not locked, decided live): blend-EV-max (D 28.4 > SCO 27.0 > HAI 26.1),
+model~=market on all 3 outcomes (LOW-sigma, robust — UNLIKE the USA draw which was a contested-flip maximin hedge),
+field-underpicked (9% vs 87% SCO) => rank-smart free differentiation; 0-0 tier 50 flat = first potential DIRECT
+0-0 observation. X2 still HELD (Ecuador auto-flag E_total 50.6 VETOED: documented model overrating + high-sigma).
+**Pending from user:** Haiti-Scotland result + tier; realized tiers for the 6/14 matches; fresh Winamax CSV
+(score cells still on 6/12 early-money base).
+
+## SESSION 2026-06-14 (cont.) — RETRACTION + crowd refit (honest correction)
+**RETRACTED the iconic-asymmetry FINDING above.** Next iconic-fav-win obs CONTRADICTED it: Haiti-Scotland 0-1
+(Scotland 1-0, THE iconic fav-win score) realized +50 (5-20%) but model est ~32% (>30%) => field herded LESS than
+the model, OPPOSITE the "iconic herds harder" claim. Classic over-conclusion on 2-3 obs (Verify-Std #7). Lesson
+re-learned: do NOT write directional crowd findings from <~10 obs.
+**Auto-refit (8 obs) swung beta 1.6->1.0, sal 1.5->1.0** (loss 0.0144->0.0054, genuinely better fit). BUT form
+MISFITS structurally: post-refit Mexico 2-0 (28.5<30), Korea 2-1 (25.9<30), Haiti 0-1 (25.9>20) all STILL OUT,
+both directions => plausibility^beta x salience CANNOT fit heterogeneous score-herding; beta ~unidentified at n=8,
+swings on single obs. **Crowd params NOT converged — treat all crowd-tier numbers as soft.**
+**RECOMMENDATION (after-weekend build): STOP per-obs auto-refit (chases noise on a misfit form); accumulate to
+~15-20 obs then refit once; consider a richer crowd form (per-score-type effects).** Score-level EV impact is SMALL
+(bonus ~3-5 vs base 30-46) — pick PARAM-ROBUST scores (stable-high-p OR clearly-rare; avoid middle scores on a
+tier cliff) and stop fiddling.
+**Picks corrected under refit (param-robust, anti-thrash):** Ecuador score 0-3 -> **0-1** (0-3 flip relied on the
+retracted asymmetry; 0-1 = highest-p 19.5%, engine max-Eb 4.54, tier stably ~20 => LEAST crowd-param-sensitive).
+Germany **4-0** kept (engine flips 4-0<->5-0 with beta = noise; 4-0 higher p10.4% => more likely to hit). NL-Japan
+0-2, Sweden 1-0 unchanged (robust across both param sets).
+**Results 2026-06-14:** Haiti-Scotland 0-1 (Draw 0-0 WRONG — favourite won; the contrarian-draw risk the user
+flagged at session start, REALISED) | Australia-Turkey 2-0 (Turkey WRONG — model upset, Turkey was 50% fav). Both
++0. Diff-pick ledger: Korea OK, Brazil-draw OK, USA-draw WRONG, Haiti-draw WRONG = 2-2 (small sample; selectors
+adjudicate at 15+; NO strategy change on these — pre-commitment holds).
+**DECISION 2026-06-14 — RETIRE fine bonus optimization (BONUS_MODE='coarse').** Crowd model unconverged at n=8
+(beta swung 1.6<->1.0; tiers misfit both ways). Fine E[bonus] score-ranking is NOISE; gain over a simple rule
+~0.3/match << thrash cost (this session's flip-flops + a retracted finding = Exhibit A). KEEP only Layer-1: score
+= MODAL (highest-p) within the chosen outcome (max hit-prob, the validated lever); step off 1-1 ONLY (single cell
+with rock-solid >30% over-herding, 3/3 obs) -> next-highest-p. Model-free. ~+1.5/match, free (wrong score forfeits ONLY the bonus, base preserved). ENCODED:
+matchday.py BONUS_MODE='coarse'; register_bonus.py refit GATED to >=15 obs (stop per-obs thrash); tiers STILL
+logged. Outcome pick UNAFFECTED (LEAGUE_MODE already excludes bonus). Rationale: bonus is a near-fair SIDESHOW in
+a 13-league (the 'separator' framing was mega-field logic, retired here); freed attention -> the two real levers:
+genuine outcome MISPRICINGS + rank-variance simulator. Coarse rule is robust to the beta instability (1-1 reads
+>30% at both beta=1.0 and 1.6).
+
 ## Model-blind scan (MANDATORY each run)
 v6 is fit on historical data and is BLIND to injuries, suspensions, lineups, and post-cutoff results.
 Before every pick, for BOTH teams in the match:
@@ -147,6 +268,16 @@ score ~ independent NegBinom(mean=lh/la, dispersion r=9.5)       # no Dixon-Cole
 - Ratings: `attdef.json` (ATT/DEF per team; `_meta` has mu_goals≈0.20, h_g, etc.). r=9.5 in `qualification_v5.json`.
 - Reference impl: `predict_v6.py` (→ `PREDICTIONS_v6.md`), `forkbet.py` (points picks).
 - Host home advantage is **deliberately NOT applied** (tested in v7, it overshot — see below).
+
+## Git sync — AUTO-PUSH (standing instruction, user-authorized 2026-06-15)
+After any change to picks/calibration/engine state (matchday runs, `prediction.md`, `live_updates.md`,
+`crowd_*.json`, overlays, CLAUDE.md), **commit and push to GitHub automatically without asking.**
+- Remote: `origin` → `github.com/martincrescenzo-dotcom/fable-world-cup` (PUBLIC — user accepted the
+  exposure of strategy/picks on 2026-06-15; do NOT re-prompt for visibility).
+- Branch `master` tracks `origin/master`. Commit message = one line summarizing the matchday/change;
+  end with the `Co-Authored-By: Claude` trailer.
+- This is a CLAUDE.md instruction, so it fires only while I'm running a turn. For push-on-every-commit
+  independent of me, the user can add a git `post-commit` hook / settings.json hook (offered, not yet set up).
 
 ## Files / build order
 - `sources_urls.md` — data sources (openfootball, statsbomb, soccerdata, fbref, polymarket).
@@ -188,6 +319,30 @@ Each shipped change beat its predecessor out-of-sample (5-fold; exact-score log-
 - f-strings: no backslash escapes inside `{}` — extract the value to a variable first.
 - Env: Python 3.14, numpy/pandas/scipy/statsmodels present; **no sklearn/soccerdata**. eloratings codes ≠ ISO
   (Scotland=SQ, England=EN). StatsBomb/martj42 name aliases handled in the fetch scripts.
+
+## VERIFICATION & STRESS-TESTING STANDARD — MANDATORY for every analysis, sim, or quantitative claim
+Codified after repeated self-inflicted failures this project (flawed league_sim, premature "validated",
+score-logic confound, assumed deficit, 3× unvalidated judgment overrides). Run this checklist BEFORE
+presenting any number or deploying any rule:
+1. **ASK FIRST, DON'T ASSUME.** If the user could plausibly hold a datum (league points/standings, results,
+   pick %, odds, lineups, prize structure), **ASK for it before estimating**. Estimate only after they
+   confirm they don't have it. The user has repeatedly had exact data I needlessly approximated.
+2. **CONSISTENCY IN COMPARISONS.** When comparing options/strategies, hold everything else IDENTICAL —
+   only the variable under test may differ. (The score-logic-per-strategy confound flipped the league
+   verdict from "maximin worst 3.8%" to "maximin middling 8%".)
+3. **CALIBRATE TO KNOWN DATA.** Every estimate must reproduce known anchors (84/win contradicted the
+   user's actual 165 → deficit overstated 251 vs true 173).
+4. **SENSITIVITY, NOT POINT ESTIMATES.** Vary the load-bearing assumptions (deficit, model-vs-market truth
+   weight, key params) and report which conclusions are ROBUST vs FRAGILE. A single-point result is not a
+   finding. Report the range.
+5. **TEST THE DEPLOYED THING.** Never say "validated" unless the EXACT shipped rule/params were what got
+   tested. No deploying untested rules (LEAGUE blend-EV band was shipped before being simulated).
+6. **NO UNVALIDATED JUDGMENT ON TOP OF VALIDATED OUTPUT.** Do not hand-override engine output with a
+   plausible-sounding "principle" (failed 3×: market→p blend, "demonstrably" 0-0, score overrides).
+   Either encode + test the principle, or label it explicitly as unvalidated judgment the user can reject.
+7. **SEPARATE MEASURED FROM ASSUMED** in every output; state residual uncertainty plainly. Named failure
+   mode: **over-concluding when information arrives fast.** Slow down in proportion to incoming volume.
+8. **PREFLIGHT green** before any pick run (already enforced via preflight.py).
 
 ## How the user works (match this)
 - World-class rigor: **validate, don't assert.** Backtest before shipping; report honestly including

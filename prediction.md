@@ -95,3 +95,23 @@ Across 4 matches: ~40% chance at least one lands (+50 each), every draw also pay
 
 *Next inputs: realized TIERS from organizer emails (every match, esp. rare scores); fresh Winamax pull
 + 1N2 odds next matchday; rank updates.*
+
+---
+
+# MD2 slate 2026-06-15 (engine v6 + LEAGUE_MODE, DIFF_BAND=0, BONUS_MODE=coarse)
+
+User 9th/13 (374 pts), ~92 matches left → EV-max regime, X2 HELD. Winamax 20260615 ingested; preflight GREEN.
+Model & reward-implied market AGREE on the favourite in all 4 → picks market-robust (no Polymarket pull this slate).
+
+| # | Match (date) | OUTCOME | SCORE | Rationale (1-line) |
+|---|--------------|---------|-------|--------------------|
+| 1 | Belgium–Egypt (15th) | **Belgium** | **1-0** | EV-max (totalEV 39.6); model 61% ≈ reward 53%; Salah half-fit overlay reinforces; 1-0 modal (coarse) — div flag noted, kept per rule |
+| 2 | Saudi Arabia–Uruguay (15th) | **Uruguay** | **0-1** | EV-max (totalEV 39.9); model 67% ≈ reward 57%; field 81% (crowded, no diff available — take EV-max anyway); 0-1 modal |
+| 3 | Iran–New Zealand (15th) | **Iran** | **1-0** | EV-max (totalEV 40.7) AND FREE differentiation: field over-picks Draw (44%) vs Iran 35%; 1-0 modal (model over-rates 1-0 herding → tier likely better than shown) |
+| 4 | Spain–Cape Verde (15th) | **Spain** | **3-0** | model 93/6/2 near-lock; EV low (20.4 — 16 reward, heavy-fav fair-game) so value is in the bonus; 3-0 modal (xG 3.95-0.33), tier 50 stable. Yamal+N.Williams benched (token overlay). Score grid = 6/12 early money; rewards 16/166/217, field 88/10/2 (user supplied late). |
+
+**BLEND ROBUSTNESS (no Polymarket this slate):** re-ran each pick with reward-implied market as the blend term (½ model + ½ reward-implied) → **outcome argmax UNCHANGED in all 4** (Bel H, Uru A, Iran H, Spa H). Blend narrows margins (Uru 33.5→31.1, Iran 37.8→34.4) but flips nothing. Picks robust to the missing PM layer; for future slates pull `fetch_pm_matches.py` so the deployed blend actually engages.
+
+**X2: HELD.** No candidate (max E_total 40.7 < 45 threshold; all favourites, none contrarian). Reserve for high-E knockout where model+market agree.
+
+*Pending from user: realized TIERS for the 6/14 matches + Sweden-Tunisia 5-1 tier (calibration backlog → 13 obs, refit gated at 15); results of these 3.*

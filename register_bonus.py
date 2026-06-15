@@ -8,7 +8,12 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 NEW_OBS = [
-    # dict(match='X-Y', date='2026-06-..', home='X', away='Y', actual_score=(2,0), bonus_awarded=50),
+    dict(match='Germany-Curacao', date='2026-06-14', home='Germany',
+         away='Curacao', actual_score=(7,1), bonus_awarded=100),
+    dict(match='Netherlands-Japan', date='2026-06-14', home='Netherlands',
+         away='Japan', actual_score=(2,2), bonus_awarded=20),
+    dict(match='Ivory Coast-Ecuador', date='2026-06-14', home='Ivory Coast',
+         away='Ecuador', actual_score=(1,0), bonus_awarded=30),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}
@@ -77,8 +82,8 @@ for o in obs:
     ok='OK' if lo<=c<=hi else 'VIOLATED'
     print(f"  {o['match']} {o['actual_score']}: est {c*100:.1f}% vs band [{lo*100:.1f},{hi*100:.1f}]%  {ok}")
 violated=any(not (o['share_band'][0]<=share_est(o,cur['beta'],cur['sal_strength'])<=o['share_band'][1]) for o in obs)
-if len(obs)>=3 or violated:
-    if violated and len(obs)<3: print('VIOLATION with <3 obs -> refit triggered early (data contradicts params).')
+if len(obs)>=15:   # 2026-06-14: refit GATED to >=15 obs. Per-obs refit chased noise on a misfit form
+                   # (beta swung 1.6<->1.0 on single results); coarse BONUS_MODE makes fine params ~irrelevant.
     grid_b=[1.0,1.1,1.25,1.4,1.6,1.8]; grid_s=[0.5,0.75,1.0,1.25,1.5]
     best=min(((loss(b,s),b,s) for b in grid_b for s in grid_s))
     if best[0]<loss(cur['beta'],cur['sal_strength'])-1e-9:
@@ -91,4 +96,4 @@ if len(obs)>=3 or violated:
     else:
         print('grid cannot improve — params kept; flag persists.')
 else:
-    print(f'({len(obs)} obs, none violated — refit activates at 3+.)')
+    print(f'{len(obs)} obs logged. Refit GATED to >=15 obs + OOS validation (2026-06-14); coarse BONUS_MODE — fine params barely affect picks.')
