@@ -9,14 +9,14 @@
  5 hits: Mexico✅+20 | Korea✅ | Brazil-Morocco Draw✅ | Germany✅ | Sweden✅
  7 misses: Canada | USA | Qatar-Swiss | Haiti-Scotland | Australia-Turkey | NL-Japan | CIV-Ecuador
 **Running total: 374 pts** (69 Mexico + 96 Korea + 122 Brazil-Morocco + 15 Germany + 72 Sweden).
-**Sweden-Tunisia tier: PENDING** (5-1 result, presumably rare → +70 or +100; register when confirmed).
+**Sweden-Tunisia tier: +100** (5-1, model est 0.2% → OK; we picked 1-0 so bonus not ours — calibration only).
 **Strategy (settled):** pure blend-EV-max — LEAGUE_MODE, **DIFF_BAND=0**, COARSE scores (modal/highest-p, step off 1-1 only).
 **X2 boost: HELD.** Use only on SIGNIFICANT + model-market-AGREED high-E match. Anytime incl. knockouts.
 **PENDING (ask user):** (1) Sweden-Tunisia tier; (2) MD2 reward tables + fresh Winamax/Polymarket.
-**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 12 obs / 6 violations — accumulate to 15 for refit. First DIRECT 0-0 obs (Spain-CV) landed at +50, model est 17.8% OK → 0-0 tier-50 thesis gets its first support.
+**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 13 obs / 6 violations — accumulate to 15 for refit. First DIRECT 0-0 obs (Spain-CV) landed at +50, model est 17.8% OK → 0-0 tier-50 thesis gets its first support. Sweden 5-1 +100 (est 0.2% OK) = 2nd tail obs nailed.
 
 ## CHALLENGE AGENDA — stress-test assumptions as evidence accumulates; surface proactively at each trigger
-**1. Crowd model refit — trigger: ≥15 obs (currently 12)**
+**1. Crowd model refit — trigger: ≥15 obs (currently 13)**
 6/11 violations; beta/sal near-unidentified on a misfit form. At 15 obs: refit once, then test whether
 `plausibility^β × salience` can structurally fit the data or needs a richer form (per-score-type effects).
 Known failure modes: draw scores (1-1, 2-2) under-estimated; home-win 1-0 over-estimated.
@@ -53,7 +53,7 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-14 | Germany 7–1 Curaçao | Germany W | consistent (blowout; model favoured Germany heavily) | historic scoreline; tier +100 |
 | 2026-06-14 | Netherlands 2–2 Japan | Draw | MISS — model picked Japan W; market NL → we picked Japan (LEAGUE) | iconic draw; tier +20 |
 | 2026-06-14 | Côte d'Ivoire 1–0 Ecuador | CIV W | MISS — we picked Ecuador W (4-source model flag; Ecuador overrated confirmed) | tier +30 |
-| 2026-06-14 | Sweden 5–1 Tunisia | Sweden W | consistent (model+market favoured Sweden) | score missed (1-0 pick); tier PENDING (5-1 rare) |
+| 2026-06-14 | Sweden 5–1 Tunisia | Sweden W | consistent (model+market favoured Sweden) | score missed (1-0 pick); tier **+100** (5-1, model est 0.2% OK) |
 | 2026-06-15 | Spain 0–0 Cape Verde | Draw | **MAJOR UPSET** — model 93% Spain, market agreed; pick Spain 3-0 → base 0 | irreducible upset variance, NOT a model error (both sources lock Spain); 0-0 tier **+50** = FIRST DIRECT 0-0 obs |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
@@ -72,7 +72,7 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Ivory Coast–Ecuador | Ecuador | 0–1 | **1-0 CIV ❌** | 0 | tier(1-0)=+30 obs#11 |
 | Germany–Curaçao | Germany | 4–0 | **7-1 GER ✅** | base (ask reward) | tier(7-1)=+100 obs#9; score missed |
 | Netherlands–Japan | Japan | 0–2 | **2-2 ❌** | 0 | tier(2-2)=+20 obs#10; outcome missed (draw) |
-| Sweden–Tunisia | **Sweden** | **1–0** | **5-1 SWE ✅** | 72 | score missed; tier PENDING (5-1, presumably rare) |
+| Sweden–Tunisia | **Sweden** | **1–0** | **5-1 SWE ✅** | 72 | score missed; tier(5-1)=**+100** obs#13 (model est 0.2% OK) |
 | Spain–Cape Verde | Spain | 3–0 | **0-0 DRAW ❌** | 0 | major upset (Spain 93%); tier(0-0)=+50 obs#12 — FIRST DIRECT 0-0, validates tier-50 thesis |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
