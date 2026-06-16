@@ -71,7 +71,9 @@ round matches remain (24 opening matches total, 16 played). If the next few open
 opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
-**Last scanned: 2026-06-15.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Last scanned: 2026-06-16.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Scan 2026-06-16 (MD3: France-Senegal, Iraq-Norway, Argentina-Algeria, Austria-Jordan, Portugal-DRCongo — REAL WC Group I + Arg opener):**
+ France full strength (Ekitiké out=depth, Saliba minor knock but available; XI Mbappé/Dembélé/Olise). Senegal strong (Mané/Koulibaly/Mendy/Gueye), no June injury. **Argentina: real defensive thinning for the opener — Dibu Martínez (GK, finger fracture) doubt, Molina+Montiel (RBs) muscle tears, Balerdi OUT; Messi/Álvarez/Romero fit → mild DEF overlay −0.05 (halved, priced; Arg still 80% fav).** Norway full strength (Haaland fit). Portugal full strength (Ronaldo's March hamstring healed). Austria/Jordan: light scan (blowout). All other teams no material overlay. NO Polymarket pull (no slugs for these fixtures) → market-confirmed veto applied manually via reward-implied.
 **XI check 2026-06-15 (pre-KO, all 3 MD2 matches — NO change):** Belgium XI CONFIRMED (Courtois + Doku start, scare cleared; Ngoy/Mechele depth CBs = ignore; Egypt Salah starts = overlay already applied). Saudi-Uruguay + Iran-NZ still PREDICTED (sheets drop ~KO) but no surprise: **Uruguay near-full-strength (Valverde/Bentancur/Ugarte/Núñez/Viñas) — NOT resting starters → pick STRENGTHENED**; Iran expected XI (Taremi leads, Jahanbakhsh out per overlay). No outcome flip on any → Belgium 1-0 / Uruguay 0-1 / Iran 1-0 all HOLD. X2 HELD.
 **Scan 2026-06-15 (MD2 slate Belgium/Saudi/Iran):** Belgium–Egypt: Egypt **Salah (hamstring) starting but not fully fit** → mild Egypt ATT −0.07 (halved, market-priced); Belgium Debast (CB) out = squad depth, ignore; Doku breathing scare, returned/fit. Saudi–Uruguay: Uruguay near full-strength; Saudi new coach (Renard sacked April), poor form — intangible, NO overlay. Iran–NZ: Iran missing **Jahanbakhsh (muscle) + Eckert + Torabi** → mild Iran ATT −0.05 (halved); NZ fully fit (Wood back since April). All overlays run WITH the market (no illusory value). PICKS: Belgium 1-0 / Uruguay 0-1 / Iran 1-0 — all EV-max favourites; Iran = free differentiation (field over-picks Draw 44%). X2 HELD.
 **Scan 2026-06-14:** CIV Ndicka (starting CB) OUT for opener → mild CIV DEF downgrade, supports Ecuador/over (NOT applied as overlay — would compound the flagged Ecuador outcome-overrating; noted as qualitative de-risk only). Japan on 6-win streak (beat Brazil, England) = post-cutoff form aligned with our contrarian Japan lean. NL Verbruggen fit, Timber out (already in overlay). No score changes.
@@ -113,6 +115,11 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Belgium–Egypt | Belgium | 1–0 | **1-1 DRAW ❌** | 0 | favourite drawn; tier(1-1)=+20 obs#14 |
 | Saudi Arabia–Uruguay | Uruguay | 0–1 | **1-1 DRAW ❌** | 0 | favourite drawn; tier(1-1)=+20 obs#15 |
 | Iran–New Zealand | Iran | 1–0 | **2-2 DRAW ❌** | 0 | favourite drawn; field's Draw (44%) was right; tier(2-2)=+50 obs#16 |
+| France–Senegal | **Draw** | **0–0** | MD3 SUBMITTED | | EV-max + Axis-B (field 88% France crushes reward→Draw 29.2 max, field 9%, conf'd) |
+| Iraq–Norway | **Draw** | **0–0** | MD3 SUBMITTED | | EV-max + Axis-B (field 91% Norway→Draw 22.8, field 6%); high variance |
+| Argentina–Algeria | Argentina | 2–0 | MD3 SUBMITTED | | Axis-A follow (EV-max 28.9); DEF overlay −0.05 |
+| Austria–Jordan | **Draw** | **0–0** | MD3 SUBMITTED | | Jordan was raw EV-max but VETOED (model 21 vs impl 15, underdog-overrating, no PM); Draw next-confirmed |
+| Portugal–DR Congo | Portugal | 2–0 | MD3 SUBMITTED | | Axis-A follow (EV-max 25.4; draw separation negative) |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
 +EV picks (Morocco/Japan = field-underpicked EV-competitive; Haiti-Draw = EV-max 9%-field; Sweden = EV-max

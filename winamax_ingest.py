@@ -42,7 +42,8 @@ for fr_match,lines in m.items():
     entry={'snap_date':SNAP_DATE,'odds':{},'pct':{}}
     for r in lines:
         sc=r['Score'].strip()
-        odds=float(str(r['Cote']).replace(',','.'))
+        cote=r.get('Cote') or r.get('Cote_Winamax')   # accept either column header variant
+        odds=float(str(cote).replace(',','.'))
         pct=float(r['Pct_parieurs']) if r['Pct_parieurs'] not in ('',None) else 0.0
         entry['odds'][sc]=odds; entry['pct'][sc]=pct
     store.setdefault(key,[]).append(entry)

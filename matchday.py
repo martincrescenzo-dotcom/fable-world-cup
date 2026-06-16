@@ -21,20 +21,22 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD2 slate 2026-06-15 (fieldpct=[H,D,A] = real pick shares from reward CSV Pct_joueurs).
- # overlay=(dATT_h,dDEF_h,dATT_a,dDEF_a) log units. Model-blind scan 2026-06-15:
- dict(home='Belgium', away='Egypt', rewards=[57,122,135], date='2026-06-15', fieldpct=[.81,.14,.05],
-      overlay=(0,0,-0.07,0)),   # Egypt: Salah (hamstring) starting but not fully fit -> mild ATT down (halved, priced)
- dict(home='Saudi Arabia', away='Uruguay', rewards=[146,125,50], date='2026-06-15', fieldpct=[.06,.14,.81]),
- dict(home='Iran', away='New Zealand', rewards=[63,116,130], date='2026-06-15', fieldpct=[.35,.44,.21],
-      overlay=(-0.05,0,0,0)),   # Iran: Jahanbakhsh (muscle) + Eckert/Torabi out -> mild ATT down (halved, priced)
- dict(home='Spain', away='Cape Verde', rewards=[16,166,217], date='2026-06-15', fieldpct=[.88,.10,.02],
-      overlay=(-0.05,0,0,0)),   # Spain: Yamal+N.Williams (hamstring) BENCHED -> token ATT down (huge depth, priced).
-                                # NB score grid = 6/12 EARLY-money Winamax (no fresh full-time pull this match).
+MATCHES = [   # MD3 slate 2026-06-16 (fieldpct=[H,D,A] = real pick shares from reward CSV Pct_joueurs).
+ # overlay=(dATT_h,dDEF_h,dATT_a,dDEF_a) log units. Model-blind scan 2026-06-16 (real WC Group I + Arg-Alg opener):
+ dict(home='France', away='Senegal', rewards=[46,128,153], date='2026-06-16', fieldpct=[.88,.09,.03]),
+      # France full strength (Ekitike out=depth, Saliba minor but available); Senegal strong (Mane/Koulibaly/Mendy). No overlay.
+ dict(home='Iraq', away='Norway', rewards=[178,144,30], date='2026-06-16', fieldpct=[.02,.06,.91]),
+      # Norway full strength (Haaland fit). Heavy away fav. No overlay.
+ dict(home='Argentina', away='Algeria', rewards=[43,129,159], date='2026-06-16', fieldpct=[.80,.14,.06],
+      overlay=(0,-0.05,0,0)),   # Argentina: Dibu Martinez(GK) doubt + Molina/Montiel(RB) tears + Balerdi out -> mild DEF down (halved, priced)
+ dict(home='Austria', away='Jordan', rewards=[38,136,163], date='2026-06-16', fieldpct=[.83,.14,.03]),
+      # Austria heavy fav; light scan (blowout). No overlay.
+ dict(home='Portugal', away='DR Congo', rewards=[34,140,170], date='2026-06-16', fieldpct=[.95,.04,.01]),
+      # Portugal full strength (Ronaldo hamstring healed). Extreme chalk. No overlay.
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile
-WINAMAX_VALID_THROUGH = '2026-06-15'   # fresh CSV 'Cotes Winamax ... 20260615' ingested 2026-06-15
+WINAMAX_VALID_THROUGH = '2026-06-16'   # fresh CSV ingested 2026-06-16 (France-Senegal slate)
                                        # (Belgium/SaudiArabia/Iran matches); raise on next fresh CSV
 VAR_TIEBREAK_EV = 1.5       # rank strategy: among scores within this EV of the best, prefer LOWER-crowd
 LEAGUE_MODE = True          # objective = TOP-2 of 13-person league over ~100 remaining matches.

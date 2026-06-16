@@ -115,3 +115,23 @@ Model & reward-implied market AGREE on the favourite in all 4 → picks market-r
 **X2: HELD.** No candidate (max E_total 40.7 < 45 threshold; all favourites, none contrarian). Reserve for high-E knockout where model+market agree.
 
 *Pending from user: realized TIERS for the 6/14 matches + Sweden-Tunisia 5-1 tier (calibration backlog → 13 obs, refit gated at 15); results of these 3.*
+
+---
+
+# MD3 slate 2026-06-16 (engine v6 + LEAGUE_MODE, DIFF_BAND_FRAC=0.05, blend 0.4/0.6, COARSE) — FIRST slate under the AUDIT-corrected two-axis doctrine
+
+User #10/13 (374), gap 284 to #2 line (658), ~88 left → behind ⇒ DECORRELATE (not EV-max-follow). Preflight GREEN; Winamax 20260616 ingested. **Real WC: Group I openers + Arg-Alg opener.**
+**⚠ NO POLYMARKET (no slugs for these fixtures) → independent market-confirmed VETO is degraded; applied MANUALLY via reward-implied probs. Outcome picks = model + reward-implied only (lower confidence than a PM-confirmed slate).**
+
+| # | Match | OUTCOME | SCORE | Rationale (two-axis) |
+|---|-------|---------|-------|----------------------|
+| 1 | France–Senegal | **Draw** | **0-0** | EV-MAX + AXIS-B: field 88% France crushes France reward (46) → Draw is blend-EV-max (29.2), field-underpicked (9%), market-confirmed (model 24%≈impl 22%). Free decorrelation. |
+| 2 | Iraq–Norway | **Draw** | **0-0** | EV-max + AXIS-B: field 91% Norway crushes Norway reward (30) → Draw blend-EV-max (22.8>21.9), field 6%, confirmed (17%≈15%). HIGH variance (Norway 73% fav) — flagged. |
+| 3 | Argentina–Algeria | **Argentina** | **2-0** | AXIS-A follow: Argentina blend-EV-max (28.9), reward 43 not crushed enough for a draw edge. DEF overlay −0.05 (Dibu/Molina/Montiel/Balerdi out, halved/priced). No Axis-B avail. |
+| 4 | Austria–Jordan | **Draw** | **0-0** | Raw EV-max = Jordan (28.4) but **VETOED**: model 21% vs reward-impl 15% on an away-underdog WIN = the model-overrating failure mode (Ecuador), no PM to confirm. Draw is next + better-confirmed (22%≈18%), blend-EV 26.7, field 14%. |
+| 5 | Portugal–DR Congo | **Portugal** | **2-0** | AXIS-A follow: Portugal blend-EV-max (25.4); Draw excluded — separation vs bloc is NEGATIVE (Por 75%, reward 34 not crushed enough). EV-max favourite. |
+
+**Portfolio note (honest):** 3 draws + 2 favourites = a HIGH-VARIANCE, decorrelated slate, and it's also the EV-MAX slate (expected base ~143 vs ~128 for following the bloc — decorrelation is FREE here). Downside: if favourites win across the board (they're 57–75%), I score only Arg+Por and fall further behind the bloc this matchday. That variance is the point — from 10th, EV-max-follow can't close 284; these +EV decorrelated draws are the climbing engine. Each draw is +EV individually (crushed-favourite rewards), not −EV gambling.
+**X2: HELD.** No candidate ≥45 (max totalEV 36.7 Argentina; all low-K crushed-chalk matches). Reserve for a higher-E field-underpicked + market-confirmed spot (likely a more even match / knockout).
+
+*Pending from user: realized TIERS for these 5 + the 6/14 backlog; results; updated leaderboard. For MD4+: pull `fetch_pm_matches.py` if slugs exist so the independent-market veto engages.*
