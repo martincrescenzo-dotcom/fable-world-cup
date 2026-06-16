@@ -232,8 +232,33 @@ def analyse(m):
     return res
 
 LBL=lambda m:[m['home'],'Draw',m['away']]
+
+# ---- INPUT-COMPLETENESS GATE (2026-06-16) — never emit picks on partial inputs (a churn failure happened:
+#      produced a slate before the independent market was in hand, then revised 3x as data trickled in).
+#      Assemble ALL required inputs FIRST; this fails loud if any are missing. The market=[] requirement is
+#      the load-bearing one: the AXIS-A market-confirmed veto does not function without an INDEPENDENT 1X2.
+def _input_gate(matches):
+    probs=[]
+    for m in matches:
+        miss=[k for k in ('rewards','fieldpct','market')
+              if not (isinstance(m.get(k),(list,tuple)) and len(m[k])==3)]
+        if not m.get('date'): miss.append('date')
+        mk=m.get('market')
+        if isinstance(mk,(list,tuple)) and len(mk)==3 and abs(sum(mk)-1)>0.06:
+            miss.append('market-not-devigged(sum!=1)')
+        if miss: probs.append(f"  {m.get('home','?')} vs {m.get('away','?')}: missing/invalid {miss}")
+    if probs:
+        print('INPUT GATE FAILED — do NOT emit a partial slate. Assemble every input first, then run once:')
+        print(chr(10).join(probs))
+        print('Required/match: rewards[H,D,A], fieldpct[H,D,A], date, market[H,D,A] = INDEPENDENT de-vigged')
+        print('1X2 (Polymarket slugs / Kalshi / sharp book via web / Winamax-grid-derived). Also confirm (judgment,')
+        print('not gated): model-blind scan done; standings if variance-relevant. ASK the user for what is missing.')
+        raise SystemExit(1)
+
 if not MATCHES:
     print('No MATCHES configured — edit the MATCHES list at the top with this matchday slate.')
+else:
+    _input_gate(MATCHES)
 for m in MATCHES:
     r=analyse(m)
     pm=r['pm']; pick=r['pick']; o=r['outcomes'][pick]; best=o['rows'][0]
