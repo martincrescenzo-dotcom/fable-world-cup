@@ -2,9 +2,11 @@
 
 ## ════ CURRENT STATE SNAPSHOT (2026-06-16) — read this first; rows below are edit history ════
 **Objective:** TOP-2 of 13-person friends league. **User: was 9th/13, 374 pts** (pre-MD2). **MD2 went 0/4 — all four picks were favourites/Uruguay that DREW (Belgium 1-1, Saudi-Uruguay 1-1, Iran 2-2, Spain 0-0). +0 base, +0 bonus (none of our scores hit).** ⚠ ASK USER for updated leaderboard — standing likely dropped.
-**Friends league full MD1 standings (12 matches played):**
- #1 997 (10W/3E) | #2 542 (7W/2E) | #3 493 (7W/1E) | #4 441 (6W/1E) | #5 436 (6W/1E) | #6 411 (6W/2E) | #7 405 (5W/1E) | #8 389 (6W/1E) | **#9 USER 374 (5W/1E)** | #10-13 unknown.
-**Gaps:** to #8: 15 | to #7: 31 | to #6: 37 | to #5: 62 | to #4: 67 | to #3: 119 | to #2: 168. ~92 matches remain.
+**Friends league standings POST-MD2 (2026-06-16, ~16 matches played):**
+ #1 1113 (11W/3E) | #2 658 (8W/2E) | #3 609 (8W/1E) | #4 557 (7W/1E) | #5 436 (6W/1E) | #6 419 (5W/1E) | #7 411 (6W/2E) | #8 405 (5W/1E) | #9 389 (6W/1E) | **#10 USER 374 (5W/1E)** | #11-13 unknown.
+**User dropped 9th→10th** (374 unchanged = MD2 0/4 confirmed; field's draw-pickers leapt — #2 +116 in MD2).
+**Gaps:** to #9: 15 | to #8: 31 | to #7: 37 | to #6: 45 | to #5: 62 | to #4 (top-4): 183 | to #3: 235 | **to #2 (TOP-2 LINE): 284** | to #1: 739. ~88 matches remain.
+**TOP-2 read:** target is the #2 line (658), gap 284 over ~88 matches. Leader 1113 is runaway (irrelevant for 2nd). #2–#4 bunched (658/609/557). Still LONG horizon → EV-max regime, NO aggression yet (variance ramps only if still trailing in final third).
 **MD1 fully resolved (12 matches):** 5/12 correct outcomes, 1/12 exact score (Mexico 2-0). 
  5 hits: Mexico✅+20 | Korea✅ | Brazil-Morocco Draw✅ | Germany✅ | Sweden✅
  7 misses: Canada | USA | Qatar-Swiss | Haiti-Scotland | Australia-Turkey | NL-Japan | CIV-Ecuador
@@ -38,8 +40,18 @@ Ecuador confirmed overrated (CIV 1-0). As more flagged teams resolve, update the
 reasoning. Do NOT refit engine mid-tournament.
 
 **5. #1 hit-rate tracking — trigger: each matchday**
-Currently 10/12 = 83%. If sustained through MD2, understand the strategy (chalk? luck?).
-Relevant for variance mode calibration if trailing late.
+Now 11/16 = 69% (was 10/12 = 83%; leader took only +1 winner in MD2 → the draw cluster hammered HIM too, not
+just us). Still high but the draw-fest compressed the field. Relevant for variance mode if trailing late.
+
+**6. ⚠ DRAW-CLUSTER FLAG (new 2026-06-16) — HYPOTHESIS ONLY, do NOT refit**
+MD2 went 4/4 DRAWS (Belgium 1-1, Saudi-Uru 1-1, Iran 2-2, Spain 0-0). P(4/4 | ~27% each, indep) ≈ 0.5% — very
+unlikely as pure independent variance. Common factor: **all 4 were OPENING matches** for those teams (first
+group game). Hypothesis: opening-round caution inflates draws AND the field over-picks favourites in openers →
+Draw is systematically field-underpriced in opening matches = potential free-differentiation EV. Overall draw
+rate 8/16 = 50% (MD1 was a normal 4/12 = 33%; MD2 is the outlier). **Status: WATCH, do not act.** Verify-Std #6/#7
+(no refit on small samples, don't over-conclude when info arrives fast). Runway is limited anyway — only ~8 first-
+round matches remain (24 opening matches total, 16 played). If the next few openers keep drawing, quantify a small
+opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
 **Last scanned: 2026-06-15.** Update this every model run (see CLAUDE.md → "Model-blind scan").
