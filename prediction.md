@@ -121,7 +121,8 @@ Model & reward-implied market AGREE on the favourite in all 4 → picks market-r
 # MD3 slate 2026-06-16 (engine v6 + LEAGUE_MODE, DIFF_BAND_FRAC=0.05, blend 0.4/0.6, COARSE) — FIRST slate under the AUDIT-corrected two-axis doctrine
 
 User #10/13 (374), gap 284 to #2 line (658), ~88 left → behind ⇒ DECORRELATE where +EV. Preflight GREEN; Winamax 20260616 ingested. **Real WC: Group I openers + Arg-Alg opener.**
-**INDEPENDENT MARKET = Kalshi prediction-market 1X2 (x-checked bet365), entered as `market=[H,D,A]` (no Polymarket slugs for these fixtures). Blend = 0.4 model + 0.6 market; veto functions.** [REVISED from an earlier reward-implied-only draft — the user correctly rejected running without an independent market; the Kalshi line FLIPPED Iraq-Norway and cleaned up Austria.]
+**INDEPENDENT MARKET = Kalshi 1X2 (x-checked bet365), entered as `market=[H,D,A]`. Blend = 0.4 model + 0.6 market; veto functions.** [REVISED from a reward-implied-only draft — user correctly rejected running without an independent market; the Kalshi line FLIPPED Iraq-Norway and cleaned up Austria.]
+**TWO-MARKET CROSS-CHECK (Winamax 1X2 derived from the score grid the user supplied):** WMX France 60/24/16, Iraq-Nor 10/16/74, Arg 63/23/14, Aut-Jor 65/21/15, Por 70/19/11. Winamax reads the DRAW & UNDERDOG systematically higher (French-public longshot/0-0 bias — the two-population effect) → weight Kalshi/bet365 more for favourite magnitude. Picks UNCHANGED. Closest call = Iraq-Norway (WMX+model ~74% Norway vs Kalshi/bet365 ~80%; stay Norway — model under-rates a strong fav vs weak debutant). Winamax STRENGTHENS France-draw (24%).
 
 | # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6 w/ Kalshi market) |
 |---|-------|---------|-------|----------------------|
