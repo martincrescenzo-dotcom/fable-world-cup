@@ -194,5 +194,50 @@
       0.0,
       0.005
     ]
+  },
+  {
+    "match": "Belgium-Egypt",
+    "date": "2026-06-15",
+    "home": "Belgium",
+    "away": "Egypt",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "Saudi Arabia-Uruguay",
+    "date": "2026-06-15",
+    "home": "Saudi Arabia",
+    "away": "Uruguay",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "match": "Iran-New Zealand",
+    "date": "2026-06-15",
+    "home": "Iran",
+    "away": "New Zealand",
+    "actual_score": [
+      2,
+      2
+    ],
+    "bonus_awarded": 50,
+    "share_band": [
+      0.05,
+      0.2
+    ]
   }
 ]

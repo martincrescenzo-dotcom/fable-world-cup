@@ -1,7 +1,7 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
-## ════ CURRENT STATE SNAPSHOT (2026-06-15) — read this first; rows below are edit history ════
-**Objective:** TOP-2 of 13-person friends league. **User: 9th/13, 374 pts** (5 winners, 1 exact). 
+## ════ CURRENT STATE SNAPSHOT (2026-06-16) — read this first; rows below are edit history ════
+**Objective:** TOP-2 of 13-person friends league. **User: was 9th/13, 374 pts** (pre-MD2). **MD2 went 0/4 — all four picks were favourites/Uruguay that DREW (Belgium 1-1, Saudi-Uruguay 1-1, Iran 2-2, Spain 0-0). +0 base, +0 bonus (none of our scores hit).** ⚠ ASK USER for updated leaderboard — standing likely dropped.
 **Friends league full MD1 standings (12 matches played):**
  #1 997 (10W/3E) | #2 542 (7W/2E) | #3 493 (7W/1E) | #4 441 (6W/1E) | #5 436 (6W/1E) | #6 411 (6W/2E) | #7 405 (5W/1E) | #8 389 (6W/1E) | **#9 USER 374 (5W/1E)** | #10-13 unknown.
 **Gaps:** to #8: 15 | to #7: 31 | to #6: 37 | to #5: 62 | to #4: 67 | to #3: 119 | to #2: 168. ~92 matches remain.
@@ -12,14 +12,17 @@
 **Sweden-Tunisia tier: +100** (5-1, model est 0.2% → OK; we picked 1-0 so bonus not ours — calibration only).
 **Strategy (settled):** pure blend-EV-max — LEAGUE_MODE, **DIFF_BAND=0**, COARSE scores (modal/highest-p, step off 1-1 only).
 **X2 boost: HELD.** Use only on SIGNIFICANT + model-market-AGREED high-E match. Anytime incl. knockouts.
-**PENDING (ask user):** (1) Sweden-Tunisia tier; (2) MD2 reward tables + fresh Winamax/Polymarket.
-**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 13 obs / 6 violations — accumulate to 15 for refit. First DIRECT 0-0 obs (Spain-CV) landed at +50, model est 17.8% OK → 0-0 tier-50 thesis gets its first support. Sweden 5-1 +100 (est 0.2% OK) = 2nd tail obs nailed.
+**PENDING (ask user):** (1) **updated friends-league leaderboard after MD2** (standing likely dropped after 0/4); (2) MD3 reward tables + fresh Winamax/Polymarket.
+**CROWD REFIT FIRED (2026-06-16, 16 obs ≥ 15 gate):** in-sample grid moved **sal_strength 1.0→0.75** (beta held 1.0); loss 0.0356→0.0311. BUT form STILL structurally misfit — 6/16 obs violate post-refit, BOTH directions (Mexico/Korea 1-0,2-1 under; Haiti/Germany/NL/Ecuador over). The 3 new MD2 obs (Bel 1-1, Saudi 1-1, Iran 2-2) all fit OK. **Near-irrelevant to picks** under BONUS_MODE='coarse' (score = modal within outcome). Honest read: `plaus^β × salience` cannot fit heterogeneous herding; needs richer form (per-score-type) — DON'T trust crowd-tier magnitudes. NB the script auto-refits in-sample without OOS validation (the doctrine wanted OOS too) — kept since it's marginal & coarse mode ignores it.
+**OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 16 obs / 6 violations — refit fired but misfit persists (see above). 0-0 (Spain-CV +50, est 17.8% OK) + Sweden 5-1 +100 (est 0.2% OK) + Iran 2-2 +50 (est 11.8% OK) = tier-50/tail estimates holding; draw-iconic 1-1/2-2 high-tier obs all OK at current params.
 
 ## CHALLENGE AGENDA — stress-test assumptions as evidence accumulates; surface proactively at each trigger
-**1. Crowd model refit — trigger: ≥15 obs (currently 13)**
-6/11 violations; beta/sal near-unidentified on a misfit form. At 15 obs: refit once, then test whether
-`plausibility^β × salience` can structurally fit the data or needs a richer form (per-score-type effects).
-Known failure modes: draw scores (1-1, 2-2) under-estimated; home-win 1-0 over-estimated.
+**1. Crowd model refit — FIRED 2026-06-16 at 16 obs (sal 1.0→0.75, beta held 1.0; loss 0.0356→0.0311)**
+Still 6/16 violations post-refit, BOTH directions → confirms `plausibility^β × salience` CANNOT structurally
+fit heterogeneous herding. NEXT STEP (open): test a richer form (per-score-type effects) vs accept the misfit
+and rely on coarse/modal scoring (current deployed stance — fine params barely affect picks). Persistent
+failure modes: Mexico 2-0 / Korea 2-1 under-estimated (favourite-win iconic); Ecuador 1-0 / Germany 7-1 /
+NL 2-2 over. Refit is in-sample only (no OOS gate in script) — treat magnitudes as soft.
 
 **2. Blend weight ½/½ model-market — trigger: ~30-40 match results on ledger**
 Currently a prior, not fit. Method: per-match log-loss of v6 / market / blend on running results ledger.
@@ -56,6 +59,9 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-14 | Côte d'Ivoire 1–0 Ecuador | CIV W | MISS — we picked Ecuador W (4-source model flag; Ecuador overrated confirmed) | tier +30 |
 | 2026-06-14 | Sweden 5–1 Tunisia | Sweden W | consistent (model+market favoured Sweden) | score missed (1-0 pick); tier **+100** (5-1, model est 0.2% OK) |
 | 2026-06-15 | Spain 0–0 Cape Verde | Draw | **MAJOR UPSET** — model 93% Spain, market agreed; pick Spain 3-0 → base 0 | irreducible upset variance, NOT a model error (both sources lock Spain); 0-0 tier **+50** = FIRST DIRECT 0-0 obs |
+| 2026-06-15 | Belgium 1–1 Egypt | Draw | MISS — pick Belgium 1-0 (model 61% ≈ reward 53%) → base 0 | favourite drawn; 1-1 tier **+20** obs#14 (model est 67% OK) |
+| 2026-06-15 | Saudi Arabia 1–1 Uruguay | Draw | MISS — pick Uruguay 0-1 (model 67% ≈ reward 57%) → base 0 | favourite drawn; 1-1 tier **+20** obs#15 (model est 67% OK) |
+| 2026-06-15 | Iran 2–2 New Zealand | Draw | MISS — pick Iran 1-0 (model+free-diff vs field's Draw 44%) → base 0; **the field's Draw was right** | favourite drawn; 2-2 tier **+50** obs#16 (model est 11.8% OK) |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
@@ -75,6 +81,9 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Netherlands–Japan | Japan | 0–2 | **2-2 ❌** | 0 | tier(2-2)=+20 obs#10; outcome missed (draw) |
 | Sweden–Tunisia | **Sweden** | **1–0** | **5-1 SWE ✅** | 72 | score missed; tier(5-1)=**+100** obs#13 (model est 0.2% OK) |
 | Spain–Cape Verde | Spain | 3–0 | **0-0 DRAW ❌** | 0 | major upset (Spain 93%); tier(0-0)=+50 obs#12 — FIRST DIRECT 0-0, validates tier-50 thesis |
+| Belgium–Egypt | Belgium | 1–0 | **1-1 DRAW ❌** | 0 | favourite drawn; tier(1-1)=+20 obs#14 |
+| Saudi Arabia–Uruguay | Uruguay | 0–1 | **1-1 DRAW ❌** | 0 | favourite drawn; tier(1-1)=+20 obs#15 |
+| Iran–New Zealand | Iran | 1–0 | **2-2 DRAW ❌** | 0 | favourite drawn; field's Draw (44%) was right; tier(2-2)=+50 obs#16 |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
 +EV picks (Morocco/Japan = field-underpicked EV-competitive; Haiti-Draw = EV-max 9%-field; Sweden = EV-max
