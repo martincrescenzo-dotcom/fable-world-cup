@@ -23,16 +23,18 @@ from scipy.stats import nbinom
 # ------------------------------------------------------------------ inputs
 MATCHES = [   # MD3 slate 2026-06-16 (fieldpct=[H,D,A] = real pick shares from reward CSV Pct_joueurs).
  # overlay=(dATT_h,dDEF_h,dATT_a,dDEF_a) log units. Model-blind scan 2026-06-16 (real WC Group I + Arg-Alg opener):
- dict(home='France', away='Senegal', rewards=[46,128,153], date='2026-06-16', fieldpct=[.88,.09,.03]),
+ # market=[H,D,A] = INDEPENDENT de-vigged 1X2 (Kalshi prediction market, x-checked bet365) pulled 2026-06-16.
+ # This is the Polymarket replacement (no PM slugs for these fixtures) — feeds the blend + market-confirmed veto.
+ dict(home='France', away='Senegal', rewards=[46,128,153], date='2026-06-16', fieldpct=[.88,.09,.03], market=[.66,.21,.13]),
       # France full strength (Ekitike out=depth, Saliba minor but available); Senegal strong (Mane/Koulibaly/Mendy). No overlay.
- dict(home='Iraq', away='Norway', rewards=[178,144,30], date='2026-06-16', fieldpct=[.02,.06,.91]),
-      # Norway full strength (Haaland fit). Heavy away fav. No overlay.
- dict(home='Argentina', away='Algeria', rewards=[43,129,159], date='2026-06-16', fieldpct=[.80,.14,.06],
+ dict(home='Iraq', away='Norway', rewards=[178,144,30], date='2026-06-16', fieldpct=[.02,.06,.91], market=[.07,.13,.80]),
+      # Norway full strength (Haaland fit). Market says Norway 80% (model 73% UNDER) -> draw NOT EV-max. No overlay.
+ dict(home='Argentina', away='Algeria', rewards=[43,129,159], date='2026-06-16', fieldpct=[.80,.14,.06], market=[.70,.20,.10],
       overlay=(0,-0.05,0,0)),   # Argentina: Dibu Martinez(GK) doubt + Molina/Montiel(RB) tears + Balerdi out -> mild DEF down (halved, priced)
- dict(home='Austria', away='Jordan', rewards=[38,136,163], date='2026-06-16', fieldpct=[.83,.14,.03]),
-      # Austria heavy fav; light scan (blowout). No overlay.
- dict(home='Portugal', away='DR Congo', rewards=[34,140,170], date='2026-06-16', fieldpct=[.95,.04,.01]),
-      # Portugal full strength (Ronaldo hamstring healed). Extreme chalk. No overlay.
+ dict(home='Austria', away='Jordan', rewards=[38,136,163], date='2026-06-16', fieldpct=[.83,.14,.03], market=[.72,.17,.11]),
+      # Austria fav; market Jordan only 11% (model 21% = OVERRATED, Ecuador-style) -> Jordan vetoed. No overlay.
+ dict(home='Portugal', away='DR Congo', rewards=[34,140,170], date='2026-06-16', fieldpct=[.95,.04,.01], market=[.75,.17,.08]),
+      # Portugal full strength (Ronaldo healed); market ≈ model. Extreme chalk. No overlay.
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile
@@ -205,7 +207,8 @@ def analyse(m):
     res['league']=None
     fp=m.get('fieldpct')
     if LEAGUE_MODE and fp:
-        mkt=res['pm_check']['p'] if res.get('pm_check') else pm
+        mkt=m.get('market') or (res['pm_check']['p'] if res.get('pm_check') else pm)  # independent market: manual Kalshi/book line > Polymarket > model fallback
+        res['market_used']=('manual' if m.get('market') else ('polymarket' if res.get('pm_check') else 'NONE(model-fallback)'))
         blend=[0.4*pm[i]+0.6*mkt[i] for i in range(3)]
         bev=[blend[i]*rew[i] for i in range(3)]
         emax=max(bev)
@@ -236,6 +239,7 @@ for m in MATCHES:
     pm=r['pm']; pick=r['pick']; o=r['outcomes'][pick]; best=o['rows'][0]
     lab=LBL(m)
     print(f"=== {m['home']} vs {m['away']} ===  model W/D/L {pm[0]*100:.0f}/{pm[1]*100:.0f}/{pm[2]*100:.0f}  (xG {r['lams'][0]:.2f}-{r['lams'][1]:.2f})")
+    if m.get('market'): print(f"  market(indep) W/D/L {m['market'][0]*100:.0f}/{m['market'][1]*100:.0f}/{m['market'][2]*100:.0f}  [{r.get('market_used')}]")
     if m.get('overlay',(0,0,0,0))!=(0,0,0,0): print(f"  overlay applied: {m['overlay']}")
     if not r['used_bookie']: print('  (NO market data — crowd tiers on model-prob base; LOWER confidence)')
     lg=r.get('league')

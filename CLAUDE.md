@@ -133,10 +133,14 @@ who's-right question (track ledger log-loss), not a pooling-math question. 88 ma
 (need ~500+); 0.4/0.6 is the deployed prior, revisit only on clear ledger signal.
 
 ## REQUIRED FROM USER each matchday (ask if missing)
-0. **Polymarket pull — NOW MANDATORY (audit 2026-06-16):** run `python fetch_pm_matches.py`. Without an
-   independent market the 0.6-market lean falls back to the model (mkt=pm) → the AXIS-A market-confirmed
-   VETO is INERT (reward-implied alone agreed with the model on Ecuador → can't veto). No Polymarket = the
-   doctrine's main protection is off; flag it loudly and treat outcome picks as model-only / lower-confidence.
+0. **Independent market — MANDATORY (audit 2026-06-16), and it is NEVER optional (do not run on reward-
+   implied alone — that is the game-maker's own line, NOT independent; it agreed with the model on Ecuador
+   and cannot veto).** Source order: (a) `python fetch_pm_matches.py` (Polymarket, if slugs exist); else
+   (b) **Kalshi prediction-market line or a de-vigged sharp book (bet365/Pinnacle) via WebSearch** — enter as
+   `market=[H,D,A]` (de-vigged, sums to 1) in each MATCHES dict. matchday.py uses `m['market']` as the blend's
+   market leg (prints `[manual]`) and the market-confirmed veto then functions. PROVEN load-bearing on MD3:
+   the independent (Kalshi) line flipped Iraq-Norway (model overrated the draw; Norway 80% mkt → Norway pick)
+   and auto-demoted Austria's Jordan (model 21% vs mkt 11%, Ecuador-style). NEVER submit a slate without it.
 1. **Reward table** per match: `Home X / Draw Y / Away Z` — REQUIRED for EV picks.
 2. **Winamax exact-score CSV update** (`scores_exacts_winamax.csv`, columns Match,Score,Cote,Pct_parieurs)
    → run `python winamax_ingest.py <date>` (timestamped store `winamax_snapshots.json`, history kept —
