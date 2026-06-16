@@ -12,9 +12,26 @@
  7 misses: Canada | USA | Qatar-Swiss | Haiti-Scotland | Australia-Turkey | NL-Japan | CIV-Ecuador
 **Running total: 374 pts** (69 Mexico + 96 Korea + 122 Brazil-Morocco + 15 Germany + 72 Sweden).
 **Sweden-Tunisia tier: +100** (5-1, model est 0.2% → OK; we picked 1-0 so bonus not ours — calibration only).
-**Strategy (settled):** pure blend-EV-max — LEAGUE_MODE, **DIFF_BAND=0**, COARSE scores (modal/highest-p, step off 1-1 only).
-**X2 boost: HELD.** Use only on SIGNIFICANT + model-market-AGREED high-E match. Anytime incl. knockouts.
-**PENDING (ask user):** (1) **updated friends-league leaderboard after MD2** (standing likely dropped after 0/4); (2) MD3 reward tables + fresh Winamax/Polymarket.
+**Strategy (CORRECTED 2026-06-16 AUDIT — supersedes "pure EV-max / DIFF_BAND=0"):** behind + must climb ⇒
+EV-max-FOLLOW freezes the 284 gap (~3% top-2); decorrelation is the path up (future_sim ~10%). **TWO-AXIS
+RULE:** AXIS-A (vs market) = FOLLOW (blend 0.4 model/0.6 market, NO maximin, market-confirmed veto — needs
+Polymarket pull); AXIS-B (vs field's picks) = DECORRELATE on field-underpicked + market-confirmed spots, pay
+≤5% EV (DIFF_BAND_FRAC=0.05). Deficit is mostly self-inflicted Axis-A errors (USA/Haiti maximin, Ecuador
+model-pick). COARSE scores unchanged. See CLAUDE.md ACTIVE TASK for full rationale + future_sim.py.
+**X2 boost: HELD (criterion FLIPPED).** Deploy on high-reward (≥~100) + FIELD-UNDERPICKED + market-confirmed
+spot, group OR KO (free if it loses → only timing matters). NOT model-market-agree (= correlated = no
+separation). Evidence: Alexandre X2'd NL-Japan DRAW (115)→+115; Nicolas/Bertrand WASTED it on Germany lock→+15.
+**TOP-5 RIVAL DATA (pronos_unifies_top_players_league.csv, 16 matches) — analysed 2026-06-16:**
+ Totals reconcile EXACTLY to standings: Alexandre 1113(#1), Nicolas 658(#2), Bertrand 609(#3), Frederic
+ 557(#4), Gaspard 436(#5). Correct OUTCOMES: Alex 11/16, the rest 8/8/7/6 vs USER 5/16. **The field is a
+ TIGHT favourite-herd** (5/5 outcome agreement on 7 of 16 matches, 4/5 on most; scores all iconic) → ρ_field
+ HIGH → decorrelation MORE valuable. **User's outcome deficit is self-inflicted:** lost USA (bloc 5/5 USA,
+ maximin-Draw), Haiti (bloc 5/5 SCO, maximin-Draw), Ecuador (model-pick, market+bloc on CIV). **X2 usage:**
+ Alexandre +115 on NL-Japan DRAW (field-thin, reward 115); Nicolas & Bertrand BOTH wasted it on Germany lock
+ (+15). Bonuses are all modal-iconic (downstream of outcome hit-rate). #1 is a runaway (legit 11/16) → race
+ is for the 2nd slot (catch Nicolas 658). DON'T retro-fit a rival model on 16 feeling-based matches — these
+ are the robust structural reads only.
+**PENDING (ask user):** (1) **updated friends-league leaderboard after MD2** (standing likely dropped after 0/4); (2) MD3 reward tables + fresh Winamax/Polymarket (PM pull now MANDATORY — see CLAUDE.md).
 **CROWD REFIT FIRED (2026-06-16, 16 obs ≥ 15 gate):** in-sample grid moved **sal_strength 1.0→0.75** (beta held 1.0); loss 0.0356→0.0311. BUT form STILL structurally misfit — 6/16 obs violate post-refit, BOTH directions (Mexico/Korea 1-0,2-1 under; Haiti/Germany/NL/Ecuador over). The 3 new MD2 obs (Bel 1-1, Saudi 1-1, Iran 2-2) all fit OK. **Near-irrelevant to picks** under BONUS_MODE='coarse' (score = modal within outcome). Honest read: `plaus^β × salience` cannot fit heterogeneous herding; needs richer form (per-score-type) — DON'T trust crowd-tier magnitudes. NB the script auto-refits in-sample without OOS validation (the doctrine wanted OOS too) — kept since it's marginal & coarse mode ignores it.
 **OPEN LOOSE ENDS:** (1) Blend weight ½/½ unvalidated. (2) Crowd model 16 obs / 6 violations — refit fired but misfit persists (see above). 0-0 (Spain-CV +50, est 17.8% OK) + Sweden 5-1 +100 (est 0.2% OK) + Iran 2-2 +50 (est 11.8% OK) = tier-50/tail estimates holding; draw-iconic 1-1/2-2 high-tier obs all OK at current params.
 

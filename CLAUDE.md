@@ -14,19 +14,40 @@ score + right result still pays base), **plus a RARITY BONUS if the exact score 
 share of correct-outcome pickers who chose that score:
 `>30%:+20 | 20–30%:+30 | 5–20%:+50 | 0.5–5%:+70 | <0.5%:+100`.
 **X2 boost: ONE per tournament, usable ANYTIME incl. knockouts** — doubles a chosen prediction's total
-points (incl. rarity bonus) if the outcome is correct. Policy: HOLD through groups; bar = must beat the
-expected best knockout opportunity (~E_total ≥ 45+, no dead-rubber/rotation flags, prefer contrarian).
+points (incl. rarity bonus) if the outcome is correct. **X2 is FREE optionality (costs nothing if the pick
+loses) → the only decision is TIMING/target.** Policy (AUDIT 2026-06-16, flipped): deploy on the best
+**high-reward (≥~100) + FIELD-UNDERPICKED + MARKET-CONFIRMED** outcome whenever it appears, group OR KO —
+do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DRAW (reward 115, field-thin)
+→ +115, a big slice of his lead; Nicolas & Bertrand BOTH WASTED X2 on Germany-Curaçao (reward 15 lock) →
++15. Never X2 a low-reward favourite lock. "Model+market AGREE" is NOT the criterion (agreement = field also
+on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
-**TRUE OBJECTIVE (updated 2026-06-13): TOP-2 of the 13-person friends league, over 104 total matches
-(~100 remaining).** REAL standings: 376/280/240/239/239/219/190/[USER 165]/143/123/123/96/49.
-**HORIZON FINDING (league_sim2, K=12≈100 matches w/ real standings, top-2 metric) — REVERSES earlier
-differentiation thesis:** over the long horizon, PURE BLEND-EV-MAX (DIFF_BAND=0) is BEST (45% top-2);
-EV sacrifice for differentiation monotonically HURTS (b1:41 b2:37 b3:33); DIFF/aggression near-WORST
-(31%); MARKET-follow worst-ish (31%). Differentiation only helped at the wrong (8-match) horizon. So:
-**DIFF_BAND=0 deployed — maximize blend-EV (0.5 model+0.5 market) every match, take free differentiation
-when EV-max is field-underpicked, NEVER pay EV for it; max-E[bonus] scores.** Blend-EV (45%) > pure-model
-EVMAX (37%) → blend the market IN, don't fade it. Caveat: horizon proxy repeats same 8 matches (LLN
-direction robust, magnitudes approximate). Don't-follow-market still holds (correlation).
+**TRUE OBJECTIVE: TOP-2 of the 13-person friends league, ~88 matches remaining.** Standings 2026-06-16:
+1113 / **658(#2 LINE)** / 609 / 557 / 436 / 419 / 411 / 405 / 389 / **[USER 374, #10]** / 350? / 320? / 290?.
+#1 (Alexandre, legit 11/16) is a runaway → race is for the **2nd slot = catch Nicolas (658), gap 284**.
+**STRATEGY VERDICT — CORRECTED 2026-06-16 (supersedes the DIFF_BAND=0 "differentiation hurts" finding).**
+league_sim2 (which set DIFF_BAND=0) was BROKEN twice: (a) STALE standings (user #8/115-deficit; truly
+#10/284), (b) rivals modeled as INDEPENDENT pickers — but the top-5 data shows they are a TIGHT
+favourite-herd (5/5 outcome agreement on 7 of 16 matches, 4/5 on most). Independent-rivals is a strawman
+that erased decorrelation's value. Rebuilt `future_sim.py` (current standings, rivals=herd, 88-match
+horizon, P(top-2) objective): **differentiation ~TRIPLES top-2 odds (3.9%→~10%); break-even EV cost ~7%.**
+You CANNOT pass a bloc 284 ahead by copying it (the gap freezes) — decorrelation is the only path up.
+**THE TWO-AXIS RULE (load-bearing):**
+ • **AXIS A = you vs MARKET. FOLLOW it.** Fighting the market is −EV and caused your deficit: maximin-Draw
+   on USA (bloc 5/5 USA, won) and Haiti (bloc 5/5 Scotland, won), + model-pick Ecuador (market faded it,
+   CIV won). NO maximin hedges. Blend leans market: **p_blend = 0.4 model + 0.6 market.** Market-confirmed
+   VETO: never pick an outcome the independent market doesn't support (REQUIRES a Polymarket pull — reward-
+   implied alone agreed with the model on Ecuador, so it can't veto; `fetch_pm_matches.py` is now mandatory
+   each matchday for the veto to function).
+ • **AXIS B = you vs the FIELD'S PICKS. DECORRELATE.** When model AND market agree on something the herd
+   under-picks (draws/underdogs the bloc fades, e.g. Brazil-Morocco Draw = your one good Axis-B play, +122),
+   take it — free decorrelation. Pay up to **~5% of per-match EV** for it (DIFF_BAND_FRAC=0.05); never more.
+**Your deficit is mostly SELF-INFLICTED Axis-A errors, not too little following.** Fix order: (1) close the
+skill gap by following the market harder (drop maximin, lean market) — biggest lever; (2) climb via Axis-B
+decorrelation + a well-timed X2. Honest odds: top-2 ≈ 10% (vs ≈3% under pure follow). Scores stay COARSE
+(bonus gap is downstream of the outcome gap — fix outcomes, bonuses follow). Caveats: future_sim's ρ_field
+& equal-skill marginal are assumptions (direction robust across all knobs, Panels A–E); it gives the GOAL
+(decorrelate ≤5% cost), not the picks.
 [superseded] earlier: user currently 8th/13 (165; leader ~250 ahead). `league_sim2.py` (Q6 CORRECTED — original league_sim.py was FLAWED: inconsistent score logic across
 strategies + overestimated deficit 251 vs true ~173 from user 2w1e=165). Corrected verdict, robust
 across model-vs-market truth weight (tw 0.3-0.7): MARKET-follow ROBUSTLY WORST (~5% even when market
@@ -81,11 +102,14 @@ realized tier of every played match.
 5. Append pick to `prediction.md`; after the match, log result in `live_updates.md`.
 
 ## DECISION-MAKING REFERENCE (consolidated — the math that drives every pick)
-**Objective:** TOP-2 of 13-league over 104 matches (~100 left). Horizon long ⇒ maximise EV per match,
-variance averages out (proven league_sim2 K=12: pure EV 45% top-2, any differentiation-for-EV-sacrifice
-worse). 
-**Outcome pick = argmaxₒ EV(o),  EV(o)=p_blend(o)·reward(o)**, p_blend=½·p_v6+½·p_market. DIFF_BAND=0
-(no EV sacrifice for differentiation; free differentiation happens when EV-max is field-underpicked).
+**Objective:** TOP-2 of 13-league, ~88 left, user #10 @374, gap 284 to the #2 line (658). **Behind + must
+climb ⇒ EV-max-FOLLOW is WRONG (freezes the gap, ~3% top-2); the path up is DECORRELATION** (future_sim:
+~10% top-2). [CORRECTED 2026-06-16 — league_sim2's "variance averages out / pure EV best" was computed on
+stale standings with an independent-rivals strawman; see TWE-AXIS RULE in ACTIVE TASK above.]
+**Outcome pick = argmaxₒ EV(o),  EV(o)=p_blend(o)·reward(o)**, **p_blend = 0.4·p_v6 + 0.6·p_market**
+(AXIS-A: lean market; the 0.6 weight IS the market-confirmed veto — needs a Polymarket pull to bite).
+**DIFF_BAND_FRAC=0.05** (AXIS-B: among outcomes within ~5% of max blend-EV, take the least field-crowded;
+pay ≤5% EV for decorrelation, never more; NO maximin hedges).
 **Score pick = argmaxₛ bonusEV(s)** within chosen outcome, bonusEV(s)=p(s)·mean[tier(0.7c),tier(c),tier(1.43c)],
 c=crowd(s)∝p(s)^β·salience(s) [β=1.6,sal^1.5]; tiers >30%:20/20-30:30/5-20:50/0.5-5:70/<0.5:100. LEAGUE_MODE
 disables the rarity tie-break. [SUPERSEDED 2026-06-14 -> BONUS_MODE='coarse': score = MODAL (highest-p) within outcome,
@@ -97,16 +121,22 @@ own.** Edge comes ONLY from (a) mispricing detection (our p_blend ≠ reward-imp
 Season EV ≈ 3,900 pts (12-match est; knockouts likely higher EV — even teams).
 **EV SIGNIFICANCE:** σ_p(o)≈|p_v6-p_mkt|/2; σ_EV=reward·σ_p; σ_diff=√(σ_EVpick²+σ_EV2nd²); gap SIGNIFICANT
 if >2·σ_diff. MOST per-match gaps are NOT significant (within model-market noise) — take max-EV anyway
-(compounds over 104, LLN). BUT reserve X2 boost for SIGNIFICANT + high-E matches (model & market AGREE);
-high-EV-but-high-σ picks (Ecuador, Japan) are real-in-expectation, NOT robust → poor X2 targets.
-**OPEN CALIBRATION — BLEND WEIGHT (flagged, unvalidated):** the ½/½ model-market weight is a PRIOR, not
-fit. Optimal w = the true relative accuracy of v6 vs market (logarithmic-pool weight). Method: track
-per-match log-loss of v6 / market / blends on the results ledger; refit w when enough history. HONEST
-POWER CAVEAT: 104 matches is too few to sharply estimate w (need ~500+ for tight CI on a 0.1 shift) →
-won't be precisely optimisable this WC. Pragmatic: Bayesian prior leaning market (sharper a priori; USA
-ledger pt favours market) ~0.4 model/0.6 market defensible; shift only if ledger shows clear divergence.
+(compounds, LLN). **X2 (CORRECTED 2026-06-16): NOT for model-market-AGREE picks** (agreement = field also
+on it = correlated = zero rank separation). Target = high-reward (≥~100) + FIELD-UNDERPICKED + market-
+confirmed (the contrarian-but-+EV / Alexandre-NL-draw profile). X2 is free if it loses → only timing matters;
+deploy on the best such spot, group or KO. high-σ model-only picks (Ecuador) remain poor targets (no veto).
+**BLEND WEIGHT — RESOLVED to 0.4 model / 0.6 market (2026-06-16).** Was an open ½/½ vs 0.4/0.6 inconsistency;
+fixed to lean market: fair-game logic (market sets fair prices) + ledger (every model-vs-market divergence so
+far — USA, Ecuador — resolved FOR the market). Reviewer Q6 (v6/market ~60% correlated → ½/½ overstates info)
+is real theory but LOW pick-leverage: the weight only bites on DIVERGENCES, and there it's an empirical
+who's-right question (track ledger log-loss), not a pooling-math question. 88 matches can't sharply fit w
+(need ~500+); 0.4/0.6 is the deployed prior, revisit only on clear ledger signal.
 
 ## REQUIRED FROM USER each matchday (ask if missing)
+0. **Polymarket pull — NOW MANDATORY (audit 2026-06-16):** run `python fetch_pm_matches.py`. Without an
+   independent market the 0.6-market lean falls back to the model (mkt=pm) → the AXIS-A market-confirmed
+   VETO is INERT (reward-implied alone agreed with the model on Ecuador → can't veto). No Polymarket = the
+   doctrine's main protection is off; flag it loudly and treat outcome picks as model-only / lower-confidence.
 1. **Reward table** per match: `Home X / Draw Y / Away Z` — REQUIRED for EV picks.
 2. **Winamax exact-score CSV update** (`scores_exacts_winamax.csv`, columns Match,Score,Cote,Pct_parieurs)
    → run `python winamax_ingest.py <date>` (timestamped store `winamax_snapshots.json`, history kept —

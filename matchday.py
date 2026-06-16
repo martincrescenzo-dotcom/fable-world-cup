@@ -38,10 +38,18 @@ WINAMAX_VALID_THROUGH = '2026-06-15'   # fresh CSV 'Cotes Winamax ... 20260615' 
                                        # (Belgium/SaudiArabia/Iran matches); raise on next fresh CSV
 VAR_TIEBREAK_EV = 1.5       # rank strategy: among scores within this EV of the best, prefer LOWER-crowd
 LEAGUE_MODE = True          # objective = TOP-2 of 13-person league over ~100 remaining matches.
-DIFF_BAND = 0.0            # HORIZON-CORRECTED (league_sim2, K=12 ~100 matches): pure blend-EV-max wins
-                          # (45% top-2); ANY EV sacrifice for differentiation hurts over the long horizon
-                          # (b=1:41%, b=2:37%, b=3:33%). Differentiation comes FREE when EV-max is
-                          # field-underpicked; never pay EV for it. Was 2.0 (correct only for ~8-match horizon).
+DIFF_BAND_FRAC = 0.05      # AUDIT 2026-06-16: CORRECTED from 0.0. league_sim2 (which set 0.0) was BROKEN:
+                          # (a) ran on STALE standings (user #8 / 115-deficit; actually #10 / 284-deficit),
+                          # (b) modeled the 13 rivals as INDEPENDENT pickers, not the correlated favourite-
+                          #     herd they demonstrably are (top-5 data: 5/5 agreement on 7 matches, 4/5 on
+                          #     most) -> a strawman that erased the value of decorrelation.
+                          # future_sim.py (current standings, rivals=herd, 88-match horizon, P(top-2)
+                          # objective) shows differentiation ~TRIPLES top-2 odds (3.9%->~10%); break-even
+                          # EV cost ~7%. RULE: take field-underpicked + MARKET-CONFIRMED decorrelation up to
+                          # ~5% of per-match EV; never pay more. The 0.6 market lean below is the market-
+                          # confirmed VETO (a model-only contrarian like Ecuador falls outside the band).
+                          # NB this is the AXIS-B lever (you vs the field's picks). AXIS-A (you vs market) =
+                          # FOLLOW the market; no maximin hedges (they cost USA + Haiti winners in MD1).
 BONUS_MODE = 'coarse'      # 2026-06-14: crowd model unconverged at n=8 -> RETIRE fine E[bonus] opt (noise+thrash).
                           # Score = MODAL (highest-p) within outcome = max hit-prob; step off 1-1 ONLY (the one
                           # cell with rock-solid >30% over-herding, 3/3 obs). Model-free; ignores fine tier rank.
@@ -190,15 +198,17 @@ def analyse(m):
     except Exception as e:
         print('  (pm_check failed:',repr(e)[:50],')')
     # LEAGUE MODE: re-select outcome to maximise P(win league) = disciplined differentiation.
-    # blend-EV (0.5 model + 0.5 market); among outcomes within DIFF_BAND of max, take least field-crowded.
+    # blend-EV (0.4 model + 0.6 market = AXIS-A lean-to-market + market-confirmed veto); among outcomes
+    # within DIFF_BAND_FRAC*emax (~5% EV) of max, take least field-crowded (AXIS-B free decorrelation).
     res['league']=None
     fp=m.get('fieldpct')
     if LEAGUE_MODE and fp:
         mkt=res['pm_check']['p'] if res.get('pm_check') else pm
-        blend=[0.5*(pm[i]+mkt[i]) for i in range(3)]
+        blend=[0.4*pm[i]+0.6*mkt[i] for i in range(3)]
         bev=[blend[i]*rew[i] for i in range(3)]
         emax=max(bev)
-        cand=[i for i in range(3) if bev[i]>=emax-DIFF_BAND]
+        band=DIFF_BAND_FRAC*emax
+        cand=[i for i in range(3) if bev[i]>=emax-band]
         lpick=min(cand,key=lambda i: fp[i])
         res['league']=dict(blend_ev=bev,cand=cand,fieldpct=fp,prev=pick,pick=lpick,
                            differentiated=(lpick!=int(np.argmax(bev))))
@@ -206,9 +216,14 @@ def analyse(m):
     # X2 evaluation
     o=res['outcomes'][pick]
     edge=pm[pick]/imp[pick]
+    fp_pick=fp[pick] if (LEAGUE_MODE and fp) else None
+    contrarian=(edge>=CONTRARIAN_EDGE and pick!=int(np.argmax(imp)))
+    # PRIME X2 (audit 2026-06-16): high E_total + FIELD-UNDERPICKED + market-confirmed = max rank separation
+    # (the Alexandre NL-Japan-draw profile, +115). A low-reward lock (Germany 15) is the OPPOSITE — never X2 it.
+    prime=(o['total_ev']>=X2_THRESHOLD and fp_pick is not None and fp_pick<0.35 and o['base_ev']>=30)
     res['x2']=dict(candidate=(o['total_ev']>=X2_THRESHOLD and not m.get('flags')),
-                   e_total=o['total_ev'],contrarian=(edge>=CONTRARIAN_EDGE and pick!=int(np.argmax(imp))),
-                   edge=float(edge))
+                   e_total=o['total_ev'],contrarian=contrarian,edge=float(edge),
+                   field_pct=fp_pick,prime=prime)
     return res
 
 LBL=lambda m:[m['home'],'Draw',m['away']]
@@ -228,7 +243,7 @@ for m in MATCHES:
         print(f"  {lab[oi]:<24} baseEV {oo['base_ev']:5.1f}  totalEV {oo['total_ev']:5.1f}{fpx}{tag}")
     if lg and lg['differentiated']:
         print(f"  >> LEAGUE: differentiated to {lab[lg['pick']]} (field {lg['fieldpct'][lg['pick']]*100:.0f}%) "
-              f"over EV-max {lab[int(__import__('numpy').argmax(lg['blend_ev']))]} — within {DIFF_BAND}EV, less crowded")
+              f"over EV-max {lab[int(__import__('numpy').argmax(lg['blend_ev']))]} — within {DIFF_BAND_FRAC*100:.0f}% EV, less crowded (AXIS-B)")
     if r['flip_warn']: print('  !! WARNING: bonus EV flipped the outcome pick vs pure base EV — review manually')
     a,b=best['score']
     bflag=' [BOUNDARY-tier risk]' if best['boundary'] else ''
@@ -248,5 +263,7 @@ for m in MATCHES:
             print(f"  ~ pm divergence {gap*100:.0f}pts (PM {pmc['ts']}: {['%.2f'%v for v in pmc['p']]}) — pick unchanged but model heat noted")
     x=r['x2']
     if x['candidate']:
-        print(f"  ** X2 CANDIDATE **  E_total={x['e_total']:.1f}{' CONTRARIAN (field misses it -> separation)' if x['contrarian'] else ''}")
+        fpx=f"  field {x['field_pct']*100:.0f}%" if x['field_pct'] is not None else ''
+        tag=' ** PRIME (field-underpicked + market-confirmed = max separation, DEPLOY-worthy)' if x['prime'] else (' CONTRARIAN (field misses it -> separation)' if x['contrarian'] else '')
+        print(f"  ** X2 CANDIDATE **  E_total={x['e_total']:.1f}{fpx}{tag}")
     print()

@@ -111,3 +111,33 @@ The salience values (1-0: 1.5, 1-1: 1.7, 0-0: 0.55, etc.) are entirely judgment-
 *The system is sophisticated and self-aware about most of its risks. The biggest gap is that the two load-bearing decisions — the ½/½ blend (Q6) and the DIFF_BAND=0 policy (Q8/Q13) — rest on unvalidated assumptions or on a simulation that does not reproduce the actual 100-match tournament structure. These two items matter more than any crowd-model parameter.*
 
 *Review addendum 2026-06-16: this conclusion HOLDS and is reinforced — Q13 now shows parimutuel theory actively contradicts league_sim2's differentiation verdict (the field demonstrably over-bets favourites), so Q8 is not merely "unvalidated" but disputed by a competing model. Resolving the forward simulator (now backtestable on the real MD1+MD2 ledger, not the 8-match repeat) is the single highest-value build. The crowd-model items (Q9/Q16) are real but correctly contained by BONUS_MODE='coarse'; do not over-invest there. Two audit items were over-stated and have been demoted: Q10 (de-vig — main market is near-zero vig) and Q14 (no silent error actually occurred; the cited Ecuador flip was a logged deliberate decision).*
+
+---
+
+## RESOLUTION PASS — 2026-06-16 (acted on the audit)
+**Q8/Q13 (RESOLVED, top priority).** Built `future_sim.py` fixing league_sim2's 3 flaws: (a) CURRENT standings
+(user #10/284-deficit, not stale #8/115), (b) rivals as a CORRELATED HERD via common-factor copula (top-5 data
+proves the herd: 5/5 outcome agreement on 7 of 16 matches) — league_sim2's independent-rivals was a strawman
+that erased decorrelation's value, (c) 88 distinct matches, P(top-2) objective. RESULT: differentiation
+~TRIPLES top-2 (3.9%→~10%); EV-cost break-even ~7%; robust across ρ_field, herd strength, ±skill (Panels A–E).
+Parimutuel theory (Q13) VINDICATED, league_sim2 OVERTURNED for the current position. ⇒ **DIFF_BAND=0 →
+DIFF_BAND_FRAC=0.05** (pay ≤5% EV for field-underpicked + market-confirmed decorrelation). Caveat: ρ_field &
+equal-skill are assumptions; direction robust, magnitude approximate. The TWO-AXIS framing (follow market on
+Axis-A, decorrelate from field on Axis-B) is the operational output.
+**Q6 (RESOLVED, DEMOTED from audit's #1).** Real theory, LOW pick-leverage: blend weight only bites on
+divergences, where it's an empirical who's-right question, not pooling math; the correlation correction barely
+moves divergent cases. Reconciled the ½ vs 0.4/0.6 inconsistency → **deployed 0.4 model / 0.6 market** (fair-game
++ ledger leans market: USA & Ecuador both resolved for market). The 0.6 lean doubles as the market-confirmed veto.
+**Q12 (RESOLVED).** X2 doctrine FLIPPED: target = high-reward + field-underpicked + market-confirmed (max rank
+separation), group OR KO; X2 is free-if-lost so only timing matters. "Model+market agree" is a NEGATIVE
+(correlated). Confirmed by data (Alexandre +115 contrarian draw vs Nicolas/Bertrand +15 wasted on a lock).
+matchday.py now flags PRIME X2 candidates.
+**Q11 (partial).** Polymarket pull made MANDATORY each matchday — without it the market leg falls back to the
+model and the veto is inert (the exact gap that let Ecuador through). Per-market blend-weight calibration: not
+worth it on this sample; lean-market prior + ledger tracking instead.
+**Q9/Q16 (held, contained).** Crowd form confirmed misspecified; coarse mode contains it. Did NOT refit/rebuild
+(user: don't over-engineer on 16 feeling-based obs). SAL ordering qualitatively confirmed by top-5 score data
+(everyone iconic; nobody exotic) — no parametric Spearman needed.
+**Q1/Q3/Q5 (logged, not actioned).** Engine refits forbidden mid-tournament. MD2 0/4-draws = n=4 noise.
+**Q14/Q15 (low, not actioned this pass).** Winamax gate already errs safe (skips+prints beyond cutoff). Atomic
+param-hash log deferred (frozen engine + coarse mode = low risk).
