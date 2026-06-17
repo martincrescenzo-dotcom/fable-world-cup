@@ -16,9 +16,25 @@ skill lever and it worked. **No strategy change on one slate** (pre-commitment) 
 Axis-A-follow and AGAINST aggressive diff-draws. Bonuses calibration-only (no exact score hit). Score-prob
 note: all 4 actual scores had 3+ goals for the winning side — engine modal scores (1-0/2-0/0-2) again undershot
 realized totals (persistent fat-real-tail vs model).
-**PENDING (ask user):** (1) Iraq–Norway + Argentina–Algeria **base reward values** (two correct outcomes →
-points earned, update running total); (2) Portugal–DR Congo result + tier; (3) **updated leaderboard**
-(MD3 2/4 with two favourites hit — may have held or gained vs the draw-picking field this time).
+**LEADERBOARD IN (2026-06-17, full 13):**
+ #1 Alexlastaaaaar 1232 (13 bon/4 exact) | #2 Nicolas 815 (12/2) | #3 CrazyBE 766 (12/1) | #4 Cyrilpqt 606 (9/2) |
+ #5 LMD92110 596 (10/2) | #6 FredFUP 587 (8/1) | #7 Chocho_27 550 (9/1) | #8 AdyFC 525 (9/2) | #9 Diane123 489 (7/1) |
+ #10 Paulinho1204 465 (8/1) | #11 Hadri02 459 (8/2) | **#12 USER (Lampadaire83) 447 (7 bon/1 exact)** | #13 Helene12ln 431 (9/1).
+**USER 374→447 (+73)** = the two MD3 base hits (Norway + Argentina; no exact → all base, no bonus). **But rank
+DROPPED #10→#12** — the favourite-hitting field gained MORE on the same MD3 favourites slate. **TOP-2 GAP WIDENED
+284→368** (#2 line jumped 658→815, Nicolas +157 vs user +73). New gaps: #11 12 | #9 (489) 42 | #5 (596) 149 |
+#3 (766) 319 | **#2 (815, TOP-2 LINE) 368** | #1 785. ~83 matches remain.
+**HARD READ:** following the favourites WITH the herd (MD3 Axis-A) earns points but does NOT separate — user
+gained ~field-average and fell two spots. This is the doctrine's central tension made concrete: you can't
+out-points a bloc by copying it (gap froze/widened), yet the one separation lever (Axis-B diff-draws) went 0/2
+this slate and cost EV. Neither axis is climbing right now. **STILL EV-max regime** (83 matches = long; variance
+ramp only in final third) but the top-2 target is drifting — needs either a hot exact-score bonus run or a
+correct high-reward contrarian (the X2 spot). NO panic aggression yet; re-evaluate the variance trigger if the
+gap is still >300 with <30 matches left.
+**X2 STILL HELD** — none of MD3 was the profile (Norway/Argentina were market-agree favourites = correlated =
+no separation; the diff-draws lost). Keep waiting for high-reward (≥100) + field-underpicked + market-confirmed.
+**PENDING (ask user):** (1) Portugal–DR Congo result + tier (5th MD3 match); (2) split of the +73 (Norway base
+vs Argentina base) if you want it logged per-match — not required, total reconciles.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
 ## ════ CURRENT STATE SNAPSHOT (2026-06-16) — read this first; rows below are edit history ════
