@@ -25,7 +25,7 @@ NEW_OBS = [
     dict(match='Iran-New Zealand', date='2026-06-15', home='Iran',
          away='New Zealand', actual_score=(2,2), bonus_awarded=50),
     dict(match='Iraq-Norway', date='2026-06-16', home='Iraq',
-         away='Norway', actual_score=(4,1), bonus_awarded=70),
+         away='Norway', actual_score=(1,4), bonus_awarded=70),
     dict(match='Argentina-Algeria', date='2026-06-16', home='Argentina',
          away='Algeria', actual_score=(3,0), bonus_awarded=50),
     dict(match='Austria-Jordan', date='2026-06-16', home='Austria',
