@@ -1,5 +1,24 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD3 RESULTS IN (2026-06-17) — read first ════
+**4 of 5 reported (Portugal–DR Congo still pending). We went 1/4 on outcomes:**
+ - **Argentina 3–0 Algeria → HIT** (pick Arg 2-0, Axis-A follow). Base ✅ (ASK USER for reward value), score missed, 3-0 tier +50.
+ - France 3–1 Senegal → **MISS** (pick Draw 0-0, Axis-B decorrelation; favourite WON). 3-1 tier +30.
+ - Austria 3–1 Jordan → **MISS** (pick Draw 0-0, Axis-B; favourite WON). 3-1 tier +50.
+ - Iraq 4–1 Norway → **MISS** (pick Norway 0-2, Axis-A flip to Kalshi 80% Norway). **Massive upset** — irreducible tail, not a strategy error. 4-1 tier +70.
+**HONEST STRATEGIC READ (do NOT over-conclude, small n — Verify-Std #6/#7):** both Axis-B decorrelation
+draws LOST this slate (France, Austria — favourites won). MD2 was 4/4 draws (helped draw-pickers); MD3
+flipped (favourites won the openers we drew). The DRAW-CLUSTER FLAG (item 6 below) did NOT generalise to
+MD3 — opening-match draw overlay stays UNBUILT/unwarranted. Axis-B diff-draw ledger now: France✗ Austria✗
+this slate. Iraq-Norway was Axis-A (followed 80% market) and lost to a 4-1 upset = variance, market was right
+to favour Norway. **No strategy change on one slate** (pre-commitment); but log it: differentiation cost is
+REAL and showed up here. Bonuses still calibration-only (we hit none of these exact scores). Score-prob model
+note: all 4 actual scores were 3+ goals for the favourite/upset side — the engine's modal scores (1-0/2-0/0-2
+type) again undershot realized goal totals (the persistent fat-real-tail vs model pattern).
+**PENDING (ask user):** (1) Argentina–Algeria **base reward value** (correct outcome → points earned);
+(2) Portugal–DR Congo result + tier; (3) **updated leaderboard** (MD3 1/4 — likely lost more ground).
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 ## ════ CURRENT STATE SNAPSHOT (2026-06-16) — read this first; rows below are edit history ════
 **Objective:** TOP-2 of 13-person friends league. **User: was 9th/13, 374 pts** (pre-MD2). **MD2 went 0/4 — all four picks were favourites/Uruguay that DREW (Belgium 1-1, Saudi-Uruguay 1-1, Iran 2-2, Spain 0-0). +0 base, +0 bonus (none of our scores hit).** ⚠ ASK USER for updated leaderboard — standing likely dropped.
 **Friends league standings POST-MD2 (2026-06-16, ~16 matches played):**
@@ -93,6 +112,10 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-15 | Belgium 1–1 Egypt | Draw | MISS — pick Belgium 1-0 (model 61% ≈ reward 53%) → base 0 | favourite drawn; 1-1 tier **+20** obs#14 (model est 67% OK) |
 | 2026-06-15 | Saudi Arabia 1–1 Uruguay | Draw | MISS — pick Uruguay 0-1 (model 67% ≈ reward 57%) → base 0 | favourite drawn; 1-1 tier **+20** obs#15 (model est 67% OK) |
 | 2026-06-15 | Iran 2–2 New Zealand | Draw | MISS — pick Iran 1-0 (model+free-diff vs field's Draw 44%) → base 0; **the field's Draw was right** | favourite drawn; 2-2 tier **+50** obs#16 (model est 11.8% OK) |
+| 2026-06-16 | France 3–1 Senegal | France W | MISS — pick Draw 0-0 (Axis-B decorrelation, field 9%) → base 0; favourite WON | 3-1 tier **+30** obs#19 (model est 8.8%, VIOLATED — under-est draw-side score herding) |
+| 2026-06-16 | Iraq 4–1 Norway | Iraq W | MISS — pick Norway 0-2 (Axis-A: flipped to Kalshi 80% Norway) → base 0; **massive upset, Norway 73-80% everywhere** | irreducible tail (not a strategy error); 4-1 tier **+70** obs#17 (model est 0.9% OK) |
+| 2026-06-16 | Argentina 3–0 Algeria | Argentina W | **HIT** — pick Argentina 2-0 (Axis-A follow) → base ✅, score missed | 3-0 tier **+50** obs#18 (model est 12.4% OK) |
+| 2026-06-16 | Austria 3–1 Jordan | Austria W | MISS — pick Draw 0-0 (Axis-B, Kalshi-vetoed Jordan, field 14%) → base 0; favourite WON | 3-1 tier **+50** obs#20 (model est 8.4% OK) |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
