@@ -21,20 +21,21 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD3 slate 2026-06-16 (fieldpct=[H,D,A] = real pick shares from reward CSV Pct_joueurs).
- # overlay=(dATT_h,dDEF_h,dATT_a,dDEF_a) log units. Model-blind scan 2026-06-16 (real WC Group I + Arg-Alg opener):
- # market=[H,D,A] = INDEPENDENT de-vigged 1X2 (Kalshi prediction market, x-checked bet365) pulled 2026-06-16.
- # This is the Polymarket replacement (no PM slugs for these fixtures) — feeds the blend + market-confirmed veto.
- dict(home='France', away='Senegal', rewards=[46,128,153], date='2026-06-16', fieldpct=[.88,.09,.03], market=[.66,.21,.13]),
-      # France full strength (Ekitike out=depth, Saliba minor but available); Senegal strong (Mane/Koulibaly/Mendy). No overlay.
- dict(home='Iraq', away='Norway', rewards=[178,144,30], date='2026-06-16', fieldpct=[.02,.06,.91], market=[.07,.13,.80]),
-      # Norway full strength (Haaland fit). Market says Norway 80% (model 73% UNDER) -> draw NOT EV-max. No overlay.
- dict(home='Argentina', away='Algeria', rewards=[43,129,159], date='2026-06-16', fieldpct=[.80,.14,.06], market=[.70,.20,.10],
-      overlay=(0,-0.05,0,0)),   # Argentina: Dibu Martinez(GK) doubt + Molina/Montiel(RB) tears + Balerdi out -> mild DEF down (halved, priced)
- dict(home='Austria', away='Jordan', rewards=[38,136,163], date='2026-06-16', fieldpct=[.83,.14,.03], market=[.72,.17,.11]),
-      # Austria fav; market Jordan only 11% (model 21% = OVERRATED, Ecuador-style) -> Jordan vetoed. No overlay.
- dict(home='Portugal', away='DR Congo', rewards=[34,140,170], date='2026-06-16', fieldpct=[.95,.04,.01], market=[.75,.17,.08]),
-      # Portugal full strength (Ronaldo healed); market ≈ model. Extreme chalk. No overlay.
+MATCHES = [   # MD4 slate 2026-06-17/18 (fieldpct=[H,D,A] = Repartition from user; rewards=Cotes from user).
+ # market=[H,D,A] = INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-17 (bet365/FanDuel/DraftKings/1xbet).
+ # Model-blind scan 2026-06-17 below. NB field now HERDS ON DRAWS (post-MD2/3 draw-fever: 30-39% on draw) ->
+ # the underpicked side has shifted to the AWAY underdogs (Croatia 8% / Panama 7% / Bosnia 7%).
+ dict(home='England', away='Croatia', rewards=[59,119,133], date='2026-06-17', fieldpct=[.53,.39,.08], market=[.547,.255,.198]),
+      # England -138, Draw +270, Croatia +375 (bet365). Model 50/27/23 ~ market ~ reward. No overlay.
+ dict(home='Ghana', away='Panama', rewards=[73,113,116], date='2026-06-17', fieldpct=[.58,.36,.07], market=[.432,.288,.280]),
+      # !! MODEL ARTIFACT: v6 has Panama 63% but market+reward+field ALL favour Ghana (43/29/28). Ecuador-class.
+      # The 0.4 model weight is NOT enough to override this extreme artifact -> handle by JUDGMENT (see writeup), do NOT trust blend-EV Panama.
+ dict(home='Uzbekistan', away='Colombia', rewards=[157,130,44], date='2026-06-17', fieldpct=[.03,.08,.89], market=[.125,.207,.668]),
+      # Colombia -250 (bet365). Model 12/21/67 ~ market 12.5/21/67 NEARLY IDENTICAL. Colombia chalk. No overlay.
+ dict(home='Czech Republic', away='South Africa', rewards=[62,112,142], date='2026-06-18', fieldpct=[.55,.30,.15], market=[.525,.25,.225]),
+      # Czech 1.85 (1xbet). Model 61/22/16 a touch hot vs market 53/25/22; same side. Both lost openers. No overlay.
+ dict(home='Switzerland', away='Bosnia and Herzegovina', rewards=[76,108,134], date='2026-06-18', fieldpct=[.70,.23,.07], market=[.595,.24,.165]),
+      # Swiss -172 (~63% raw). Model 75/17/9 HOT vs market 60/24/17 (model overrates Swiss). Same side. No overlay.
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

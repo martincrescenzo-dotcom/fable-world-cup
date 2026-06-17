@@ -1,5 +1,30 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD4 SLATE SUBMITTED (2026-06-17/18) — read first ════
+Inputs: user Cotes (rewards) + Répartition (fieldpct); INDEPENDENT market = de-vigged sharp books via WebSearch
+(bet365/FanDuel/DraftKings/1xbet, 2026-06-17). Preflight GREEN. matchday.py run, two judgment overrides:
+ - **Uzbekistan–Colombia → Colombia 0-1** (FOLLOW; model=market identical 12/21/67; field 89% chalk, no sep).
+ - **Czechia–South Africa → Czechia 1-0** (FOLLOW; blendEV 34.7; model 61 hot vs mkt 53, same side).
+ - **Switzerland–Bosnia → Switzerland 2-0** (FOLLOW; blendEV 49.8; model 75 hot vs mkt 60, same side; field 70%).
+ - **England–Croatia → England 1-0** (OVERRIDE engine's Axis-B Draw): field now DRAW-HERDS (39%) so Draw no
+   longer underpicked → decorrelation premium gone; blend-EV-max is England anyway (31.2 vs 30.9). Lower variance.
+ - **Ghana–Panama → Panama 0-1** (AXIS-B decorrelation, the one real separation spot): **MODEL ARTIFACT** — v6
+   has Panama 63% but market+reward+field ALL favour Ghana (mkt 43/29/28). Ecuador-class; the engine's blendEV
+   Panama 48.6 / X2-PRIME flag are ARTIFACT-INFLATED → IGNORED. On market-only it's a fair-game even match
+   (Ghana 31.5 / Draw 32.5 / Panama 32.5 EV); Panama is least field-crowded (7%) in the EV band → doctrine pick
+   even discarding the broken model. Honest: ~28% to hit, ~0 EV cost, real decorrelation. Alt = Ghana (follow).
+**X2 HELD:** Switzerland flag = field 70% (correlated, no separation); Ghana-Panama PRIME flag = artifact (28%
+Panama not confident enough for the one-shot). No genuine high-reward+underpicked+confirmed spot this slate.
+**NEW KNOWN ARTIFACT (log to audit): GHANA underrated / PANAMA overrated by v6** (model Panama 63% vs market
+Ghana 43%). Same class as Ecuador (attdef relative-strength artifact). Do NOT refit mid-tournament; market-veto
+handles it. Watch the result — if Ghana wins, confirms artifact.
+**Model-blind scan 2026-06-17 (light — picks are mostly chalk follows):** England-Croatia Group L opener (Dallas);
+Switzerland & Bosnia both drew openers (1-1); Czechia lost 2-1 to Korea, SA lost 2-0 to Mexico (both must-win).
+No material injury news surfaced in previews → overlays all ZERO. Ghana-Panama divergence is a RATING artifact,
+not model-blindness.
+**PENDING (ask user):** Portugal–DR Congo (MD3 #5) result + tier; MD4 results + realized tiers.
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 ## ════ MD3 RESULTS IN (2026-06-17, Iraq-Norway score CORRECTED) — read first ════
 **4 of 5 reported (Portugal–DR Congo still pending). We went 2/4 on outcomes:**
  - **Iraq 1–4 Norway → HIT** (pick Norway 0-2, Axis-A follow Kalshi 80% Norway). Base ✅ (ASK reward), score missed, 1-4 tier +70. **The MD3 flip-to-Norway was VINDICATED — Norway won big.**
@@ -161,6 +186,11 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Argentina–Algeria | Argentina | 2–0 | MD3 SUBMITTED | | Axis-A follow (blend-EV-max 31.0); DEF overlay −0.05 (Dibu/Molina/Montiel/Balerdi) |
 | Austria–Jordan | **Draw** | **0–0** | MD3 SUBMITTED | | Axis-B: Draw blend-EV-max 26.1; Kalshi demoted Jordan to 11% (model 21 overrated) → auto-veto. Field 14% |
 | Portugal–DR Congo | Portugal | 2–0 | MD3 SUBMITTED | | Axis-A follow (blend-EV-max 25.5; mkt≈model; draw separation negative) |
+| England–Croatia | England | 1–0 | MD4 SUBMITTED | | FOLLOW (override engine Axis-B Draw; field draw-herds 39%) |
+| Ghana–Panama | **Panama** | **0–1** | MD4 SUBMITTED | | **AXIS-B decorrelation** (field 7%); MODEL ARTIFACT (v6 Panama 63 vs mkt 28) — even-EV on market, real sep |
+| Uzbekistan–Colombia | Colombia | 0–1 | MD4 SUBMITTED | | FOLLOW chalk (model=market 12/21/67); field 89% |
+| Czechia–South Africa | Czechia | 1–0 | MD4 SUBMITTED | | FOLLOW (blendEV 34.7); both lost openers |
+| Switzerland–Bosnia | Switzerland | 2–0 | MD4 SUBMITTED | | FOLLOW (blendEV 49.8); field 70%; X2 HELD (correlated) |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
 +EV picks (Morocco/Japan = field-underpicked EV-competitive; Haiti-Draw = EV-max 9%-field; Sweden = EV-max
