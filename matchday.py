@@ -170,13 +170,16 @@ def analyse(m):
                 if pick0 is not rows[0]:
                     rows.remove(pick0); rows.insert(0,pick0)
         if BONUS_MODE=='coarse' and len(rows)>1:
-            # Layer-1 only (CLAUDE.md 2026-06-14): take the modal (highest-p) score = max hit-probability,
-            # the one reliably-validated lever (score model is OOS-validated; crowd model is NOT). Step off
-            # 1-1 ONLY -- the single cell with rock-solid >30% over-herding (3/3 obs). All other tiers are
-            # match-dependent and the crowd model is unconverged, so do NOT second-guess the modal.
+            # Layer-1 only: take the modal (highest-p) score = max hit-probability, the one reliably-
+            # validated lever (score model OOS-validated; crowd model is NOT). 2026-06-17 UPDATE: the
+            # 1-1 STEP-OFF IS REMOVED. score_rule_backtest.py (20 obs, true-outcome-conditioned, LOO):
+            # pure modal (keep 1-1) earned 190 realized bonus vs 130 for the step-off rule (+60 = +3/match)
+            # -- 1-1 is the single most FREQUENT score, and a likely +20 beats chasing a 0-0 (tier 50) that
+            # lands rarely. The SAME backtest REJECTED the rare-score E[bonus] optimizer (130 = tied modal-
+            # step -> no realized edge; the expected edge is model-internal, swamped by exact-hit variance
+            # at n=20). Caveat: sample is draw-heavy (8/20=40% vs ~28% normal) so the 1-1-FREQUENCY edge is
+            # sample-dependent; the tier-20-on-1-1 part is solid (5/5). Revisit if draw rate regresses.
             by_p=sorted(rows,key=lambda r:-r['p']); pick_s=by_p[0]
-            if pick_s['score']==(1,1) and len(by_p)>1:
-                pick_s=by_p[1]
             if pick_s is not rows[0]:
                 rows.remove(pick_s); rows.insert(0,pick_s)
         base_ev=pm[oi]*rew[oi]

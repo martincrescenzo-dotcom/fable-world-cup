@@ -1,5 +1,35 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ LEARNINGS (2026-06-17, post score-rule backtest) — read first ════
+Distilled from score_rule_backtest.py (20 obs), the 45%-modal-outcome count, and the MD3/MD4 results.
+Separated ROBUST vs TENTATIVE (Verify-Std #4/#7).
+**META (the load-bearing one):** the score/crowd/bonus layer is a CONVERGED SIDESHOW — stop mining it for
+edge. Three sessions of crowd-model refits / iconic-asymmetry / rare-score optimization netted ~0 and
+produced 2 retracted findings. Bonus is ~2-5 pts vs base 30-70. Spend attention on the 2 levers that move
+RANK: (1) the mandatory independent-market pull, (2) honest variance-timing. Treat scores as a 1-line rule.
+**ROBUST, ACTED ON:**
+ 1. SCORE = pure modal (highest-p), MECHANICAL. Backtest: pure-modal 190 realized bonus > step-off-1-1 130
+    (+60); rare-score E[bonus] optimizer 130 = NO realized edge (REJECTED — expected edge is model-internal,
+    swamped by exact-hit variance at n=20). ⇒ DEPLOYED: removed the 1-1 step-off in matchday.py (pure modal).
+    Caveat: 1-1-frequency edge is sample-dependent (draw-heavy 8/20); tier-20-on-1-1 is solid (5/5).
+ 2. Independent-market pull is LOAD-BEARING, proven 2x (Iraq→Norway hit; caught Ghana/Panama artifact, like
+    Ecuador). Relative-strength model-vs-market splits resolve FOR the market every time. NEVER skip it.
+ 3. Decorrelation target MOVED. The field now HERDS ON DRAWS (30-39% on MD4, post-draw-fever) → draws are no
+    longer field-underpicked. Axis-B separation now lives in AWAY UNDERDOGS (Croatia 8%/Panama 7%/Bosnia 7%),
+    NOT draws. Bonus: draws are also the model's weakest call (caught 1 of 8). Stop picking draws "to decorrelate".
+**HONEST STRATEGIC READ:** 45% modal-outcome rate ≈ the CEILING of favourite-following on this draw-heavy run,
+and it does NOT catch a 13/20 leader (you're 7/20; deviations cost the other 2). Following keeps you ~field-
+average = ~12th while the bloc gains too (gap to #2 WIDENED 284→368 despite +73). Top-2 is now a genuine long
+shot; the ONLY closer is correct contrarian outcomes (high-variance, went 0/2 MD3). ⇒ FORWARD RULE:
+ • NOW (≥30 left): EV-max FOLLOW + mechanical modal scores. Take ZERO-cost Axis-B underdogs (in EV band, e.g.
+   Panama); SKIP marginal ones (e.g. the England draw). Don't bleed EV on speculative decorrelation yet.
+ • FINAL THIRD if still >300 behind: deliberately RAMP variance (+EV contrarian underdogs + deploy X2),
+   accepting frequent losses — field-average finishes 12th; only variance finishes top-2.
+**TENTATIVE / DON'T over-conclude:** draw rate 40% is likely a blip (regresses to ~28%) — NO permanent draw
+overlay. Leader's 13/20 may be variance not skill (n=20). Blend weight ½/½... wait 0.4/0.6 still a prior — need
+~30-40 more logged matches WITH market+field% (now captured) to fit it & measure if Axis-B actually pays.
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 ## ════ MD4 SLATE SUBMITTED (2026-06-17/18) — read first ════
 Inputs: user Cotes (rewards) + Répartition (fieldpct); INDEPENDENT market = de-vigged sharp books via WebSearch
 (bet365/FanDuel/DraftKings/1xbet, 2026-06-17). Preflight GREEN. matchday.py run, two judgment overrides:
