@@ -25,17 +25,12 @@ MATCHES = [   # MD4 slate 2026-06-17/18 (fieldpct=[H,D,A] = Repartition from use
  # market=[H,D,A] = INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-17 (bet365/FanDuel/DraftKings/1xbet).
  # Model-blind scan 2026-06-17 below. NB field now HERDS ON DRAWS (post-MD2/3 draw-fever: 30-39% on draw) ->
  # the underpicked side has shifted to the AWAY underdogs (Croatia 8% / Panama 7% / Bosnia 7%).
- dict(home='England', away='Croatia', rewards=[59,119,133], date='2026-06-17', fieldpct=[.53,.39,.08], market=[.547,.255,.198]),
-      # England -138, Draw +270, Croatia +375 (bet365). Model 50/27/23 ~ market ~ reward. No overlay.
- dict(home='Ghana', away='Panama', rewards=[73,113,116], date='2026-06-17', fieldpct=[.58,.36,.07], market=[.432,.288,.280]),
-      # !! MODEL ARTIFACT: v6 has Panama 63% but market+reward+field ALL favour Ghana (43/29/28). Ecuador-class.
-      # The 0.4 model weight is NOT enough to override this extreme artifact -> handle by JUDGMENT (see writeup), do NOT trust blend-EV Panama.
- dict(home='Uzbekistan', away='Colombia', rewards=[157,130,44], date='2026-06-17', fieldpct=[.03,.08,.89], market=[.125,.207,.668]),
-      # Colombia -250 (bet365). Model 12/21/67 ~ market 12.5/21/67 NEARLY IDENTICAL. Colombia chalk. No overlay.
- dict(home='Czech Republic', away='South Africa', rewards=[62,112,142], date='2026-06-18', fieldpct=[.55,.30,.15], market=[.525,.25,.225]),
-      # Czech 1.85 (1xbet). Model 61/22/16 a touch hot vs market 53/25/22; same side. Both lost openers. No overlay.
- dict(home='Switzerland', away='Bosnia and Herzegovina', rewards=[76,108,134], date='2026-06-18', fieldpct=[.70,.23,.07], market=[.595,.24,.165]),
-      # Swiss -172 (~63% raw). Model 75/17/9 HOT vs market 60/24/17 (model overrates Swiss). Same side. No overlay.
+ dict(home='Canada', away='Qatar', rewards=[71,104,148], date='2026-06-18', fieldpct=[.73,.20,.07], market=[.747,.167,.086]),
+      # Canada -370 (FanDuel), supercomputer 72%. Field ~ market (Canada heavy chalk). No overlay.
+ dict(home='Mexico', away='South Korea', rewards=[69,117,129], date='2026-06-18', fieldpct=[.52,.34,.15], market=[.486,.288,.226],
+      overlay=(0,-0.05,0,0)),
+      # Mexico -105 (FanDuel) = ~49% only (close game). Montes (CB) SUSPENDED -> DEF -0.05 (halved, market's low 49% likely prices it).
+      # KOREA FIELD-UNDERPICKED (15% field vs 23% market) = candidate selective Axis-B if blend-EV competitive.
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

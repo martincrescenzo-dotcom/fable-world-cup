@@ -52,6 +52,25 @@ handles it. Watch the result — if Ghana wins, confirms artifact.
 Switzerland & Bosnia both drew openers (1-1); Czechia lost 2-1 to Korea, SA lost 2-0 to Mexico (both must-win).
 No material injury news surfaced in previews → overlays all ZERO. Ghana-Panama divergence is a RATING artifact,
 not model-blindness.
+## ════ RANK-SEAT MODEL + POPULATION FIX (2026-06-18) — read first, supersedes EV-follow framing ════
+**User challenge (correct): the "fieldpct" I use (e.g. 52/34/15) is the MEGA-FIELD, NOT the 16-league split.**
+Conflated populations → my "draws crowded in our league" claim was unsupported. We do NOT observe the 15 rivals'
+per-match picks (only an early top-5 CSV showing a favourite-herd). ASK user if league splits are visible.
+**SEAT-SIM (expected_seats, 16-league standings, rivals~independent share, 200k MC, robust across mega & herd
+rival models):** for the RANK objective at the BOTTOM (#14, only 2 below = downside capped), DECORRELATION
+beats FOLLOW whenever the underpicked outcome is reasonably PROBABLE:
+ • Mexico-Korea: follow Mexico +0.3 seats / 0% top10  vs  Korea +1.2 / ~23% top10  vs  Draw +1.1 / ~20%.
+ • Canada-Qatar: follow Canada +0.4 / 0%  vs  Qatar +0.6 / ~8% (chalk — decorrelation edge MARGINAL, alts <16%).
+**THE RULE (sharpened, grounded in seats not EV):** lever = p(outcome) × unpopularity × reward, NOT min-crowd.
+DECORRELATE when an underpicked outcome is ~≥20% probable (Korea 24%); FOLLOW chalk when only longshots remain
+(Qatar 8%) — bank reliable base to build toward the 703 top-5 line. Following a herd-favourite gives ~0% climb
+(reward too small vs gaps). My earlier "disciplined Mexico follow" was WRONG (optimized points, wrong-population
+crowding) — REVERSED to Korea.
+**CAVEATS:** top-5 UNREACHABLE in 1 match (max 679 < 703 line) — P(top5)=0% this match for ALL picks; top-10
+(~23% via Korea) is the single-match ambition, top-5 is a multi-hit season path (moderate prob at best). Rival
+split ASSUMED (robust across 2 models) — replace with real league splits if visible. script: (inline, this session).
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 ## ════ LEADERBOARD 2026-06-18 — LEAGUE GREW TO 16 (new players joining) — read first ════
 **USER = #14/16 (Lampadaire83) 550 pts, 9 bons, 1 exact.** Points reconcile (447 + England 59 + Colombia 44 = 550).
  #1 Alexlastaaaaar 1335 (15/4) | #2 CrazyBE 942 (15/1) | #3 Nicolas 918 (14/2) | #4 AdyFC 721 (12/**3**) |
@@ -268,6 +287,8 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | Uzbekistan–Colombia | Colombia | 0–1 | MD4 SUBMITTED | | FOLLOW chalk (model=market 12/21/67); field 89% |
 | Czechia–South Africa | Czechia | 1–0 | MD4 SUBMITTED | | FOLLOW (blendEV 34.7); both lost openers |
 | Switzerland–Bosnia | Switzerland | 2–0 | MD4 SUBMITTED | | FOLLOW (blendEV 49.8); field 70%; X2 HELD (correlated) |
+| Canada–Qatar | Canada | 2–0 | MD5 SUBMITTED | | FOLLOW (chalk 76%; seat-sim: decorrelation edge marginal, alts <16% → bank base) |
+| Mexico–South Korea | **South Korea** | **0–1** | MD5 SUBMITTED | | **DECORRELATE** (seat-sim: Korea +1.2 seats/23% top10 vs Mexico follow +0.3/0%); model 26%+market 23% > field 15%; reversed from Mexico follow. Montes(Mex CB) susp |
 
 **REVISED 2026-06-13 under LEAGUE objective (picks unlocked):** 4 maximin draws dismantled → differentiated
 +EV picks (Morocco/Japan = field-underpicked EV-competitive; Haiti-Draw = EV-max 9%-field; Sweden = EV-max
