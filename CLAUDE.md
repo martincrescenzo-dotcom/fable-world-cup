@@ -22,6 +22,14 @@ do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DR
 +15. Never X2 a low-reward favourite lock. "Model+market AGREE" is NOT the criterion (agreement = field also
 on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
+**OBJECTIVE UPDATED 2026-06-18 → TOP-5 of ~16 (league grew from 13 to 16 & settled; new players joined), BALANCED.**
+User #14/16 @550. Supersedes the "top-2 of 13" frame below. STRATEGY = EV-max FOLLOW + mechanical MODAL scores
+(base) + SELECTIVE variance on ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots (raise
+the bar — recent marginal/artifact ones went 0/3); NO full-variance ramp, NO rare-score gamble; X2 on a good
+field-underpicked spot for a rank bump. future_sim.py INVALID (fixed-13 assumption). Following GAINS points but
+LOSES rank (#10→#14 while +176 pts) — climbers use contrarian outcomes + exacts (user 1 exact vs climbers 2-4).
+Reachability: top-5 line 703, gap 153, mid-table bunched (143 over 9) → realistic with 1-2 selective calls. See
+live_updates.md snapshot. [HISTORICAL below — top-2/13 frame, superseded:]
 **TRUE OBJECTIVE: TOP-2 of the 13-person friends league, ~88 matches remaining.** Standings 2026-06-16:
 1113 / **658(#2 LINE)** / 609 / 557 / 436 / 419 / 411 / 405 / 389 / **[USER 374, #10]** / 350? / 320? / 290?.
 #1 (Alexandre, legit 11/16) is a runaway → race is for the **2nd slot = catch Nicolas (658), gap 284**.

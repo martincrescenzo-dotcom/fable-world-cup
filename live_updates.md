@@ -52,6 +52,38 @@ handles it. Watch the result — if Ghana wins, confirms artifact.
 Switzerland & Bosnia both drew openers (1-1); Czechia lost 2-1 to Korea, SA lost 2-0 to Mexico (both must-win).
 No material injury news surfaced in previews → overlays all ZERO. Ghana-Panama divergence is a RATING artifact,
 not model-blindness.
+## ════ LEADERBOARD 2026-06-18 — LEAGUE GREW TO 16 (new players joining) — read first ════
+**USER = #14/16 (Lampadaire83) 550 pts, 9 bons, 1 exact.** Points reconcile (447 + England 59 + Colombia 44 = 550).
+ #1 Alexlastaaaaar 1335 (15/4) | #2 CrazyBE 942 (15/1) | #3 Nicolas 918 (14/2) | #4 AdyFC 721 (12/**3**) |
+ #5 Ethan_prn 703 (13/1) | #6 Diane123 693 (9/2) | #7 Alexis#KGYJ 684 (12/2) | #8 Chocho_27 667 (11/1) |
+ #9 Hadri02 655 (11/**3**) | #10 Cyrilpqt 650 (10/2) | #11 LMD92110 640 (11/2) | #12 Paulinho 602 (10/2) |
+ #13 FredFUP 587 (8/1) | **#14 USER 550 (9/1)** | #15 Helene 475 (10/1) | #16 DealNonClosey 390 (6/**3**, joined late).
+**STRUCTURAL CHANGE — this is NOT a fixed 13-person herd.** League is OPEN/GROWING (new players: Ethan, Alexis,
+DealNonClosey...). future_sim's fixed-13-herd model is now INVALID. Objective "top-2 of 13" is obsolete — ASK USER
+for the real target (see below). RANK TRAJECTORY: user #10→#12→#14 over 3 matchdays while points rose 374→550 —
+**following GAINS points but LOSES rank** (field climbs faster; stronger new players entered above).
+**HOW THE CLIMBERS CLIMB (the signal):** Diane123 jumped #9→#6 in ONE matchday with a +160 (called Ghana upset +
+exact). The EXACTS column separates: #1=4, #4/#9/#16=3 exacts vs USER=1. Climbing happens via (a) contrarian
+OUTCOMES the field misses (Ghana) + (b) EXACT-score bonuses (+50 to +160 swings). Pure following does neither.
+**TENSION with this session's "score = sideshow / EV-max follow" conclusion:** that holds for EV/points, but the
+leaderboard shows RANK is moved by VARIANCE (contrarian calls + rare exacts), which a trailing player needs. The
+backtest only proved we can't engineer more POINTS via the score rule — it did NOT address rank-variance. If the
+objective is top-few-or-bust, the rank-correct move is to RAMP VARIANCE NOW (contrarian +EV underdogs + pick RARER
+scores for exact-bonus leaps, reversing 'modal'), NOT wait for the final third — because rank is sliding every MD.
+**OBJECTIVE RESOLVED (user, 2026-06-18): TOP-5 of ~16 (league settled at 16), BALANCED.** Supersedes "top-2 of 13".
+STRATEGY:
+ • BASE = EV-max FOLLOW + mechanical MODAL scores (unchanged; backtest holds for EV).
+ • LAYER = SELECTIVE variance: take ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots.
+   The recent 0/3 (France/Austria draws, Panama) were MARGINAL/artifact-driven → RAISE the conviction bar (genuine
+   +EV underdog the market backs AND the field clearly fades, not an ~even-EV coin-flip). Skip marginal decorrelation.
+ • NO full-variance ramp, NO rare-score exact-gamble (those were the top-2-or-bust path — not chosen). Keep modal.
+ • X2 = deploy on a good field-underpicked + market-confirmed spot for a RANK BUMP when it appears; don't hoard for KO.
+**REACHABILITY:** top-5 line = #5 Ethan 703; user 550; gap 153. Mid-table bunched (#6 693…#14 550 = 143 over 9
+players) → ~1-2 good selective calls + steady base accumulation = top-5 is REALISTIC, not a hail-mary. One bad
+variance batch drops toward last, so SELECTIVITY (not volume) of contrarian picks is the discipline.
+**future_sim.py is now INVALID** (assumed fixed 13-herd; league is 16, different rivals). Rank target = top-5 of 16.
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 **MD4 RESULTS (3 of 5 in, 2026-06-17):** **2/3 outcomes.**
  - **England 4–2 Croatia → HIT** (pick England 1-0, OVERRODE engine Draw → base +59). **Override vindicated.** 4-2 tier +70.
  - **Uzbekistan 1–3 Colombia → HIT** (pick Colombia 0-1, follow chalk → base +44). 1-3 tier +50.
