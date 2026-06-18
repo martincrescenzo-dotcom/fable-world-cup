@@ -52,7 +52,18 @@ handles it. Watch the result — if Ghana wins, confirms artifact.
 Switzerland & Bosnia both drew openers (1-1); Czechia lost 2-1 to Korea, SA lost 2-0 to Mexico (both must-win).
 No material injury news surfaced in previews → overlays all ZERO. Ghana-Panama divergence is a RATING artifact,
 not model-blindness.
-**PENDING (ask user):** Portugal–DR Congo (MD3 #5) result + tier; MD4 results + realized tiers.
+**MD4 RESULTS (3 of 5 in, 2026-06-17):** **2/3 outcomes.**
+ - **England 4–2 Croatia → HIT** (pick England 1-0, OVERRODE engine Draw → base +59). **Override vindicated.** 4-2 tier +70.
+ - **Uzbekistan 1–3 Colombia → HIT** (pick Colombia 0-1, follow chalk → base +44). 1-3 tier +50.
+ - **Ghana 1–0 Panama → MISS** (pick Panama 0-1, Axis-B decorrelation). **ARTIFACT CONFIRMED — Ghana won as market said** (v6 Panama 63% was wrong). Market-veto vindicated; aggressive Axis-B underdog lost (now 0/3 incl MD3 draws). 1-0 tier +20.
+ - Czechia–SA + Switzerland–Bosnia still pending (6/18, both follows).
+**Net MD4 so far: +103 base** (England 59 + Colombia 44; no exact-score bonus — scores missed). Portugal-DRC (MD3#5) was +0.
+**KEY CONFIRMATIONS this batch:** (1) independent-market layer is LOAD-BEARING — caught Ghana artifact, exactly
+like Ecuador; (2) "draws now crowded → follow, don't decorrelate-to-draw" was RIGHT (England override won);
+(3) aggressive Axis-B underdog/draw picks are 0/3 (France/Austria draws + Panama) — the differentiation cost is
+REAL and recurring. Reinforces the forward rule: EV-max FOLLOW + mechanical modal scores now; ramp variance
+only in the final third.
+**PENDING (ask user):** Czechia–SA + Switzerland–Bosnia results + tiers; updated leaderboard (running ~550 projected).
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
 ## ════ MD3 RESULTS IN (2026-06-17, Iraq-Norway score CORRECTED) — read first ════
@@ -189,6 +200,10 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-16 | Iraq 1–4 Norway | Norway W | **HIT** — pick Norway 0-2 (Axis-A: flipped to Kalshi 80% Norway) → base ✅, score missed | flip vindicated, Norway won big; 1-4 tier **+70** obs#17 (model est 0.9% OK) |
 | 2026-06-16 | Argentina 3–0 Algeria | Argentina W | **HIT** — pick Argentina 2-0 (Axis-A follow) → base ✅, score missed | 3-0 tier **+50** obs#18 (model est 12.4% OK) |
 | 2026-06-16 | Austria 3–1 Jordan | Austria W | MISS — pick Draw 0-0 (Axis-B, Kalshi-vetoed Jordan, field 14%) → base 0; favourite WON | 3-1 tier **+50** obs#20 (model est 8.4% OK) |
+| 2026-06-16 | Portugal 1–1 DR Congo | Draw | MISS — pick Portugal 2-0 (MD3 #5, Axis-A follow) → base 0; favourite drawn | 1-1 tier **+20** obs#23 |
+| 2026-06-17 | Ghana 1–0 Panama | Ghana W | MISS — pick Panama 0-1 (Axis-B decorrelation) → base 0; **MODEL ARTIFACT CONFIRMED** — Ghana won as market said (v6 had Panama 63%) | 1-0 tier **+20** obs#21; market-veto vindicated |
+| 2026-06-17 | Uzbekistan 1–3 Colombia | Colombia W | **HIT** — pick Colombia 0-1 (follow chalk) → base ✅ (+44), score missed | 1-3 tier **+50** obs#22 |
+| 2026-06-17 | England 4–2 Croatia | England W | **HIT** — pick England 1-0 (OVERRODE engine's Axis-B Draw) → base ✅ (+59), score missed; **override vindicated** | 4-2 tier **+70** obs#24 (model est 0.7% OK) |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
