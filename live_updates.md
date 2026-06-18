@@ -1,5 +1,23 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MODEL vs DE-VIGGED WINAMAX — score-prediction validation (2026-06-18, 19 matches) ════
+Cross-checked v6 (pure) score grids vs de-vigged Winamax exact-score côtes for all 19 stored matches.
+**SHAPE: excellent** — mean cell-corr 0.96 (median 0.97, min 0.85 US-Par), mean abs err 0.96%/cell; 1X2
+divergences concentrate in the already-flagged matches (US-Par, Ecuador, Qatar-Swiss, Canada) = rediscovers
+known divergences, no new ones. **PREDICTIVE (log-loss on the REALIZED score, all 19 played):** Winamax 2.83 <
+model 3.13 (lower=better); model better on only 4/19. BUT decompose: NON-tail (11) model 2.65 ≈ winx 2.55
+(TIED within noise — strong for a model vs market); TAIL realized>=4g (8) model 3.79 >> winx 3.22 — the model
+LOSES on high-scoring games. This tournament ran a FAT tail (Ger 7-1, Swe 5-1, USA 4-1, Eng 4-2, Iraq 1-4) and
+v6's tail is too thin -> under-priced all of them. **Caveats:** the tail gap is partly MY artifact (3 Autre
+scores got handed the whole Autre mass — Germany 7-1 alone ~0.12 of the 0.30 gap; corrected gap is smaller, the
+bulk-TIE is the honest headline); n=19; single-bookie 150% vig de-vig is imprecise (doesn't strip longshot
+shading -> inflates market tail). **FLAG (contradiction):** CLAUDE.md 'known fact' says model tail FATTER than
+market; this measurement + realized results show model tail THINNER (under-called the tail). Reconcile, don't
+trust the old note. **Strategic implication: NONE for picks** — model can't call the tail, which is exactly why
+we take the MODAL low-scoring score and don't gamble on rare high exacts. Thin tail is documented + OOS-unfixable
+(dispersion fix overfit). Calibration finding, not a doctrine change.
+## ═══════════════════════════════════════════════════════════════════════════════════════════
+
 ## ════ LEARNINGS (2026-06-17, post score-rule backtest) — read first ════
 Distilled from score_rule_backtest.py (20 obs), the 45%-modal-outcome count, and the MD3/MD4 results.
 Separated ROBUST vs TENTATIVE (Verify-Std #4/#7).
