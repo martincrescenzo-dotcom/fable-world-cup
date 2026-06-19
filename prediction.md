@@ -136,3 +136,31 @@ User #10/13 (374), gap 284 to #2 line (658), ~88 left → behind ⇒ DECORRELATE
 **X2: HELD.** No candidate ≥45 (max totalEV 36.7 Argentina; all low-K crushed-chalk matches). Reserve for a higher-E field-underpicked + market-confirmed spot (more even match / knockout).
 
 *Pending from user: realized TIERS for these 5 + the 6/14 backlog; results; updated leaderboard.*
+
+---
+
+# MD6 slate 2026-06-19 (engine v6 + LEAGUE_MODE, blend 0.4/0.6, COARSE) — Group C/D 2nd-round matches
+
+User = **Lampadaire83, #12/16 @697** (climbed #14→#12, +147 via Switzerland + Canada base). Objective TOP-5, top-5 line
+= #5 CrazyBE **1018, gap 321** (top herd #1–#5 = 1018–1482 with 16–17 goods, pulling away). Mid-table bunched
+(#8 814 … #12 697 … #14 622). Preflight GREEN. INDEPENDENT MARKET = de-vigged DraftKings/FanDuel/BetOnline 1X2 via
+WebSearch 2026-06-19. **Model-blind scan: Pulisic OUT (USA, calf) → USA ATT −0.07 halved; Brazil tourn injuries
+−0.05/−0.04 halved; Paraguay Caballero+Sosa out → Paraguay ATT −0.05.**
+
+| # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6) |
+|---|-------|---------|-------|----------------------|
+| 1 | USA–Australia | **USA** | **1-0** | **OVERRIDE engine's Australia pick** (model 28/27/45 → blend-EV-max Australia 44.1, PRIME X2 flag). This is the **documented v6 USA-UNDERRATING artifact** — same class as Ghana-Panama (artifact PRIME, ignored) & USA-Paraguay (model had PAR fav, USA won 4-1, resolved FOR market). MARKET-CONFIRMED VETO: sharp books say USA 60% / AUS 18% (post-Pulisic, post-AUS-beat-Turkey) → market does NOT support Australia. Follow market = USA. Field 75% (crowded, no separation) but disciplined. |
+| 2 | Scotland–Morocco | **Morocco** | **0-1** | AXIS-A follow chalk: Morocco blend-EV-max 48.7 (model 49% ≈ market 56%). Field 79% Morocco (crowded). No Axis-B: Draw (29.9) & Scotland (19.6) far outside 5% band. |
+| 3 | Brazil–Haiti | **Brazil** | **3-0** | AXIS-A follow: Brazil blend-EV-max 18.1 (model≈market 85/87). Reward only 21 (crushed chalk, field 95%) → low-EV match, everyone has it; Draw (15.4) just outside band. Modal blowout 3-0. |
+| 4 | Türkiye–Paraguay | **Türkiye** | **1-0** | AXIS-A follow: Turkey blend-EV-max 40.6 (model 47 ≈ market 49). Draw field-OVER-picked (33%) = not a decorrel target; Paraguay (30.1, field 11%) outside band. Both teams lost openers (must-win). |
+
+**Portfolio (honest):** 4 favourites, ZERO decorrelation. No high-conviction field-underpicked + market-confirmed
+Axis-B spot exists on this slate (the one underpicked+long-reward spot, Australia 7%/153, is a MODEL ARTIFACT the
+market fades → fails the criterion; taking it = the 0/4 aggressive-underdog trap). Disciplined all-follow. Expected
+base if all hit ≈ 58+91+21+84 = 254, but the field also holds this chalk → **gains points, not rank** (the documented
+tension). Top-5 (gap 321) not closable today; realistic near-term = pass bunched #8–#11 (749–814).
+**X2: HELD.** The only PRIME flag (Australia, E_total 71.5, field 7%) is the USA-underrating artifact — exactly the
+flag the doctrine says to IGNORE (Ghana-Panama precedent). No genuine high-reward + field-underpicked + MARKET-CONFIRMED
+spot. Keep waiting.
+
+*Pending from user: realized TIERS for these 4 + results; updated leaderboard.*

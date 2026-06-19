@@ -21,16 +21,18 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD4 slate 2026-06-17/18 (fieldpct=[H,D,A] = Repartition from user; rewards=Cotes from user).
- # market=[H,D,A] = INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-17 (bet365/FanDuel/DraftKings/1xbet).
- # Model-blind scan 2026-06-17 below. NB field now HERDS ON DRAWS (post-MD2/3 draw-fever: 30-39% on draw) ->
- # the underpicked side has shifted to the AWAY underdogs (Croatia 8% / Panama 7% / Bosnia 7%).
- dict(home='Canada', away='Qatar', rewards=[71,104,148], date='2026-06-18', fieldpct=[.73,.20,.07], market=[.747,.167,.086]),
-      # Canada -370 (FanDuel), supercomputer 72%. Field ~ market (Canada heavy chalk). No overlay.
- dict(home='Mexico', away='South Korea', rewards=[69,117,129], date='2026-06-18', fieldpct=[.52,.34,.15], market=[.486,.288,.226],
-      overlay=(0,-0.05,0,0)),
-      # Mexico -105 (FanDuel) = ~49% only (close game). Montes (CB) SUSPENDED -> DEF -0.05 (halved, market's low 49% likely prices it).
-      # KOREA FIELD-UNDERPICKED (15% field vs 23% market) = candidate selective Axis-B if blend-EV competitive.
+MATCHES = [   # MD6 slate 2026-06-19 (fieldpct=[H,D,A]=Repartition from user; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-19 (DraftKings/FanDuel/BetOnline).
+ # Model-blind scan 2026-06-19: Pulisic OUT (USA, calf) -> USA ATT -0.07 (halved; mkt likely priced). Brazil tourn
+ # injuries (Rodrygo/Militao/Estevao) -0.05/-0.04 halved. Paraguay Caballero+Sosa out -> Paraguay ATT -0.05.
+ dict(home='United States', away='Australia', rewards=[58,119,153], date='2026-06-19', fieldpct=[.75,.18,.07],
+      market=[.601,.217,.182], overlay=(-0.07,0,0,0)),
+ dict(home='Scotland', away='Morocco', rewards=[99,112,91], date='2026-06-19', fieldpct=[.04,.16,.79],
+      market=[.173,.264,.563]),
+ dict(home='Brazil', away='Haiti', rewards=[21,167,198], date='2026-06-19', fieldpct=[.95,.04,.01],
+      market=[.868,.087,.045], overlay=(-0.05,-0.04,0,0)),
+ dict(home='Turkey', away='Paraguay', rewards=[84,113,126], date='2026-06-19', fieldpct=[.56,.33,.11],
+      market=[.492,.281,.227], overlay=(0,0,-0.05,0)),
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

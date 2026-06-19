@@ -1,5 +1,40 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD5/MD6 RESULTS + LEADERBOARD 2026-06-19 — read first ════
+**USER = Lampadaire83, now #12/16 @697** (11 bons / 1 exact). Climbed #14→#12 (+147) via Switzerland + Canada base hits.
+**Yesterday's results (MD4 tail + MD5):**
+ - **Canada 6–0 Qatar → HIT** (pick Canada 2-0; base ✅, score miss). No tier obs (no one bet 6-0).
+ - **Switzerland 4–1 Bosnia → HIT** (pick Switzerland 2-0; base ✅, score miss). No tier obs (no one bet 4-1).
+ - **Mexico 1–0 South Korea → MISS** (pick Draw 1-1, Axis-B differentiation; Mexico won). base 0. **1-0 tier +50** obs#25
+   (model est 31.7% VIOLATED — over-est 1-0 herding). **Axis-B decorrelation lost AGAIN** (now ~0/5: France/Austria draws,
+   Panama, Mexico-Korea draw).
+ - **Czechia 1–1 South Africa → MISS** (pick Czechia 1-0 follow; drew). base 0. **1-1 tier +20** obs#26.
+**LEADERBOARD 2026-06-19 (16 players):**
+ #1 Alexlastaaaaar 1482 (17/4) | #2 AdyFC 1119 (16/5) | #3 Nicolas232345 1101 (16/2) | #4 Alexis#KGYJ 1032 (16/3) |
+ #5 CrazyBE 1018 (16/1) | #6 Cyrilpqt 929 (13/3) | #7 Hadri02 921 (14/4) | #8 Chocho_27 814 (13/1) |
+ #9 Ethan_prn 779 (14/1) | #10 Diane123 764 (10/2) | #11 Paulinho1204 749 (12/2) | **#12 USER (Lampadaire83) 697 (11/1)** |
+ #13 LMD92110 640 (11/2) | #14 Helene12ln 622 (12/1) | #15 FredFUP 587 (8/1) | #16 DealNonClosey 537 (8/3).
+**STRATEGIC READ:** top-5 line jumped 703→**1018** (top herd #1–#5 separated hard, all 16–17 goods) → **gap 321, growing**.
+Top-5 is now a genuine long shot. Mid-table bunched (#8 814 … #12 697 = 117 over 5) → realistic near-term = pass #11/#10/#9
+(749/764/779). Following gains points but field climbs with you (rank ~static). Per doctrine: NO variance ramp without a
+high-conviction field-underpicked + market-confirmed spot — none on MD6. The Axis-B/aggressive-underdog ledger is now ~0/5
+(every decorrelation pick has LOST) → bar stays high; do NOT force separation on coin-flips.
+
+## ════ MD6 SCAN 2026-06-19 (USA-Aus, Scotland-Mor, Brazil-Haiti, Turkey-Par) ════
+INDEPENDENT MARKET = de-vigged DraftKings/FanDuel/BetOnline 1X2 (WebSearch): USA-Aus [.60,.22,.18]; Sco-Mor [.17,.26,.56];
+Bra-Hai [.87,.09,.05]; Tur-Par [.49,.28,.23]. Field [H,D,A]: USA 75/18/7; Sco-Mor 4/16/79; Bra-Hai 95/4/1; Tur-Par 56/33/11.
+**Model-blind injuries:** **Pulisic OUT (USA, calf, left vs Paraguay)** — Pepi starts → USA ATT −0.07 (halved; sharp line
+likely prices it). Brazil tourn injuries (Rodrygo ACL/Militão/Estêvão) −0.05/−0.04 halved. **Paraguay Caballero (muscle)
++ Sosa (ankle) out, 5 on yellows** → Paraguay ATT −0.05. Turkey full squad (Yıldız fitness doubt = depth). Australia full
+(beat Turkey 2-0 in opener — real quality signal, but the SHARP line already prices it at AUS 18%).
+**KEY CALL — USA-Australia artifact:** v6 says USA only 28% / Australia 45% → engine picks Australia + fires PRIME X2.
+This is the **documented v6 USA-underrating artifact** (CLAUDE.md known-fact; USA-Paraguay MD1 resolved 4-1 FOR the market
+after v6 had Paraguay favourite). Same class as Ghana-Panama (artifact PRIME flag, correctly ignored). MARKET-CONFIRMED
+VETO → pick **USA**, X2 HELD. If Australia wins, it's the first time the USA-underrating flag resolves AGAINST the market
+— log it. (Watch: Australia did beat Turkey 2-0 and USA lost Pulisic, so this is the closest the artifact has come to
+being real; the sharp line at USA 60% post-news is the tiebreaker.)
+
+
 ## ════ MODEL vs DE-VIGGED WINAMAX — score-prediction validation (2026-06-18, 19 matches) ════
 Cross-checked v6 (pure) score grids vs de-vigged Winamax exact-score côtes for all 19 stored matches.
 **SHAPE: excellent** — mean cell-corr 0.96 (median 0.97, min 0.85 US-Par), mean abs err 0.96%/cell; 1X2
@@ -242,7 +277,7 @@ round matches remain (24 opening matches total, 16 played). If the next few open
 opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
-**Last scanned: 2026-06-16.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Last scanned: 2026-06-19.** Update this every model run (see CLAUDE.md → "Model-blind scan").
 **Scan 2026-06-16 (MD3: France-Senegal, Iraq-Norway, Argentina-Algeria, Austria-Jordan, Portugal-DRCongo — REAL WC Group I + Arg opener):**
  France full strength (Ekitiké out=depth, Saliba minor knock but available; XI Mbappé/Dembélé/Olise). Senegal strong (Mané/Koulibaly/Mendy/Gueye), no June injury. **Argentina: real defensive thinning for the opener — Dibu Martínez (GK, finger fracture) doubt, Molina+Montiel (RBs) muscle tears, Balerdi OUT; Messi/Álvarez/Romero fit → mild DEF overlay −0.05 (halved, priced; Arg still 80% fav).** Norway full strength (Haaland fit). Portugal full strength (Ronaldo's March hamstring healed). Austria/Jordan: light scan (blowout). All other teams no material overlay. **INDEPENDENT MARKET = Kalshi 1X2 (x-checked bet365), entered as market=[H,D,A]** (no Polymarket slugs) — flipped Iraq-Norway (Norway 80% mkt) & auto-vetoed Austria's Jordan (mkt 11% vs model 21%).
 **XI check 2026-06-15 (pre-KO, all 3 MD2 matches — NO change):** Belgium XI CONFIRMED (Courtois + Doku start, scare cleared; Ngoy/Mechele depth CBs = ignore; Egypt Salah starts = overlay already applied). Saudi-Uruguay + Iran-NZ still PREDICTED (sheets drop ~KO) but no surprise: **Uruguay near-full-strength (Valverde/Bentancur/Ugarte/Núñez/Viñas) — NOT resting starters → pick STRENGTHENED**; Iran expected XI (Taremi leads, Jahanbakhsh out per overlay). No outcome flip on any → Belgium 1-0 / Uruguay 0-1 / Iran 1-0 all HOLD. X2 HELD.
@@ -272,6 +307,10 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-17 | Ghana 1–0 Panama | Ghana W | MISS — pick Panama 0-1 (Axis-B decorrelation) → base 0; **MODEL ARTIFACT CONFIRMED** — Ghana won as market said (v6 had Panama 63%) | 1-0 tier **+20** obs#21; market-veto vindicated |
 | 2026-06-17 | Uzbekistan 1–3 Colombia | Colombia W | **HIT** — pick Colombia 0-1 (follow chalk) → base ✅ (+44), score missed | 1-3 tier **+50** obs#22 |
 | 2026-06-17 | England 4–2 Croatia | England W | **HIT** — pick England 1-0 (OVERRODE engine's Axis-B Draw) → base ✅ (+59), score missed; **override vindicated** | 4-2 tier **+70** obs#24 (model est 0.7% OK) |
+| 2026-06-18 | Canada 6–0 Qatar | Canada W | **HIT** — pick Canada 2-0 → base ✅, score missed | no tier obs (no one bet 6-0) |
+| 2026-06-18 | Switzerland 4–1 Bosnia | Switzerland W | **HIT** — pick Switzerland 2-0 → base ✅, score missed | no tier obs (no one bet 4-1) |
+| 2026-06-18 | Mexico 1–0 South Korea | Mexico W | MISS — pick Draw 1-1 (Axis-B differentiation) → base 0; favourite WON | 1-0 tier **+50** obs#25 (model est 31.7% VIOLATED) |
+| 2026-06-18 | Czechia 1–1 South Africa | Draw | MISS — pick Czechia 1-0 (follow) → base 0; favourite drawn | 1-1 tier **+20** obs#26 |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |

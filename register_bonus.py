@@ -40,6 +40,10 @@ NEW_OBS = [
          away='DR Congo', actual_score=(1,1), bonus_awarded=20),
     dict(match='England-Croatia', date='2026-06-17', home='England',
          away='Croatia', actual_score=(4,2), bonus_awarded=70),
+    dict(match='Mexico-South Korea', date='2026-06-18', home='Mexico',
+         away='South Korea', actual_score=(1,0), bonus_awarded=50),
+    dict(match='Czechia-South Africa', date='2026-06-18', home='Czech Republic',
+         away='South Africa', actual_score=(1,1), bonus_awarded=20),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}
