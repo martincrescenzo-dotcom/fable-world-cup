@@ -132,8 +132,12 @@ line under-prices our pick ⇒ +EV.** On MD7, EVERY pick had edge>1 (Japan 1.67,
 Ger-CIV draw 1.22…). **CAVEAT for RANK:** the favourite-EV is shared with the favourite-herd field ⇒ it is
 TABLE STAKES for points, NOT separation. Rank still comes only from (a) accuracy on CONTESTED matches,
 (b) exact-score bonus, (c) field-underpicked +EV decorrelation. **field% NO LONGER explains reward level**
-(the earlier "field over-picking crushes the favourite's reward" framing was WRONG); field% = decorrelation
-+ dynamic bonus ONLY. Open challenge: is the compression a reliable repeatable +EV signal? (n=8, track it).
+(the earlier "field over-picking crushes the favourite's reward" framing was WRONG); **outcome field% =
+rank-decorrelation ONLY.** It does NOT drive the exact-score bonus either (user 2026-06-20): the bonus tier =
+share of CORRECT-OUTCOME pickers on a score = P(score|correct outcome), computed within that always-large pool
+(even 1% ≈ tens of thousands) ⇒ independent of outcome popularity. Bonus is driven by SCORE-level salience
+herding (crowd_params), NOT outcome field%. Open challenge: is the compression a reliable repeatable +EV
+signal? (n=8, track it).
 See REPORT_2026-06-20.md. [Superseded numbers: "32.9/match, +14%, 3900/season" assumed the fair-line model.]
 **EV SIGNIFICANCE:** σ_p(o)≈|p_v6-p_mkt|/2; σ_EV=reward·σ_p; σ_diff=√(σ_EVpick²+σ_EV2nd²); gap SIGNIFICANT
 if >2·σ_diff. MOST per-match gaps are NOT significant (within model-market noise) — take max-EV anyway
