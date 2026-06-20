@@ -180,18 +180,21 @@ Debast out=depth; Iran minor MF doubts). No new overlays — the draws stand on 
 | # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6) |
 |---|-------|---------|-------|----------------------|
 | 1 | Netherlands–Sweden | **Netherlands** | **2-0** | FOLLOW: blend-EV-max 40.2; model 69% HOT vs market 54% (same side). Field 56%. |
-| 2 | Germany–Ivory Coast | **Draw** | **1-1** | **AXIS-B = EV-MAX** (not a sacrifice): field piled 82% on Germany → crushed Ger reward to 38 → Draw blend-EV 29.6 > Ger 23.8 > CIV 25.7. Field-underpicked (14%) + market-confirmed (22%) + model-market AGREE on Ger strength (65/61). **X2 TARGET** (reward 137≥100, robust). |
+| 2 | Germany–Ivory Coast | **Draw** | **1-1** | **AXIS-B = EV-MAX** (not a sacrifice): the FIXED reward line under-prices the draw — reward-implied 18% vs independent sharp market 22% (**edge 1.22**) → Draw blend-EV 29.6 > Ger 23.8 > CIV 25.7. INDEPENDENTLY field-underpicked (14%) + model-market AGREE on Ger strength (65/61). **X2 TARGET** (reward 137≥100, robust). [Rewards are FIXED, not crowd-dynamic — field% is decorrelation only.] |
 | 3 | Ecuador–Curaçao | **Ecuador** | **2-0** | FOLLOW: blend-EV-max 34.9. Ecuador overrating-artifact IRRELEVANT (huge fav anyway; Curaçao conceded 7 to Germany). Field 81%. |
 | 4 | Tunisia–Japan | **Japan** | **0-1** | FOLLOW: blend-EV-max 58.9. Japan chalk (field 71%). Mitoma overlay applied. Tunisia sacked coach (Renard interim). |
 | 5 | Spain–Saudi Arabia | **Spain** | **3-0** | FOLLOW: blend-EV-max 27.7. Crushed chalk (field 94%, reward 31). Spain drew CV last (upset risk) but market 87%. Low value, no separation available. |
-| 6 | Belgium–Iran | **Draw** | **1-1** | **AXIS-B** (OVERRIDE engine's Iran): Draw blend-EV 29.8 = highest; engine tie-broke to Iran (2% field) but Iran market-UNCONFIRMED (13%) → market veto. Draw market-confirmed (20%), field-underpicked (8%), ~0 EV cost. MARGINAL EV-max (Belgium likely underrated, model 52 vs mkt 67) → take Draw but **NOT X2**. |
+| 6 | Belgium–Iran | **Draw** | **1-1** | **AXIS-B** (OVERRIDE engine's Iran): Draw blend-EV 29.8 = highest; engine tie-broke to Iran (2% field) but Iran market-UNCONFIRMED (13%) → market veto. Draw market-confirmed (20%), field-underpicked (8%), ~0 EV cost. But only **edge 1.07** (fixed line barely under-prices the draw here) and Belgium likely underrated (model 52 vs mkt 67) → MARGINAL → take Draw but **NOT X2**. |
 | 7 | Uruguay–Cape Verde | **Uruguay** | **1-0** | FOLLOW: blend-EV-max 47.0. Strong fav (field 76%). |
 | 8 | New Zealand–Egypt | **Egypt** | **0-1** | FOLLOW (OVERRIDE engine's NZ): engine tie-broke to NZ (9% field) but NZ only IN-BAND not EV-max (Egypt 31.8 > NZ 30.7) AND market-unconfirmed (18%, NZ lowest-ranked team 85th vs Salah/Egypt unbeaten) → raised-bar + veto reject it. Egypt EV-max follow. Crushed chalk (field 70%, reward 59), no separation. |
 
 **Portfolio:** 6 FOLLOWS + 2 EV-MAX DRAWS (Germany-CIV, Belgium-Iran). The draws are NOT the 0/5 sacrifice-draws — they are
-EV-MAX/tied (field over-piled on the favourite, crushing its reward below the draw's value) + hugely field-underpicked
-(14%/8%) + market-confirmed → zero-EV-cost decorrelation, the correct rank-separation play for a trailing #9. Two overrides
-reject engine tie-breaks into market-UNCONFIRMED underdogs (Iran 13%, NZ 18% — the Australia/Ghana-Panama artifact class).
+EV-MAX/tied because the FIXED reward line under-prices the draw vs the independent sharp market (edge 1.22 / 1.07), AND they are
+independently field-underpicked (14%/8%) → zero-EV-cost decorrelation, the correct rank-separation play for a trailing #9.
+**[CORRECTION 2026-06-20: rewards are FIXED, not crowd-dynamic — my earlier "field crushed the favourite's reward" framing was
+WRONG. The edge is sharp-market-vs-game-maker-line mispricing, decoupled from field%. ALSO: the fixed line is variably COMPRESSED
+(Japan edge 1.67) → following calibrated favourites is genuinely +EV, overturning the old "skill earns ~0" claim. See
+REPORT_2026-06-20.md.]** Two overrides reject engine tie-breaks into market-UNCONFIRMED underdogs (Iran 13%, NZ 18% — artifact class).
 **X2 — HELD (user decision 2026-06-20).** Recommended Germany–CIV Draw, but user declined to deploy on the FIRST firing of a
 new flag — wants to LOG both EV-max-draw spots and learn their realized hit-rate before committing the one-shot (we're <30% of
 total matches in, not even half of group stage). Disciplined: validate the "reward-mispricing EV-max draw" profile across several

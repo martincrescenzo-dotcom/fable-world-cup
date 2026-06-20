@@ -122,11 +122,19 @@ pay ≤5% EV for decorrelation, never more; NO maximin hedges).
 c=crowd(s)∝p(s)^β·salience(s) [β=1.6,sal^1.5]; tiers >30%:20/20-30:30/5-20:50/0.5-5:70/<0.5:100. LEAGUE_MODE
 disables the rarity tie-break. [SUPERSEDED 2026-06-14 -> BONUS_MODE='coarse': score = MODAL (highest-p) within outcome,
 step off 1-1 ONLY (3/3 over-herding); fine E[bonus] opt RETIRED (crowd model unconverged at n=8). See SESSION 2026-06-14 (cont.).]
-**FAIR-GAME INSIGHT (decisive):** reward(o)≈K_match/p_true(o), K_match=1/Σ(1/rewardₒ) (varies: lopsided
-matches K~13, even K~31). ⇒ EV of ANY calibrated pick ≈ K_match — **winner-picking skill earns ~0 on its
-own.** Edge comes ONLY from (a) mispricing detection (our p_blend ≠ reward-implied → Ecuador/Japan) and
-(b) exact-score bonus. Our EV-max ≈32.9/match base vs fair baseline 28.8 = +14% edge (~+850 pts/season).
-Season EV ≈ 3,900 pts (12-match est; knockouts likely higher EV — even teams).
+**FAIR-GAME INSIGHT — PARTLY FALSIFIED 2026-06-20 (user: rewards are FIXED, not crowd-dynamic; verified on
+8-match slate).** The old claim "reward(o)≈K_match/p_true(o) ⇒ EV of any calibrated pick ≈ K, skill earns ~0"
+assumed a FAIR K/p line. The fixed reward line is NOT fair — it is variably COMPRESSED (e.g. Tunisia–Japan
+[118/103/91] is nearly flat despite Japan being a true ~63% fav; a fair line ≈ [54/149/245]). ⇒ a calibrated
+favourite pick has REAL absolute EV (Japan EV≈57 vs fair K≈34). **Measure edge cleanly as
+`edge = market_p(pick) / reward_implied_p(pick)`, reward_implied = normalised 1/reward; edge>1 ⇒ the fixed
+line under-prices our pick ⇒ +EV.** On MD7, EVERY pick had edge>1 (Japan 1.67, Uruguay 1.37, Ecuador 1.33,
+Ger-CIV draw 1.22…). **CAVEAT for RANK:** the favourite-EV is shared with the favourite-herd field ⇒ it is
+TABLE STAKES for points, NOT separation. Rank still comes only from (a) accuracy on CONTESTED matches,
+(b) exact-score bonus, (c) field-underpicked +EV decorrelation. **field% NO LONGER explains reward level**
+(the earlier "field over-picking crushes the favourite's reward" framing was WRONG); field% = decorrelation
++ dynamic bonus ONLY. Open challenge: is the compression a reliable repeatable +EV signal? (n=8, track it).
+See REPORT_2026-06-20.md. [Superseded numbers: "32.9/match, +14%, 3900/season" assumed the fair-line model.]
 **EV SIGNIFICANCE:** σ_p(o)≈|p_v6-p_mkt|/2; σ_EV=reward·σ_p; σ_diff=√(σ_EVpick²+σ_EV2nd²); gap SIGNIFICANT
 if >2·σ_diff. MOST per-match gaps are NOT significant (within model-market noise) — take max-EV anyway
 (compounds, LLN). **X2 (CORRECTED 2026-06-16): NOT for model-market-AGREE picks** (agreement = field also

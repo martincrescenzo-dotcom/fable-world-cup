@@ -22,10 +22,14 @@ jumped). Exacts + field-underpicked contrarian outcomes = the lever, confirmed a
 ## ════ MD7 SCAN 2026-06-20 (8 matches, Group E/F/G/H 2nd round) ════
 INDEPENDENT MARKET = de-vigged bet365/FanDuel/DK/BetOnline (WebSearch). Picks: NL / **GER-CIV DRAW** / Ecuador / Japan /
 Spain / **BEL-IRN DRAW** / Uruguay / Egypt. See prediction.md MD7 for full rationale.
-**KEY: TWO EV-MAX REWARD-MISPRICING DRAWS.** Field over-piled on Germany (82%) & Belgium (90%) → crushed their rewards to
-38/39 → the DRAW (reward 137/138) becomes blend-EV-MAX, field-underpicked (14%/8%), market-confirmed (22%/20%). These are
-NOT the 0/5 sacrifice-draws (those cost EV); these COST ZERO EV (they're EV-max) + decorrelate hugely = correct trailing-
-player variance. **2 engine OVERRIDES:** Belgium-Iran engine→Iran (mkt 13%, veto) corrected to DRAW; NZ-Egypt engine→NZ
+**KEY: TWO EV-MAX REWARD-MISPRICING DRAWS.** [CORRECTED 2026-06-20: rewards are FIXED, NOT crowd-dynamic.] The FIXED reward
+line under-prices the draw vs the independent sharp market (Ger-CIV reward-impl 18% vs mkt 22% = edge 1.22; Bel-Irn 19% vs 20%
+= edge 1.07) → the DRAW is blend-EV-MAX, AND independently field-underpicked (14%/8%). These are NOT the 0/5 sacrifice-draws
+(those cost EV); these COST ZERO EV (EV-max) + decorrelate hugely = correct trailing-player variance.
+**REWARD-MODEL CORRECTION (load-bearing):** field% does NOT set reward (game-maker's line is fixed). Edge = sharp-market_p /
+reward-implied_p (>1 = under-priced = +EV). The fixed line is variably COMPRESSED (Tunisia-Japan [118/103/91] ~flat despite
+Japan 63% → Japan edge 1.67) → following calibrated favourites is genuinely +EV (overturns old "fair-game skill earns ~0").
+That favourite-EV is shared with the herd = TABLE STAKES for points, not rank separation. See REPORT_2026-06-20.md. **2 engine OVERRIDES:** Belgium-Iran engine→Iran (mkt 13%, veto) corrected to DRAW; NZ-Egypt engine→NZ
 (in-band-not-EV-max + mkt 18% lowest-ranked team, veto) corrected to EGYPT follow.
 **Model-blind:** Germany FULL strength (CIV Ndicka CB doubt, priced); Belgium near-full (DeBruyne/Doku/Courtois start,
 Lukaku bench, Debast out=depth; Iran minor MF doubts Cheshmi/Ghoddos); NL trio out (priced); Japan Mitoma out. No new overlays.
@@ -33,8 +37,9 @@ Lukaku bench, Debast out=depth; Iran minor MF doubts Cheshmi/Ghoddos); NL trio o
 realized hit-rate, deploy on a LATER such spot with calibration. Rationale: <30% of total matches in, not even half of group stage.
 
 ## ════ X2-FLAG LEDGER — "EV-max reward-mispricing DRAW" profile (track hit-rate before deploying the one-shot X2) ════
-Profile = field over-piles on the home favourite → crushes its reward → the DRAW becomes blend-EV-MAX, field-underpicked, AND
-market-confirmed. This is the candidate X2 profile (high-reward draw the field fades). Logging each firing + result to calibrate
+Profile = the FIXED reward line under-prices the draw vs the independent sharp market (reward-implied draw% < sharp draw% =
+edge>1.15) AND the draw is field-underpicked. This is the candidate X2 profile (under-priced draw the field fades). [NB rewards
+are FIXED, not crowd-dynamic — the edge is line-vs-market mispricing, not field-crushing.] Logging each firing + result to calibrate
 the deploy decision. (Hold X2 until this shows a real edge / a stand-out spot.)
 | Date | Match | Draw reward | Field% draw | Mkt% draw | Model-mkt agree on fav? | Draw blend-EV (vs fav) | RESULT | Hit? |
 |------|-------|-------------|-------------|-----------|--------------------------|------------------------|--------|------|
