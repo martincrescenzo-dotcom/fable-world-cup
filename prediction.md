@@ -164,3 +164,37 @@ flag the doctrine says to IGNORE (Ghana-Panama precedent). No genuine high-rewar
 spot. Keep waiting.
 
 *Pending from user: realized TIERS for these 4 + results; updated leaderboard.*
+
+---
+
+# MD7 slate 2026-06-20/21 (engine v6 + LEAGUE_MODE, blend 0.4/0.6, COARSE) — 8 matches, Group E/F/G/H 2nd round
+
+User = **Lampadaire83, #9/16 @937** (jumped #12→#9, +240 via Morocco 0-1 EXACT +50, Brazil 3-0 EXACT +20, USA base 58 —
+the **USA override was VINDICATED**, USA won 2-0; artifact resolved FOR market again). Objective TOP-5; line = #5 Alexis
+**1232, gap 295**; cluster #2–#7 bunched 1190–1307; #8 Chocho 984 (only +47). Preflight GREEN. INDEPENDENT MARKET =
+de-vigged bet365/FanDuel/DraftKings/BetOnline via WebSearch 2026-06-20.
+**Model-blind scan 2026-06-20:** NL trio (Xavi Simons/De Ligt/Timber) −0.04/−0.05 halved-priced; Japan Mitoma ATT −0.06.
+Fresh: Germany FULL strength (CIV Ndicka CB doubt, priced); Belgium near-full (DeBruyne/Doku/Courtois start, Lukaku bench,
+Debast out=depth; Iran minor MF doubts). No new overlays — the draws stand on REWARD-MISPRICING + market, not injuries.
+
+| # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6) |
+|---|-------|---------|-------|----------------------|
+| 1 | Netherlands–Sweden | **Netherlands** | **2-0** | FOLLOW: blend-EV-max 40.2; model 69% HOT vs market 54% (same side). Field 56%. |
+| 2 | Germany–Ivory Coast | **Draw** | **1-1** | **AXIS-B = EV-MAX** (not a sacrifice): field piled 82% on Germany → crushed Ger reward to 38 → Draw blend-EV 29.6 > Ger 23.8 > CIV 25.7. Field-underpicked (14%) + market-confirmed (22%) + model-market AGREE on Ger strength (65/61). **X2 TARGET** (reward 137≥100, robust). |
+| 3 | Ecuador–Curaçao | **Ecuador** | **2-0** | FOLLOW: blend-EV-max 34.9. Ecuador overrating-artifact IRRELEVANT (huge fav anyway; Curaçao conceded 7 to Germany). Field 81%. |
+| 4 | Tunisia–Japan | **Japan** | **0-1** | FOLLOW: blend-EV-max 58.9. Japan chalk (field 71%). Mitoma overlay applied. Tunisia sacked coach (Renard interim). |
+| 5 | Spain–Saudi Arabia | **Spain** | **3-0** | FOLLOW: blend-EV-max 27.7. Crushed chalk (field 94%, reward 31). Spain drew CV last (upset risk) but market 87%. Low value, no separation available. |
+| 6 | Belgium–Iran | **Draw** | **1-1** | **AXIS-B** (OVERRIDE engine's Iran): Draw blend-EV 29.8 = highest; engine tie-broke to Iran (2% field) but Iran market-UNCONFIRMED (13%) → market veto. Draw market-confirmed (20%), field-underpicked (8%), ~0 EV cost. MARGINAL EV-max (Belgium likely underrated, model 52 vs mkt 67) → take Draw but **NOT X2**. |
+| 7 | Uruguay–Cape Verde | **Uruguay** | **1-0** | FOLLOW: blend-EV-max 47.0. Strong fav (field 76%). |
+| 8 | New Zealand–Egypt | **Egypt** | **0-1** | FOLLOW (OVERRIDE engine's NZ): engine tie-broke to NZ (9% field) but NZ only IN-BAND not EV-max (Egypt 31.8 > NZ 30.7) AND market-unconfirmed (18%, NZ lowest-ranked team 85th vs Salah/Egypt unbeaten) → raised-bar + veto reject it. Egypt EV-max follow. Crushed chalk (field 70%, reward 59), no separation. |
+
+**Portfolio:** 6 FOLLOWS + 2 EV-MAX DRAWS (Germany-CIV, Belgium-Iran). The draws are NOT the 0/5 sacrifice-draws — they are
+EV-MAX/tied (field over-piled on the favourite, crushing its reward below the draw's value) + hugely field-underpicked
+(14%/8%) + market-confirmed → zero-EV-cost decorrelation, the correct rank-separation play for a trailing #9. Two overrides
+reject engine tie-breaks into market-UNCONFIRMED underdogs (Iran 13%, NZ 18% — the Australia/Ghana-Panama artifact class).
+**X2 — RECOMMENDED DEPLOY on Germany–Ivory Coast DRAW (pending user confirm).** First clean high-reward (137≥100) +
+field-underpicked (14%) + market-confirmed (22%) + EV-max spot in 7 matchdays = the Alexandre-NL-draw profile (+115). Robust
+(model-market agree on Germany). ~21% to hit → if it lands, ×2 = ~+274 = top-5 leap; free if it loses. Doctrine: deploy when
+this profile appears, don't hold indefinitely. Belgium-Iran draw is the same profile but LESS robust (Belgium underrated) → not the X2.
+
+*Pending: realized TIERS for these 8 + results; X2 deploy confirmation; updated leaderboard.*
