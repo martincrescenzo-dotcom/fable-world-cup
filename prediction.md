@@ -192,9 +192,10 @@ Debast out=depth; Iran minor MF doubts). No new overlays — the draws stand on 
 EV-MAX/tied (field over-piled on the favourite, crushing its reward below the draw's value) + hugely field-underpicked
 (14%/8%) + market-confirmed → zero-EV-cost decorrelation, the correct rank-separation play for a trailing #9. Two overrides
 reject engine tie-breaks into market-UNCONFIRMED underdogs (Iran 13%, NZ 18% — the Australia/Ghana-Panama artifact class).
-**X2 — RECOMMENDED DEPLOY on Germany–Ivory Coast DRAW (pending user confirm).** First clean high-reward (137≥100) +
-field-underpicked (14%) + market-confirmed (22%) + EV-max spot in 7 matchdays = the Alexandre-NL-draw profile (+115). Robust
-(model-market agree on Germany). ~21% to hit → if it lands, ×2 = ~+274 = top-5 leap; free if it loses. Doctrine: deploy when
-this profile appears, don't hold indefinitely. Belgium-Iran draw is the same profile but LESS robust (Belgium underrated) → not the X2.
+**X2 — HELD (user decision 2026-06-20).** Recommended Germany–CIV Draw, but user declined to deploy on the FIRST firing of a
+new flag — wants to LOG both EV-max-draw spots and learn their realized hit-rate before committing the one-shot (we're <30% of
+total matches in, not even half of group stage). Disciplined: validate the "reward-mispricing EV-max draw" profile across several
+observations, THEN deploy the X2 on a future such spot with calibrated confidence. The 2 draw PICKS stand regardless (they're the
+slate's blend-EV-max outcomes); the X2 is a separate lever. See X2-FLAG LEDGER in live_updates.md.
 
 *Pending: realized TIERS for these 8 + results; X2 deploy confirmation; updated leaderboard.*

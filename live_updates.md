@@ -29,9 +29,19 @@ player variance. **2 engine OVERRIDES:** Belgium-Iran engine→Iran (mkt 13%, ve
 (in-band-not-EV-max + mkt 18% lowest-ranked team, veto) corrected to EGYPT follow.
 **Model-blind:** Germany FULL strength (CIV Ndicka CB doubt, priced); Belgium near-full (DeBruyne/Doku/Courtois start,
 Lukaku bench, Debast out=depth; Iran minor MF doubts Cheshmi/Ghoddos); NL trio out (priced); Japan Mitoma out. No new overlays.
-**X2 — RECOMMENDED DEPLOY: Germany–Ivory Coast DRAW** (first clean high-reward+underpicked+confirmed+EV-max spot in 7 MDs;
-robust = model-market agree on Germany; ~21% → ×2 ≈ +274 if hit, free if loses). AWAITING USER CONFIRM (irreversible, 1/tourn).
-Belgium-Iran draw = same profile but less robust (Belgium underrated) → take as pick, NOT the X2.
+**X2 — HELD (user decision 2026-06-20):** declined to deploy on the FIRST firing of a new flag; LOG the spots, learn the
+realized hit-rate, deploy on a LATER such spot with calibration. Rationale: <30% of total matches in, not even half of group stage.
+
+## ════ X2-FLAG LEDGER — "EV-max reward-mispricing DRAW" profile (track hit-rate before deploying the one-shot X2) ════
+Profile = field over-piles on the home favourite → crushes its reward → the DRAW becomes blend-EV-MAX, field-underpicked, AND
+market-confirmed. This is the candidate X2 profile (high-reward draw the field fades). Logging each firing + result to calibrate
+the deploy decision. (Hold X2 until this shows a real edge / a stand-out spot.)
+| Date | Match | Draw reward | Field% draw | Mkt% draw | Model-mkt agree on fav? | Draw blend-EV (vs fav) | RESULT | Hit? |
+|------|-------|-------------|-------------|-----------|--------------------------|------------------------|--------|------|
+| 2026-06-20 | Germany–Ivory Coast | 137 | 14% | 22% | YES (65/61) — robust | 29.6 (vs Ger 23.8) | pending | — |
+| 2026-06-21 | Belgium–Iran | 138 | 8% | 20% | NO (model 52 vs mkt 67 = Bel underrated) — marginal | 29.8 (vs Bel 23.9) | pending | — |
+NB: also retro-fits the leader's WINNING X2 (Alexandre, NL–Japan draw reward 115, field-thin → +115). Need ~4-6 firings + results
+to estimate the profile's true draw-hit rate (~20-25% expected) and EV before spending the one-shot.
 
 ## ════ MD5/MD6 RESULTS + LEADERBOARD 2026-06-19 — read first ════
 **USER = Lampadaire83, now #12/16 @697** (11 bons / 1 exact). Climbed #14→#12 (+147) via Switzerland + Canada base hits.
