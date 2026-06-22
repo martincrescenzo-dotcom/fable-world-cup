@@ -52,6 +52,21 @@ NEW_OBS = [
          away='Paraguay', actual_score=(0,1), bonus_awarded=20),
     dict(match='USA-Australia', date='2026-06-19', home='United States',
          away='Australia', actual_score=(2,0), bonus_awarded=30),
+    # MD7 (2026-06-20/21) realized tiers
+    dict(match='Germany-Ivory Coast', date='2026-06-20', home='Germany',
+         away='Ivory Coast', actual_score=(2,1), bonus_awarded=30),
+    dict(match='Ecuador-Curacao', date='2026-06-20', home='Ecuador',
+         away='Curacao', actual_score=(0,0), bonus_awarded=30),
+    dict(match='Tunisia-Japan', date='2026-06-20', home='Tunisia',
+         away='Japan', actual_score=(0,4), bonus_awarded=70),
+    dict(match='Spain-Saudi Arabia', date='2026-06-21', home='Spain',
+         away='Saudi Arabia', actual_score=(4,0), bonus_awarded=50),
+    dict(match='Belgium-Iran', date='2026-06-21', home='Belgium',
+         away='Iran', actual_score=(0,0), bonus_awarded=50),
+    dict(match='Uruguay-Cape Verde', date='2026-06-21', home='Uruguay',
+         away='Cape Verde', actual_score=(2,2), bonus_awarded=50),
+    dict(match='New Zealand-Egypt', date='2026-06-21', home='New Zealand',
+         away='Egypt', actual_score=(1,3), bonus_awarded=50),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}

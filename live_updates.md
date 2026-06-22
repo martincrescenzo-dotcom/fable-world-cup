@@ -1,5 +1,47 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD7 RESULTS + LEADERBOARD 2026-06-22 — read first ════
+**USER = Lampadaire83, CLIMBED #9→#8 @1323** (19 bons / **3 exacts**, unchanged). **+386 in the weekend, reconciles EXACTLY:**
+NL 67 + Japan 91 + Spain 31 + **Belgium-Iran DRAW 138** + Egypt 59 = 386. **5/8 outcomes, 0 exacts.**
+**THE HEADLINE: the Axis-B reward-mispricing DRAW (Belgium-Iran 0-0) was the single biggest base of the slate (+138)** — the
+EV-max-draw call (field 8%, edge 1.07) WON as a PICK. Its X2-flag sibling (Germany-CIV draw) LOST to a 90+4 winner → **X2 HOLD
+vindicated** (draw-profile X2 ledger now 1/2; the higher-conviction Ger-CIV firing is the one that lost).
+**MD7 detail:** NL 5-1 ✓(+67) | Ger 2-1 ✗(draw, 90+4 winner) | Ecuador 0-0 ✗(upset) | Japan 0-4 ✓(+91) | Spain 4-0 ✓(+31) |
+**Bel-Iran 0-0 ✓(+138, DRAW pick HIT)** | Uruguay 2-2 ✗(upset) | Egypt 1-3 ✓(+59). THREE favourite-draw upsets (Ecuador,
+Uruguay, + Germany nearly) — draw variance ran hot again, but our one deliberate draw (Bel-Iran) was on the right side.
+**SCORE-LAYER NOTE (do NOT act — sideshow):** BOTH our draw picks were 1-1 but BOTH landed 0-0 (Ecuador-Cur 0-0, Bel-Iran 0-0);
+0-0 paid +30/+50 to its pickers. Single weekend; the 2026-06-17 backtest favored pure-modal (1-1 most frequent), so no rule
+change — but log it (0-0 herding-undershoot reappearing in defensive low-xG draws).
+**LEADERBOARD 2026-06-22 (15 — league shrank by 1):**
+ #1 Alexlastaaaaar 1952 (24/5) | #2 Hadri02 1743 (23/**8**) | #3 Nicolas232345 1657 (24/4) | #4 Alexis#KGYJ 1551 (23/6) |
+ **#5 AdyFC 1493 (22/8)** | #6 CrazyBE 1457 (23/3) | #7 Cyrilpqt 1371 (19/3) | **#8 USER (Lampadaire83) 1323 (19/3)** |
+ #9 Ethan_prn 1273 (22/2) | #10 Chocho_27 1253 (20/2) | #11 Paulinho1204 1076 | #12 Helene12ln 1020 | #13 Diane123 1004 |
+ #14 AntoineBSerge 976 | #15 LMD92110 876.
+**STRATEGIC READ — TOP-5 NOW GENUINELY REACHABLE.** top-5 line = #5 AdyFC **1493, gap 170** (was 295). Cluster #5–#8 bunched
+(1493/1457/1371/1323 = 170 over 4) → **1-2 good calls + base accumulation = top-5 is live**, not a hail-mary. The climbers STILL
+carry the exact-score edge (#2 Hadri 8 exacts, #5 AdyFC 8 exacts, #4 Alexis 6 vs USER 3) — that gap is the structural separator,
+but the OUTCOME-EV + one well-placed decorrelation/X2 closes 170 without needing a hot exact run. **This is the window to deploy
+the X2 on a PRIME spot** (Senegal flag on MD8 — see scan).
+
+## ════ MD8 SCAN 2026-06-22 (Argentina-Austria, France-Iraq, Norway-Senegal, Jordan-Algeria — Group I/J FINAL group matches) ════
+INDEPENDENT MARKET = de-vigged FanDuel/DraftKings/ESPN 1X2 + Opta sim (WebSearch 2026-06-22): Arg-Aut [.62,.23,.15];
+Fra-Irq [.90,.07,.03]; Nor-Sen [.44,.27,.29]; Jor-Alg [.158,.215,.627]. Field [H,D,A]: Arg 92/7/1; Fra 98/2/0; Nor 33/42/25; Jor 5/18/77.
+**Model-blind:** Argentina near-FULL XI (Messi starts, rest ~60' only if settled — no overlay, mkt prices it); France ROTATES but
+strong XI (Mbappé/Dembélé/Olise/Saliba/Upamecano/Maignan start — negligible, mkt 90% prices it); **Norway–Senegal BOTH full
+strength, NO injuries, both motivated (winner advances; Senegal must-win)** = clean contested read; Jordan–Algeria no news. No overlays.
+**PICKS:** Argentina 1-0 (follow) | France 2-0 (follow, crushed chalk) | **Senegal 0-1 (AXIS-A EV-max + AXIS-B field-underpicked)** |
+Algeria 0-1 (follow). 3 follows + Senegal the rank lever. See prediction.md MD8.
+**★ X2 PRIME FLAG — Senegal (DECISION PENDING USER).** Reward 137 (≥100) + field-underpicked (25% vs draw-herd 42%) +
+market-confirmed (mkt Senegal 29% > reward-implied 22.5% > draw — independent line lifts Senegal ABOVE the draw, edge 1.29; NOT a
+model artifact like Ecuador/Panama). Blend-EV-max anyway (41.5 vs Norway 27.8) → ZERO EV cost to take it. First clean PRIME
+*outcome* flag of the tournament (vs the 1/2 draw-profile firings). User is #8, top-5 gap 170 → a doubled Senegal win vaults
+into top-5; free if it loses. Doctrine = deploy on the best such spot whenever it appears (don't hoard for KO).
+**★ X2 DEPLOYED ON SENEGAL (user decision 2026-06-22) — THE ONE-SHOT IS NOW SPENT.** Decisive timing argument: X2 rank-value =
+P(hit) × reward × field-underpick, and that combination is a GROUP-STAGE creature — KO compresses rewards AND converges the
+field (KO favourites are the WORST X2 targets), so "wait for KO" yields a *lower*-separation spot. These are the FINAL group
+matches → supply of high-reward field-split underdogs ends now. Senegal ~30% to win; if it hits, 2× on a pick 75% of the field
+missed = max rank lever; if it misses, the one-shot is gone but cost nothing. Track the result.
+
 ## ════ MD6 RESULTS + LEADERBOARD 2026-06-20 — read first ════
 **USER = Lampadaire83, JUMPED #12→#9 @937** (14 bons / **3 exacts**, was 1). +240 in one matchday — **the exacts were the
 separator** (doctrine vindicated: rank moves via exacts + contrarian outcomes, not following).
@@ -43,10 +85,14 @@ are FIXED, not crowd-dynamic — the edge is line-vs-market mispricing, not fiel
 the deploy decision. (Hold X2 until this shows a real edge / a stand-out spot.)
 | Date | Match | Draw reward | Field% draw | Mkt% draw | Model-mkt agree on fav? | Draw blend-EV (vs fav) | RESULT | Hit? |
 |------|-------|-------------|-------------|-----------|--------------------------|------------------------|--------|------|
-| 2026-06-20 | Germany–Ivory Coast | 137 | 14% | 22% | YES (65/61) — robust | 29.6 (vs Ger 23.8) | pending | — |
-| 2026-06-21 | Belgium–Iran | 138 | 8% | 20% | NO (model 52 vs mkt 67 = Bel underrated) — marginal | 29.8 (vs Bel 23.9) | pending | — |
+| 2026-06-20 | Germany–Ivory Coast | 137 | 14% | 22% | YES (65/61) — robust | 29.6 (vs Ger 23.8) | **Ger 2-1 (90+4!)** | **MISS** |
+| 2026-06-21 | Belgium–Iran | 138 | 8% | 20% | NO (model 52 vs mkt 67 = Bel underrated) — marginal | 29.8 (vs Bel 23.9) | **0-0 DRAW** | **HIT (+138 base)** |
 NB: also retro-fits the leader's WINNING X2 (Alexandre, NL–Japan draw reward 115, field-thin → +115). Need ~4-6 firings + results
 to estimate the profile's true draw-hit rate (~20-25% expected) and EV before spending the one-shot.
+**RESULT 2026-06-22: draw-profile X2 ledger = 1/2** (Bel-Iran HIT 0-0 → +138 base, the slate's biggest; Ger-CIV MISS — Germany
+won on a 90+4 stoppage-time goal, the draw was alive to the 94th min). **NOTABLE: the *higher*-conviction firing (Ger-CIV,
+edge 1.22, "robust") LOST; the marginal one (Bel-Iran, edge 1.07) WON** — small n, but it VINDICATES holding the X2 (we would
+have wasted the one-shot on Ger-CIV). The DRAW as an outcome paid off as a PICK (Bel-Iran +138) even without the X2.
 
 ## ════ MD5/MD6 RESULTS + LEADERBOARD 2026-06-19 — read first ════
 **USER = Lampadaire83, now #12/16 @697** (11 bons / 1 exact). Climbed #14→#12 (+147) via Switzerland + Canada base hits.
@@ -325,7 +371,13 @@ round matches remain (24 opening matches total, 16 played). If the next few open
 opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
-**Last scanned: 2026-06-20.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Last scanned: 2026-06-22.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Scan 2026-06-22 (MD8: Argentina-Austria, France-Iraq, Norway-Senegal, Jordan-Algeria — Group I/J final group matches):**
+ Argentina near-full XI (Messi starts, plan to rest ~60' only if game settled — no overlay; mkt 62% prices it). France ROTATES
+ (Olise central, Barcola/Koné/Digne in) but XI still strong (Mbappé/Dembélé/Olise/Saliba/Upamecano/Maignan) and a draw qualifies
+ them → no material overlay, mkt 90%. **Norway & Senegal BOTH report ZERO injuries, both full-strength and motivated (winner
+ advances; Senegal must-win)** → the contested match is a clean read, no overlay. Jordan/Algeria no news. INDEPENDENT MARKET =
+ de-vigged FanDuel/DraftKings/ESPN + Opta via WebSearch.
 **Scan 2026-06-16 (MD3: France-Senegal, Iraq-Norway, Argentina-Algeria, Austria-Jordan, Portugal-DRCongo — REAL WC Group I + Arg opener):**
  France full strength (Ekitiké out=depth, Saliba minor knock but available; XI Mbappé/Dembélé/Olise). Senegal strong (Mané/Koulibaly/Mendy/Gueye), no June injury. **Argentina: real defensive thinning for the opener — Dibu Martínez (GK, finger fracture) doubt, Molina+Montiel (RBs) muscle tears, Balerdi OUT; Messi/Álvarez/Romero fit → mild DEF overlay −0.05 (halved, priced; Arg still 80% fav).** Norway full strength (Haaland fit). Portugal full strength (Ronaldo's March hamstring healed). Austria/Jordan: light scan (blowout). All other teams no material overlay. **INDEPENDENT MARKET = Kalshi 1X2 (x-checked bet365), entered as market=[H,D,A]** (no Polymarket slugs) — flipped Iraq-Norway (Norway 80% mkt) & auto-vetoed Austria's Jordan (mkt 11% vs model 21%).
 **XI check 2026-06-15 (pre-KO, all 3 MD2 matches — NO change):** Belgium XI CONFIRMED (Courtois + Doku start, scare cleared; Ngoy/Mechele depth CBs = ignore; Egypt Salah starts = overlay already applied). Saudi-Uruguay + Iran-NZ still PREDICTED (sheets drop ~KO) but no surprise: **Uruguay near-full-strength (Valverde/Bentancur/Ugarte/Núñez/Viñas) — NOT resting starters → pick STRENGTHENED**; Iran expected XI (Taremi leads, Jahanbakhsh out per overlay). No outcome flip on any → Belgium 1-0 / Uruguay 0-1 / Iran 1-0 all HOLD. X2 HELD.
@@ -363,6 +415,14 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-19 | Brazil 3–0 Haiti | Brazil W | **HIT + EXACT** — pick Brazil 3-0 → base 21 + **bonus +20** | 3-0 tier **+20** obs#28 |
 | 2026-06-19 | Türkiye 0–1 Paraguay | Paraguay W | MISS — pick Turkey 1-0 (follow) → base 0; away upset, both must-win | 0-1 tier **+20** obs#29 |
 | 2026-06-19 | USA 2–0 Australia | USA W | **HIT** — pick USA 1-0 (**OVERRODE engine Australia = USA-underrating artifact**) → base 58, score miss; **veto VINDICATED 3rd time** | 2-0 tier **+30** obs#30 |
+| 2026-06-20 | Netherlands 5–1 Sweden | NL W | **HIT** — pick NL 2-0 → base **+67**, score miss | 5-1 tier (bonus unknown to us) |
+| 2026-06-20 | Germany 2–1 Ivory Coast | Ger W | MISS — pick **Draw 1-1** (Axis-B EV-max draw, X2-flag) → base 0; **Germany won on a 90+4 goal** (draw alive to the 94th) | 2-1 tier **+30** obs#31 |
+| 2026-06-20 | Ecuador 0–0 Curaçao | Draw | MISS — pick Ecuador 2-0 (follow chalk, field 81%) → base 0; **upset** (Curaçao held the fav, not model-specific) | 0-0 tier **+30** obs#32 |
+| 2026-06-20 | Tunisia 0–4 Japan | Japan W | **HIT** — pick Japan 0-1 (follow) → base **+91**, score miss | 0-4 tier **+70** obs#33 |
+| 2026-06-21 | Spain 4–0 Saudi Arabia | Spain W | **HIT** — pick Spain 3-0 (follow) → base **+31**, score miss | 4-0 tier **+50** obs#34 |
+| 2026-06-21 | Belgium 0–0 Iran | Draw | **HIT** — pick **Draw 1-1** (Axis-B EV-max reward-mispricing draw, field 8%) → base **+138** (slate's biggest), score miss (0-0 vs our 1-1) | 0-0 tier **+50** obs#35 |
+| 2026-06-21 | Uruguay 2–2 Cape Verde | Draw | MISS — pick Uruguay 1-0 (follow, field 76%) → base 0; **upset** (Cape Verde held the fav, also drew Spain earlier) | 2-2 tier **+50** obs#36 |
+| 2026-06-21 | New Zealand 1–3 Egypt | Egypt W | **HIT** — pick Egypt 0-1 (follow, OVERRODE engine NZ) → base **+59**, score miss | 1-3 tier **+50** obs#37 |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |

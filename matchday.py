@@ -21,26 +21,21 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD7 slate 2026-06-20/21 (fieldpct=[H,D,A]=Repartition from user; rewards=Cotes from user).
- # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-20 (bet365/FanDuel/DraftKings/BetOnline).
- # Model-blind scan 2026-06-20: NL tourn injuries (Xavi Simons/De Ligt/Timber) -0.04/-0.05 halved-priced;
- # Japan Mitoma (hamstring) ATT -0.06 halved. Targeted fresh scans on contested picks after first run.
- dict(home='Netherlands', away='Sweden', rewards=[67,122,131], date='2026-06-20', fieldpct=[.56,.32,.12],
-      market=[.538,.253,.208], overlay=(-0.04,-0.05,0,0)),
- dict(home='Germany', away='Ivory Coast', rewards=[38,137,164], date='2026-06-20', fieldpct=[.82,.14,.04],
-      market=[.610,.225,.164]),
- dict(home='Ecuador', away='Curacao', rewards=[41,143,168], date='2026-06-20', fieldpct=[.81,.15,.04],
-      market=[.868,.087,.045]),
- dict(home='Tunisia', away='Japan', rewards=[118,103,91], date='2026-06-20', fieldpct=[.10,.19,.71],
-      market=[.137,.234,.629], overlay=(0,0,-0.06,0)),
- dict(home='Spain', away='Saudi Arabia', rewards=[31,139,176], date='2026-06-21', fieldpct=[.94,.04,.01],
-      market=[.872,.091,.037]),
- dict(home='Belgium', away='Iran', rewards=[39,138,171], date='2026-06-21', fieldpct=[.90,.08,.02],
-      market=[.674,.201,.126]),
- dict(home='Uruguay', away='Cape Verde', rewards=[72,109,137], date='2026-06-21', fieldpct=[.76,.18,.06],
-      market=[.626,.231,.142]),
- dict(home='New Zealand', away='Egypt', rewards=[148,116,59], date='2026-06-21', fieldpct=[.09,.21,.70],
-      market=[.184,.249,.567]),
+MATCHES = [   # MD8 slate 2026-06-22 (Group I/J FINAL group matches; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-22 (FanDuel/DraftKings/ESPN + Opta).
+ # Model-blind scan 2026-06-22 (all final-round group matches): Argentina near-FULL XI (Messi starts as captain,
+ #   plan to rest him ~60' only if game is settled) -> NO overlay; market 62% already prices it. France ROTATES but
+ #   still a strong XI (Mbappe/Dembele/Olise/Saliba/Upamecano/Maignan all start; Kone/Barcola/Digne in) -> negligible,
+ #   market 90% prices it, NO overlay. Norway-Senegal = the contested one: BOTH full strength, NO injuries, both
+ #   motivated (winner advances; Senegal must-win) -> clean read, no overlay. Jordan-Algeria: Algeria fav, no news.
+ dict(home='Argentina', away='Austria', rewards=[63,105,132], date='2026-06-22', fieldpct=[.92,.07,.01],
+      market=[.62,.23,.15]),
+ dict(home='France', away='Iraq', rewards=[22,166,189], date='2026-06-22', fieldpct=[.98,.02,.00],
+      market=[.90,.07,.03]),
+ dict(home='Norway', away='Senegal', rewards=[64,105,137], date='2026-06-22', fieldpct=[.33,.42,.25],
+      market=[.44,.27,.29]),
+ dict(home='Jordan', away='Algeria', rewards=[152,139,67], date='2026-06-22', fieldpct=[.05,.18,.77],
+      market=[.158,.215,.627]),
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

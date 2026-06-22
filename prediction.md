@@ -202,3 +202,39 @@ observations, THEN deploy the X2 on a future such spot with calibrated confidenc
 slate's blend-EV-max outcomes); the X2 is a separate lever. See X2-FLAG LEDGER in live_updates.md.
 
 *Pending: realized TIERS for these 8 + results; X2 deploy confirmation; updated leaderboard.*
+
+---
+
+# MD8 slate 2026-06-22 (engine v6 + LEAGUE_MODE, blend 0.4/0.6, COARSE) — Group I/J FINAL group matches
+
+User = **Lampadaire83, #8/15 @1323** (climbed #9→#8, **+386** — reconciles EXACTLY: NL 67 + Japan 91 + Spain 31 +
+**Belgium-Iran DRAW 138** + Egypt 59; 5 base hits, 0 exacts; the **Axis-B reward-mispricing draw (Bel-Iran 0-0) was the
+single biggest base, +138**). Objective TOP-5; **line = #5 AdyFC 1493, gap 170** — cluster #5–#8 bunched (1493/1457/1371/1323),
+**top-5 genuinely reachable now** (gap was 295, now 170). Climbers still carry HIGH exacts (#2 Hadri 8, #5 AdyFC 8 vs user 3).
+Preflight GREEN. INDEPENDENT MARKET = de-vigged FanDuel/DraftKings/ESPN 1X2 + Opta sim via WebSearch 2026-06-22.
+**Model-blind scan 2026-06-22 (final-round group matches):** Argentina near-FULL XI (Messi starts, rested ~60' only if game
+settled) → no overlay, market 62% prices it; France ROTATES but strong XI (Mbappé/Dembélé/Olise/Saliba/Upamecano/Maignan
+start) → negligible, market 90% prices it; **Norway–Senegal BOTH full strength, NO injuries, both motivated (winner advances,
+Senegal must-win)** → clean read; Jordan–Algeria no news. No overlays this slate.
+
+| # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6) |
+|---|-------|---------|-------|----------------------|
+| 1 | Argentina–Austria | **Argentina** | **1-0** | FOLLOW: blend-EV-max 41.5 (model 72 ≈ mkt 62). Edge 1.29 (line under-prices Arg) but field 92% = table stakes, ZERO separation. 1-0 modal. |
+| 2 | France–Iraq | **France** | **2-0** | FOLLOW: blend-EV-max 19.2. Crushed chalk (reward 22, field 98%) → low value, everyone has it, no separation. 2-0 modal. France rotates but wins. |
+| 3 | Norway–Senegal | **Senegal** 🔥**X2 DEPLOYED** | **0-1** | **AXIS-A EV-MAX *and* AXIS-B both point to Senegal**: blend-EV-max 41.5 (reward 137 × live ~30% >> Norway 27.8/Draw 27.6) AND least field-crowded (25% vs Draw 42%). Market-confirmed edge **1.29** (mkt 29% vs reward-impl 22.5% — independent line lifts Senegal ABOVE the draw, NOT a model artifact). Genuine contested match, both full-strength. **X2 PRIME flag → DEPLOYED** (reward 137≥100 + field-underpicked + market-confirmed). 0-1 modal. |
+| 4 | Jordan–Algeria | **Algeria** | **0-1** | FOLLOW: blend-EV-max 39.5 (model 53 ≈ mkt 63). Jordan baseEV 36.1 is the compressed-line illusion (reward 152 × low 24%/16% prob) → blend correctly demotes it. Field 77% Algeria = no separation. 0-1 modal. |
+
+**Portfolio:** 3 FOLLOWS (Argentina, France, Algeria — all crushed/crowded chalk, points not rank) + **1 genuine rank lever
+(Senegal)**. Senegal is the rare spot where EV-max and field-decorrelation ALIGN (no EV cost): it is blend-EV-max *and* the
+least-crowded outcome *and* market-confirmed-above-reward-line. Exactly the field-underpicked + market-confirmed +EV underdog
+the doctrine wants for a trailing #8 with a reachable top-5.
+**X2 — DEPLOYED on Senegal (user decision 2026-06-22). ONE-SHOT NOW SPENT.** First clean PRIME *outcome* flag of the
+tournament (high-reward 137 + field-underpicked 25% + market-confirmed edge 1.29 — the Alexandre-NL-draw-winning profile),
+deployed with top-5 in range (gap 170) where a doubled Senegal win (~+280) vaults into the top 5; free if it loses (~70%).
+Timing rationale (the decisive argument): the X2's RANK value = P(hit) × reward × field-underpick, and that profile is a
+GROUP-STAGE creature — KO compresses rewards AND converges the field, so "wait for KO" gives a *lower*-separation spot, not a
+higher one. These are the FINAL group matches → the supply of high-reward field-split underdogs is ending now. Counter logged:
+~30% hit; if Senegal loses, the one-shot is gone (but EV-free). **If Senegal wins → 2× total points on a pick 75% of the field
+missed = the single biggest rank lever available.**
+
+*Pending: realized TIERS for these 4 + results; X2 deploy confirmation; updated leaderboard.*
