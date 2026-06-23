@@ -21,21 +21,22 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD8 slate 2026-06-22 (Group I/J FINAL group matches; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
- # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-22 (FanDuel/DraftKings/ESPN + Opta).
- # Model-blind scan 2026-06-22 (all final-round group matches): Argentina near-FULL XI (Messi starts as captain,
- #   plan to rest him ~60' only if game is settled) -> NO overlay; market 62% already prices it. France ROTATES but
- #   still a strong XI (Mbappe/Dembele/Olise/Saliba/Upamecano/Maignan all start; Kone/Barcola/Digne in) -> negligible,
- #   market 90% prices it, NO overlay. Norway-Senegal = the contested one: BOTH full strength, NO injuries, both
- #   motivated (winner advances; Senegal must-win) -> clean read, no overlay. Jordan-Algeria: Algeria fav, no news.
- dict(home='Argentina', away='Austria', rewards=[63,105,132], date='2026-06-22', fieldpct=[.92,.07,.01],
-      market=[.62,.23,.15]),
- dict(home='France', away='Iraq', rewards=[22,166,189], date='2026-06-22', fieldpct=[.98,.02,.00],
-      market=[.90,.07,.03]),
- dict(home='Norway', away='Senegal', rewards=[64,105,137], date='2026-06-22', fieldpct=[.33,.42,.25],
-      market=[.44,.27,.29]),
- dict(home='Jordan', away='Algeria', rewards=[152,139,67], date='2026-06-22', fieldpct=[.05,.18,.77],
-      market=[.158,.215,.627]),
+MATCHES = [   # MD9 slate 2026-06-23 (more FINAL group matches; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-23 (FanDuel/ESPN/BetOnline).
+ # Model-blind scan 2026-06-23 (final-round group matches): England qualifying, may rotate but huge fav (mkt 81%) -> no
+ #   overlay; Croatia heavy fav vs Panama; Colombia fav; SWITZERLAND-CANADA = the contested one (both on 4 pts, straight
+ #   fight for top spot -> BOTH full strength, motivated, no rotation); Bosnia-Qatar both on 1 pt, must-win/eliminated
+ #   (both motivated). Overlays set after targeted scan.
+ dict(home='England', away='Ghana', rewards=[44,127,162], date='2026-06-23', fieldpct=[.92,.06,.02],
+      market=[.81,.13,.06]),
+ dict(home='Panama', away='Croatia', rewards=[165,123,36], date='2026-06-23', fieldpct=[.02,.09,.89],
+      market=[.12,.22,.66]),
+ dict(home='Colombia', away='DR Congo', rewards=[77,111,123], date='2026-06-23', fieldpct=[.58,.33,.09],
+      market=[.63,.24,.13]),
+ dict(home='Switzerland', away='Canada', rewards=[68,106,129], date='2026-06-23', fieldpct=[.39,.46,.15],
+      market=[.40,.31,.29], overlay=(0,0,-0.05,0)),   # Canada: Davies (hamstring) MAY rest + Kone (tibia) OUT -> mild ATT -0.05 (uncertain "may", halved-ish); market 29% may not fully price a late Davies rest
+ dict(home='Bosnia and Herzegovina', away='Qatar', rewards=[87,102,120], date='2026-06-23', fieldpct=[.59,.31,.10],
+      market=[.64,.22,.13], overlay=(0,-0.05,0,0)),   # Bosnia: Muharemovic (CB) SUSPENDED -> mild DEF -0.05; but Qatar weak attack + 2 Qatar suspensions, so minor
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

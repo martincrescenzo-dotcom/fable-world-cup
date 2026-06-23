@@ -238,3 +238,34 @@ higher one. These are the FINAL group matches → the supply of high-reward fiel
 missed = the single biggest rank lever available.**
 
 *Pending: realized TIERS for these 4 + results; X2 deploy confirmation; updated leaderboard.*
+
+---
+
+# MD9 slate 2026-06-23 (engine v6 + LEAGUE_MODE, blend 0.4/0.6, COARSE) — more FINAL group matches (Groups B/K/L)
+
+User = **Lampadaire83, #9/9-shown @1475** (DROPPED #8→#9 despite +152: Arg 63 + Fra 22 + Alg 67 = 152, 3/4 follows all chalk; **Senegal
+X2 LOST** — Norway won 3-2, the ~70% branch). The drop is the doctrine's tension made concrete: **following chalk gains points but loses
+rank** (the herd moves with you), and the one separation lever missed. Objective TOP-5; line = #5 CrazyBE **1633, gap 158**; cluster tight
+(#6 AdyFC 1602 / #7 Ethan 1519 / #8 Cyril 1500 / user 1475). **STRUCTURAL DEFICIT = exacts: user 3 vs #2 Hadri 9, #6 AdyFC 8, #4 Alexis 7.**
+Preflight GREEN (manifest intact). INDEPENDENT MARKET = de-vigged FanDuel/ESPN/BetOnline 1X2 via WebSearch 2026-06-23.
+**Model-blind scan 2026-06-23:** England qualifying, may rotate but huge fav (mkt 81%) → no overlay. Croatia heavy fav + **must-win** vs
+Panama (motivation headwind on the draw). Colombia unchanged, can seal qualification. **Canada: Koné (tibia) OUT + Davies (hamstring) MAY
+rest** → ATT −0.05 (uncertain "may", mild); but Canada won 6-0 vs Qatar & tops group. Bosnia: Muharemović (CB) SUSPENDED → DEF −0.05 (minor;
+Qatar weak + 2 Qatar suspensions). **X2 = SPENT (Senegal) — no boost available this slate.**
+
+| # | Match | OUTCOME | SCORE | Rationale (two-axis, blend 0.4/0.6) |
+|---|-------|---------|-------|----------------------|
+| 1 | England–Ghana | **England** | **2-0** | FOLLOW: blend-EV-max 37.0 (model 89 ≈ mkt 81). Edge 1.31 but field 92% = table stakes, ZERO separation. 2-0 modal. |
+| 2 | Panama–Croatia | **Draw** | **1-1** | **AXIS-B (lower-conviction): Draw blend-EV-max 27.2** (Croatia reward crushed to 36 → even at mkt 66% only ~23 EV), field-underpicked (9% vs Croatia herd 89%), market-confirmed edge 1.16. FREE decorrelation (it IS the EV-max). **Headwind:** Croatia must-win + heavy fav → real draw prob may be <22%. The weaker of the two decorrelations; downgrade to Croatia-follow if minimizing variance. 1-1 modal. |
+| 3 | Colombia–DR Congo | **Colombia** | **1-0** | FOLLOW: blend-EV-max 51.0 (slate's best; model 71 ≈ mkt 63). Edge 1.46 (strong +EV). Field 58% = moderately crowded, limited separation. 1-0 modal. |
+| 4 | Switzerland–Canada | **Canada** | **0-1** | **AXIS-B (cleaner): Canada blend-EV-max 35.0** (reward 129 × ~28%), field only 15% (field over-loves Draw 46% / Switzerland 39%), market-confirmed edge 1.19 (mkt 29% > reward-impl 24%). Same profile as Senegal but with EV margin. **Flag:** Davies-rest doubt (overlay −0.05 applied, still EV-max). 0-1 modal. |
+| 5 | Bosnia–Qatar | **Bosnia** | **1-0** | FOLLOW: blend-EV-max 51.4. **Edge 1.65** — the fixed line badly under-prices Bosnia (reward-impl 39% vs mkt 64%) → strongest +EV of the slate. Field 59% (crowded). Both must-win. 1-0 modal. |
+
+**Portfolio:** 3 strong +EV FOLLOWS (England, Colombia, Bosnia — all crushed/strong chalk the field also holds → points, not rank) + **2 FREE
+EV-MAX decorrelations (Canada cleaner, Panama-Croatia draw marginal)** = the rank levers. Both are blend-EV-max (not sacrifices) + field-underpicked
+(15%/9%) + market-confirmed → the disciplined optimizer output, not forced variance. **Honest base case:** the 3 follows land, both decorrelations
+likely miss (~25%/~22% each → ~56% BOTH miss), modest rank-static day; upside is a Canada or draw hit (85-91% of field off them) = big jump. After the
+Senegal X2 loss this is the correct profile for trailing #9 with a reachable top-5 — following is what dropped us; the Senegal loss was variance, not a
+process error. **NO X2 (spent on Senegal).**
+
+*Pending: realized TIERS for these 5 + results; updated leaderboard.*

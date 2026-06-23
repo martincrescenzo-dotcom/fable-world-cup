@@ -67,6 +67,15 @@ NEW_OBS = [
          away='Cape Verde', actual_score=(2,2), bonus_awarded=50),
     dict(match='New Zealand-Egypt', date='2026-06-21', home='New Zealand',
          away='Egypt', actual_score=(1,3), bonus_awarded=50),
+    # MD8 (2026-06-22) realized tiers
+    dict(match='Argentina-Austria', date='2026-06-22', home='Argentina',
+         away='Austria', actual_score=(2,0), bonus_awarded=30),
+    dict(match='France-Iraq', date='2026-06-22', home='France',
+         away='Iraq', actual_score=(3,0), bonus_awarded=20),
+    dict(match='Norway-Senegal', date='2026-06-22', home='Norway',
+         away='Senegal', actual_score=(3,2), bonus_awarded=50),
+    dict(match='Jordan-Algeria', date='2026-06-22', home='Jordan',
+         away='Algeria', actual_score=(1,2), bonus_awarded=30),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}

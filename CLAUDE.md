@@ -23,10 +23,12 @@ do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DR
 on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
 **OBJECTIVE UPDATED 2026-06-18 → TOP-5 of ~16 (league grew from 13 to 16 & settled; new players joined), BALANCED.**
-**STANDING 2026-06-22: USER #8/15 (Lampadaire83) @1323 (19 bons / 3 exacts). TOP-5 NOW REACHABLE: line = #5 AdyFC 1493, gap 170,
-cluster #5–#8 bunched (1493/1457/1371/1323).** Climbed #9→#8 (+386 weekend; the Axis-B Belgium-Iran reward-mispricing DRAW was the
-single biggest base, +138 — EV-max-draw call WON as a pick). **X2 DEPLOYED on Senegal (MD8, 2026-06-22) — the one-shot is now SPENT**
-(first clean PRIME outcome flag: reward 137 + field 25% + market-confirmed edge 1.29; timing logic = high-reward+field-split underdogs are a group-stage creature, KO compresses them).
+**STANDING 2026-06-23: USER #9 (Lampadaire83) @1475 (22 bons / 3 exacts). Top-5 line = #5 CrazyBE 1633, gap 158; cluster #6–#9 tight
+(1602/1519/1500/1475).** DROPPED #8→#9 despite +152 (Arg 63 + France 22 + Algeria 67; 3/4 follows all chalk) — **the Senegal X2 LOST
+(Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**
+The rank drop while +152 is the doctrine's core tension: following chalk = points-not-rank; the structural deficit is EXACTS (user 3 vs
+climbers 7-9). Path up = EV-max follows for bons + FREE EV-max decorrelations (field-underpicked + market-confirmed) for rank; do NOT dial
+down variance (following is what dropped us). [Earlier: #8 @1323 after the +386 weekend incl. the Belgium-Iran reward-mispricing DRAW +138.]
 Climbers still carry the exact-score edge (#2/#5 = 8 exacts vs user 3). [Earlier: User #14/16 @550.] Supersedes the "top-2 of 13" frame below. STRATEGY = EV-max FOLLOW + mechanical MODAL scores
 (base) + SELECTIVE variance on ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots (raise
 the bar — recent marginal/artifact ones went 0/3); NO full-variance ramp, NO rare-score gamble; X2 on a good

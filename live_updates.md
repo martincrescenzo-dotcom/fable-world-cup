@@ -1,5 +1,33 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD8 RESULTS + LEADERBOARD 2026-06-23 — read first ════
+**USER = Lampadaire83, DROPPED #8→#9 @1475** (22 bons / **3 exacts**). +152 (Arg 63 + France 22 + Algeria 67 = exact reconcile;
+3/4 follows, all chalk, 0 exacts). **THE X2 ON SENEGAL LOST** — Norway won 3-2 (Senegal scored twice; Haaland's side took it). The
+one-shot is spent with no payoff; the ~70% branch hit. **Process was sound** (clean PRIME field-underpicked + market-confirmed +EV
+spot), outcome was the unlucky side — NOT a strategy error, do not retro-regret it.
+**THE RANK DROP IS THE LESSON (again, sharper):** +152 but FELL a spot. The three follows were chalk the favourite-herd also held →
+everyone gained together; the only separation lever (X2) missed. **Following ⇒ points, not rank.** The structural deficit is now glaring:
+**exacts — user 3 vs #2 Hadri 9, #6 AdyFC 8, #4 Alexis 7, #1 Alex 5.** Climbers separate on exact scores + contrarian outcomes, which a
+pure-follow strategy generates neither of.
+**LEADERBOARD 2026-06-23 (top-9 shown):**
+ #1 Alexlastaaaaar 1998 (26/5) | #2 Hadri02 1939 (27/**9**) | #3 Nicolas232345 1853 (28/5) | #4 Alexis#KGYJ 1821 (28/**7**) |
+ **#5 CrazyBE 1633 (27/3)** | #6 AdyFC 1602 (25/**8**) | #7 Ethan_prn 1519 (26/5) | #8 Cyrilpqt 1500 (22/4) | **#9 USER (Lampadaire83) 1475 (22/3)**.
+**STRATEGIC READ:** top-5 line = #5 CrazyBE **1633, gap 158**; cluster #6–#9 tight (1602/1519/1500/1475 = 127 over 4). Reachable but user
+is now bottom-of-visible-board. The bons gap is small (user 22 ≈ #8 Cyril 22); the EXACTS gap is the separator. CrazyBE (#5) has only 3
+exacts (= user) and leads by 158 on pure bons volume (27 vs 22) → closing 5 bons OR 2-3 exacts catches top-5. Path: keep EV-max follows for
+bons + take FREE EV-max decorrelations for rank (don't dial down variance — following is what dropped us).
+
+## ════ MD9 SCAN 2026-06-23 (England-Ghana, Panama-Croatia, Colombia-DRC, Switzerland-Canada, Bosnia-Qatar — final group matches B/K/L) ════
+INDEPENDENT MARKET = de-vigged FanDuel/ESPN/BetOnline 1X2 (WebSearch 2026-06-23): Eng-Gha [.81,.13,.06]; Pan-Cro [.12,.22,.66];
+Col-DRC [.63,.24,.13]; Sui-Can [.40,.31,.29]; Bos-Qat [.64,.22,.13]. Field [H,D,A]: Eng 92/6/2; Pan 2/9/89; Col 58/33/9; Sui 39/46/15; Bos 59/31/10.
+**Model-blind:** England may rotate (qualifying) but huge fav — no overlay. Croatia heavy fav + **must-win** vs Panama → motivation headwind on
+the draw (noted, market prices it). Colombia unchanged, can seal qualification. **Canada: Koné (tibia) OUT + Davies (hamstring) MAY rest → ATT
+−0.05** (mild, "may"); Canada won 6-0 vs Qatar, tops group. **Bosnia: Muharemović (CB) SUSPENDED → DEF −0.05** (minor; Qatar weak + 2 Qatar suspensions).
+**PICKS:** England 2-0 (follow) | **Panama-Croatia DRAW 1-1 (Axis-B, lower-conviction)** | Colombia 1-0 (follow) | **Switzerland-Canada → CANADA
+0-1 (Axis-B, cleaner, market-confirmed)** | Bosnia 1-0 (follow, edge 1.65). 3 follows + 2 FREE EV-max decorrelations (both blend-EV-max + field-
+underpicked + market-confirmed — the rank levers). **NO X2 (spent on Senegal).** See prediction.md MD9. Honest: ~56% chance both decorrelations miss
+(rank-static base case); upside = a Canada/draw hit (85-91% field off them) = big jump.
+
 ## ════ MD7 RESULTS + LEADERBOARD 2026-06-22 — read first ════
 **USER = Lampadaire83, CLIMBED #9→#8 @1323** (19 bons / **3 exacts**, unchanged). **+386 in the weekend, reconciles EXACTLY:**
 NL 67 + Japan 91 + Spain 31 + **Belgium-Iran DRAW 138** + Egypt 59 = 386. **5/8 outcomes, 0 exacts.**
@@ -371,7 +399,12 @@ round matches remain (24 opening matches total, 16 played). If the next few open
 opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
-**Last scanned: 2026-06-22.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Last scanned: 2026-06-23.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Scan 2026-06-23 (MD9: England-Ghana, Panama-Croatia, Colombia-DRC, Switzerland-Canada, Bosnia-Qatar — final group matches B/K/L):**
+ England qualifying (may rotate, huge fav — no overlay). Croatia heavy fav + must-win vs Panama (motivation headwind on draw; market prices it).
+ Colombia unchanged, can seal qualification (no overlay). **Canada: Koné tibia-fracture OUT + Davies hamstring MAY rest → ATT −0.05** (mild/uncertain;
+ Canada won 6-0 vs Qatar, tops Group B). **Bosnia: Muharemović CB SUSPENDED → DEF −0.05** (minor; Qatar attack weak, 2 Qatar players also suspended).
+ INDEPENDENT MARKET = de-vigged FanDuel/ESPN/BetOnline via WebSearch.
 **Scan 2026-06-22 (MD8: Argentina-Austria, France-Iraq, Norway-Senegal, Jordan-Algeria — Group I/J final group matches):**
  Argentina near-full XI (Messi starts, plan to rest ~60' only if game settled — no overlay; mkt 62% prices it). France ROTATES
  (Olise central, Barcola/Koné/Digne in) but XI still strong (Mbappé/Dembélé/Olise/Saliba/Upamecano/Maignan) and a draw qualifies
@@ -423,6 +456,10 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-21 | Belgium 0–0 Iran | Draw | **HIT** — pick **Draw 1-1** (Axis-B EV-max reward-mispricing draw, field 8%) → base **+138** (slate's biggest), score miss (0-0 vs our 1-1) | 0-0 tier **+50** obs#35 |
 | 2026-06-21 | Uruguay 2–2 Cape Verde | Draw | MISS — pick Uruguay 1-0 (follow, field 76%) → base 0; **upset** (Cape Verde held the fav, also drew Spain earlier) | 2-2 tier **+50** obs#36 |
 | 2026-06-21 | New Zealand 1–3 Egypt | Egypt W | **HIT** — pick Egypt 0-1 (follow, OVERRODE engine NZ) → base **+59**, score miss | 1-3 tier **+50** obs#37 |
+| 2026-06-22 | Argentina 2–0 Austria | Argentina W | **HIT** — pick Argentina 1-0 (follow) → base **+63**, score miss | 2-0 tier **+30** obs#38 |
+| 2026-06-22 | France 3–0 Iraq | France W | **HIT** — pick France 2-0 (follow) → base **+22**, score miss | 3-0 tier **+20** obs#39 |
+| 2026-06-22 | Norway 3–2 Senegal | Norway W | MISS — pick **Senegal 0-1 + X2 DEPLOYED** (Axis-A EV-max + Axis-B); Norway won → base 0 AND **X2 WASTED** (one-shot spent, ~70% branch) | 3-2 tier **+50** obs#40 |
+| 2026-06-22 | Jordan 1–2 Algeria | Algeria W | **HIT** — pick Algeria 0-1 (follow) → base **+67**, score miss | 1-2 tier **+30** obs#41 |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
