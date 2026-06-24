@@ -29,8 +29,16 @@ England 0-0 upset + Panama-Croatia draw lost (the lower-conviction decorrelation
 decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the league's separating currency. [Earlier 2026-06-23: #9 @1475, 3 exacts.] DROPPED #8→#9 despite +152 (Arg 63 + France 22 + Algeria 67; 3/4 follows all chalk) — **the Senegal X2 LOST
 (Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**
 The rank drop while +152 is the doctrine's core tension: following chalk = points-not-rank; the structural deficit is EXACTS (user 3 vs
-climbers 7-9). Path up = EV-max follows for bons + FREE EV-max decorrelations (field-underpicked + market-confirmed) for rank; do NOT dial
-down variance (following is what dropped us). [Earlier: #8 @1323 after the +386 weekend incl. the Belgium-Iran reward-mispricing DRAW +138.]
+climbers 7-9). [Earlier: #8 @1323 after the +386 weekend incl. the Belgium-Iran reward-mispricing DRAW +138.]
+**★★ DECORRELATION FALSIFIED 2026-06-24 (tested on our own ledger — supersedes "decorrelate for rank") ★★** Over the 8 matches where we
+DEVIATED from the market favourite (the clean test; real rewards from git history): decorrelation earned **138 pts** (only Belgium-Iran 0-0,
++138); **follow+modal+exact would have earned 364–484** (3 modal-exacts would have landed: Mexico 1-0, Ghana 1-0, Croatia 0-1). Decorrelation
+**cost ~225–345 pts**, hit **1/8**. Mechanism: "EV-max decorrelation" picks are EV-max ONLY via crushed favourite-rewards → high-EV but LOW-HIT,
+and EXACTS (the rank currency) REQUIRE hits → low-hit picks miss base AND make 0 exacts (follow threw 3 in those 8). Rank agrees: every climb
+came from exacts-on-follows (MD6 Morocco+Brazil, MD9 Colombia +127); the Senegal decorrelation burned the X2 for nothing. **NEW DEFAULT:
+follow market favourite + modal score on EVERY match (max base-hit + max exact-generation). Decorrelate ONLY when hit-prob ≥~35% on a near-even
+match the field wrongly herds — NEVER a crushed-favourite draw.** Caveat: n=8 (Belgium shows it can pay big); but direction is structural, and
+even at mean-expected ~2.2 hits it doesn't beat follow. See [[two-axis-differentiation]], [[score-layer-is-a-sideshow]].
 Climbers still carry the exact-score edge (#2/#5 = 8 exacts vs user 3). [Earlier: User #14/16 @550.] Supersedes the "top-2 of 13" frame below. STRATEGY = EV-max FOLLOW + mechanical MODAL scores
 (base) + SELECTIVE variance on ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots (raise
 the bar — recent marginal/artifact ones went 0/3); NO full-variance ramp, NO rare-score gamble; X2 on a good
