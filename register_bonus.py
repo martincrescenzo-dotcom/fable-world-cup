@@ -76,6 +76,13 @@ NEW_OBS = [
          away='Senegal', actual_score=(3,2), bonus_awarded=50),
     dict(match='Jordan-Algeria', date='2026-06-22', home='Jordan',
          away='Algeria', actual_score=(1,2), bonus_awarded=30),
+    # MD9 (2026-06-23) realized tiers — first 3 (Switzerland-Canada, Bosnia-Qatar pending)
+    dict(match='England-Ghana', date='2026-06-23', home='England',
+         away='Ghana', actual_score=(0,0), bonus_awarded=50),
+    dict(match='Panama-Croatia', date='2026-06-23', home='Panama',
+         away='Croatia', actual_score=(0,1), bonus_awarded=50),
+    dict(match='Colombia-DR Congo', date='2026-06-23', home='Colombia',
+         away='DR Congo', actual_score=(1,0), bonus_awarded=50),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}

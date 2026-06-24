@@ -1,5 +1,23 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD9 PARTIAL RESULTS + LEADERBOARD 2026-06-24 — read first (2 MD9 matches still pending) ════
+**USER = Lampadaire83, #9 @1602 (23 bons / 4 EXACTS).** +127 from 3 reported MD9 matches — **ALL from the Colombia 1-0 EXACT**
+(base 77 + bonus 50). **The exact came on a straight EV-max FOLLOW** (the slate's best +EV chalk) → the "exacts are the separator"
+lesson delivered cleanly: one exact on a routine follow outscored the rest of the slate. Exacts gap closing (3→4).
+**MD9 (3 of 5 in):** England 0-0 ✗ (favourite held — draw upset, mkt 81%) | Panama-Croatia: Croatia 0-1 ✗ (**the lower-conviction
+Axis-B draw LOST as the must-win headwind warned — flagged ex-ante**) | Colombia 1-0 ✅ EXACT +127. **STILL PENDING (today 6/24):
+Switzerland-Canada (CANADA 0-1, the cleaner decorrelation) + Bosnia-Qatar (BOSNIA 1-0 follow).**
+**Decorrelation scorecard this slate: Croatia-draw MISS (the marginal one, as flagged); Canada still pending.** No process change —
+the draw was free (blend-EV-max) and the headwind was logged; pre-commitment holds.
+**LEADERBOARD 2026-06-24 (15):**
+ #1 Alexlastaaaaar 2161 (28/6) | #2 Hadri02 2152 (29/**11**) | #3 Nicolas232345 1996 (30/5) | #4 Alexis#KGYJ 1934 (30/7) |
+ **#5 AdyFC 1785 (27/9)** | #6 CrazyBE 1746 (29/3) | #7 Cyrilpqt 1613 (24/4) | #8 Ethan_prn 1612 (28/4) | **#9 USER (Lampadaire83) 1602 (23/4)** |
+ #10 Chocho_27 1542 | #11 Paulinho 1395 | #12 Helene 1335 | #13 AntoineBSerge 1299 (18/5) | #14 Diane123 1180 | #15 LMD92110 1165.
+**STRATEGIC READ:** #7/#8/#9 are bunched within **11 points** (1613/1612/1602) → a single hit on either pending match (Canada or
+Bosnia) passes #7. Top-5 line = #5 AdyFC **1785, gap 183** (widened from 158 — AdyFC has 9 exacts, the climber profile). The bons
+gap to top-5 is real (user 23 vs #5's 27) AND exacts (4 vs 9). Near-term realistic = pass #7/#8 today; top-5 still needs the
+decorrelations/exacts to keep landing. #2 Hadri now has **11 exacts** — exacts are unambiguously the league's separating currency.
+
 ## ════ MD8 RESULTS + LEADERBOARD 2026-06-23 — read first ════
 **USER = Lampadaire83, DROPPED #8→#9 @1475** (22 bons / **3 exacts**). +152 (Arg 63 + France 22 + Algeria 67 = exact reconcile;
 3/4 follows, all chalk, 0 exacts). **THE X2 ON SENEGAL LOST** — Norway won 3-2 (Senegal scored twice; Haaland's side took it). The
@@ -460,6 +478,9 @@ lineups, and results after the data cutoff. This file is the manual overlay laye
 | 2026-06-22 | France 3–0 Iraq | France W | **HIT** — pick France 2-0 (follow) → base **+22**, score miss | 3-0 tier **+20** obs#39 |
 | 2026-06-22 | Norway 3–2 Senegal | Norway W | MISS — pick **Senegal 0-1 + X2 DEPLOYED** (Axis-A EV-max + Axis-B); Norway won → base 0 AND **X2 WASTED** (one-shot spent, ~70% branch) | 3-2 tier **+50** obs#40 |
 | 2026-06-22 | Jordan 1–2 Algeria | Algeria W | **HIT** — pick Algeria 0-1 (follow) → base **+67**, score miss | 1-2 tier **+30** obs#41 |
+| 2026-06-23 | England 0–0 Ghana | Draw | MISS — pick England 2-0 (follow, mkt 81%) → base 0; **favourite held (draw upset)** | 0-0 tier **+50** obs#42 |
+| 2026-06-23 | Panama 0–1 Croatia | Croatia W | MISS — pick **Draw 1-1** (Axis-B, lower-conviction) → base 0; **Croatia won as the must-win headwind warned** (flagged ex-ante) | 0-1 tier **+50** obs#43 |
+| 2026-06-23 | Colombia 1–0 DR Congo | Colombia W | **HIT + EXACT** — pick Colombia 1-0 (follow, slate's best +EV) → base **+77** + **bonus +50 = +127** (4th exact) | 1-0 tier **+50** obs#44 |
 
 ## Pick performance (points game: base reward + rarity bonus, X2 held)
 | Match | Outcome pick | Score submitted | Result | Base pts | Rarity bonus |
