@@ -30,15 +30,20 @@ decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the lea
 (Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**
 The rank drop while +152 is the doctrine's core tension: following chalk = points-not-rank; the structural deficit is EXACTS (user 3 vs
 climbers 7-9). [Earlier: #8 @1323 after the +386 weekend incl. the Belgium-Iran reward-mispricing DRAW +138.]
-**★★ DECORRELATION FALSIFIED 2026-06-24 (tested on our own ledger — supersedes "decorrelate for rank") ★★** Over the 8 matches where we
-DEVIATED from the market favourite (the clean test; real rewards from git history): decorrelation earned **138 pts** (only Belgium-Iran 0-0,
-+138); **follow+modal+exact would have earned 364–484** (3 modal-exacts would have landed: Mexico 1-0, Ghana 1-0, Croatia 0-1). Decorrelation
-**cost ~225–345 pts**, hit **1/8**. Mechanism: "EV-max decorrelation" picks are EV-max ONLY via crushed favourite-rewards → high-EV but LOW-HIT,
-and EXACTS (the rank currency) REQUIRE hits → low-hit picks miss base AND make 0 exacts (follow threw 3 in those 8). Rank agrees: every climb
-came from exacts-on-follows (MD6 Morocco+Brazil, MD9 Colombia +127); the Senegal decorrelation burned the X2 for nothing. **NEW DEFAULT:
-follow market favourite + modal score on EVERY match (max base-hit + max exact-generation). Decorrelate ONLY when hit-prob ≥~35% on a near-even
-match the field wrongly herds — NEVER a crushed-favourite draw.** Caveat: n=8 (Belgium shows it can pay big); but direction is structural, and
-even at mean-expected ~2.2 hits it doesn't beat follow. See [[two-axis-differentiation]], [[score-layer-is-a-sideshow]].
+**★★ DECORRELATION DEMOTED 2026-06-24 (weighting shift, NOT an n=8 "falsification" — tempered after a sound user challenge) ★★**
+Realized record over the 8 matches where we DEVIATED from the market favourite (clean test; real rewards from git history): decorrelation
+earned **138 pts** (only Belgium-Iran 0-0), vs **364–484** for follow+modal+exact. **BUT honest decomposition:** (a) the base-points gap is
+MOSTLY REALIZED VARIANCE — favourites won 7/8, and the decorrelations were blend-EV-MAX so their EXPECTED base-EV was ≥ follow by construction;
+n=8 CANNOT establish a base-EV deficit. (b) The ROBUST, variance-independent edge is the EXACT CHANNEL: modal-on-a-favourite hits the exact
+**~17–23% of favourite-wins (7/30; all 7 were low scores, misses were blowouts — fat tail)**, while a decorrelation-draw's modal (1-1, crowded)
+hits ~0% and the draw usually loses outright. Exacts are the DEMONSTRATED rank-mover (every climb = exacts-on-follows: MD6 Morocco+Brazil, MD9
+Colombia +127). **DEFINITION (was unclear): "follow" = pick the highest-PROBABILITY outcome = the model+market favourite (hit-rate-max), NOT the
+highest-EV outcome — on crushed-reward matches the highest-EV outcome IS the draw, and picking it is the decorrelation. "+modal" = highest-p
+score within that outcome.** NEW DEFAULT: **follow+modal on every match** (max base-hit + max exact-generation). Decorrelate ONLY at genuinely
+high hit-prob (≥~35%) on a near-even match the field misreads — NEVER a crushed-favourite draw. Justification = the exact-channel edge + trailing
+position, NOT an n=8 base-EV claim; decorrelation is HIGH-VARIANCE & UNPROVEN (Belgium shows it can pay), not falsified. **OPEN (bigger) FLAG:**
+leaders convert correct-outcomes→exacts at ~33–38% (Hadri 11/29, AdyFC 9/27) vs our ~17% (4/23) — if skill not variance, the score layer (retired
+as "sideshow") may be where the league is won. Investigate before next score-rule decision. See [[two-axis-differentiation]], [[score-layer-is-a-sideshow]].
 Climbers still carry the exact-score edge (#2/#5 = 8 exacts vs user 3). [Earlier: User #14/16 @550.] Supersedes the "top-2 of 13" frame below. STRATEGY = EV-max FOLLOW + mechanical MODAL scores
 (base) + SELECTIVE variance on ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots (raise
 the bar — recent marginal/artifact ones went 0/3); NO full-variance ramp, NO rare-score gamble; X2 on a good
