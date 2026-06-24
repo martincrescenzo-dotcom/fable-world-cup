@@ -405,8 +405,12 @@ Each shipped change beat its predecessor out-of-sample (5-fold; exact-score log-
 
 ## VERIFICATION & STRESS-TESTING STANDARD — MANDATORY for every analysis, sim, or quantitative claim
 Codified after repeated self-inflicted failures this project (flawed league_sim, premature "validated",
-score-logic confound, assumed deficit, 3× unvalidated judgment overrides). Run this checklist BEFORE
-presenting any number or deploying any rule:
+score-logic confound, assumed deficit, 3× unvalidated judgment overrides, the 2026-06-24 "follow-for-bons"
+3-framing cascade). **OPERATIONALIZED as the RED-TEAM GATE — see `RED_TEAM_PROTOCOL.md`:** Tier-0 self-check
+(power/CI · maximand · sample-vs-inference · measured-vs-assumed) on every claim — auto-injected each turn by
+the `.claude/settings.json` UserPromptSubmit hook; Tier-1 full 3-agent review (statistician + strategist +
+data-integrity) via the `redteam` skill when a claim is load-bearing / drives an irreversible pick / is
+challenged / uses "validated|falsified|proven|no gap|at ceiling". The checklist below is the substance the gate enforces:
 1. **ASK FIRST, DON'T ASSUME.** If the user could plausibly hold a datum (league points/standings, results,
    pick %, odds, lineups, prize structure), **ASK for it before estimating**. Estimate only after they
    confirm they don't have it. The user has repeatedly had exact data I needlessly approximated.

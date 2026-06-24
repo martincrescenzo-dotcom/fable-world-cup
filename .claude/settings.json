@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo RED-TEAM GATE active - before any affirmation, number, or answer run the Tier-0 self-check 1 power-and-CI 2 maximand-vs-objective 3 sample-vs-inference 4 measured-vs-assumed - if any is shaky AND the claim is load-bearing, escalate to the full 3-agent review via the redteam skill - canonical protocol in RED_TEAM_PROTOCOL.md"
+          }
+        ]
+      }
+    ]
+  }
+}
