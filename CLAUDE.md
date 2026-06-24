@@ -30,20 +30,24 @@ decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the lea
 (Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**
 The rank drop while +152 is the doctrine's core tension: following chalk = points-not-rank; the structural deficit is EXACTS (user 3 vs
 climbers 7-9). [Earlier: #8 @1323 after the +386 weekend incl. the Belgium-Iran reward-mispricing DRAW +138.]
-**★★ DECORRELATION DEMOTED 2026-06-24 (weighting shift, NOT an n=8 "falsification" — tempered after a sound user challenge) ★★**
-Realized record over the 8 matches where we DEVIATED from the market favourite (clean test; real rewards from git history): decorrelation
-earned **138 pts** (only Belgium-Iran 0-0), vs **364–484** for follow+modal+exact. **BUT honest decomposition:** (a) the base-points gap is
-MOSTLY REALIZED VARIANCE — favourites won 7/8, and the decorrelations were blend-EV-MAX so their EXPECTED base-EV was ≥ follow by construction;
-n=8 CANNOT establish a base-EV deficit. (b) The ROBUST, variance-independent edge is the EXACT CHANNEL: modal-on-a-favourite hits the exact
-**~17–23% of favourite-wins (7/30; all 7 were low scores, misses were blowouts — fat tail)**, while a decorrelation-draw's modal (1-1, crowded)
-hits ~0% and the draw usually loses outright. Exacts are the DEMONSTRATED rank-mover (every climb = exacts-on-follows: MD6 Morocco+Brazil, MD9
-Colombia +127). **DEFINITION (was unclear): "follow" = pick the highest-PROBABILITY outcome = the model+market favourite (hit-rate-max), NOT the
-highest-EV outcome — on crushed-reward matches the highest-EV outcome IS the draw, and picking it is the decorrelation. "+modal" = highest-p
-score within that outcome.** NEW DEFAULT: **follow+modal on every match** (max base-hit + max exact-generation). Decorrelate ONLY at genuinely
-high hit-prob (≥~35%) on a near-even match the field misreads — NEVER a crushed-favourite draw. Justification = the exact-channel edge + trailing
-position, NOT an n=8 base-EV claim; decorrelation is HIGH-VARIANCE & UNPROVEN (Belgium shows it can pay), not falsified. **OPEN (bigger) FLAG:**
-leaders convert correct-outcomes→exacts at ~33–38% (Hadri 11/29, AdyFC 9/27) vs our ~17% (4/23) — if skill not variance, the score layer (retired
-as "sideshow") may be where the league is won. Investigate before next score-rule decision. See [[two-axis-differentiation]], [[score-layer-is-a-sideshow]].
+**★★ FOLLOW-FOR-BONS 2026-06-24 (the TESTED conclusion — supersedes "decorrelate for rank" AND my own wrong "follow has an exact-edge") ★★**
+Investigated properly (43 played matches w/ realized scores; significance + model-calibration, not assertion). THREE measured facts:
+ 1. **No score-skill gap exists.** Realized exact rate (actual==model-modal) = **14.0% (6/43) ≈ the model's mean modal-cell prob 13.4%** → the
+    model is calibrated on exacts and pure-modal is already at its ceiling. Leaders' per-bon exact rate is NOT significantly above ours
+    (Fisher us 4/23 vs Hadri 11/29 p=0.13; vs AdyFC p=0.33; vs top-3 pooled **p=0.78**). The "score layer is a sideshow / pick pure modal"
+    doctrine is now confirmed by CALIBRATION, not just the n=20 backtest. Do NOT chase fancier score rules — they cannot beat ~14% on this model.
+ 2. **Exact-conversion by outcome type (44 obs): draws 50% (1-1, 7/14), away-wins 44% (0-1, 4/9), HOME-fav wins only 19%** (scores dispersed by the
+    fat tail). So follow-favourite has NO exact-conversion edge — home wins convert WORST. (My earlier "decorrel-draws ~0% exact / follow has the
+    exact edge" was WRONG, corrected.) Exacts are ~outcome-type-neutral per-attempt; what matters is the NUMBER of correct-outcome attempts.
+ 3. **Exacts are a fixed-rate byproduct of BONS; the lever is bon-count, and decorrelation's true cost was ~7 BONS.** Leaders lead on exacts because
+    they have MORE BONS (29/27 vs our 23), not better conversion. 7 of our 8 deviations lost while the favourite won = **7 forfeited bons**; had we
+    followed all 8 we'd have ~30 bons = leader-level (+~1 expected exact). Our ENTIRE outcome-accuracy deficit to the leaders is the decorrelation losses.
+**DEFAULT = FOLLOW the highest-PROBABILITY outcome (model+market favourite, hit-rate-max — NOT highest-EV; on crushed-reward matches highest-EV is the
+draw = the decorrelation) + MODAL score, every match.** Rationale = maximise BONS → maximise exact lottery tickets at the fixed ~14% conversion.
+Decorrelation is HIGH-VARIANCE and its rare big hit (Belgium +138) did NOT recoup the forfeited bons at n=8 — deploy only on a genuine near-even match
+the field misreads, decided case-by-case (**NO fabricated hit-prob threshold — the earlier "≥35%" was made up and is DELETED**). **ONLY remaining open
+question:** is the leaders' outcome accuracy (≈60–66% vs our 52%) fully explained by our decorrelation losses (looks like yes: 23+7≈30) or do they also
+call contested matches better? = an OUTCOME-model question, not a score question. See [[two-axis-differentiation]], [[score-layer-is-a-sideshow]].
 Climbers still carry the exact-score edge (#2/#5 = 8 exacts vs user 3). [Earlier: User #14/16 @550.] Supersedes the "top-2 of 13" frame below. STRATEGY = EV-max FOLLOW + mechanical MODAL scores
 (base) + SELECTIVE variance on ONLY the highest-conviction field-underpicked + market-confirmed Axis-B spots (raise
 the bar — recent marginal/artifact ones went 0/3); NO full-variance ramp, NO rare-score gamble; X2 on a good
