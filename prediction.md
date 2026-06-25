@@ -269,3 +269,33 @@ Senegal X2 loss this is the correct profile for trailing #9 with a reachable top
 process error. **NO X2 (spent on Senegal).**
 
 *Pending: realized TIERS for these 5 + results; updated leaderboard.*
+
+---
+
+# MD10 full slate — submitted picks (computed 2026-06-25, engine v6 + independent market veto + Tier-1 red-team)
+
+**Standing:** USER = Lampadaire83 **#8 of 16 @1857** (27 bons / 4 exacts). Bunched: #7 Cyril 1868 (+11), #6 CrazyBE
+1910 (+53) above; #9 Ethan 1776 (−81), #10 Chocho 1710 (−147) below. Top-5 line = #5 AdyFC 2090, gap **233**.
+**X2 SPENT.** Final group matches (E/D/F/I). Independent market = de-vigged Kalshi/ESPN/FanDuel/DraftKings/Caesars
+(WebSearch 2026-06-25). Preflight GREEN.
+
+| # | Match | OUTCOME | SCORE | blendEV | Rationale (1-line) |
+|---|-------|---------|-------|---------|--------------------|
+| 1 | Ecuador–Germany | **Germany** | **0-1** | 21.2 | FOLLOW. ⚠ engine picked Ecuador (blendEV 37.9, PRIME flag) — 3-agent red-team FALSIFIED it: EV+ but RANK-negative for a player atop a bunch; v6 Ecuador artifact; 2/13 losing profile. See REVIEW_2026-06-25 |
+| 2 | Curaçao–Ivory Coast | **Ivory Coast** | **0-1** | 41.3 | follow; CIV must-win for 2nd, mkt 84% |
+| 3 | Tunisia–Netherlands | **Netherlands** | **0-1** | 46.4 | follow; NL 1st, strong XI named, mkt 90% |
+| 4 | Japan–Sweden | **Japan** | **2-0** | 56.4 | follow + best EV on board; field underweights Japan (45%) vs the 42% draw-herd; edge 1.43 |
+| 5 | Turkey–USA | **USA** | **0-1** | (mkt 43.7) | ⚠ engine picked Turkey = documented USA-underrating artifact (v6 58%); OVERRIDE → USA (mkt-EV-max, Turkey edge 0.97<1). Dead rubber, USA rotates but still mkt fav |
+| 6 | Paraguay–Australia | **Draw** | **0-0** | 39.7 | blend-EV-max DRAW (Australia advances on a draw & plays for it; Paraguay missing Almirón). Field 43% also here → EV pick, not a separator |
+| 7 | Norway–France | **France** | **0-1** | 35.4 | follow; both qualified, top-spot decider, France strong XI (Deschamps absent, off-field) |
+| 8 | Senegal–Iraq | **Senegal** | **1-0** | 39.7 | follow; both 0pts must-win, Senegal heavy fav (mkt 79%) |
+
+**STRATEGY: full FOLLOW slate (no clean separator exists — almost all chalk).** The two deviations from raw engine
+output are both ARTIFACT CORRECTIONS toward the market (Ecuador→Germany de-escalates a falsified decorrelation;
+Turkey→USA is the standard USA-underrating veto), NOT new contrarian bets. **The rank lever this slate is EXACT-SCORE
+accuracy on the confident follows** (Senegal 1-0, NL 0-1, CIV 0-1, Japan 2-0 are the best exact chances) — the
+documented real separator (climbers carry 7-11 exacts vs user 4; the user's best move to date was a Colombia 1-0
+EXACT +127 on a straight follow). **NO X2 (spent).** Honest: a near-pure-chalk day = points-not-rank; rank moves only
+if an exact lands or the favourite-herd takes an upset we dodged.
+
+*Pending: realized TIERS for these 8 + results; updated leaderboard.*

@@ -1,5 +1,39 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD10 SCAN + LEADERBOARD 2026-06-25 — read first ════
+**USER = Lampadaire83, CLIMBED #9→#8 @1857** (27 bons / **4 exacts**). +255 since 2026-06-24. Canada decorrelation LOST
+(Switzerland won 2-1, the field-favoured side — Axis-B ledger worsens again); Bosnia 1-0 follow hit base. The climb came
+from base accumulation on follows, not separation.
+**LEADERBOARD 2026-06-25 (15):** #1 Alexlastaaaaar 2375 (31/7) | #2 Hadri02 2359 (32/**11**) | #3 Alexis#KGYJ 2189 (34/7) |
+#4 Nicolas232345 2164 (33/5) | **#5 AdyFC 2090 (31/10)** | #6 CrazyBE 1910 (32/3) | #7 Cyrilpqt 1868 (28/4) |
+**#8 USER (Lampadaire83) 1857 (27/4)** | #9 Ethan_prn 1776 (31/4) | #10 Chocho_27 1710 (29/2) | #11 Helene 1474 | #12 Paulinho 1472 |
+#13 LMD92110 1420 | #14 AntoineBSerge 1415 (20/5) | #15 Diane123 1267.
+**STRATEGIC READ:** user is **atop a tight bunch with a cushion below** — #7 +11, #6 +53 ABOVE; #9 −81, #10 −147 BELOW.
+Top-5 line = #5 AdyFC **2090, gap 233**. **This standing INVERTS the variance logic:** the user is defending a bunched
+position from below, NOT chasing a bloc from below → high-variance decorrelation is now RANK-DESTRUCTIVE (a miss cedes
+the head-to-head to #6/#7 who follow chalk AND lets #9 close). Exacts remain the separator (user 4 vs #2 Hadri 11, #5
+AdyFC 10). Path to top-5 = bank chalk + hit exacts; do NOT force outcome variance.
+**★ TIER-1 RED-TEAM (2026-06-25): "take Ecuador over Germany" FALSIFIED → follow Germany.** I pattern-matched the
+"high-reward(145)+field-thin(3%)+edge1.23 = take it" decorrelation onto Ecuador — the project's most-documented
+artifact team. 3 lenses converged: numbers correct (Ecuador genuinely blend-EV-max 37.9) but **EV-positive &
+RANK-NEGATIVE** (raises E[rank] ~0.9 even in its own 22% best-case; P-worsen 62% vs P-improve 22%), EV-max collapses
+on a −3.3pt swing (binding rival = the draw), and it's the same 2/13-losing profile, not a higher bar. 4th time this
+"high-reward field-thin underdog" lever was reached for (Panama ✗, Senegal-X2 ✗, ...). See REVIEW_2026-06-25_ecuador-decorrelation.md.
+**INDEPENDENT MARKET (de-vigged Kalshi/ESPN/FanDuel/DraftKings/Caesars, WebSearch 2026-06-25):** Ecu-Ger [.22,.21,.59];
+Cur-CIV [.06,.11,.84]; Tun-NL [.04,.09,.90]; Jpn-Swe [.52,.27,.21]; Tur-USA [.30,.23,.47]; Par-Aus [.33,.43,.24];
+Nor-Fra [.22,.28,.50]; Sen-Irq [.79,.14,.08]. Field [H,D,A] per Repartition.
+**Model-blind (final group matches → qualification/dead-rubber dominates):** Germany QUALIFIED top E (6pts, may rotate;
+mkt 59% prices it; v6 37% = ECUADOR-OVERRATING ARTIFACT → follow Germany). Ivory Coast must-win for 2nd (full strength).
+Netherlands 1st, strong XI (Verbruggen/van Dijk/de Jong/Gravenberch). Japan needs only a draw / Sweden must win (Japan
+blend-EV-max). **TURKEY-USA = DEAD RUBBER** (USA won group 2-0; Turkey eliminated → USA rotates heavily, mkt still USA
+~47%; v6 Turkey 58% = USA-UNDERRATING ARTIFACT → override to USA). Paraguay-Australia: Australia advances on a DRAW &
+plays for it, Paraguay missing **Almirón (suspended)** → ATT −0.05; DRAW is mkt-favourite & blend-EV-max. Norway-France
+both qualified, top-spot decider, France strong XI (Mbappé/Dembélé; Deschamps absent — mother's funeral, off-field).
+Senegal-Iraq both 0pts must-win, Senegal heavy fav.
+**PICKS:** Germany 0-1 | Ivory Coast 0-1 | Netherlands 0-1 | Japan 2-0 | USA 0-1 | DRAW 0-0 (Par-Aus) | France 0-1 |
+Senegal 1-0. **Full FOLLOW slate** (2 deviations are artifact corrections toward market, not contrarian bets). Rank
+lever = EXACTS on the confident follows. **NO X2 (spent).** See prediction.md MD10.
+
 ## ════ MD9 PARTIAL RESULTS + LEADERBOARD 2026-06-24 — read first (2 MD9 matches still pending) ════
 **USER = Lampadaire83, #9 @1602 (23 bons / 4 EXACTS).** +127 from 3 reported MD9 matches — **ALL from the Colombia 1-0 EXACT**
 (base 77 + bonus 50). **The exact came on a straight EV-max FOLLOW** (the slate's best +EV chalk) → the "exacts are the separator"

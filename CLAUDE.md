@@ -23,8 +23,13 @@ do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DR
 on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
 **OBJECTIVE UPDATED 2026-06-18 → TOP-5 of ~16 (league grew from 13 to 16 & settled; new players joined), BALANCED.**
-**STANDING 2026-06-24: USER #9 (Lampadaire83) @1602 (23 bons / 4 EXACTS). #7/#8/#9 bunched within 11 pts (1613/1612/1602); top-5 line =
-#5 AdyFC 1785, gap 183.** MD9 partial: +127 ALL from a Colombia 1-0 EXACT on a straight FOLLOW (exacts-are-the-separator, delivered);
+**STANDING 2026-06-25: USER #8 (Lampadaire83) @1857 (27 bons / 4 EXACTS), climbed #9→#8 (+255 on follows; Canada decorrelation LOST,
+Switzerland 2-1). #8 ATOP A BUNCH WITH A CUSHION BELOW — #7 +11, #6 +53 ABOVE; #9 −81, #10 −147 BELOW; top-5 line #5 AdyFC 2090, gap 233.
+★ THIS INVERTS THE VARIANCE LOGIC: defending a bunched position from below ≠ chasing a bloc from below → high-variance decorrelation is now
+RANK-DESTRUCTIVE (a miss cedes the head-to-head to chalk-following #6/#7 AND lets #9 close). Rank lever = bank chalk + hit EXACTS (user 4 vs
+#2 Hadri 11). MD10 = full FOLLOW slate; the "take Ecuador (high-reward 145 + field-thin 3% + edge 1.23)" decorrelation was FALSIFIED by a
+3-agent red-team (EV-positive but RANK-negative; same 2/13-losing profile; the project's worst artifact team) → followed Germany instead.
+See REVIEW_2026-06-25_ecuador-decorrelation.md. [Earlier 2026-06-24: #9 @1602; #7/#8/#9 bunched within 11; top-5 line #5 AdyFC 1785, gap 183.]** MD9 partial: +127 ALL from a Colombia 1-0 EXACT on a straight FOLLOW (exacts-are-the-separator, delivered);
 England 0-0 upset + Panama-Croatia draw lost (the lower-conviction decorrelation, flagged ex-ante). 2 MD9 picks PENDING (Canada 0-1
 decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the league's separating currency. [Earlier 2026-06-23: #9 @1475, 3 exacts.] DROPPED #8→#9 despite +152 (Arg 63 + France 22 + Algeria 67; 3/4 follows all chalk) — **the Senegal X2 LOST
 (Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**

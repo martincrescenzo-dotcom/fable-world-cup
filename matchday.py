@@ -21,22 +21,38 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD9 slate 2026-06-23 (more FINAL group matches; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
- # market=[H,D,A]=INDEPENDENT de-vigged 1X2 from sharp books via WebSearch 2026-06-23 (FanDuel/ESPN/BetOnline).
- # Model-blind scan 2026-06-23 (final-round group matches): England qualifying, may rotate but huge fav (mkt 81%) -> no
- #   overlay; Croatia heavy fav vs Panama; Colombia fav; SWITZERLAND-CANADA = the contested one (both on 4 pts, straight
- #   fight for top spot -> BOTH full strength, motivated, no rotation); Bosnia-Qatar both on 1 pt, must-win/eliminated
- #   (both motivated). Overlays set after targeted scan.
- dict(home='England', away='Ghana', rewards=[44,127,162], date='2026-06-23', fieldpct=[.92,.06,.02],
-      market=[.81,.13,.06]),
- dict(home='Panama', away='Croatia', rewards=[165,123,36], date='2026-06-23', fieldpct=[.02,.09,.89],
-      market=[.12,.22,.66]),
- dict(home='Colombia', away='DR Congo', rewards=[77,111,123], date='2026-06-23', fieldpct=[.58,.33,.09],
-      market=[.63,.24,.13]),
- dict(home='Switzerland', away='Canada', rewards=[68,106,129], date='2026-06-23', fieldpct=[.39,.46,.15],
-      market=[.40,.31,.29], overlay=(0,0,-0.05,0)),   # Canada: Davies (hamstring) MAY rest + Kone (tibia) OUT -> mild ATT -0.05 (uncertain "may", halved-ish); market 29% may not fully price a late Davies rest
- dict(home='Bosnia and Herzegovina', away='Qatar', rewards=[87,102,120], date='2026-06-23', fieldpct=[.59,.31,.10],
-      market=[.64,.22,.13], overlay=(0,-0.05,0,0)),   # Bosnia: Muharemovic (CB) SUSPENDED -> mild DEF -0.05; but Qatar weak attack + 2 Qatar suspensions, so minor
+# ★ TWO JUDGMENT OVERRIDES of raw engine output (MD10, both documented artifacts; see REVIEW_2026-06-25):
+#   (1) Ecuador-Germany: engine picks ECUADOR (blendEV 37.9, PRIME X2 flag) — OVERRIDDEN to GERMANY (follow).
+#       3-agent red-team FALSIFIED the Ecuador decorrelation: EV-positive but RANK-NEGATIVE (user is atop a bunch
+#       w/ a cushion below, not chasing from below → variance is rank-destructive); same 2/13-losing profile +
+#       the project's worst artifact team; EV-max collapses on a -3.3pt swing (binding rival = the draw).
+#   (5) Turkey-USA: engine picks TURKEY (blendEV 45.0) = the documented USA-UNDERRATING artifact — OVERRIDDEN to
+#       USA (market-EV-max 43.7; Turkey edge 0.97<1 fails the gate). Market-confirmed veto.
+MATCHES = [   # MD10 slate 2026-06-25/26 (FINAL group matches E/D/F/I; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 / Kalshi via WebSearch 2026-06-25 (ESPN/FanDuel/DraftKings/Caesars/Kalshi).
+ # Model-blind scan 2026-06-25: Germany QUALIFIED top (may rotate; mkt 59% prices it; v6 37% = ECUADOR-OVERRATING ARTIFACT
+ #   -> follow Germany via market veto); Ivory Coast must-win for 2nd (full strength); Netherlands 1st, strong XI named;
+ #   Japan needs only a draw / Sweden must win (Japan blend-EV-max); TURKEY-USA = DEAD RUBBER (USA won group, Turkey
+ #   eliminated -> USA rotates heavily; mkt still USA ~47%; v6 Turkey 58% = USA-UNDERRATING ARTIFACT -> follow USA);
+ #   Paraguay-Australia = Australia advances on a DRAW & plays for it, Paraguay missing Almiron (susp) -> DRAW mkt-fav;
+ #   Norway-France both qualified, top-spot decider, France strong XI (Deschamps absent, off-field); Senegal-Iraq both 0pts
+ #   must-win, Senegal heavy fav.
+ dict(home='Ecuador', away='Germany', rewards=[145,129,42], date='2026-06-25', fieldpct=[.03,.09,.88],
+      market=[.22,.21,.59]),   # Germany qualified, MAY rotate but mkt 59% prices it; v6 37% = artifact -> follow Germany
+ dict(home='Curacao', away='Ivory Coast', rewards=[163,118,53], date='2026-06-25', fieldpct=[.02,.09,.89],
+      market=[.06,.11,.84]),
+ dict(home='Tunisia', away='Netherlands', rewards=[131,123,56], date='2026-06-25', fieldpct=[.03,.07,.91],
+      market=[.04,.09,.90]),
+ dict(home='Japan', away='Sweden', rewards=[96,108,111], date='2026-06-25', fieldpct=[.45,.42,.13],
+      market=[.52,.27,.21]),   # Japan blend-EV-max; field underweights Japan (45%) vs the 42% draw-herd
+ dict(home='Turkey', away='United States', rewards=[109,102,93], date='2026-06-25', fieldpct=[.13,.24,.63],
+      market=[.30,.23,.47]),   # DEAD RUBBER, USA rotates; v6 Turkey 58% = USA-underrating artifact -> follow USA (mkt fav)
+ dict(home='Paraguay', away='Australia', rewards=[74,104,131], date='2026-06-25', fieldpct=[.34,.43,.22],
+      market=[.33,.43,.24], overlay=(-0.05,0,0,0)),   # Paraguay missing Almiron (susp) ATT -0.05 (halved, mkt prices); Australia plays for the draw
+ dict(home='Norway', away='France', rewards=[141,108,68], date='2026-06-26', fieldpct=[.03,.15,.82],
+      market=[.22,.28,.50]),
+ dict(home='Senegal', away='Iraq', rewards=[54,115,149], date='2026-06-26', fieldpct=[.91,.07,.02],
+      market=[.79,.14,.08]),
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile
