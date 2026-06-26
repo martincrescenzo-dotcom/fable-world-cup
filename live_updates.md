@@ -1,5 +1,43 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD10 RESULTS (6 of 8) + LEADERBOARD 2026-06-26 — read first ════
+**USER = Lampadaire83, HELD #8 @2120 (30 good / 5 EXACTS).** +263, +3 good, +1 exact since #8 @1857.
+**MD10 detail (6 reported; Norway-France & Senegal-Iraq STILL PENDING):**
+ - Ecuador 2–1 Germany → **MISS** (pick Germany 0-1). Tier Ecuador 2-1 = +20. **★ The decorrelation the red-team KILLED WON.**
+ - Curaçao 0–2 Ivory Coast → **HIT base** (pick CIV 0-1, score miss). Tier 0-2 = +20.
+ - Tunisia 1–3 Netherlands → **HIT base** (pick NL 0-1, score miss). Tier 1-3 = +50.
+ - Japan 1–1 Sweden → **MISS** (pick Japan 2-0; draw upset). Tier 1-1 = +20.
+ - Türkiye 3–2 USA → **MISS** (pick USA 0-1). **★ The Turkey→USA override LOST.** Tier 3-2 = +70.
+ - Paraguay 0–0 Australia → **HIT base + EXACT +50** (pick Draw 0-0 ✓✓). Tier 0-0 = +50. **The win of the day.**
+ Reconciles: 3 base hits (CIV, NL, Para-draw) + the 0-0 EXACT bonus +50 = +263; 0 of the 3 upsets (Ecuador, Turkey, Japan-draw) caught.
+**THREE HONEST READS (do NOT over-conclude on one upset-cluster slate — Verify-Std #7):**
+ 1. **The killed Ecuador decorrelation WON, but it was the ~22% TAIL branch** (modal = Germany). Symmetric to the Senegal-X2 loss:
+    that was process-sound/outcome-unlucky; this is process-questioned/outcome-lucky-for-the-road-not-taken. One tail realization does
+    NOT refute the EV-positive/RANK-negative expectation argument. **BUT it exposes a real flaw in the 2026-06-25 inversion premise:**
+    that premise assumed a decorrelation-MISS "cedes the head-to-head to chalk-following #6/#7." On an UPSET-cluster slate the
+    chalk-followers MISS TOO (they also had Germany/USA) → the actual rank threat was a **VARIANCE player catching the upsets**, not
+    the chalk bloc pulling away. **Proof: Chocho_27 jumped #10→#7 (+450)** by catching Turkey/Ecuador-type upsets while the user banked
+    chalk and stayed static. The inversion logic's *mechanism* was wrong; the conclusion (defend-from-below ⇒ low variance) needs review.
+ 2. **The Turkey→USA override LOST** (engine had Turkey 58%, we vetoed to USA on market 47%; Turkey won 3-2). First USA-underrating
+    override to resolve AGAINST the market (ledger now **3/1**). **Heavy caveat: DEAD RUBBER, USA rotated a B-team** → the engine's
+    Turkey lean was plausibly RIGHT for non-artifact reasons, and the market itself was only a weak 47% USA plurality. NOT a clean
+    artifact test; do not update the USA-veto on a rotation dead-rubber.
+ 3. **The +50 EXACT was a FOLLOW** (Paraguay-Australia blend-EV-max draw, field 43% also on it). 5th exact, and AGAIN delivered on a
+    confident follow (cf. Colombia 1-0 +127). Score-layer separation is real even when the outcome isn't a separator — most of the 43%
+    draw-pickers didn't nail 0-0. **Exacts-on-follows remains the user's only proven, repeatable rank lever.**
+**LEADERBOARD 2026-06-26 (10 shown):** #1 Alexlastaaaaar 2697 (35/7) | #2 Nicolas232345 2427 (36/6) | #3 Alexis#KGYJ 2422 (37/8) |
+#4 Hadri02 2412 (33/**11**) | **#5 AdyFC 2347 (34/12)** | #6 CrazyBE 2271 (36/5) | #7 Chocho_27 2160 (34/3) |
+**#8 USER (Lampadaire83) 2120 (30/5)** | #9 Cyrilpqt 2081 (31/4) | #10 Ethan_prn 1849 (32/5).
+**STRATEGIC READ:** user HELD #8. Bunch above loosened (#7 Chocho +40, #6 CrazyBE +151); cushion below widened (#9 Cyril −39, #10
+Ethan −271). Top-5 line = #5 AdyFC **2347, gap 227** (≈unchanged from 233; AdyFC now 12 exacts). The recurring structural fact, sharper:
+**+263 of pure-follow accumulation = STATIC rank; the climber (Chocho) used upset-variance to pass.** Exacts gap (user 5 vs AdyFC 12,
+Hadri 11) is the separator and is closing slowly via follow-exacts. **OPEN DOCTRINE QUESTION for the KO slate** (next): the 2026-06-25
+"decorrelation is rank-destructive for a bunched defender" call took an evidential hit (its mechanism — ceding to chalk-followers —
+didn't materialize; variance players are the threat). DO NOT flip on one slate; if the KO slate offers a clean field-underpicked +
+market-confirmed +EV spot, run the redteam skill on the take-it-vs-follow decision rather than defaulting to either. 2 picks PENDING
+(France 0-1, Senegal 1-0). **NO X2 (spent on Senegal). Calibration: 6 tiers registered → 50 obs; auto-refit nudged sal_strength 0.5→1.0
+(loss 0.209→0.170), INERT under coarse BONUS_MODE; violations still both-directional = the documented crowd-form misfit, no signal.**
+
 ## ════ MD10 SCAN + LEADERBOARD 2026-06-25 — read first ════
 **USER = Lampadaire83, CLIMBED #9→#8 @1857** (27 bons / **4 exacts**). +255 since 2026-06-24. Canada decorrelation LOST
 (Switzerland won 2-1, the field-favoured side — Axis-B ledger worsens again); Bosnia 1-0 follow hit base. The climb came

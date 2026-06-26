@@ -23,13 +23,17 @@ do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DR
 on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
 **OBJECTIVE UPDATED 2026-06-18 → TOP-5 of ~16 (league grew from 13 to 16 & settled; new players joined), BALANCED.**
-**STANDING 2026-06-25: USER #8 (Lampadaire83) @1857 (27 bons / 4 EXACTS), climbed #9→#8 (+255 on follows; Canada decorrelation LOST,
-Switzerland 2-1). #8 ATOP A BUNCH WITH A CUSHION BELOW — #7 +11, #6 +53 ABOVE; #9 −81, #10 −147 BELOW; top-5 line #5 AdyFC 2090, gap 233.
-★ THIS INVERTS THE VARIANCE LOGIC: defending a bunched position from below ≠ chasing a bloc from below → high-variance decorrelation is now
-RANK-DESTRUCTIVE (a miss cedes the head-to-head to chalk-following #6/#7 AND lets #9 close). Rank lever = bank chalk + hit EXACTS (user 4 vs
-#2 Hadri 11). MD10 = full FOLLOW slate; the "take Ecuador (high-reward 145 + field-thin 3% + edge 1.23)" decorrelation was FALSIFIED by a
-3-agent red-team (EV-positive but RANK-negative; same 2/13-losing profile; the project's worst artifact team) → followed Germany instead.
-See REVIEW_2026-06-25_ecuador-decorrelation.md. [Earlier 2026-06-24: #9 @1602; #7/#8/#9 bunched within 11; top-5 line #5 AdyFC 1785, gap 183.]** MD9 partial: +127 ALL from a Colombia 1-0 EXACT on a straight FOLLOW (exacts-are-the-separator, delivered);
+**STANDING 2026-06-26: USER #8 (Lampadaire83) @2120 (30 good / 5 EXACTS), HELD #8 (+263 on a near-pure-follow slate: 3 base hits CIV/NL/Para-draw
++ a Paraguay-Australia 0-0 EXACT +50). #7 Chocho +40, #6 CrazyBE +151 ABOVE; #9 Cyril −39, #10 Ethan −271 BELOW; top-5 line #5 AdyFC 2347 (12 exacts), gap 227.
+★ THE 2026-06-25 INVERSION CALL TOOK AN EVIDENTIAL HIT (do NOT flip on one upset-cluster slate): its mechanism — "a decorrelation-miss cedes the
+head-to-head to chalk-following #6/#7" — did NOT materialize. MD10 ran an upset cluster (Ecuador 2-1, Turkey 3-2, Japan-Sweden draw); the chalk-followers
+MISSED THOSE TOO, so the rank threat was a VARIANCE player catching them (Chocho jumped #10→#7, +450), not the chalk bloc pulling away. The KILLED Ecuador
+decorrelation WON — but it was the ~22% tail branch (modal=Germany), so the EV+/RANK− expectation argument isn't refuted by one tail; still, the inversion's
+defend-from-below⇒low-variance conclusion needs review next slate. The Turkey→USA override LOST (engine's Turkey 58% was right) but in a DEAD-RUBBER/B-team
+context = NOT a clean artifact test (USA-veto ledger 3/1; do not update on it). Rank lever remains exacts-on-FOLLOWS (user 5 vs AdyFC 12 / Hadri 11; the +50
+came on a follow, like Colombia 1-0 +127). OPEN QUESTION for the KO slate: if a clean field-underpicked + market-confirmed +EV spot appears, run the redteam
+skill on take-vs-follow rather than defaulting either way. 2 picks PENDING (France 0-1, Senegal 1-0). See live_updates.md MD10 RESULTS 2026-06-26.
+[2026-06-25: #8 @1857; inversion call + Ecuador-decorrelation FALSIFIED, REVIEW_2026-06-25. Earlier 2026-06-24: #9 @1602; top-5 line #5 AdyFC 1785, gap 183.]** MD9 partial: +127 ALL from a Colombia 1-0 EXACT on a straight FOLLOW (exacts-are-the-separator, delivered);
 England 0-0 upset + Panama-Croatia draw lost (the lower-conviction decorrelation, flagged ex-ante). 2 MD9 picks PENDING (Canada 0-1
 decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the league's separating currency. [Earlier 2026-06-23: #9 @1475, 3 exacts.] DROPPED #8→#9 despite +152 (Arg 63 + France 22 + Algeria 67; 3/4 follows all chalk) — **the Senegal X2 LOST
 (Norway won 3-2, the ~70% branch; process sound, outcome unlucky — NOT a strategy error). X2 ONE-SHOT NOW SPENT, no boost remaining.**
