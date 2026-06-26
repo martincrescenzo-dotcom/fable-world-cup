@@ -38,7 +38,15 @@ Iran must win (travel/geopolitical disruption, unquantified, mkt prices); NZ mus
  the USA-artifact veto stepped on a stakes signal that AGREED with the engine's Türkiye lean (Türkiye won 3-2). **NEW: VETO-COLLISION RULE — an artifact-veto SUSPENDS
  when a confirmed unpriced stakes signal points the SAME way as the engine → coin-flip → rank levers decide.** Corrected 5-gate protocol now in CLAUDE.md model-blind §.
  **MD11 picks UNCHANGED; Egypt-Iran DRAW is REINFORCED** (textbook field-fame-bias decorrelation: field 71% on famous Egypt, blind to the cagey-draw the sharp market prices at 31%).
-*Pending: realized TIERS for these 4 + results; updated leaderboard.*
+**★ CAPE VERDE-SAUDI = the CONTRAST case confirming "fame, not stakes":** same play-for-a-draw structure as Egypt-Iran (Saudi must-win, Cape Verde content with a
+draw), but the field PRICED it — field draw **50%** vs sharp market 31% (Cape Verde is NOT a famous name → field read the situation, not a badge). So the draw is
+field-OVER-picked = NOT a separator (the opposite of fame-blind Egypt). Saudi field-underpicked (14%) but edge 0.90<1 (reward over-prices it) → reject. Pick stays
+Draw 0-0 = EV-max POINTS pick, not a rank lever. This is the "fame not stakes" finding in action: identical stakes, opposite field behaviour, driven by fame.
+**★ VALIDATION STATUS (honest, not "red-team validated all"):** data-integrity REPRODUCED all 4 picks' numbers (model/blendEV/edge/score cells = PASS). The two
+LOAD-BEARING calls — Egypt-Iran Draw + the inversion/stakes doctrine — got the full Tier-1 3-agent review (confirmed, reasoning corrected). Spain/Belgium/CV-Saudi
+are **Tier-0 CLEAN** (engine's straight blend-EV-max, NO judgment override) → ordinary model/market risk, not a contested decision; deliberately NOT Tier-1'd.
+EDGES: Spain 1.13 (follow) | CV-Saudi draw 1.10 (crowded) | Belgium 1.13 (follow) | Egypt-Iran draw 1.01 (rank lever; Iran VETOED edge 0.92).
+*Pending: realized TIERS for these 4 + results; MD10 France 0-1 & Senegal 1-0 still open; updated leaderboard.*
 
 ## ════ MD10 RESULTS (6 of 8) + LEADERBOARD 2026-06-26 — read first ════
 **USER = Lampadaire83, HELD #8 @2120 (30 good / 5 EXACTS).** +263, +3 good, +1 exact since #8 @1857.
