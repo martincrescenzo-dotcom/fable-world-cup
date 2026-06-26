@@ -394,6 +394,19 @@ Each shipped change beat its predecessor out-of-sample (5-fold; exact-score log-
   group odds, Winamax grid: model 55% vs 40% away-win mass at CIV-Ecuador). Cell-level "hot" flags on 0-1
   were de-vig FLB artifact (within-region ratio 1.16). Treat CIV-Ecuador & similar with extra caution +
   thorough model-blind scan; do NOT silently adjust ratings.
+- **REJECTED 2026-06-26 — mid-tournament WC-data refit of attdef.json (Tier-1 red-team, REVIEW_2026-06-26_freeze-vs-wc-refit.md).**
+  v6 stays **FROZEN through group stage AND KO**. (a) DATA: StatsBomb free open-data has **no 2026 season** (newest WC=2022)
+  → faithful goals+xG refit is BLOCKED (xG leg load-bearing); goals-only is obtainable via a fresh martj42 pull but provably
+  inert. (b) ALGEBRA: reparametrise the ridge — strength S=ATT+DEF has prior precision 2ρ_str+ρ_ad=68 (w(n=3)=**0.10**), split
+  Δ=ATT−DEF has precision ρ_ad=8 (w(n=3)=**0.48**). Outcome prob depends ONLY on S (lam_pair) → a 3-game refit moves outcomes
+  ~10% of a noise signal, ×0.4 blend = **~4% reaches the pick** (near-inert); it moves the score-grid a lot but that's the
+  validated mechanical sideshow where n=3 overfits. **Both layers say don't refit.** (c) A round-3 backtest (n≈48) is
+  **underpowered ~6%** (sd_diff≈0.53 nats/match, MDE@80%=0.22 vs realistic gain 0.02–0.03) → can't validate mid-tournament,
+  don't propose it. (d) STRATEGIC: refit only bites where model DIVERGES from market — exactly where the stale model is most
+  wrong and the veto already overrides it; refit is DEAD-LAST among rank levers (exacts > decorrelation > KO-crowding >
+  contested-accuracy > refit). One true signal: low-liquidity MINNOW matches (Curaçao/Iraq/Cape Verde) where the market can't
+  carry form → route to a sharper manual OVERLAY, not a refit. Graded market-weight-on-divergence considered & REJECTED
+  (unfittable free param at current n; the binary market-veto already captures the extreme). 3rd correctly-resisted refit impulse.
 - **Core lesson:** model STRUCTURE ≫ data SOURCE; market ≫ model for relative strength.
 - Diagnostic backtests live in: `backtest_2d.py`, `score_struct_backtest.py`, `calib.py`, `recalibrate.py`.
 
