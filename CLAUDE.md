@@ -31,8 +31,14 @@ MISSED THOSE TOO, so the rank threat was a VARIANCE player catching them (Chocho
 decorrelation WON — but it was the ~22% tail branch (modal=Germany), so the EV+/RANK− expectation argument isn't refuted by one tail; still, the inversion's
 defend-from-below⇒low-variance conclusion needs review next slate. The Turkey→USA override LOST (engine's Turkey 58% was right) but in a DEAD-RUBBER/B-team
 context = NOT a clean artifact test (USA-veto ledger 3/1; do not update on it). Rank lever remains exacts-on-FOLLOWS (user 5 vs AdyFC 12 / Hadri 11; the +50
-came on a follow, like Colombia 1-0 +127). OPEN QUESTION for the KO slate: if a clean field-underpicked + market-confirmed +EV spot appears, run the redteam
-skill on take-vs-follow rather than defaulting either way. 2 picks PENDING (France 0-1, Senegal 1-0). See live_updates.md MD10 RESULTS 2026-06-26.
+came on a follow, like Colombia 1-0 +127). ★★ RESOLVED 2026-06-26 (3-agent red-team, REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md):
+the inversion call is NARROWED TO NEAR-DEAD — it optimized the WRONG maximand (minimized variance to defend the #8/#9 LOCAL boundary, which is
+~worthless to the LIVE top-5 objective, gap 227). Gap-arithmetic: only field-underpicked up-variance closes 227 vs a chalk field (Draw gain-branch
++86.6 net-vs-chalk; following caps at +24.6 & the herd banks it → realized net ≈0 = "following FREEZES the gap"). CORRECTED RULE: **the bunch is not
+your benchmark — your objective is; a trailing-must-climb player TAKES EV-neutral (edge≥1, no leak) + field-underpicked + market-confirmed up-variance,
+≤1–2/slate, and stacks exacts-on-follows on the rest** (edge≥1 suffices for a must-climb trailer, not strict >1; edge<1 still rejected; field-underpicked
+is the right proxy only vs a CHALK bloc — re-target vs an off-chalk variance rival; switches: top-5-live?/rival-correlation/horizon). MD11 slate APPLIES it:
+Egypt-Iran DRAW (the one gated rank-lever; Iran VETOED = artifact edge 0.92). 2 MD10 picks PENDING (France 0-1, Senegal 1-0). See live_updates.md MD11 + MD10.
 [2026-06-25: #8 @1857; inversion call + Ecuador-decorrelation FALSIFIED, REVIEW_2026-06-25. Earlier 2026-06-24: #9 @1602; top-5 line #5 AdyFC 1785, gap 183.]** MD9 partial: +127 ALL from a Colombia 1-0 EXACT on a straight FOLLOW (exacts-are-the-separator, delivered);
 England 0-0 upset + Panama-Croatia draw lost (the lower-conviction decorrelation, flagged ex-ante). 2 MD9 picks PENDING (Canada 0-1
 decorrelation, Bosnia 1-0 follow). #2 Hadri has 11 exacts — exacts are the league's separating currency. [Earlier 2026-06-23: #9 @1475, 3 exacts.] DROPPED #8→#9 despite +152 (Arg 63 + France 22 + Algeria 67; 3/4 follows all chalk) — **the Senegal X2 LOST
@@ -141,10 +147,12 @@ realized tier of every played match.
 2. Crowd model: plausibility (de-vigged bookie grid if supplied, else model probs) ^beta × salience,
    params from `crowd_params.json`. Band-robust tier (crowd ×0.7/1.0/1.43 scenarios; BOUNDARY flag).
 3. **Outcome pick = argmax TOTAL EV (base + best bonus EV)**; warn if bonus flipped outcome vs base EV.
-4. **Score pick (COARSE, 2026-06-14 = BONUS_MODE='coarse') = the naive modal (highest-p) score within the
-   picked outcome; step off 1-1 ONLY (the single cell with rock-solid 3/3 over-herding) to the next-highest-p.**
-   Maximises hit-probability (the validated lever); model-free. Fine E[bonus] optimization RETIRED (crowd model
-   unconverged at n=8; tier ranking is noise; gain over this rule ~0.3/match << thrash cost).
+4. **Score pick (COARSE, BONUS_MODE='coarse') = PURE MODAL (highest-p) score within the picked outcome.**
+   ★ The 1-1 step-off was RETIRED 2026-06-17 (`score_rule_backtest.py`: pure-modal 190 realized bonus >
+   step-off-1-1 130; the higher hit-rate of the modal cell beats the rarer cell's higher tier). The deployed
+   matchday.py keeps the modal cell — do NOT step off 1-1 (older prose saying "step off 1-1 ONLY" is STALE,
+   scrubbed here per the 2026-06-26 data-integrity audit). Maximises hit-probability (the validated lever);
+   model-free. Fine E[bonus] optimization RETIRED (crowd model unconverged; tier ranking is noise).
 5. Append pick to `prediction.md`; after the match, log result in `live_updates.md`.
 
 ## DECISION-MAKING REFERENCE (consolidated — the math that drives every pick)

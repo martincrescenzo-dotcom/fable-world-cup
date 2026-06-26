@@ -21,38 +21,32 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-# ★ TWO JUDGMENT OVERRIDES of raw engine output (MD10, both documented artifacts; see REVIEW_2026-06-25):
-#   (1) Ecuador-Germany: engine picks ECUADOR (blendEV 37.9, PRIME X2 flag) — OVERRIDDEN to GERMANY (follow).
-#       3-agent red-team FALSIFIED the Ecuador decorrelation: EV-positive but RANK-NEGATIVE (user is atop a bunch
-#       w/ a cushion below, not chasing from below → variance is rank-destructive); same 2/13-losing profile +
-#       the project's worst artifact team; EV-max collapses on a -3.3pt swing (binding rival = the draw).
-#   (5) Turkey-USA: engine picks TURKEY (blendEV 45.0) = the documented USA-UNDERRATING artifact — OVERRIDDEN to
-#       USA (market-EV-max 43.7; Turkey edge 0.97<1 fails the gate). Market-confirmed veto.
-MATCHES = [   # MD10 slate 2026-06-25/26 (FINAL group matches E/D/F/I; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
- # market=[H,D,A]=INDEPENDENT de-vigged 1X2 / Kalshi via WebSearch 2026-06-25 (ESPN/FanDuel/DraftKings/Caesars/Kalshi).
- # Model-blind scan 2026-06-25: Germany QUALIFIED top (may rotate; mkt 59% prices it; v6 37% = ECUADOR-OVERRATING ARTIFACT
- #   -> follow Germany via market veto); Ivory Coast must-win for 2nd (full strength); Netherlands 1st, strong XI named;
- #   Japan needs only a draw / Sweden must win (Japan blend-EV-max); TURKEY-USA = DEAD RUBBER (USA won group, Turkey
- #   eliminated -> USA rotates heavily; mkt still USA ~47%; v6 Turkey 58% = USA-UNDERRATING ARTIFACT -> follow USA);
- #   Paraguay-Australia = Australia advances on a DRAW & plays for it, Paraguay missing Almiron (susp) -> DRAW mkt-fav;
- #   Norway-France both qualified, top-spot decider, France strong XI (Deschamps absent, off-field); Senegal-Iraq both 0pts
- #   must-win, Senegal heavy fav.
- dict(home='Ecuador', away='Germany', rewards=[145,129,42], date='2026-06-25', fieldpct=[.03,.09,.88],
-      market=[.22,.21,.59]),   # Germany qualified, MAY rotate but mkt 59% prices it; v6 37% = artifact -> follow Germany
- dict(home='Curacao', away='Ivory Coast', rewards=[163,118,53], date='2026-06-25', fieldpct=[.02,.09,.89],
-      market=[.06,.11,.84]),
- dict(home='Tunisia', away='Netherlands', rewards=[131,123,56], date='2026-06-25', fieldpct=[.03,.07,.91],
-      market=[.04,.09,.90]),
- dict(home='Japan', away='Sweden', rewards=[96,108,111], date='2026-06-25', fieldpct=[.45,.42,.13],
-      market=[.52,.27,.21]),   # Japan blend-EV-max; field underweights Japan (45%) vs the 42% draw-herd
- dict(home='Turkey', away='United States', rewards=[109,102,93], date='2026-06-25', fieldpct=[.13,.24,.63],
-      market=[.30,.23,.47]),   # DEAD RUBBER, USA rotates; v6 Turkey 58% = USA-underrating artifact -> follow USA (mkt fav)
- dict(home='Paraguay', away='Australia', rewards=[74,104,131], date='2026-06-25', fieldpct=[.34,.43,.22],
-      market=[.33,.43,.24], overlay=(-0.05,0,0,0)),   # Paraguay missing Almiron (susp) ATT -0.05 (halved, mkt prices); Australia plays for the draw
- dict(home='Norway', away='France', rewards=[141,108,68], date='2026-06-26', fieldpct=[.03,.15,.82],
-      market=[.22,.28,.50]),
- dict(home='Senegal', away='Iraq', rewards=[54,115,149], date='2026-06-26', fieldpct=[.91,.07,.02],
-      market=[.79,.14,.08]),
+MATCHES = [   # MD11 slate 2026-06-27 (FINAL group matches, Groups G & H; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 via WebSearch 2026-06-26 (ESPN/bet365/FanDuel/SportsLine/Opta-supercomputer).
+ # Model-blind scan 2026-06-26 (final-round, qualification-driven):
+ #  Group H standings Spain 4 / Uruguay 2 (2nd on goals) / Cape Verde 2 / Saudi Arabia 1.
+ #   - Uruguay-Spain: SPAIN near-full XI (Yamal/Pedri/Rodri/Olmo/N.Williams start — wants to TOP group; NO rotation overlay),
+ #     mkt Spain 59%; Uruguay must-win-or-match-CapeVerde (desperate). Follow Spain (crushed chalk, field 87% = no sep).
+ #   - Cape Verde-Saudi Arabia: even 3-way (mkt .36/.31/.33); SAUDI must-win, CAPE VERDE plays for the draw (a draw likely
+ #     sends CV through). Field piled 50% on the DRAW -> draw is field-OVER-picked (NOT a decorrel target).
+ #  Group G standings Egypt 4 / Iran 2 / Belgium 2 / New Zealand 1.
+ #   - New Zealand-Belgium: Belgium heavy fav (mkt 79%, -500), Doku returns, near-full & motivated; NZ bottom must-win
+ #     hail-mary. Follow Belgium (crushed chalk, field 86% = no sep).
+ #   - Egypt-Iran: Egypt needs only a DRAW to advance (cagey-game risk) -> mkt Egypt 42 / draw 31 / Iran 26 (Opta 44/31/25);
+ #     Iran must-win. Egypt blend-fav but field hammers Egypt 71% / draw only 24% -> DRAW is the field-underpicked spot; let
+ #     the engine adjudicate the Egypt-vs-Draw EV (potential Axis-B).  Iran travel/geopolitical disruption (unquantified, mkt prices).
+ dict(home='Uruguay', away='Spain', rewards=[143,112,57], date='2026-06-27', fieldpct=[.02,.11,.87],
+      market=[.145,.261,.594]),
+ dict(home='Cape Verde', away='Saudi Arabia', rewards=[99,123,94], date='2026-06-27', fieldpct=[.35,.50,.14],
+      market=[.36,.31,.33]),
+ dict(home='New Zealand', away='Belgium', rewards=[172,129,32], date='2026-06-27', fieldpct=[.04,.10,.86],
+      market=[.08,.13,.79]),
+ dict(home='Egypt', away='Iran', rewards=[85,114,123], date='2026-06-27', fieldpct=[.71,.24,.05],
+      market=[.42,.31,.26]),   # ★ OVERRIDE engine's IRAN (blendEV 41.4 + PRIME-X2) = v6 BIDIRECTIONAL ARTIFACT
+      # (model underrates Egypt .27 vs mkt .42 AND overrates Iran .45 vs mkt .26; Iran edge 0.92<1) -> Iran VETOED.
+      # PICK = DRAW (post-veto: pure-market EV-tie Egypt 35.7 / Draw 35.3, Draw robust across truth axis;
+      # field-underpicked 24% vs mkt 31%; edge 1.01). Score 1-1 (deployed pure-modal; CV-Saudi draw modal=0-0).
+      # See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md. NO X2 (spent).
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

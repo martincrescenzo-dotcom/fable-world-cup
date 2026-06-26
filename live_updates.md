@@ -1,5 +1,36 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD11 SCAN + SLATE 2026-06-27 (FINAL group matches, Groups G & H) — read first ════
+**USER #8 @2120, top-5 gap 227, X2 spent.** Preflight GREEN. INDEPENDENT MARKET = de-vigged bet365/FanDuel/ESPN/SportsLine
++ Opta supercomputer (WebSearch 2026-06-26). Field [H,D,A]=Repartition.
+**Group H** (Spain 4 / Uruguay 2 on goals / Cape Verde 2 / Saudi 1): Spain near-full XI (Yamal/Pedri/Rodri start) wants to top
+→ NO rotation overlay; Uruguay must match Cape Verde (desperate); Saudi must win; Cape Verde plays for a draw (field piled 50% on draw).
+**Group G** (Egypt 4 / Iran 2 / Belgium 2 / NZ 1): Belgium heavy fav (Doku back, motivated); Egypt needs only a draw to advance;
+Iran must win (travel/geopolitical disruption, unquantified, mkt prices); NZ must-win hail-mary.
+**Markets (de-vigged):** Uru-Spa [.145,.261,.594]; CV-Sau [.36,.31,.33]; NZ-Bel [.08,.13,.79]; Egy-Irn [.42,.31,.26] (Opta 44/31/25).
+**PICKS:** Spain 0-1 (follow) | CV-Saudi DRAW 0-0 (blend-EV-max but field 50% = crowded, NOT a separator) | Belgium 0-2 (follow) |
+**Egypt-Iran DRAW 1-1 (OVERRIDE engine's Iran artifact — the ONE rank-lever decorrelation).** See prediction.md MD11.
+**★ TIER-1 RED-TEAM (3 agents) — two outputs:**
+ 1. **Egypt-Iran: TAKE THE DRAW.** Iran VETOED (v6 bidirectional artifact: underrates Egypt .27 vs mkt .42 AND overrates Iran .45
+    vs mkt .26; Iran edge 0.92<1; blendEV 41.4 + PRIME-X2 is reward-artifact — Ecuador/USA class). Post-veto Egypt vs Draw are
+    EV-TIED on pure market (35.7/35.3, ≪2σ) and Draw weakly DOMINATES across the model↔market truth axis (Egypt never meaningfully
+    ahead). Field underpicks the draw (24% vs mkt 31%) + over-picks Egypt (71% vs 42%). **Corrected my own reasoning: the "blend shows
+    Draw EV-max" claim was ARTIFACT LEAKAGE** (same Egypt-underrating I veto Iran for); justify the Draw on pure-market parity +
+    truth-robustness + field-decorrelation ONLY. The "Egypt cagey→draw" tailwind is already in mkt 31% — dropped from EV (soft flag only).
+    **Score = 1-1 (deployed PURE-MODAL; the 1-1 step-off was RETIRED 2026-06-17 — my "step off to 0-0" was stale prose).** CV-Saudi draw modal IS 0-0.
+ 2. **DOCTRINE: the 2026-06-25 "inversion" call is NARROWED TO NEAR-DEAD.** It optimized the WRONG maximand (minimized variance to
+    defend the #8/#9 LOCAL boundary) — but the committed objective is TOP-5 (gap 227), to which the #8/#9 spot is ~worthless. Gap
+    arithmetic: to close 227 vs a chalk field you NEED field-underpicked up-variance (Draw gain-branch +86.6 net vs chalk; Egypt caps
+    at +24.6 and the herd banks it → realized net ≈0 = "following freezes the gap"). The inversion also priced only one tail
+    (decorrelate→miss→cede above) and ignored the other (follow→underpicked thing hits→cede to VARIANCE players), which MD10 realized
+    (Chocho #10→#7). **CORRECTED RULE: the bunch is not your benchmark — your objective is. Trailing-must-climb ⇒ take EV-neutral
+    (edge≥1, no leak) + field-underpicked + market-confirmed up-variance, ≤1–2/slate; stack exacts-on-follows on the rest. edge≥1
+    (not strict >1) suffices for a must-climb trailer; edge<1 still rejected. Switches: top-5 live? (master) · binding rival chalk vs
+    off-chalk · horizon.** field-underpicked is the right proxy ONLY vs a chalk bloc (re-target vs an off-chalk variance rival).
+    See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md.
+**Portfolio: 2 follows + 1 crowded EV-max draw + 1 gated rank-lever decorrelation (≤1-2 rule held). NO X2 (spent).**
+*Pending: realized TIERS for these 4 + results; updated leaderboard.*
+
 ## ════ MD10 RESULTS (6 of 8) + LEADERBOARD 2026-06-26 — read first ════
 **USER = Lampadaire83, HELD #8 @2120 (30 good / 5 EXACTS).** +263, +3 good, +1 exact since #8 @1857.
 **MD10 detail (6 reported; Norway-France & Senegal-Iraq STILL PENDING):**

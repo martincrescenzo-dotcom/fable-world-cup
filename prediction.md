@@ -299,3 +299,30 @@ EXACT +127 on a straight follow). **NO X2 (spent).** Honest: a near-pure-chalk d
 if an exact lands or the favourite-herd takes an upset we dodged.
 
 *Pending: realized TIERS for these 8 + results; updated leaderboard.*
+
+---
+
+# MD11 slate 2026-06-27 (engine v6 frozen + independent market veto + Tier-1 red-team) — FINAL group matches, Groups G & H
+
+**Standing:** USER = Lampadaire83 **#8 of ~16 @2120** (30 good / 5 exacts). Top-5 line #5 AdyFC 2347, gap **227**;
+#7 Chocho +40, #6 CrazyBE +151 above; #9 Cyril −39, #10 Ethan −271 below. **X2 SPENT.** Preflight GREEN.
+Independent market = de-vigged bet365/FanDuel/ESPN/SportsLine + Opta supercomputer (WebSearch 2026-06-26).
+**Group H** standings: Spain 4 / Uruguay 2 (2nd on goals) / Cape Verde 2 / Saudi 1. **Group G**: Egypt 4 / Iran 2 / Belgium 2 / NZ 1.
+
+| # | Match | OUTCOME | SCORE | blendEV | Rationale (1-line) |
+|---|-------|---------|-------|---------|--------------------|
+| 1 | Uruguay–Spain | **Spain** | **0-1** | 35.4 | FOLLOW. Spain near-full XI (Yamal/Pedri/Rodri) wants to top group; mkt 59%. Crushed chalk, field 87% = no sep |
+| 2 | Cape Verde–Saudi Arabia | **Draw** | **0-0** | 38.2 | blend-EV-max draw (reward 123); even 3-way. BUT field 50% on draw = crowded → EV pick, NOT a separator |
+| 3 | New Zealand–Belgium | **Belgium** | **0-2** | 24.9 | FOLLOW. Belgium -500, Doku back, motivated; field 86% = no sep |
+| 4 | Egypt–Iran | **Draw** | **1-1** | (mkt 35.3) | ★ OVERRIDE engine's IRAN (blendEV 41.4 + PRIME-X2) = v6 bidirectional artifact (Iran edge 0.92<1). The slate's ONE rank-lever: EV-tied w/ Egypt on pure market (35.7/35.3) + robust across truth axis + field-underpicked 24% vs mkt 31% + edge 1.01 |
+
+**STRATEGY: 2 follows (Spain, Belgium) + 1 EV-max-but-crowded draw (CV-Saudi) + 1 GATED rank-lever decorrelation
+(Egypt-Iran draw).** The Egypt-Iran draw is the disciplined Axis-B pick a **trailing-must-climb #8** should take:
+EV-neutral (edge≥1, no leak) + field clearly underpicks it (24% vs the 71% Egypt-herd) + market-confirmed. A
+3-agent red-team confirmed the take (and NARROWED the 2026-06-25 "inversion" call: the bunch is not the
+benchmark — the live top-5 objective is, and only field-underpicked up-variance closes a 227 gap vs a chalk
+field; following freezes it). **Iran VETOED** (documented artifact, edge<1 — Ecuador/USA class). **Score = deployed
+pure-modal** (Egypt-Iran draw modal 1-1; CV-Saudi draw modal 0-0); the 1-1 step-off was retired by backtest.
+**NO X2 (spent).** See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md.
+
+*Pending: realized TIERS for these 4 + results; updated leaderboard.*
