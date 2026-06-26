@@ -29,6 +29,15 @@ Iran must win (travel/geopolitical disruption, unquantified, mkt prices); NZ mus
     off-chalk · horizon.** field-underpicked is the right proxy ONLY vs a chalk bloc (re-target vs an off-chalk variance rival).
     See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md.
 **Portfolio: 2 follows + 1 crowded EV-max draw + 1 gated rank-lever decorrelation (≤1-2 rule held). NO X2 (spent).**
+**★ STAKES-DOCTRINE RED-TEAM (3-agent, 2026-06-26, REVIEW_2026-06-26_stakes-and-veto-collision.md) — user challenged my stakes framing, all 3 challenges LANDED:**
+ (1) **Opta is STAKES-BLIND** (Elo Power-Rankings + book-odds Monte Carlo; "can't predict human factors") = same class as v6 → "books AND Opta agree" is NOT
+ stakes confirmation (double-counts a blind source); only sharp BOOKS price stakes. (2) **Field prices stakes IMPERFECTLY, no fixed sign** — DOES price salient
+ draw-incentive (Paraguay-Aus field draw 43%=mkt 43%) but blind to FAME-masked stakes (63% on rotating USA vs mkt 47%; 71% on cagey-Egypt vs 42%); the lever is
+ FAME not stakes (field over-backs famous favs). My "field under-prices stakes" was wrong; "field-stakes" low-stakes-over-back +24.7 vs +10.7 is p≈.03/power .58 =
+ hypothesis only. (3) **Türkiye-USA = a CONFOUNDED-VETO error**, not "stakes is dangerous": our notes flagged "USA rotates heavily" and we overrode to USA anyway;
+ the USA-artifact veto stepped on a stakes signal that AGREED with the engine's Türkiye lean (Türkiye won 3-2). **NEW: VETO-COLLISION RULE — an artifact-veto SUSPENDS
+ when a confirmed unpriced stakes signal points the SAME way as the engine → coin-flip → rank levers decide.** Corrected 5-gate protocol now in CLAUDE.md model-blind §.
+ **MD11 picks UNCHANGED; Egypt-Iran DRAW is REINFORCED** (textbook field-fame-bias decorrelation: field 71% on famous Egypt, blind to the cagey-draw the sharp market prices at 31%).
 *Pending: realized TIERS for these 4 + results; updated leaderboard.*
 
 ## ════ MD10 RESULTS (6 of 8) + LEADERBOARD 2026-06-26 — read first ════

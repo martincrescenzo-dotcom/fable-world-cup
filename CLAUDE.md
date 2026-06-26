@@ -353,6 +353,36 @@ Before every pick, for BOTH teams in the match:
    discount it, say so in the pick.
 Do NOT refit the model on trickling results (2-game samples = noise; overfitting risk).
 
+**TEAM STAKES / MOTIVATION (qualified-coasting, must-win, play-for-a-draw, dead rubber) — corrected protocol
+(3-agent red-team 2026-06-26, REVIEW_2026-06-26_stakes-and-veto-collision.md). Stakes IS real and DOES move
+outcomes — handle it through these gates, NOT a freehand narrative:**
+ a. **SOURCE GATE (load-bearing): SIMS ARE STAKES-BLIND.** Opta's supercomputer = Elo Power-Rankings + book-odds
+    Monte Carlo ("can't predict the human factors") — structurally the same stakes-blind class as v6. So "the
+    market already prices stakes" is true ONLY for a **stakes-aware sharp source** (de-vigged book / Kalshi /
+    liquid Polymarket that moves on team news), NOT for Opta. **Citing "books AND Opta agree" as confirmation of a
+    STAKES effect is double-counting a stakes-blind (and partly book-derivative) source — invalid.** If the only
+    market leg is sim/reward-implied on a stakes-asymmetric match → treat stakes as UNPRICED → eligible for an overlay.
+ b. **OVERLAY:** apply a stakes overlay ONLY when CONFIRMED (lineup leak/presser, not rumour) AND demonstrably
+    UNPRICED (the sharp line didn't move on the news), pre-registered with sign+size, HALVED. Falsifiability test:
+    state direction/size/why-unpriced BEFORE the result, or you must follow the market. No narrative-only flips.
+ c. **VETO-COLLISION RULE (the key fix):** a documented model-artifact veto (USA-underrating, Ecuador-overrating…)
+    **SUSPENDS when a confirmed, unpriced stakes signal points the SAME way as the engine.** The veto's premise is
+    "the engine's lean is PURELY a rating artifact" — a B-team/rotation that makes the favourite genuinely weaker
+    confounds that premise (the engine may be right for a NON-artifact reason). On collision: do NOT auto-follow the
+    market → drop the match to a coin-flip → let the rank levers decide. The veto fires at full strength only when
+    the engine's anti-favourite lean is otherwise unexplained. [Türkiye-USA MD10: our own notes flagged "DEAD
+    RUBBER, USA rotates heavily" and we overrode to USA anyway → the veto stepped on a stakes signal that AGREED
+    with the engine's Türkiye lean; Türkiye won 3-2. Re-filed as a veto-collision error, NOT "stakes is dangerous."]
+ d. **FIELD vs stakes (decorrelation lever) — REFINED, not "field under-prices stakes":** the field prices stakes
+    IMPERFECTLY with NO fixed sign — it DOES price salient draw-incentive (Paraguay-Australia: field draw 43% =
+    market 43%), but is blind to FAME-masked stakes (it piled 63% on rotating-qualified USA vs market 47%; 71% on
+    cagey-Egypt vs market 42%). The durable, exploitable bias is **field OVER-BACKS FAMOUS FAVOURITES irrespective
+    of stakes.** Lever = fade the famous favourite in a low-stakes/rotation spot ONLY when (i) a stakes-aware sharp
+    line makes it ≤ coin-flip, (ii) the field is piled on it, (iii) it clears the edge≥1 / market-confirmed gate
+    (the "high-reward field-thin contrarian" lever is 4/4 LOSSES — a stakes-gap existing ≠ +EV to fade into). It's
+    a field-vs-SHARP-MARKET gap, not a field-vs-stakes gap. Empirics: low-stakes-fav over-backing +24.7 vs normal
+    +10.7 (Δ+14, p≈.03 but power .58, n=3 clean + 2 pending) → DIRECTIONAL HYPOTHESIS, not a validated lever.
+
 Field strategy: edge (calibration) compounds you up the table; the exact-score double is the
 separator. Variance is dynamic — mid/level = EV-max; **trailing late = take +edge variance**
 (underdogs/draws/longer scores); **leading late = play safe**. Ask user's standing when tight.
