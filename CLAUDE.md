@@ -13,6 +13,12 @@ User plays a prediction game: competes in a **large field of French recreational
 score + right result still pays base), **plus a RARITY BONUS if the exact score hits**, tiered by the
 share of correct-outcome pickers who chose that score:
 `>30%:+20 | 20–30%:+30 | 5–20%:+50 | 0.5–5%:+70 | <0.5%:+100`.
+**KO SCORING (user-confirmed 2026-06-27): picks judged on the 120-MINUTE scoreline (ET included, PENALTIES IGNORED)** —
+a pens match scores as its 120' draw line; e.g. 1-1 @90' → 3-1 a.e.t.: a 2-1 pick WINS the result, a 1-1 pick scores ZERO.
+**v6 outputs a 90' distribution → KO needs an ET re-allocation (UNBUILT; build+validate when KO is live):** draw prob FALLS,
+win probs RISE, scores shift HIGHER ⇒ **re-price draws DOWN for KO** (group draw-harvesting does NOT transfer). The market leg
+must be "**result after ET excl. pens**", NOT the "to qualify/advance" line (to-advance counts pens-winners; we score pens as a
+draw — using it is a silent error). See [[ko-scoring-120-minutes]].
 **X2 boost: ONE per tournament, usable ANYTIME incl. knockouts** — doubles a chosen prediction's total
 points (incl. rarity bonus) if the outcome is correct. **X2 is FREE optionality (costs nothing if the pick
 loses) → the only decision is TIMING/target.** Policy (AUDIT 2026-06-16, flipped): deploy on the best
