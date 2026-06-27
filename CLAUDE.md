@@ -39,7 +39,21 @@ killed two errors for good: (i) "chalk bloc ahead" is unmeasurable from good-cou
 (ii) decorrelation=rank-lever was derived from BELOW the bunch (rank-convex) — MID-bunch it's E[rank]-neutral-to-NEGATIVE, so adding
 outcome-variance for rank is the killed-"inversion" error sign-flipped. This RESTORES the original EV-max core, stripped of rank accretions.
 **STANDING 2026-06-27: USER #4 of 9 shown (Lampadaire83) @2688 (36 good / 8 EXACTS).** Bunch: #1 Alex 3042 (+354 runaway) / #2 Nicolas 2761
-(+73) / #3 Hadri 2689 (+1) / #4 USER / #5 AdyFC 2681 (−7) / #6 Alexis 2633 (−55) / #7 CrazyBE 2605 (−83). [HISTORICAL rank-target frames below — SUPERSEDED:]
+(+73) / #3 Hadri 2689 (+1) / #4 USER / #5 AdyFC 2681 (−7) / #6 Alexis 2633 (−55) / #7 CrazyBE 2605 (−83).
+**★ GUARDRAILS (bias-audit red-team 2026-06-27b, REVIEW addendum) — the reset is an "EV-max-WITH-an-ENDGAME-CLAUSE" doctrine; without
+these it can "honestly finish #6 when #3 was free":** G1 **ENDGAME CLAUSE** — "rank is downstream" holds while horizon is long
+(N ≳ (gap/σ_d)² ≈8-13; true NOW at N≈37). In the LAST ~1-3 slates with standings known AND gap-to-adjacent-rival ≤ one-slate swing
+(~one exact 50-100) → SWITCH to rank-aware: copy rivals you LEAD, decorrelate from rivals you CHASE, bounded −EV only if it STRICTLY
+raises P(target rank); PRE-REGISTER rival model + arithmetic, red-team-gate it. (Re-instates the true "copying-freezes-the-gap"
+theorem STRICTLY for the endgame — horizon trigger is what separates it from the killed inversion.) G2 utility = MILD RANK-KINK
+(user "wouldn't like #6 but care more about building") → G1 is ON. G3 **PROCESS SCORECARD** — judge the doctrine on CALIBRATION
+(pick log-loss/Brier, market edge-hit-rate, decorrelation discipline), NEVER on points/rank (else "good process, just unlucky" is
+unfalsifiable). G4 **QUARANTINE +568** as ~4σ/n=1 non-evidence; adopted for outcome-INDEPENDENT reasons; "proved we can predict" is
+the user's framing, NOT a statistical claim (n=9 underpowered) — keep the gate hot. G5 **KEEP-BUILDING FENCE** — ONE sanctioned build =
+the KO ET re-allocation (correctness fix, NEW transform on the 90' output, NEVER a refit of frozen attdef.json); URGENT (next slate is KO;
+South Africa-Canada is cross-group = likely the first R32 match, held by user); crowd-mining/engine-refit stay CLOSED. G6 zero-cost rank
+tie-breaks (field-thinner if trailing / thicker if leading; extend to score cell on a bonus-EV tie) + one-shot/timing instruments (X2,
+spent) decided on RANK-SEPARATION not per-match EV. [HISTORICAL rank-target frames below — SUPERSEDED:]
 **OBJECTIVE (superseded) 2026-06-18 → TOP-5 of ~16, BALANCED.**
 **STANDING 2026-06-26: USER #8 (Lampadaire83) @2120 (30 good / 5 EXACTS), HELD #8 (+263 on a near-pure-follow slate: 3 base hits CIV/NL/Para-draw
 + a Paraguay-Australia 0-0 EXACT +50). #7 Chocho +40, #6 CrazyBE +151 ABOVE; #9 Cyril −39, #10 Ethan −271 BELOW; top-5 line #5 AdyFC 2347 (12 exacts), gap 227.

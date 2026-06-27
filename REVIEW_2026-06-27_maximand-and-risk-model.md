@@ -76,3 +76,54 @@ SCOREBOARD, an OUTCOME of good process, not the objective function.** This is NO
 
 ## What still CANNOT be inferred (state plainly): any rival's pick style/correlation/field%, per-player exact tiers,
 the prize structure. All strategic claims about rivals' styles are assumption, not data.
+
+---
+
+# ADDENDUM 2026-06-27b — BIAS AUDIT of the new doctrine ("does the user's steer hurt/bias what we built?")
+
+User asked me + a fresh 3-agent red-team to check whether the MAXIMAND RESET itself biases current/future
+predictions or damages the system. **VERDICT: the steer does NOT hurt the system — it is protective** (touches
+only the selection layer, never the probability engine; prescribes the statistically-correct EV-max rule; removes
+ledger-losing accretions; improves the calibration loop; deleted ZERO guardrails; all numbers reconcile). BUT it is
+an "EV-max-WITH-an-endgame-clause" doctrine — shipping it without the clause + guardrails IS the bias. Five guardrails
+(all three lenses converged on G1, G3-G5; statistician supplied the G1 math):
+
+**G1 — ENDGAME CLAUSE (the big one).** Rank = Φ((Nδ−g)/(√N·σ_d)) vs a specific rival (δ=per-match EV edge≈0 in a
+compressed equal-skill field, g=gap, σ_d=per-match difference-std, N=matches left). "Rank is downstream" holds while
+√N·σ_d ≳ g, i.e. N ≳ (g/σ_d)² (≈8-13 here; with N≈37 left, even a pure-follow book has P(pass +73)≈27% from natural
+variance → correct to ignore rank NOW). It SIGN-FLIPS in the last ~1-3 slates: at N=5, g=73, manufacturing variance
+(σ_d 20→45) takes P(pass) 5%→23%. SWITCH to rank-aware when **N ≲ (g/σ_d)² (≈ last 1-3 slates) AND standings known
+AND gap-to-adjacent-rival ≤ a single-slate swing (~one exact bonus 50-100):** copy rivals you LEAD (kill diff-variance),
+decorrelate from rivals you CHASE (manufacture it), accept bounded −EV ONLY if it STRICTLY raises P(target rank).
+PRE-REGISTER the rival model + swing arithmetic BEFORE the slate; route through the red-team gate. This RE-INSTATES the
+one TRUE theorem the reset otherwise discarded (correlated field → copying freezes the gap → rank needs difference-
+variance) STRICTLY for the endgame — the horizon trigger is exactly what separates it from the falsified "inversion."
+
+**G2 — UTILITY pinned.** EV-max is optimal at all N iff utility is LINEAR in points. The user's prior variance-ramp
+impulse + "wouldn't like #6 but care more about building" = a MILD RANK-KINK, not pure-linear → G1 endgame switch is ON.
+(A pure-linear user would skip G1 and pre-accept finishing #6-by-3 with zero regret.) Confirm if mis-stated.
+
+**G3 — PROCESS SCORECARD (accountability).** "See how far it leads, #6 or #1" is healthy ONLY paired with a falsifiable
+metric, else "good process, just unlucky" is unfalsifiable (our #1 failure mode). Evaluate the doctrine on CALIBRATION —
+pick outcome log-loss/Brier, market edge-hit-rate (market_p/reward-implied_p>1), decorrelation-discipline adherence —
+NEVER on points or rank movement. A policy adopted on P&L gets killed on P&L; judge it on calibration.
+
+**G4 — QUARANTINE +568 as NON-EVIDENCE.** ~4σ/n=1; carries ~0 calibration information. The doctrine is correct for
+outcome-INDEPENDENT reasons (it would be correct had the slate gone −50). "Proved we can predict" is the user's framing,
+NOT a statistical claim — at n=9 the model is NOT demonstrated (project's own findings: "can't tell," underpowered).
+Keep the red-team gate hot; do NOT relax power/CI discipline on a high.
+
+**G5 — "KEEP BUILDING" FENCE.** Documented over-engineering ledger: crowd refits netted ~0 (+2 retractions), engine-refit
+rejected 3×. ONE sanctioned build = the **KO ET re-allocation** — a CORRECTNESS fix (v6 emits 90'; KO scores on the 120'
+line with draws re-priced down), implemented as a NEW transform on the 90' output, NEVER a refit of frozen attdef.json.
+URGENT: MD12 is the last group slate → the next slate is KO (South Africa-Canada is cross-group = the first R32 match the
+user is holding). Build + validate (market leg = "result after ET excl. pens", NOT "to-advance") BEFORE any KO pick.
+Everything else (crowd mining, engine refit) stays CLOSED — reopen only on new OOS evidence via the gate.
+
+**G6 — ZERO-COST RANK TIE-BREAKS (always-on) + one-shot carve-out.** Among EV-TIED picks, break toward rank-optimal
+(field-thinner if trailing, field-thicker if leading); extend to the score cell on a genuine bonus-EV tie. This is the
+retained EV-neutral decorrelation lever, made symmetric. Discrete one-shot/timing instruments (X2 — SPENT, dormant) are
+decided on RANK-SEPARATION, not per-match EV (pure-EV-max would have mishandled X2 timing).
+
+**Soft flag fixed-in-note:** the MD12 Algeria-Austria DRAW stands on the EV-max case alone (mkt-EV 45.3 > 35.3); its
+"draw-incentive" mention is a NON-load-bearing soft note, not a gated stakes overlay (no pre-registered sign/size).
