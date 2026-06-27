@@ -96,6 +96,19 @@ NEW_OBS = [
          away='United States', actual_score=(3,2), bonus_awarded=70),
     dict(match='Paraguay-Australia', date='2026-06-25', home='Paraguay',
          away='Australia', actual_score=(0,0), bonus_awarded=50),
+    # MD10 tail + MD11 (2026-06-26) realized tiers (organizer emails)
+    dict(match='Norway-France', date='2026-06-26', home='Norway',
+         away='France', actual_score=(1,4), bonus_awarded=70),
+    dict(match='Senegal-Iraq', date='2026-06-26', home='Senegal',
+         away='Iraq', actual_score=(5,0), bonus_awarded=100),
+    dict(match='Uruguay-Spain', date='2026-06-26', home='Uruguay',
+         away='Spain', actual_score=(0,1), bonus_awarded=70),
+    dict(match='Cape Verde-Saudi Arabia', date='2026-06-26', home='Cape Verde',
+         away='Saudi Arabia', actual_score=(0,0), bonus_awarded=30),
+    dict(match='New Zealand-Belgium', date='2026-06-26', home='New Zealand',
+         away='Belgium', actual_score=(1,5), bonus_awarded=100),
+    dict(match='Egypt-Iran', date='2026-06-26', home='Egypt',
+         away='Iran', actual_score=(1,1), bonus_awarded=20),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}

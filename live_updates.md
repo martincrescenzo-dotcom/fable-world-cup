@@ -1,5 +1,47 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ════ MD11 RESULTS + LEADERBOARD + MD12 SCAN/SLATE 2026-06-27 — read first ════
+**★ USER = Lampadaire83 JUMPED #8 → #4 @2688 (36 good / 8 EXACTS). +568, +3 exacts in one slate.** The MD11 slate hit huge:
+Spain 0-1 **EXACT +70** (follow), Cape Verde 0-0 **EXACT +30** (EV-max draw), Egypt-Iran 1-1 **EXACT +20** (the gated rank-lever
+decorrelation — Iran VETOED, draw taken), + base on France & Senegal (MD10 tail) & Belgium. **The Egypt-Iran draw decorrelation
+WON and was EXACT** — the gated-process doctrine delivered. (NB +568 is a ~4σ/n=1 tail; do NOT over-conclude — Verify-Std #7.)
+**LEADERBOARD 2026-06-27 (9 shown):** #1 Alexlastaaaaar 3042 (40/8) — runaway +354 | #2 Nicolas232345 2761 (41/6) +73 |
+#3 Hadri02 2689 (37/**11**) +1 | **#4 USER Lampadaire83 2688 (36/8)** | #5 AdyFC 2681 (39/**12**) −7 | #6 Alexis#KGYJ 2633 (41/8) −55 |
+#7 CrazyBE 2605 (41/5) −83 | #8 Chocho_27 2371 (38/3) | #9 Cyrilpqt 2260 (34/4).
+**Realized MD11/MD10-tail TIERS registered (56 obs):** Norway-France 1-4 +70 | Senegal-Iraq 5-0 +100 | Uruguay-Spain 0-1 +70 |
+Cape Verde-Saudi 0-0 +30 | NZ-Belgium 1-5 +100 | Egypt-Iran 1-1 +20. (Crowd-form misfit persists both-directional; inert under coarse.)
+
+**★ SCHEDULE CORRECTION:** my MD9 note below labeled England-Ghana / Panama-Croatia / Colombia-DRC as "final group matches B/K/L" —
+that was WRONG (those were ROUND 2). The FINAL group matches for groups J/K/L are TODAY (MD12). Group L={Panama,England,Croatia,Ghana},
+Group K={Colombia,Portugal,DR Congo,Uzbekistan}, Group J={Algeria,Austria,Jordan,Argentina}. Verified via WebSearch (ESPN/AlJazeera/FOX).
+
+**★★ MAXIMAND RESET (user 2026-06-27, Tier-1 red-team REVIEW_2026-06-27_maximand-and-risk-model.md) ★★**
+User asked: now that we're #4 and want to keep climbing, should the risk model change? Red-team (3 agents) FALSIFIED my first answer
+("upgrade to P(top-2-3) + more decorrelations"). Findings: (a) "chalk bloc ahead" frame DEAD — unmeasurable from good-counts AND
+directionally wrong (#6/#7 are BELOW us; only #2 is ahead). (b) decorrelation=rank-lever was derived from BELOW the bunch (rank-CONVEX);
+mid-bunch it's E[rank]-neutral-to-NEGATIVE (downside −55/−83 thicker than upside +73/+1) → MORE decorrelation pushes variance the wrong
+way (same error class as the killed "inversion", sign-flipped). (c) +568 = ~4σ n=1, non-diagnostic. (d) the risk posture depends on
+payoff-convexity over rank → ASKED the user. **USER'S ANSWER:** "we proved we can do solid score prediction WITHOUT strategizing rank…
+I want to see how far our approach can lead us, whether #6 or #1… I believe we can do good independently of rank." **⇒ MAXIMAND =
+disciplined EV-max prediction; RANK IS THE SCOREBOARD, NOT THE OBJECTIVE.** No rank-chasing variance, no floor-defense distortion.
+Decorrelate ONLY when the field-thin pick is ALSO EV-max (free differentiation). Veto model artifacts toward the market. Keep BUILDING
+(KO ET re-allocation is next). This restores the project's ORIGINAL core (EV-max-follow + selective free decorrelation + modal scores),
+stripped of rank-chasing accretions. See [[two-axis-differentiation]].
+
+## ════ MD12 SLATE 2026-06-27 (FINAL group matches J/K/L; SouthAfrica-Canada EXCLUDED per user) ════
+Preflight GREEN. Independent market = de-vigged bet365/FOX/CBS/oddschecker (WebSearch 2026-06-27). fieldpct=[H,D,A]=Repartition; rewards=Cotes.
+**Markets (de-vigged [H,D,A]):** Pan-Eng [.06,.14,.80]; Cro-Gha [.55,.29,.16]; Col-Por [.23,.26,.51]; DRC-Uzb [.62,.26,.12];
+Jor-Arg [.06,.14,.80]; Alg-Aut [.23,.44,.33].
+**Qualification stakes (light/gated):** Grp L — England & Ghana qualified, England wants top (beat Panama); Panama eliminated;
+Croatia MUST-WIN vs Ghana (Ghana safe w/ draw). Grp K — Colombia advanced (wins grp w/ win OR DRAW), Portugal needs win to top;
+DR Congo MUST-WIN, Uzbekistan eliminated (dead rubber). Grp J — Argentina qualified group winner → ROTATES (priced); Jordan eliminated;
+Austria advances w/ win OR DRAW, Algeria needs win for 2nd (draw = live 3rd-place) → mutual draw-incentive.
+**PICKS:** England 0-2 (follow) | Croatia 2-0 (follow, blend-EV-max) | **Colombia 1-0 (EV-max + field-thin 7%, edge 1.22)** |
+**DR Congo 1-0 (VETO Uzbekistan artifact: model 39% vs mkt 12%, edge 0.60; minnow match)** | Argentina 0-2 (follow) |
+**Algeria-Austria DRAW 1-1 (OVERRIDE engine Austria: model overrates 41 vs mkt 33; mkt-EV draw 45.3 > 35.3 + draw-incentive).**
+5 follows + 1 EV-max field-thin (Colombia); 2 corrections BOTH toward the independent market; ZERO rank-chasing variance. X2 spent.
+See prediction.md MD12 + REVIEW_2026-06-27_maximand-and-risk-model.md.
+
 ## ════ MD11 SCAN + SLATE 2026-06-27 (FINAL group matches, Groups G & H) — read first ════
 **USER #8 @2120, top-5 gap 227, X2 spent.** Preflight GREEN. INDEPENDENT MARKET = de-vigged bet365/FanDuel/ESPN/SportsLine
 + Opta supercomputer (WebSearch 2026-06-26). Field [H,D,A]=Repartition.

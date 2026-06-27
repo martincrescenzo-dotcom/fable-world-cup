@@ -326,3 +326,33 @@ pure-modal** (Egypt-Iran draw modal 1-1; CV-Saudi draw modal 0-0); the 1-1 step-
 **NO X2 (spent).** See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md.
 
 *Pending: realized TIERS for these 4 + results; updated leaderboard.*
+
+---
+
+# MD12 slate 2026-06-27 (engine v6 frozen + independent market veto + Tier-1 red-team on the MAXIMAND) — FINAL group matches, Groups J/K/L
+
+**Standing:** USER = Lampadaire83 **#4 of 9 shown @2688** (36 good / 8 exacts) — jumped #8→#4 (+568, 3 EXACTS: Spain 0-1,
+Cape Verde 0-0, Egypt-Iran 1-1). Bunch: #1 Alex 3042 (+354 runaway) / #2 Nicolas 2761 (+73) / #3 Hadri 2689 (+1) /
+**#4 USER 2688** / #5 AdyFC 2681 (−7) / #6 Alexis 2633 (−55) / #7 CrazyBE 2605 (−83). Preflight GREEN. X2 SPENT.
+Independent market = de-vigged bet365/FOX/CBS/oddschecker (WebSearch 2026-06-27). South Africa–Canada EXCLUDED (user: predict later).
+
+**★ MAXIMAND RESET (user 2026-06-27, Tier-1 red-team REVIEW_2026-06-27_maximand-and-risk-model.md):** the objective is
+**disciplined EV-max prediction — keep improving the model & the way we use it; rank is the SCOREBOARD, not the objective
+function.** NOT P(top-2-3), NOT a convex rank-gamble. ⇒ follow blend-EV-max, modal scores, decorrelate ONLY when the
+field-thin pick is *also* EV-max (free differentiation), veto model artifacts toward the independent market. NO variance ramp.
+
+| # | Match | OUTCOME | SCORE | Rationale (1-line) |
+|---|-------|---------|-------|--------------------|
+| 1 | Panama–England | **England** | **0-2** | FOLLOW, EV-max lock (mkt 80%, field 96%). England wants top spot |
+| 2 | Croatia–Ghana | **Croatia** | **2-0** | FOLLOW, blend-EV-max (mkt 55%). Croatia must-win; model hot (81) but agrees direction — no veto |
+| 3 | Colombia–Portugal | **Colombia** | **1-0** | **EV-MAX + field-thin** (mkt-EV 35.7 > Por 28.1; edge 1.22; field 7% vs Portugal-herd 72% on only 55 reward). Not a rank bet — the highest-EV pick, field just misses it |
+| 4 | DR Congo–Uzbekistan | **DR Congo** | **1-0** | ★ VETO engine's UZBEKISTAN (model rates eliminated away Uzb 39% vs mkt 12%; edge 0.60≪1) = artifact; minnow low-liquidity match. Must-win DRC + dead-rubber Uzb stakes AGREE with market → follow DR Congo (mkt-EV 39.1) |
+| 5 | Jordan–Argentina | **Argentina** | **0-2** | FOLLOW, lock. Argentina qualified → rotation, already priced (mkt 80% not 90%) |
+| 6 | Algeria–Austria | **Draw** | **1-1** | ★ OVERRIDE engine's AUSTRIA (model overrates it 41 vs mkt 33). Independent-market DRAW is EV-max by ~10pts (45.3 vs 35.3); draw-incentive both ways (Austria advances w/ draw, Algeria's draw = live 3rd-place) |
+
+**STRATEGY: 5 follows + 1 EV-max field-thin pick (Colombia).** Two engine corrections, BOTH toward the independent
+market (DR Congo artifact-veto; Algeria-Austria model-overrating → market-EV draw) — zero contrarian rank-bets. Score
+layer = pure modal (Colombia 1-0 = the +127 exact profile; clear-fav margin scores are floor-safe). **X2 spent. NO variance
+ramp** — this is the disciplined-EV-max slate the new maximand prescribes; rank lands where it honestly lands.
+
+*Pending: realized TIERS for these 6 + results; South Africa–Canada to predict; updated leaderboard.*

@@ -28,7 +28,19 @@ do NOT hold indefinitely for KO. Evidence: leader Alexandre X2'd the NL-Japan DR
 +15. Never X2 a low-reward favourite lock. "Model+market AGREE" is NOT the criterion (agreement = field also
 on it = correlated = zero rank separation); the criterion is **field misses it but it's still +EV**.
 
-**OBJECTIVE UPDATED 2026-06-18 → TOP-5 of ~16 (league grew from 13 to 16 & settled; new players joined), BALANCED.**
+**★★ MAXIMAND RESET 2026-06-27 (user-set, Tier-1 red-team REVIEW_2026-06-27_maximand-and-risk-model.md) — SUPERSEDES the rank-target framings below.★★**
+After jumping #8→#4 (+568) the user was asked whether to switch to a climb/variance model. The red-team FALSIFIED that, and the user
+answered: **the objective is DISCIPLINED EV-MAX PREDICTION — keep improving the model & how we use it; RANK IS THE SCOREBOARD, NOT the
+objective function.** ("we proved we can do solid score prediction WITHOUT strategizing rank… see how far the approach leads, #6 or #1…
+good independently of rank.") ⇒ NO rank-chasing variance ramp, NO floor-defense distortion. Follow blend-EV-max; decorrelate ONLY when the
+field-thin outcome is ALSO EV-max (free differentiation, taken because it's the right pick); veto model artifacts toward the independent
+market; pure-modal scores (rank-bonus comes naturally from clear-fav margin games). Keep BUILDING (KO ET re-allocation next). Red-team
+killed two errors for good: (i) "chalk bloc ahead" is unmeasurable from good-counts AND directionally wrong (#6/#7 are BELOW us);
+(ii) decorrelation=rank-lever was derived from BELOW the bunch (rank-convex) — MID-bunch it's E[rank]-neutral-to-NEGATIVE, so adding
+outcome-variance for rank is the killed-"inversion" error sign-flipped. This RESTORES the original EV-max core, stripped of rank accretions.
+**STANDING 2026-06-27: USER #4 of 9 shown (Lampadaire83) @2688 (36 good / 8 EXACTS).** Bunch: #1 Alex 3042 (+354 runaway) / #2 Nicolas 2761
+(+73) / #3 Hadri 2689 (+1) / #4 USER / #5 AdyFC 2681 (−7) / #6 Alexis 2633 (−55) / #7 CrazyBE 2605 (−83). [HISTORICAL rank-target frames below — SUPERSEDED:]
+**OBJECTIVE (superseded) 2026-06-18 → TOP-5 of ~16, BALANCED.**
 **STANDING 2026-06-26: USER #8 (Lampadaire83) @2120 (30 good / 5 EXACTS), HELD #8 (+263 on a near-pure-follow slate: 3 base hits CIV/NL/Para-draw
 + a Paraguay-Australia 0-0 EXACT +50). #7 Chocho +40, #6 CrazyBE +151 ABOVE; #9 Cyril −39, #10 Ethan −271 BELOW; top-5 line #5 AdyFC 2347 (12 exacts), gap 227.
 ★ THE 2026-06-25 INVERSION CALL TOOK AN EVIDENTIAL HIT (do NOT flip on one upset-cluster slate): its mechanism — "a decorrelation-miss cedes the

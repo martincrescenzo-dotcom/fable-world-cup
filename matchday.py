@@ -21,32 +21,22 @@ import json, numpy as np
 from scipy.stats import nbinom
 
 # ------------------------------------------------------------------ inputs
-MATCHES = [   # MD11 slate 2026-06-27 (FINAL group matches, Groups G & H; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
- # market=[H,D,A]=INDEPENDENT de-vigged 1X2 via WebSearch 2026-06-26 (ESPN/bet365/FanDuel/SportsLine/Opta-supercomputer).
- # Model-blind scan 2026-06-26 (final-round, qualification-driven):
- #  Group H standings Spain 4 / Uruguay 2 (2nd on goals) / Cape Verde 2 / Saudi Arabia 1.
- #   - Uruguay-Spain: SPAIN near-full XI (Yamal/Pedri/Rodri/Olmo/N.Williams start — wants to TOP group; NO rotation overlay),
- #     mkt Spain 59%; Uruguay must-win-or-match-CapeVerde (desperate). Follow Spain (crushed chalk, field 87% = no sep).
- #   - Cape Verde-Saudi Arabia: even 3-way (mkt .36/.31/.33); SAUDI must-win, CAPE VERDE plays for the draw (a draw likely
- #     sends CV through). Field piled 50% on the DRAW -> draw is field-OVER-picked (NOT a decorrel target).
- #  Group G standings Egypt 4 / Iran 2 / Belgium 2 / New Zealand 1.
- #   - New Zealand-Belgium: Belgium heavy fav (mkt 79%, -500), Doku returns, near-full & motivated; NZ bottom must-win
- #     hail-mary. Follow Belgium (crushed chalk, field 86% = no sep).
- #   - Egypt-Iran: Egypt needs only a DRAW to advance (cagey-game risk) -> mkt Egypt 42 / draw 31 / Iran 26 (Opta 44/31/25);
- #     Iran must-win. Egypt blend-fav but field hammers Egypt 71% / draw only 24% -> DRAW is the field-underpicked spot; let
- #     the engine adjudicate the Egypt-vs-Draw EV (potential Axis-B).  Iran travel/geopolitical disruption (unquantified, mkt prices).
- dict(home='Uruguay', away='Spain', rewards=[143,112,57], date='2026-06-27', fieldpct=[.02,.11,.87],
-      market=[.145,.261,.594]),
- dict(home='Cape Verde', away='Saudi Arabia', rewards=[99,123,94], date='2026-06-27', fieldpct=[.35,.50,.14],
-      market=[.36,.31,.33]),
- dict(home='New Zealand', away='Belgium', rewards=[172,129,32], date='2026-06-27', fieldpct=[.04,.10,.86],
-      market=[.08,.13,.79]),
- dict(home='Egypt', away='Iran', rewards=[85,114,123], date='2026-06-27', fieldpct=[.71,.24,.05],
-      market=[.42,.31,.26]),   # ★ OVERRIDE engine's IRAN (blendEV 41.4 + PRIME-X2) = v6 BIDIRECTIONAL ARTIFACT
-      # (model underrates Egypt .27 vs mkt .42 AND overrates Iran .45 vs mkt .26; Iran edge 0.92<1) -> Iran VETOED.
-      # PICK = DRAW (post-veto: pure-market EV-tie Egypt 35.7 / Draw 35.3, Draw robust across truth axis;
-      # field-underpicked 24% vs mkt 31%; edge 1.01). Score 1-1 (deployed pure-modal; CV-Saudi draw modal=0-0).
-      # See REVIEW_2026-06-26_egypt-iran-draw-and-inversion.md. NO X2 (spent).
+MATCHES = [   # MD12 slate 2026-06-27 (FINAL group matches, Groups J/K/L; fieldpct=[H,D,A]=Repartition; rewards=Cotes from user).
+ # market=[H,D,A]=INDEPENDENT de-vigged 1X2 via WebSearch 2026-06-27 (bet365/FOX/CBS/oddschecker scraped fractional -> de-vig).
+ # SouthAfrica-Canada EXCLUDED per user (predict later). Maximand (user 2026-06-27): disciplined EV-max prediction; rank downstream
+ # -> follow blend-EV-max, modal scores, decorrelate ONLY as free EV-neutral differentiation. NO rank-chasing variance ramp.
+ dict(home='Panama', away='England', rewards=[168,137,32], date='2026-06-27', fieldpct=[.01,.03,.96],
+      market=[.06,.14,.80]),
+ dict(home='Croatia', away='Ghana', rewards=[57,120,138], date='2026-06-27', fieldpct=[.60,.29,.10],
+      market=[.547,.289,.164]),
+ dict(home='Colombia', away='Portugal', rewards=[154,102,55], date='2026-06-27', fieldpct=[.07,.21,.72],
+      market=[.232,.257,.511]),
+ dict(home='DR Congo', away='Uzbekistan', rewards=[63,107,158], date='2026-06-27', fieldpct=[.76,.20,.04],
+      market=[.62,.26,.12]),
+ dict(home='Jordan', away='Argentina', rewards=[165,145,32], date='2026-06-27', fieldpct=[.01,.03,.96],
+      market=[.06,.14,.80]),
+ dict(home='Algeria', away='Austria', rewards=[96,103,107], date='2026-06-27', fieldpct=[.27,.47,.26],
+      market=[.234,.437,.328]),
 ]
 X2_THRESHOLD = 45.0
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile

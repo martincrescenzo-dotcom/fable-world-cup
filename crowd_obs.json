@@ -749,5 +749,95 @@
       0.05,
       0.2
     ]
+  },
+  {
+    "match": "Norway-France",
+    "date": "2026-06-26",
+    "home": "Norway",
+    "away": "France",
+    "actual_score": [
+      1,
+      4
+    ],
+    "bonus_awarded": 70,
+    "share_band": [
+      0.005,
+      0.05
+    ]
+  },
+  {
+    "match": "Senegal-Iraq",
+    "date": "2026-06-26",
+    "home": "Senegal",
+    "away": "Iraq",
+    "actual_score": [
+      5,
+      0
+    ],
+    "bonus_awarded": 100,
+    "share_band": [
+      0.0,
+      0.005
+    ]
+  },
+  {
+    "match": "Uruguay-Spain",
+    "date": "2026-06-26",
+    "home": "Uruguay",
+    "away": "Spain",
+    "actual_score": [
+      0,
+      1
+    ],
+    "bonus_awarded": 70,
+    "share_band": [
+      0.005,
+      0.05
+    ]
+  },
+  {
+    "match": "Cape Verde-Saudi Arabia",
+    "date": "2026-06-26",
+    "home": "Cape Verde",
+    "away": "Saudi Arabia",
+    "actual_score": [
+      0,
+      0
+    ],
+    "bonus_awarded": 30,
+    "share_band": [
+      0.2,
+      0.3
+    ]
+  },
+  {
+    "match": "New Zealand-Belgium",
+    "date": "2026-06-26",
+    "home": "New Zealand",
+    "away": "Belgium",
+    "actual_score": [
+      1,
+      5
+    ],
+    "bonus_awarded": 100,
+    "share_band": [
+      0.0,
+      0.005
+    ]
+  },
+  {
+    "match": "Egypt-Iran",
+    "date": "2026-06-26",
+    "home": "Egypt",
+    "away": "Iran",
+    "actual_score": [
+      1,
+      1
+    ],
+    "bonus_awarded": 20,
+    "share_band": [
+      0.3,
+      1.0
+    ]
   }
 ]
