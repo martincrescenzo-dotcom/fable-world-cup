@@ -366,3 +366,9 @@ Process: preflight GREEN; independent 90' 1X2 pulled (sharp books, de-vigged); m
 - **Germany 1-0 Paraguay** — pick GERMANY. Raw EV said Paraguay (31.4) but VETOED: v6 23% vs market 11% = 2x overrating (Ecuador/USA artifact profile); market-correct -> Germany EV-max. Modal 1-0 (15.2%). Overlay: Germany DEF down (Schlotterbeck out, halved) nudges 2-1 (10.4%) ~ 2-0 (10.1%) but modal stays 1-0.
 
 NOTE: all 3 modals are 1-goal chalk scores -> low bonus tier -> limited exact-score separation on THIS slate; bigger bonus chances on 2-goal-margin favourites later. v6 ran hot on BOTH underdogs (Japan, Paraguay) vs the sharp market = consistent known v6 tendency, discounted in both.
+
+### CORRECTION 2026-06-28 (artifact red-team, REVIEW_2026-06-28_artifact-veto.md)
+The Paraguay & Japan "VETOES" above were OVER-REACHES (mechanism wrong-signed: γ lowers underdogs not raises; double-counts the 0.6 blend; over-generalized to unflagged teams). PICKS UNCHANGED but RE-FRAMED:
+- Germany 1-0 = EV-TIE shaded mildly to favourite by the real directional prior (v6 over-weights weaker side, 9/9). LOW confidence, NOT an artifact veto. Paraguay (field 1%, EV 31.4 vs Ger 30.5) is a legit coin-flip alternative.
+- Brazil 1-0 = nominal EV-max but a GENUINE COIN-FLIP; Japan (1.27× divergence, below artifact class, +form tailwind, field-thin 11%) is a legit free-differentiation alternative. "VETOED" framing stripped.
+- Canada 0-1 UNCHANGED (a follow; market agrees; no veto involved).

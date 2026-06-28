@@ -268,9 +268,14 @@ Two distinct populations, opposite biases — do NOT conflate:
   matches: Canada gives 1-0 26%, 1-1 22%, 2-1 22% — iconic shape). Upgrade path when tier obs ≥5-6:
   test prono ∝ (pct/odds-perceived)^delta vs salience-only; adopt only if it fits tiers better.
 - **v6 engine validated at score-cell level vs de-vigged Winamax**: corr 0.92-0.99, meanAD 0.5-1.7%/cell.
-  Known deviations: model tail FATTER than market (Autre); model hotter on Ecuador/Uruguay favourite
-  cells (0-1 19 vs 13); 0-0 mildly high. matchday.py prints a [DIVERGENCE] flag when the picked score's
-  model/market ratio is >1.3 or <0.77 — treat as caution, prefer the alt score.
+  Known deviations: model hotter on Ecuador/Uruguay favourite cells (0-1 19 vs 13); 0-0 mildly high.
+  matchday.py prints a [DIVERGENCE] flag when the picked score's model/market ratio is >1.3 or <0.77 —
+  treat as caution, prefer the alt score.
+  **★ CORRECTED 2026-06-28 (artifact red-team, REVIEW_2026-06-28_artifact-veto.md): the old "model tail
+  FATTER than market" claim here was FALSIFIED by the realized record — v6's tail is THINNER; it UNDER-called
+  every blowout (Ger 7-1, Swe 5-1, USA 4-1, Eng 4-2, Iraq 1-4, NL 5-1, Can 6-0). Do NOT reason from a
+  "fat tail". (Caveat: part of the measured gap is single-bookie de-vig "Autre"-mass, n=19 — but direction
+  is THINNER.) This also REINFORCES the divergence finding: v6 is too generous to the weaker side in goals too.★
 - **ARCHITECTURAL PRINCIPLE (locked after a caught error):** Winamax data enters the CROWD layer ONLY
   (plausibility for crowd shares). p(score) in EV stays PURE v6 — the validated truth model. Never blend
   market into p: (a) single-bookie score odds w/ 143-152% overround ≠ the liquid outcome markets where
@@ -494,6 +499,24 @@ Each shipped change beat its predecessor out-of-sample (5-fold; exact-score log-
 - Base model was UNDER-confident (favourites win more than predicted); γ=1.5 fixes it (calibrated 87%→88%).
 - **USA = flagged model-vs-market disagreement** (model ~12–19% group win, market 37%). Likely Polymarket
   US-retail patriotic bias inflating the market. DON'T "fix" it by inflating USA.
+- **★ ARTIFACT-VETO DISCIPLINE — corrected by 3-agent red-team 2026-06-28 (REVIEW_2026-06-28_artifact-veto.md),
+  after over-applying it to veto unflagged Paraguay/Japan this KO slate. Read before vetoing ANY model lean:★**
+  (1) The POWERED finding is DIRECTIONAL: across 9/9 clean model-vs-market divergences v6 over-weighted the
+  WEAKER side (p≈0.002). The "market WINS every time" rate is NOT powered (8/9, CI [0.52,0.997]; the 1 loss =
+  Türkiye 3-2, v6 was right). USA sub-ledger 3/1 (not 3/3). So: lean market on divergences — but it's a MILD
+  directional correction, not a certainty.
+  (2) The "Elo×γ amplification artifact" MECHANISM is WRONG-SIGNED for underdogs: γ=1.5 RAISES the favourite
+  and LOWERS the underdog (verified: γ1.0→1.5 moves Paraguay 25.8→21.3, Japan 32.2→29.8). So γ already pushes
+  v6's over-rated underdogs TOWARD the market. v6 over-rating an underdog comes from BASE att/def, NOT γ. The
+  γ story is valid ONLY for FAVOURITE-inflation (Ecuador as away-fav, USA-gap-widening). Never cite "γ artifact"
+  to veto an underdog down.
+  (3) NO FULL VETO ON TOP OF THE BLEND for UNFLAGGED teams = double-counting (the 0.4/0.6 blend was ITSELF set
+  from these divergences; the 0.6 already encodes the lean). On a clear divergence the honest market weight is
+  ~0.6–0.85, NOT 1.0. Trust the blend; for flagged teams (USA/Ecuador/Ghana-Panama) with clean OOS evidence,
+  lean harder. PRE-REGISTER every veto: (a) evidenced bias+direction, (b) flagged or ≥1 clean non-double-counted
+  OOS instance, (c) market-leg type — else it's a market-default tie-break, NOT an "artifact correction", and
+  must not be logged as one. Don't inflate a team with an overlay THEN veto the inflated number (did this to
+  Paraguay). Don't double-book one match across two team-ledgers (USA-Paraguay ≠ evidence for both).
 - Most score variance is irreducible (predicted-total std ~0.5 vs actual ~1.8). Model gives frequencies,
   never the specific upset.
 
