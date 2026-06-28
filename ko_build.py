@@ -60,7 +60,13 @@ for lam in (1.0,1.15,1.30):
     phi=opt.brentq(lambda p: Plevel_even(p,lam)-target,0.01,3.0)
     print(f'  canonical even match lambda/team={lam}: calibrated phi={phi:.3f}')
 PHI=opt.brentq(lambda p: Plevel_even(p,1.15)-target,0.01,3.0)
-print(f'\nDEPLOY phi={PHI:.3f} (canonical lambda=1.15). Sensitivity band phi in [{opt.brentq(lambda p:Plevel_even(p,1.30)-target,.01,3):.2f},{opt.brentq(lambda p:Plevel_even(p,1.0)-target,.01,3):.2f}]')
+# NOTE (red-team 2026-06-28): calibration fixes ONLY the product lambda*phi (= identified even-match
+# per-team ET rate). phi=0.635 is an artifact of the lambda=1.15 anchor; varying lambda just relabels
+# the same model. The HONEST uncertainty is rho's CI propagated at FIXED lambda:
+phi_lo=opt.brentq(lambda p: Plevel_even(p,1.15)-(target+1.96*(target*(1-target)/Ndata)**0.5),0.01,3.0)
+phi_hi=opt.brentq(lambda p: Plevel_even(p,1.15)-(target-1.96*(target*(1-target)/Ndata)**0.5),0.01,3.0)
+print(f'\nDEPLOY phi={PHI:.3f} @lambda=1.15. IDENTIFIED quantity = even-match per-team ET rate = {1.15*PHI/3:.3f} (only lambda*phi is pinned).')
+print(f'  honest phi uncertainty from rho CI at fixed lambda=1.15: [{phi_lo:.2f},{phi_hi:.2f}]  (NOT the old degenerate [0.56,0.73] lambda-relabel band)')
 
 games=[('South Africa','Canada',[141,121,64]),('Netherlands','Morocco',[80,114,122]),
  ('Mexico','Ecuador',[84,108,122]),('Belgium','Senegal',[80,112,123]),
