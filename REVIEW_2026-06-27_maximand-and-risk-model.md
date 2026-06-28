@@ -98,6 +98,12 @@ decorrelate from rivals you CHASE (manufacture it), accept bounded −EV ONLY if
 PRE-REGISTER the rival model + swing arithmetic BEFORE the slate; route through the red-team gate. This RE-INSTATES the
 one TRUE theorem the reset otherwise discarded (correlated field → copying freezes the gap → rank needs difference-
 variance) STRICTLY for the endgame — the horizon trigger is exactly what separates it from the falsified "inversion."
+**G1 EXECUTABILITY (user flag 2026-06-28): rivals' per-match picks are NOT visible (only leaderboard + cumulative good/exact counts).** The
+rival-SPECIFIC form ("copy rival you lead / decorrelate from rival you chase") is NOT runnable. Degrade to a FIELD-PROXY: per-match field%
+(Repartition) stands in for the pack (favourite-herd ⇒ consensus-clustered). Trailing→lean the +EV/near-EV pick the field is THIN on;
+leading→pick WITH the heavy field%. Targets the pack generically, not a named rival → blunt, keep magnitude modest. This LIMITATION
+REINFORCES the EV-max doctrine (no precision rank-targeting ⇒ don't claim rival-level resolution — that was the killed "chalk bloc" error).
+Sharpen only if rival-pick info ever becomes visible (post-lock reveal / shared sheet / top-players CSV).
 
 **G2 — UTILITY pinned.** EV-max is optimal at all N iff utility is LINEAR in points. The user's prior variance-ramp
 impulse + "wouldn't like #6 but care more about building" = a MILD RANK-KINK, not pure-linear → G1 endgame switch is ON.

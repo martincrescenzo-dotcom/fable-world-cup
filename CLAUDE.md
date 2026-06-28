@@ -45,7 +45,14 @@ these it can "honestly finish #6 when #3 was free":** G1 **ENDGAME CLAUSE** — 
 (N ≳ (gap/σ_d)² ≈8-13; true NOW at N≈37). In the LAST ~1-3 slates with standings known AND gap-to-adjacent-rival ≤ one-slate swing
 (~one exact 50-100) → SWITCH to rank-aware: copy rivals you LEAD, decorrelate from rivals you CHASE, bounded −EV only if it STRICTLY
 raises P(target rank); PRE-REGISTER rival model + arithmetic, red-team-gate it. (Re-instates the true "copying-freezes-the-gap"
-theorem STRICTLY for the endgame — horizon trigger is what separates it from the killed inversion.) G2 utility = MILD RANK-KINK
+theorem STRICTLY for the endgame — horizon trigger is what separates it from the killed inversion.)
+**G1 EXECUTABILITY CONSTRAINT (user 2026-06-28): rivals' per-match picks are NOT visible** (we see only the leaderboard + cumulative
+good/exact counts). So the rival-SPECIFIC form is NOT runnable → degrade to a FIELD-PROXY: use per-match field% (Repartition) as a stand-in
+for the pack's picks (favourite-herd ⇒ clusters on consensus). TRAILING→lean the +EV/near-EV pick the field is THIN on (manufacture
+difference vs the likely-consensus pack); LEADING→pick WITH the heavy field% (move with the pack). Targets the PACK generically, NOT a named
+rival → blunt; keep magnitude modest. This LIMITATION REINFORCES the main doctrine (can't precision-target rank ⇒ EV-max + modest endgame
+field-decorrelation is the most we can justify; do NOT claim rival-level resolution — that was the killed "chalk bloc" error). Sharpen only
+IF any rival-pick info ever becomes visible (post-lock reveal / shared sheet / top-players CSV). G2 utility = MILD RANK-KINK
 (user "wouldn't like #6 but care more about building") → G1 is ON. G3 **PROCESS SCORECARD** — judge the doctrine on CALIBRATION
 (pick log-loss/Brier, market edge-hit-rate, decorrelation discipline), NEVER on points/rank (else "good process, just unlucky" is
 unfalsifiable). G4 **QUARANTINE +568** as ~4σ/n=1 non-evidence; adopted for outcome-INDEPENDENT reasons; "proved we can predict" is
