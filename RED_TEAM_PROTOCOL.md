@@ -29,6 +29,23 @@ result if any is non-trivial:
 
 If all four pass cleanly → proceed. If any is shaky AND the claim is load-bearing → escalate to Tier 1.
 
+### ★ OUTPUT GATE (standing, user-set 2026-06-28) — applies to EVERY recommendation before it reaches chat
+A *recommendation* is any pick, ranking, "do X", or "X is the call". Before one ships it MUST carry its
+evidentiary basis through the power check, IN THE OUTPUT:
+1. **Name the basis, its n, and the CI/power.** No basis stated = not a recommendation yet.
+2. **Small-n is disqualifying.** If the load-bearing basis has a CI too wide to separate the recommended
+   option from its alternative (e.g. "0/5" → 95% CI [0, 0.52]; a hit-rate/anecdote/n≤~8 ledger), it MUST NOT
+   ship as a recommendation. Do ONE of: (a) re-base it on a POWERED fact (e.g. a p<0.01 directional finding
+   corroborated by a 2nd channel), (b) DOWNGRADE explicitly to "underpowered — no recommendation / can't tell",
+   or (c) escalate to Tier-1.
+3. **Never dress a hit-rate ledger as a decision rule.** "It went k/n, so don't/do it" is an *outcome* count;
+   judge the *process* (was each call +EV at decision: edge, market-confirmation, n behind the edge), per G3.
+   A run of 0 hits on genuinely +EV picks is variance, not a failed rule.
+4. **A powered basis that survives this is what makes it a recommendation.** Default to UNDER-claiming: when
+   power is absent, say so — that is itself the correct, shippable answer.
+This is the rule the project kept violating (league_sim2; follow-for-bons; the 2026-06-28 "decorrelation 0/5"
+pillar). The user's standard: a small-n recommendation should never reach the chat.
+
 ## TIER 1 — FULL 3-AGENT RED-TEAM (on trigger; via `/redteam`)
 **Triggers (any one):**
 - the claim would CHANGE deployed doctrine, a pick, or a parameter;

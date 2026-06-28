@@ -535,7 +535,13 @@ score-logic confound, assumed deficit, 3× unvalidated judgment overrides, the 2
 (power/CI · maximand · sample-vs-inference · measured-vs-assumed) on every claim — auto-injected each turn by
 the `.claude/settings.json` UserPromptSubmit hook; Tier-1 full 3-agent review (statistician + strategist +
 data-integrity) via the `redteam` skill when a claim is load-bearing / drives an irreversible pick / is
-challenged / uses "validated|falsified|proven|no gap|at ceiling". The checklist below is the substance the gate enforces:
+challenged / uses "validated|falsified|proven|no gap|at ceiling".
+**★ OUTPUT GATE (user-set 2026-06-28, see RED_TEAM_PROTOCOL.md): a small-n recommendation must NEVER reach the
+chat. Every pick/"do X"/"X is the call" ships only with its n + CI named; if the load-bearing basis has a CI too
+wide to separate the call from its alternative (hit-rate ledgers like "0/5" → CI [0,0.52]; anecdotes; n≲8), it is
+DISQUALIFIED — re-base it on a POWERED fact, or downgrade to "underpowered — no recommendation". Never dress a
+k/n hit-rate as a decision rule (judge process not outcomes, G3). Under-claim by default.★**
+The checklist below is the substance the gate enforces:
 1. **ASK FIRST, DON'T ASSUME.** If the user could plausibly hold a datum (league points/standings, results,
    pick %, odds, lineups, prize structure), **ASK for it before estimating**. Estimate only after they
    confirm they don't have it. The user has repeatedly had exact data I needlessly approximated.
