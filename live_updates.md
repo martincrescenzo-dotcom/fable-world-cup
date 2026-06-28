@@ -1,5 +1,18 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
+## ⟢ RESUME HERE (last session 2026-06-28, pre-/clear) ⟣
+**STATE:** USER = Lampadaire83 **#4 @2688** (36 good / 8 exacts). **MD12 slate SUBMITTED** (final group J/K/L) — pending results+tiers:
+England 0-2 | Croatia 2-0 | **Colombia 1-0** (EV-max field-thin) | **DR Congo 1-0** (vetoed Uzbekistan artifact) | Argentina 0-2 |
+**Algeria-Austria DRAW 1-1** (mkt-EV override). X2 SPENT.
+**DOCTRINE (set this session):** MAXIMAND = disciplined EV-max prediction; RANK IS THE SCOREBOARD, NOT the objective. + 6 GUARDRAILS
+(G1 endgame clause→degraded to FIELD-PROXY since rivals' picks aren't visible; G3 judge on calibration; G4 +568 is non-evidence;
+G5 keep-building fence). See CLAUDE.md MAXIMAND RESET block + REVIEW_2026-06-27_maximand-and-risk-model.md (+ addendum).
+**★ NEXT ACTION (critical path): BUILD + VALIDATE the KO ET re-allocation BEFORE predicting South Africa-Canada** (= the first
+Round-of-32 match, user is holding it). v6 emits 90'; KO scores on the 120' line (draws re-priced DOWN, scores higher). Must be a NEW
+transform ON TOP of the 90' output — NOT a refit of frozen attdef.json. Market leg = "result after ET excl. pens", NOT "to-advance". See [[ko-scoring-120-minutes]].
+**OPEN Q for user:** is ANY rival pick info ever visible (post-lock reveal / shared sheet / top-players CSV)? If never, G1 stays the blunt field-proxy permanently.
+
+
 ## ════ MD11 RESULTS + LEADERBOARD + MD12 SCAN/SLATE 2026-06-27 — read first ════
 **★ USER = Lampadaire83 JUMPED #8 → #4 @2688 (36 good / 8 EXACTS). +568, +3 exacts in one slate.** The MD11 slate hit huge:
 Spain 0-1 **EXACT +70** (follow), Cape Verde 0-0 **EXACT +30** (EV-max draw), Egypt-Iran 1-1 **EXACT +20** (the gated rank-lever
