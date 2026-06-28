@@ -1,15 +1,24 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
-## ⟢ RESUME HERE (last session 2026-06-28, pre-/clear) ⟣
-**STATE:** USER = Lampadaire83 **#4 @2688** (36 good / 8 exacts). **MD12 slate SUBMITTED** (final group J/K/L) — pending results+tiers:
-England 0-2 | Croatia 2-0 | **Colombia 1-0** (EV-max field-thin) | **DR Congo 1-0** (vetoed Uzbekistan artifact) | Argentina 0-2 |
-**Algeria-Austria DRAW 1-1** (mkt-EV override). X2 SPENT.
-**DOCTRINE (set this session):** MAXIMAND = disciplined EV-max prediction; RANK IS THE SCOREBOARD, NOT the objective. + 6 GUARDRAILS
+## ⟢ RESUME HERE (last session 2026-06-28) ⟣
+**STATE:** USER = Lampadaire83 **#3 @3005** (41 good / 9 exacts) — jumped #4→#3 (+317 on MD12). TIGHT bunch: #1 Alex 3169 (+164) /
+#2 Nicolas 3021 (+16) / **#3 USER 3005** / #4 AdyFC 2968 (−37, 12ex) / #5 Alexis 2965 (−40) / #6 CrazyBE 2922 / #7 Hadri 2873 (11ex).
+**MD12 RESULTS (scored 2026-06-28): 5/6 outcomes + 1 EXACT.** England **0-2 EXACT +30** ✓ | Croatia 2-0→**2-1** base ✓ |
+**Colombia 1-0 → 0-0 MISS** (✗ result; a +70 was one goal away — process sound, edge 1.22, the coin landed draw) |
+DR Congo 1-0→**3-1** base ✓ (artifact-veto on Uzbekistan PAID) | Argentina 0-2→**1-3** base ✓ | **Algeria-Austria DRAW 1-1→3-3 base ✓**
+(mkt-EV draw override PAID — outcome correct). Both engine corrections paid. Reconciles: +5 good, +1 exact, +317. X2 SPENT.
+**CALIBRATION TIERS (MD12, realized bonus of actual score):** Pan-Eng 0-2 +30 (20-30%) | Cro-Gha 2-1 +20 (>30%) |
+Col-Por 0-0 +70 (0.5-5%) | DRC-Uzb 3-1 +50 (5-20%) | Jor-Arg 1-3 +50 (5-20%) | Alg-Aut 3-3 +100 (<0.5%). [Crowd-mining CLOSED per G5;
+logged for record only, not refit.]
+**DOCTRINE:** MAXIMAND = disciplined EV-max prediction; RANK IS THE SCOREBOARD, NOT the objective. + 6 GUARDRAILS
 (G1 endgame clause→degraded to FIELD-PROXY since rivals' picks aren't visible; G3 judge on calibration; G4 +568 is non-evidence;
 G5 keep-building fence). See CLAUDE.md MAXIMAND RESET block + REVIEW_2026-06-27_maximand-and-risk-model.md (+ addendum).
-**★ NEXT ACTION (critical path): BUILD + VALIDATE the KO ET re-allocation BEFORE predicting South Africa-Canada** (= the first
-Round-of-32 match, user is holding it). v6 emits 90'; KO scores on the 120' line (draws re-priced DOWN, scores higher). Must be a NEW
-transform ON TOP of the 90' output — NOT a refit of frozen attdef.json. Market leg = "result after ET excl. pens", NOT "to-advance". See [[ko-scoring-120-minutes]].
+**★ NEXT ACTION (critical path): FINISH + VALIDATE the KO ET re-allocation, THEN predict South Africa-Canada** (first R32, held).
+`ko_scope.py` DRAFTED (untracked): draw cell k-k convolved with suppressed Poisson ET increments (rate (1/3)·λ·φ), φ∈[0.6,0.8] PRIOR.
+SCOPE RESULT (model-only, no market): draws fall ~9pts (SA-Can D 21.8%→~13%), pick FLIPS in only **1/16** (USA-Bosnia Draw→Bosnia).
+SA-Canada pick is **robustly Canada** across all φ (Canada favourite, away reward 64). STILL TODO before shipping: (a) ground/validate φ
+(currently unvalidated prior), (b) MANDATORY independent KO market leg = "result after ET excl. pens" NOT "to-advance" (pens scored as the
+120' draw). See [[ko-scoring-120-minutes]]. Reward table for all 16 R32 already in ko_scope.py.
 **OPEN Q for user:** is ANY rival pick info ever visible (post-lock reveal / shared sheet / top-players CSV)? If never, G1 stays the blunt field-proxy permanently.
 
 

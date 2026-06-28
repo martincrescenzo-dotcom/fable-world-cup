@@ -38,8 +38,11 @@ market; pure-modal scores (rank-bonus comes naturally from clear-fav margin game
 killed two errors for good: (i) "chalk bloc ahead" is unmeasurable from good-counts AND directionally wrong (#6/#7 are BELOW us);
 (ii) decorrelation=rank-lever was derived from BELOW the bunch (rank-convex) — MID-bunch it's E[rank]-neutral-to-NEGATIVE, so adding
 outcome-variance for rank is the killed-"inversion" error sign-flipped. This RESTORES the original EV-max core, stripped of rank accretions.
-**STANDING 2026-06-27: USER #4 of 9 shown (Lampadaire83) @2688 (36 good / 8 EXACTS).** Bunch: #1 Alex 3042 (+354 runaway) / #2 Nicolas 2761
-(+73) / #3 Hadri 2689 (+1) / #4 USER / #5 AdyFC 2681 (−7) / #6 Alexis 2633 (−55) / #7 CrazyBE 2605 (−83).
+**STANDING 2026-06-28: USER #3 of 9 shown (Lampadaire83) @3005 (41 good / 9 EXACTS) — jumped #4→#3 (+317 on MD12: 5/6 outcomes
++ a Panama-England 0-2 EXACT +30; Colombia 1-0 missed result as 0-0, a +70 one goal away — process sound, edge 1.22).** TIGHT 4-way
+bunch: #1 Alex 3169 (+164 runaway) / #2 Nicolas 3021 (+16) / **#3 USER 3005** / #4 AdyFC 2968 (−37, 12 ex) / #5 Alexis 2965 (−40) /
+#6 CrazyBE 2922 (−83) / #7 Hadri 2873 (−132, 11 ex). #2–#5 span 56 pts. KO IS LIVE: South Africa–Canada = first R32 (held). [Prev
+2026-06-27: #4 @2688; #1 Alex 3042 / #2 Nicolas 2761 / #3 Hadri 2689 / #4 USER / #5 AdyFC 2681 / #6 Alexis 2633 / #7 CrazyBE 2605.]
 **★ GUARDRAILS (bias-audit red-team 2026-06-27b, REVIEW addendum) — the reset is an "EV-max-WITH-an-ENDGAME-CLAUSE" doctrine; without
 these it can "honestly finish #6 when #3 was free":** G1 **ENDGAME CLAUSE** — "rank is downstream" holds while horizon is long
 (N ≳ (gap/σ_d)² ≈8-13; true NOW at N≈37). In the LAST ~1-3 slates with standings known AND gap-to-adjacent-rival ≤ one-slate swing
