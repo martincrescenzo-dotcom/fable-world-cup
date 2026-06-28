@@ -28,18 +28,31 @@ def wdl(M): return float(np.tril(M,-1).sum()), float(np.trace(M)), float(np.triu
 def modal(M):
     i,j=np.unravel_index(np.argmax(M),M.shape); return f'{i}-{j}',M[i,j]
 
-# --- ET goal-count distribution from the 132-match dataset (total ET goals per match) ---
-cnt={0:82,1:37,2:10,3:2,4:1}; Ndata=sum(cnt.values()); meanET=sum(g*c for g,c in cnt.items())/Ndata
+# --- read the dataset file directly (single source of truth; no hand-entered aggregates) ---
+import re
+rows=[]
+for line in open('ko_et_dataset.md',encoding='utf-8'):
+    if line.count('|')>=8 and ('| 20' in line or '| 19' in line):
+        c=[x.strip() for x in line.strip().strip('|').split('|')]
+        if len(c)<9 or not re.match(r'^\d-\d$',c[5]) or not re.match(r'^\d-\d$',c[6]): continue
+        h90,a90=map(int,c[5].split('-')); h120,a120=map(int,c[6].split('-'))
+        rows.append((c[7],h90,a90,h120,a120))
+Ndata=len(rows); Npens=sum(1 for r in rows if r[0]=='Y'); RHO=Npens/Ndata
+cnt={}
+for r in rows:
+    g=(r[3]+r[4])-(r[1]+r[2]); cnt[g]=cnt.get(g,0)+1
+meanET=sum(g*c for g,c in cnt.items())/Ndata
+print(f'rho (READ FROM FILE) = {Npens}/{Ndata} = {RHO:.3f}  SE {(RHO*(1-RHO)/Ndata)**0.5:.3f}')
 print(f'Mean ET goals/match (data) = {meanET:.3f}  over n={Ndata}')
 print('  total-ET-goals dist  data vs Poisson(mean):')
 for g in range(5):
     print(f'   {g}: data {cnt.get(g,0)/Ndata:.3f}   Poisson {poisson.pmf(g,meanET):.3f}')
 # internal consistency: does Poisson(meanET) split reproduce rho?
 mu=meanET/2; Plevel=sum(poisson.pmf(j,mu)**2 for j in range(12))
-print(f'  -> Poisson model implied P(stay level) = {Plevel:.3f}   (data rho = 0.636)  [RESOLVES the goals-vs-retention tension]')
+print(f'  -> Poisson model implied P(stay level) = {Plevel:.3f}   (data rho = {RHO:.3f})  [goals-vs-retention coincide within {abs(Plevel-RHO):.3f}]')
 
-# --- calibrate phi on a canonical even ET matchup so model P(stay level)=0.636 ---
-target=0.636
+# --- calibrate phi on a canonical even ET matchup so model P(stay level)=rho ---
+target=RHO
 def Plevel_even(phi,lam):
     mu=lam/3*phi; return sum(poisson.pmf(j,mu)**2 for j in range(12))
 import scipy.optimize as opt
