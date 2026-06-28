@@ -1,7 +1,12 @@
-"""Ground phi against an empirical anchor: P(still level after ET | level at 90') ~ 0.5
-(roughly half of matches level at 90' in major KOs go to penalties). For each phi, compute
-the MODEL-implied conditional draw-survival, averaged over the R32 slate's at-90 draw cells,
-and see which phi reproduces ~0.46-0.50."""
+"""[SUPERSEDED 2026-06-28 — DO NOT DEPLOY THIS phi.] This script anchored phi to a GUESSED
+~0.46-0.50 penalty-rate ("roughly half"). That prior was FALSIFIED by measurement: across 132
+post-2004 major-tournament ET matches the real rate is rho = P(level at 120 | reached ET) = 0.652
+(~65% go to pens, NOT 50%) — see ko_et_dataset.md + ko_build.py (red-teamed REVIEW_2026-06-28).
+Correct anchor 0.652 => phi = 0.635 (canonical, in ko_build.py), NOT the 0.9-1.0 this script implies.
+Kept only for history. Use ko_build.py.
+
+Original docstring: Ground phi against an empirical anchor: P(still level after ET | level at 90') ~ 0.5
+(roughly half of matches level at 90' in major KOs go to penalties)."""
 import json, numpy as np
 from scipy.stats import nbinom, poisson
 AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); Q=json.load(open('qualification_v5.json'))
