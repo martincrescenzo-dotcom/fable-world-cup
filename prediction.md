@@ -356,3 +356,13 @@ layer = pure modal (Colombia 1-0 = the +127 exact profile; clear-fav margin scor
 ramp** — this is the disciplined-EV-max slate the new maximand prescribes; rank lands where it honestly lands.
 
 *Pending: realized TIERS for these 6 + results; South Africa–Canada to predict; updated leaderboard.*
+
+## R32 KO PICKS — 2026-06-28 (first 3 matches; KO 120' scoring, pens ignored; ET transform phi=0.635)
+Standing: USER #3 @3005 (41 good / 9 exacts), tight bunch (Nicolas +16, AdyFC -37). X2 SPENT.
+Process: preflight GREEN; independent 90' 1X2 pulled (sharp books, de-vigged); model-blind scan done; blend 0.4 v6 + 0.6 market at outcome level, ET-transformed to 120'; score = modal 120' cell (validated, no step-off).
+
+- **South Africa 0-1 Canada** — pick CANADA. blend120 [SA 17.9 / D 15.5 / Can 66.6], EV 42.7, edge 1.32, market-confirmed. Field 75% Canada (chalk). Modal 0-1 (17.2%).
+- **Brazil 1-0 Japan** — pick BRAZIL. EV-max (Bra 37.7 vs Jpn 37.2 near-tie). Japan VETOED: edge is v6-hot-on-underdog (v6 28-32% vs mkt 19-23%), not market-confirmed; outcome-variance not sanctioned mid-bunch. Modal 1-0 (13.0%).
+- **Germany 1-0 Paraguay** — pick GERMANY. Raw EV said Paraguay (31.4) but VETOED: v6 23% vs market 11% = 2x overrating (Ecuador/USA artifact profile); market-correct -> Germany EV-max. Modal 1-0 (15.2%). Overlay: Germany DEF down (Schlotterbeck out, halved) nudges 2-1 (10.4%) ~ 2-0 (10.1%) but modal stays 1-0.
+
+NOTE: all 3 modals are 1-goal chalk scores -> low bonus tier -> limited exact-score separation on THIS slate; bigger bonus chances on 2-goal-margin favourites later. v6 ran hot on BOTH underdogs (Japan, Paraguay) vs the sharp market = consistent known v6 tendency, discounted in both.
