@@ -372,3 +372,10 @@ The Paraguay & Japan "VETOES" above were OVER-REACHES (mechanism wrong-signed: �
 - Germany 1-0 = EV-TIE shaded mildly to favourite by the real directional prior (v6 over-weights weaker side, 9/9). LOW confidence, NOT an artifact veto. Paraguay (field 1%, EV 31.4 vs Ger 30.5) is a legit coin-flip alternative.
 - Brazil 1-0 = nominal EV-max but a GENUINE COIN-FLIP; Japan (1.27× divergence, below artifact class, +form tailwind, field-thin 11%) is a legit free-differentiation alternative. "VETOED" framing stripped.
 - Canada 0-1 UNCHANGED (a follow; market agrees; no veto involved).
+
+### R32 — Netherlands–Morocco 2026-06-29 (KO 120' scoring, pens ignored; φ=0.635)
+Standing: USER #3 @3005 (after SA-Canada **0-1 EXACT, +50** ✓). Tight bunch; X2 SPENT. Horizon long (full KO ahead) → G1 endgame clause NOT triggered → pure disciplined EV-max.
+Preflight GREEN. Model-blind: no injuries either side (Dumfries/Brobbey fit); NL one change (van de Ven LB for Aké); Morocco STRENGTHENS — Mazraoui/Diop/Bouaddi/Ounahi return to XI, Saibari in form (3 goals). Both near full strength, symmetric KO stakes → NO overlay.
+Independent market (de-vigged 3-way ML, +115/+230/+260): **NL 44.5 / D 29.0 / Mor 26.6** ≈ v6 90' (46/26/28) → model–market AGREE, no divergence, **no veto** (Morocco is lower-EV, not vetoed).
+
+- **Netherlands 1-0 Morocco** — pick NETHERLANDS. blend90 [45.0/27.9/27.1] → **blend120 [NL 51.1 / D 17.6 / Mor 31.3]** (draw re-priced down per ET transform). **EV120: NL 40.8 / Draw 20.1 / Morocco 38.2 → NL EV-max.** Edge(NL)=blend/reward-implied = 0.511/0.424 = **1.20 (>1, +EV)**, market-confirmed. Field 39% NL < reward-implied 42% < our 51% ⇒ NL is mildly field-UNDERPICKED — the EV-max pick is also the non-crowded one (no decorrelation tension). Modal 120' cell = **1-0 (14.0%)**. Morocco (EV 38.2, edge 1.13) is a legit close coin-flip alternative, just below NL on EV — clean follow, not a contrarian bet.

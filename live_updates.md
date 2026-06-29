@@ -1,8 +1,11 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
-## ⟢ RESUME HERE (last session 2026-06-28) ⟣
-**STATE:** USER = Lampadaire83 **#3 @3005** (41 good / 9 exacts) — jumped #4→#3 (+317 on MD12). TIGHT bunch: #1 Alex 3169 (+164) /
+## ⟢ RESUME HERE (last session 2026-06-29) ⟣
+**STATE:** USER = Lampadaire83 **#3 @3005** (41 good / 9 exacts). TIGHT bunch: #1 Alex 3169 (+164) /
 #2 Nicolas 3021 (+16) / **#3 USER 3005** / #4 AdyFC 2968 (−37, 12ex) / #5 Alexis 2965 (−40) / #6 CrazyBE 2922 / #7 Hadri 2873 (11ex).
+
+**★ R32 RESULT 2026-06-28: South Africa–Canada 0-1 → pick Canada 0-1 = EXACT, BONUS +50** ✓ (ET transform's first live KO pick PAID — Canada follow, modal 0-1; tier 5-20%). Registered to crowd_obs (57 obs; coarse-mode, no refit per G5).
+**★ R32 PICK 2026-06-29: Netherlands 1-0 Morocco** (pick NL). Model 90' (46/26/28) ≈ indep market (44.5/29.0/26.6) → AGREE, no veto. blend120 [NL 51.1/D 17.6/Mor 31.3]; EV120 NL 40.8 > Mor 38.2 > D 20.1 → NL EV-max, edge 1.20, market-confirmed; field 39% mildly under-backs NL (no decorrelation tension). Modal 1-0 (14.0%). Disciplined EV-max follow; X2 spent; long horizon → no endgame/rank distortion. See prediction.md R32 block.
 **MD12 RESULTS (scored 2026-06-28): 5/6 outcomes + 1 EXACT.** England **0-2 EXACT +30** ✓ | Croatia 2-0→**2-1** base ✓ |
 **Colombia 1-0 → 0-0 MISS** (✗ result; a +70 was one goal away — process sound, edge 1.22, the coin landed draw) |
 DR Congo 1-0→**3-1** base ✓ (artifact-veto on Uzbekistan PAID) | Argentina 0-2→**1-3** base ✓ | **Algeria-Austria DRAW 1-1→3-3 base ✓**

@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo RED-TEAM OUTPUT GATE active. Run Tier-0 on EVERY recommendation BEFORE it ships: 1 power/CI 2 maximand 3 sample-vs-inference 4 measured-vs-assumed. HARD RULE: a recommendation whose load-bearing basis is small-n - CI too wide to separate the call from its alternative - must NOT reach chat. Name n+CI, then either rest it on a POWERED basis, DOWNGRADE to 'underpowered - no recommendation', or escalate to the Tier-1 redteam skill. Never dress a hit-rate ledger (e.g. 0/5) as a decision rule. Canonical protocol in RED_TEAM_PROTOCOL.md"
+            "command": "echo 'RED-TEAM OUTPUT GATE active. Run Tier-0 on EVERY recommendation BEFORE it ships: 1 power/CI 2 maximand 3 sample-vs-inference 4 measured-vs-assumed. HARD RULE: a recommendation whose load-bearing basis is small-n - CI too wide to separate the call from its alternative - must NOT reach chat. Name n+CI, then either rest it on a POWERED basis, DOWNGRADE to underpowered - no recommendation, or escalate to the Tier-1 redteam skill. Never dress a hit-rate ledger (e.g. 0/5) as a decision rule. Canonical protocol in RED_TEAM_PROTOCOL.md'"
           }
         ]
       }

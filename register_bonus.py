@@ -109,6 +109,9 @@ NEW_OBS = [
          away='Belgium', actual_score=(1,5), bonus_awarded=100),
     dict(match='Egypt-Iran', date='2026-06-26', home='Egypt',
          away='Iran', actual_score=(1,1), bonus_awarded=20),
+    # R32 KO (2026-06-28) — bonus on the 120' scoreline, pens ignored
+    dict(match='South Africa-Canada (R32)', date='2026-06-28', home='South Africa',
+         away='Canada', actual_score=(0,1), bonus_awarded=50),
 ]
 
 BAND={20:(0.30,1.0),30:(0.20,0.30),50:(0.05,0.20),70:(0.005,0.05),100:(0.0,0.005)}
