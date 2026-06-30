@@ -1,8 +1,39 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
-## ⟢ RESUME HERE (last session 2026-06-29) ⟣
-**STATE:** USER = Lampadaire83 **#3 @3005** (41 good / 9 exacts). TIGHT bunch: #1 Alex 3169 (+164) /
-#2 Nicolas 3021 (+16) / **#3 USER 3005** / #4 AdyFC 2968 (−37, 12ex) / #5 Alexis 2965 (−40) / #6 CrazyBE 2922 / #7 Hadri 2873 (11ex).
+## ⟢ RESUME HERE (last session 2026-06-30) ⟣
+**STATE:** USER = Lampadaire83 **#2 @3184** (43 good / 10 exacts) — jumped #3→#2 (+179). TIGHT bunch:
+#1 Alex 3318 (+134 runaway) / **#2 USER 3184** / #3 Nicolas 3170 (−14) / #4 AdyFC 3161 (−23, 12ex) /
+#5 CrazyBE 3101 / #6 Hadri 3098 (12ex) / #7 Alexis 3094 (8ex). #2–#7 span 90 pts. Long horizon (≈7 KO
+matches) → endgame/rank levers OFF (G1 off). X2 SPENT.
+
+**★ R32 RESULTS 2026-06-29 (3 played, all tier +20):** Brazil **2-1** Japan (we drafted Brazil 1-0 → base
+only, score missed) · Germany–Paraguay **1-1** (draft Paraguay field-1% = the over-applied artifact-veto
+EV-tie → LOST on the draw, as 4b60f0a flagged) · Netherlands–Morocco **1-1** (pick NL 1-0 → LOST on the
+draw). Calibration tiers (coarse-mode, logged only): Bra-Jap 2-1 +20 (>30%) · Ger-Par 1-1 +20 (>30%) ·
+NL-Mor 1-1 +20 (>30%). NB: 2 of 3 R32 draws cost outcome hits — the "model leans to the weaker side" pattern
+materialised live (Paraguay, NL both drawn).
+
+**★ R16/R32 SLATE 2026-06-30 SUBMITTED (4 matches) — full procedure: preflight GREEN, model-blind scan,
+independent market (90' de-vigged, ET-transformed), blend120 EV-max:**
+| Match | Pick | Score | blend120 / EV / edge | Basis |
+|---|---|---|---|---|
+| Côte d'Ivoire–Norway | **Norway** | **0–1** | 59.7 / 44.8 / 1.34 | follow; Norway fav under model+market(53.5)+field(61); modal away. Haaland/Ødegaard START (4-1 loss=rotation) |
+| France–Sweden | **France** | **2–0** | 83.5 / 31.7 / 1.22 | lock; Sweden CB Hien OUT (immaterial, France already heavy); modal home |
+| Mexico–Ecuador | **Mexico** | **1–0** | prob 41.6 / EV 34.9 / edge 1.03 | RED-TEAM OVERTURNED mechanical Ecuador (see below); modal home 15.9% |
+| England–DR Congo | **England** | **1–0** | 80.8 / 31.5 / 1.20 | lock; modal home |
+
+**★ TIER-1 RED-TEAM (3 agents, REVIEW_2026-06-30_mexico-ecuador-ko): MECHANICAL "ECUADOR" OVERTURNED → MEXICO.**
+Pipeline argmax-EV was Ecuador (43.0 vs Mex 34.9) but the gap is **0.73·σ_diff = NOT significant** (dead heat);
+the blend **probability** favours Mexico (41.6 vs 35.2) — only EV favours Ecuador, purely via reward asymmetry
+(122 vs 84) × the model rating Ecuador the favourite (43.6%) while the sharp market (Kalshi regulation-time line,
+ET-excl-pens — correct leg) makes Mexico a 20-pt favourite (Ecu 29.6%). The one POWERED, team-agnostic fact
+(9/9 v6 over-weights the market's weaker side, p≈0.002) breaks the tie toward Mexico WITHOUT invoking the
+fenced Ecuador-specific flag. **FATAL for Ecuador:** fails the market-confirmed clause for decorrelation
+(market contradicts it) → veto situation, structurally identical to MD12 DR Congo/Uzbekistan. Draw rejected
+(edge 0.74<1). Data-integrity 12/12 clean PASS (numbers right, inference wrong — again). Both fenced-flag and
+rank levers correctly UNUSED.
+
+[Prev 2026-06-29 #3 @3005:]
 
 **★ R32 RESULT 2026-06-28: South Africa–Canada 0-1 → pick Canada 0-1 = EXACT, BONUS +50** ✓ (ET transform's first live KO pick PAID — Canada follow, modal 0-1; tier 5-20%). Registered to crowd_obs (57 obs; coarse-mode, no refit per G5).
 **★ R32 PICK 2026-06-29: Netherlands 1-0 Morocco** (pick NL). Model 90' (46/26/28) ≈ indep market (44.5/29.0/26.6) → AGREE, no veto. blend120 [NL 51.1/D 17.6/Mor 31.3]; EV120 NL 40.8 / Mor 38.2 / D 20.1; edge 1.20, market-confirmed. Modal 1-0 (14.0%). Disciplined EV-max follow; X2 spent; long horizon → no endgame/rank distortion.
