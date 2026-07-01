@@ -410,6 +410,15 @@ moneyline / sharp-book mid, all pulled 2026-07-02, de-vigged, ET-transformed. Pr
 **Slate-wide structural finding (REVIEW_2026-07-02): the house reward line is 90'-shaped but pays at 120' →
 all 9 draw edges ≤0.69 (KO draws house-over-priced) and win-edges>1 near-automatic (mean +0.12). KO draw
 picks off reward-EV are banned without this correction; propagation, not the edge value, is the real gate.**
+
+### R16 add-ons (user-fed later on 2026-07-02)
+| Match | Pick | Score | blend120 / EV / edge | Basis |
+|---|---|---|---|---|
+| Brazil–Norway (Jul 5) | **Brazil** | **1–0** | 54.7 / 39.4 / 1.20 | EV dead heat w/ Norway (39.4 vs 39.2, the 90'-shaped-line artifact) but Brazil is argmax at EVERY weight+split of the sensitivity grid (Norway wins no corner); blend-prob 54.7 vs 30.1; mkt DK [49.2/26.7/24.0] confirms. Paquetá OUT = priced (line post-dates). Modal 1-0 (11.1 vs 2-1 10.3) |
+**Belgium–Senegal: NOT SUBMITTED (user's call — too late). Hypothetical for the record: BELGIUM 1-0** —
+EV dead heat flipping on the unmeasured market line (±2.5 EV across plausible lines); blend-prob strongly
+Belgium (~49 vs 34) + market clearly Belgium = the Mexico-Ecuador tie-break signature → Belgium. Actual:
+2-2 @90' → ET (120' final + tier pending from user). A draw pick was correctly non-viable ex-ante (EV ~19).
 Preflight GREEN. Independent market = 90' de-vigged moneylines (ESPN/DraftKings/FanDuel) cross-checked to Kalshi explicit regulation-time line (= our scoring def), ET-transformed to 120'. Model-blind: Norway Haaland/Ødegaard START (4-1 loss was rotation, not form); Sweden CB Hien OUT (immaterial vs France); CIV Singo / France Thuram / Norway Ryerson doubtful w/ cover → skipped; Mexico/Ecuador/England/DRC first XI intact (Ecuador goal-drought qualitative, NOT applied).
 - **Côte d'Ivoire 0-1 Norway** — pick NORWAY. blend120 [CIV 25.6 / D 14.8 / Nor 59.7], EV 44.8, edge 1.34, market-confirmed (Norway fav under model+market 53.5+field 61). Modal away 0-1 (13.6%).
 - **France 2-0 Sweden** — pick FRANCE. blend120 [Fra 83.5 / D 7.5 / Swe 9.0], EV 31.7, edge 1.22. Lock. Modal home 2-0 (12.0%).
