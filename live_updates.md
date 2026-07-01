@@ -5,6 +5,12 @@
 #1 Alex 3318 (+134 runaway) / **#2 USER 3184** / #3 Nicolas 3170 (−14) / #4 AdyFC 3161 (−23, 12ex) /
 #5 CrazyBE 3101 / #6 Hadri 3098 (12ex) / #7 Alexis 3094 (8ex). #2–#7 span 90 pts. Long horizon (≈7 KO
 matches) → endgame/rank levers OFF (G1 off). X2 SPENT.
+**⚠ AUDIT 2026-07-01:** (a) G1 "long horizon" is NO LONGER self-evident — N≈7 remaining is INSIDE the pre-registered
+8-13 trigger band and #3/#4 sit −14/−23 (one-swing gaps): the G1 re-eval REVIEW_2026-06-29 scheduled is DUE at the next
+slate, run the arithmetic. (b) 5 R32 matches were listed for picking 06-29 and never resolved in this log: Belgium-Senegal,
+Portugal-Croatia, Switzerland-Algeria, Colombia-Ghana, Australia-Egypt — ASK USER whether they were skipped or submitted
+elsewhere, and log their results/tiers. (c) Calibration stream is ~20 tiers behind (MD9 tail: Switzerland-Canada,
+Bosnia-Qatar; ALL of MD12; all R32 after SA-Canada) — collect from organizer emails before any --refit.
 
 **★ R32 RESULTS 2026-06-29 (3 played, all tier +20):** Brazil **2-1** Japan (we drafted Brazil 1-0 → base
 only, score missed) · Germany–Paraguay **1-1** (draft Paraguay field-1% = the over-applied artifact-veto
@@ -13,7 +19,9 @@ draw). Calibration tiers (coarse-mode, logged only): Bra-Jap 2-1 +20 (>30%) · G
 NL-Mor 1-1 +20 (>30%). NB: 2 of 3 R32 draws cost outcome hits — the "model leans to the weaker side" pattern
 materialised live (Paraguay, NL both drawn).
 
-**★ R16/R32 SLATE 2026-06-30 SUBMITTED (4 matches) — full procedure: preflight GREEN, model-blind scan,
+**★ R32 SLATE 2026-06-30 SUBMITTED (4 matches; label fixed 2026-07-01 audit — these are Round-of-32: only 8 of
+16 R32 ties had been played by 06-29, and the 06-29 session log lists Mexico-Ecuador among the R32 set) —
+full procedure: preflight GREEN, model-blind scan,
 independent market (90' de-vigged, ET-transformed), blend120 EV-max:**
 | Match | Pick | Score | blend120 / EV / edge | Basis |
 |---|---|---|---|---|
@@ -651,7 +659,8 @@ round matches remain (24 opening matches total, 16 played). If the next few open
 opening-match draw overlay; until then EV-max favourites stand.
 ## ═══════════════════════════════════════════════════════════════════════════════════════════
 
-**Last scanned: 2026-06-23.** Update this every model run (see CLAUDE.md → "Model-blind scan").
+**Last scanned: 2026-06-30** (scans 06-25→06-30 were logged inside their slate blocks but this marker was never
+bumped — fixed 2026-07-01 audit). Update this every model run (see CLAUDE.md → "Model-blind scan").
 **Scan 2026-06-23 (MD9: England-Ghana, Panama-Croatia, Colombia-DRC, Switzerland-Canada, Bosnia-Qatar — final group matches B/K/L):**
  England qualifying (may rotate, huge fav — no overlay). Croatia heavy fav + must-win vs Panama (motivation headwind on draw; market prices it).
  Colombia unchanged, can seal qualification (no overlay). **Canada: Koné tibia-fracture OUT + Davies hamstring MAY rest → ATT −0.05** (mild/uncertain;
@@ -756,13 +765,15 @@ fav, draw was −3.8EV hedge). Principle: separate via outcome when underpicked 
 score. Engine now LEAGUE_MODE (matchday.py, DIFF_BAND=2.0). X2 still HELD (Ecuador E=50.6 flagged but
 single-model-source contested — not used yet).
 
-**Running total: 165 pts (145 base + 20 bonus).**
+**Running total: 165 pts (145 base + 20 bonus). [FOSSIL — frozen at MD5, 2026-06-13 era; current standing lives in
+the RESUME block at the top of this file. Kept only as edit history.]**
 **NB:** realized bonus tiers are observable even for scores we didn't pick (obs #2 = Korea 2–1 earned +20 for whoever had it → >30% crowd). User to report the realized tier of EVERY played match → ~1 calibration obs per match.
 **Crowd calibration:** obs #2 VIOLATED the prior (est 26.8% vs realized >30%) → early refit: **beta 1.25→1.6, sal_strength 1.0→1.5** (crowd herds harder on iconic scores than assumed). Post-refit: Mexico OK (35.2%), Korea 29.0% — still 1pt below band edge; coarse-grid residual, expect resolution at obs #3. Strategic effect: iconic scores even MORE crowded → rare-score arbitrage (3-0/3-1 type, 50/70 tiers) STRONGER.
 **12 obs / 6 violations (2026-06-15):** model structurally misfit; params beta/sal near-unidentified. Notable new obs: Germany 7-1 → +100 (ultra-rare, model est 0.7% barely violates 0.5% ceiling); NL-Japan 2-2 → +20 (crowd herds hard on 2-2, model est only 17.4% vs >30% — draw iconic scores under-estimated); CIV-Ecuador 1-0 → +30 (model over-estimated 1-0 home win herding, 41.9% vs 20-30% actual). Pattern: draw scores (1-1, 2-2) dramatically under-estimated by model; home-win 1-0 over-estimated. Refit GATED to 15 obs.
 **★ FIRST DIRECT 0-0 OBSERVATION (Spain-Cape Verde, obs#12, 2026-06-15):** 0-0 realized +50 (5-20% among Draw-pickers); model est 17.8% → **OK, inside band**. The 0-0 under-picking edge was INFERRED until now (zero direct obs, demoted 2026-06-12); this is its FIRST direct support — confirms 0-0 sits at tier-50 with our p-estimate well-calibrated, vindicating the MD1 0-0-cluster tier-50 assumption. NB single obs (Verify-Std #7): one point, not a validated finding — but it points the right way (unlike the iconic-draw 1-1/2-2 under-estimates). Note 0-0 here ALSO fits the "draws under-picked by crowd" pattern but model p was accurate, so no violation.
 
-**X2 status: HELD** (usable anytime incl. KO — bar raised accordingly). Candidates auto-flagged by `matchday.py`.
+**X2 status: HELD [STALE — HISTORICAL 2026-06-12 status line. X2 was SPENT 2026-06-22 on Senegal and LOST; no boost
+remains. See RESUME block.]** Candidates auto-flagged by `matchday.py` (print now suppressed via X2_SPENT).
 **Standing (2026-06-12):** ~230,000th / >1M with 2nd-best-possible score (165) → top is dense; rare-score
 bonuses = primary climbing instrument (VAR_TIEBREAK active). 1st ex-aequo (of 4) in friends league.
 **Obs#2 provenance confirmed:** organizer email (first-party). Crowd params beta=1.6/sal=1.5 de-flagged.

@@ -2,9 +2,15 @@
 Each time the user hits an exact score, the awarded bonus reveals the BAND of the true
 crowd share of that score (among correct-outcome pickers):
   +20 -> (0.30, 1.0] | +30 -> (0.20, 0.30] | +50 -> (0.05, 0.20] | +70 -> (0.005, 0.05] | +100 -> (0, 0.005]
-Usage: edit NEW_OBS, run. With >=3 observations it grid-fits (beta, sal_strength) to put
-estimated shares inside realized bands; otherwise it just checks consistency."""
-import json, numpy as np
+Usage: edit NEW_OBS, run — registers observations + prints the consistency check.
+REFIT is opt-in: `python register_bonus.py --refit` (requires >=15 obs). 2026-07-01 audit fix:
+the old `if len(obs)>=15` gate was meant to STOP per-obs thrash but flipped into its opposite
+once n passed 15 — every registration run silently re-fit crowd_params.json (fired 2026-06-27:
+beta 1.0 / sal 0.75 now deployed). Registration and refitting are now separate decisions.
+KO obs (match tagged '(R32)'/'(R16)'/... or ko=True) are REGISTERED but EXCLUDED from the fit:
+their bonus is on the 120' scoreline, the fit's share_est is on the 90' grid — mixing them
+contaminates the crowd fit with exactly the 90'-vs-120' mismatch the ET transform corrects."""
+import json, sys, numpy as np
 from scipy.stats import nbinom
 
 NEW_OBS = [
@@ -165,33 +171,40 @@ def share_est(o,beta,sstr):
     cr=(plaus**beta)*np.array([s(a,b) for a,b in cells]); cr/=cr.sum()
     return float(cr[cells.index((a0,b0))])
 
+def is_ko(o):
+    return bool(o.get('ko')) or '(R' in o['match']   # '(R32)'/'(R16)'/'(QF)... ' tags: 120' scoreline obs
+fit_obs=[o for o in obs if not is_ko(o)]
+
 def loss(beta,sstr):
     L=0.0
-    for o in obs:
+    for o in fit_obs:
         c=share_est(o,beta,sstr); lo,hi=o['share_band']
         if c<lo: L+=(lo-c)**2
         elif c>hi: L+=(c-hi)**2
     return L
 
 cur=json.load(open('crowd_params.json'))
-print(f"current params beta={cur['beta']} sal_strength={cur['sal_strength']}  loss={loss(cur['beta'],cur['sal_strength']):.5f}")
+print(f"current params beta={cur['beta']} sal_strength={cur['sal_strength']}  loss={loss(cur['beta'],cur['sal_strength']):.5f}"
+      f"  ({len(fit_obs)} fit obs; {len(obs)-len(fit_obs)} KO obs excluded from fit)")
 for o in obs:
     c=share_est(o,cur['beta'],cur['sal_strength']); lo,hi=o['share_band']
     ok='OK' if lo<=c<=hi else 'VIOLATED'
+    if is_ko(o): ok+='  [KO 120-min obs — excluded from fit; 90-min share_est not comparable]'
     print(f"  {o['match']} {o['actual_score']}: est {c*100:.1f}% vs band [{lo*100:.1f},{hi*100:.1f}]%  {ok}")
-violated=any(not (o['share_band'][0]<=share_est(o,cur['beta'],cur['sal_strength'])<=o['share_band'][1]) for o in obs)
-if len(obs)>=15:   # 2026-06-14: refit GATED to >=15 obs. Per-obs refit chased noise on a misfit form
-                   # (beta swung 1.6<->1.0 on single results); coarse BONUS_MODE makes fine params ~irrelevant.
-    grid_b=[1.0,1.1,1.25,1.4,1.6,1.8]; grid_s=[0.5,0.75,1.0,1.25,1.5]
-    best=min(((loss(b,s),b,s) for b in grid_b for s in grid_s))
-    if best[0]<loss(cur['beta'],cur['sal_strength'])-1e-9:
-        cur['beta'],cur['sal_strength']=best[1],best[2]
-        json.dump(cur,open('crowd_params.json','w'),indent=2)
-        print(f"REFIT -> beta={best[1]} sal_strength={best[2]} (loss {best[0]:.5f}). matchday.py will use these.")
-        for o in obs:
-            c=share_est(o,cur['beta'],cur['sal_strength']); lo,hi=o['share_band']
-            print(f"  post-refit {o['match']} {o['actual_score']}: est {c*100:.1f}% vs [{lo*100:.0f},{hi*100:.0f}]%  {'OK' if lo<=c<=hi else 'STILL OUT'}")
+if '--refit' in sys.argv:
+    if len(fit_obs)<15:
+        print(f'REFIT REFUSED: only {len(fit_obs)} fit obs (<15).')
     else:
-        print('grid cannot improve — params kept; flag persists.')
+        grid_b=[1.0,1.1,1.25,1.4,1.6,1.8]; grid_s=[0.5,0.75,1.0,1.25,1.5]
+        best=min(((loss(b,s),b,s) for b in grid_b for s in grid_s))
+        if best[0]<loss(cur['beta'],cur['sal_strength'])-1e-9:
+            cur['beta'],cur['sal_strength']=best[1],best[2]
+            json.dump(cur,open('crowd_params.json','w'),indent=2)
+            print(f"REFIT -> beta={best[1]} sal_strength={best[2]} (loss {best[0]:.5f}). matchday.py will use these.")
+            for o in fit_obs:
+                c=share_est(o,cur['beta'],cur['sal_strength']); lo,hi=o['share_band']
+                print(f"  post-refit {o['match']} {o['actual_score']}: est {c*100:.1f}% vs [{lo*100:.0f},{hi*100:.0f}]%  {'OK' if lo<=c<=hi else 'STILL OUT'}")
+        else:
+            print('grid cannot improve — params kept; flag persists.')
 else:
-    print(f'{len(obs)} obs logged. Refit GATED to >=15 obs + OOS validation (2026-06-14); coarse BONUS_MODE — fine params barely affect picks.')
+    print(f'{len(obs)} obs logged (registration only). Refit is OPT-IN: run with --refit (>=15 fit obs required).')

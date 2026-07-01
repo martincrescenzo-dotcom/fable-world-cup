@@ -1,7 +1,9 @@
 import json, numpy as np
 from scipy.stats import nbinom, poisson
-AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); Q=json.load(open('qualification_v5.json'))
-mug=AD['_meta']['mu_goals']; R=Q['r']; MAXG=14; GAMMA=1.5; PHI=0.635
+AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); DP=json.load(open('deployed_params.json'))
+# R/GAMMA from deployed_params.json = single source of truth (2026-07-01 audit: was qualification_v5.json,
+# a regenerable output). MAXG=14 (vs group 12) is DELIBERATE: ET goals extend the 120' grid.
+mug=AD['_meta']['mu_goals']; R=DP['R']; MAXG=14; GAMMA=DP['GAMMA']; PHI=0.635
 # --- conservative model-blind overlays (halved where market already moved) ---
 def adj(team,datt=0.0,ddef=0.0):
     c=W2C[team]; AD[c]['ATT']+=datt; AD[c]['DEF']+=ddef
@@ -50,20 +52,25 @@ for th,ta,rew,mkt,field in games:
     # outcome-level transform mapping derived from the MODEL, applied to market:
     rho_m=v120[1]/v90[1]; broken=v90[1]-v120[1]
     s_home=(v120[0]-v90[0])/broken if broken>1e-9 else 0.5   # share of broken draw -> home
-    mkt120=np.array([mkt[0]+broken_mkt_h, 0,0]) if False else None
     bm=mkt[1]*(1-rho_m)  # market broken draw mass
     mkt120=np.array([mkt[0]+bm*s_home, mkt[1]*rho_m, mkt[2]+bm*(1-s_home)])
     blend90=0.4*v90+0.6*mkt; blend120=0.4*v120+0.6*mkt120
     impl=(1/rew)/np.sum(1/rew)
-    ev=blend120*rew; edge=blend120/impl
+    ev=blend120*rew
+    # edge = MARKET_p / reward-implied_p (doctrine metric, CLAUDE.md 2026-06-20). AUDIT FIX 2026-07-01:
+    # was blend/impl — the blend leg let the MODEL's contrarian lean inflate the edge past 1 exactly on
+    # reward-asymmetric model-vs-market divergences (Germany-Paraguay: blend-edge 1.11 vs market-edge 0.80
+    # = auto-reject; the Paraguay draft lost). Market-based edge is the gate with teeth.
+    edge=mkt120/impl; edge_blend=blend120/impl
     pick=int(np.argmax(ev)); lab=[th,'Draw',ta]
     sc,scp=modal_in(m120,pick)
     print(f"\n=== {th} v {ta} ===  rewards {rew.astype(int)}  field% {(field*100).astype(int)}")
     print(f"  v6  90': {np.round(v90*100,1)}   ->120': {np.round(v120*100,1)}   (model rho_match={rho_m:.3f}, broken->home share {s_home:.2f})")
     print(f"  mkt 90': {np.round(mkt*100,1)}   ->120': {np.round(mkt120*100,1)}")
     print(f"  BLEND120 (0.4/0.6): {np.round(blend120*100,1)}   reward-implied {np.round(impl*100,1)}")
-    print(f"  EV: {np.round(ev,1)}   edge(blend/impl): {np.round(edge,2)}")
-    print(f"  -> OUTCOME PICK: {lab[pick]}  (EV {ev[pick]:.1f}, edge {edge[pick]:.2f}, field {field[pick]*100:.0f}%)")
+    print(f"  EV: {np.round(ev,1)}   edge(mkt/impl): {np.round(edge,2)}   [blend/impl: {np.round(edge_blend,2)}]")
+    rej='  !! edge<1 = AUTO-REJECT (market says the reward line over-prices this pick) — do NOT submit without a red-team override' if edge[pick]<1 else ''
+    print(f"  -> OUTCOME PICK: {lab[pick]}  (EV {ev[pick]:.1f}, edge {edge[pick]:.2f}, field {field[pick]*100:.0f}%){rej}")
     print(f"  -> MODAL 120' SCORE in {lab[pick]}: {sc}  (p={scp*100:.1f}%)   | P(120 draw)={v120[1]*100:.1f}% vs field draw {field[1]*100:.0f}%")
 
 print("\n\n===== MODAL 120' SCORE DETAIL (top cells) for the DISCIPLINED picks =====")

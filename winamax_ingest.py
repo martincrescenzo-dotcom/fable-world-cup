@@ -28,11 +28,13 @@ def en(team):
     if t in FR2EN: return FR2EN[t]
     raise KeyError(f'unmapped French team name: {t!r} — add to FR2EN')
 
-rows=list(csv.DictReader(open(SRC,encoding='utf-8')))
+rows=list(csv.DictReader(open(SRC,encoding='utf-8-sig')))   # -sig: strip Excel BOM (else the Match column dies silently)
 m=defaultdict(list)
 for r in rows:
     if not r.get('Match'): continue
     m[r['Match']].append(r)
+if rows and not m:
+    raise SystemExit(f'{SRC}: parsed {len(rows)} rows but found NO "Match" column — header mismatch, nothing ingested')
 
 store=json.load(open('winamax_snapshots.json')) if os.path.exists('winamax_snapshots.json') else {}
 n=0
@@ -44,8 +46,14 @@ for fr_match,lines in m.items():
         sc=r['Score'].strip()
         cote=r.get('Cote') or r.get('Cote_Winamax')   # accept either column header variant
         odds=float(str(cote).replace(',','.'))
-        pct=float(r['Pct_parieurs']) if r['Pct_parieurs'] not in ('',None) else 0.0
+        pct=float(str(r['Pct_parieurs']).replace(',','.')) if r['Pct_parieurs'] not in ('',None) else 0.0
         entry['odds'][sc]=odds; entry['pct'][sc]=pct
+    prev=store.get(key,[])
+    if prev and prev[-1]['odds']==entry['odds'] and prev[-1]['pct']==entry['pct']:
+        continue   # identical re-ingest (dup protection — a 2026-06-12 CSV was double-ingested as '-v2')
+    if prev and entry['snap_date']<prev[-1]['snap_date']:
+        print(f'  !! {key}: snapshot {SNAP_DATE} is OLDER than stored {prev[-1]["snap_date"]} — consumers take [-1]; NOT appending')
+        continue
     store.setdefault(key,[]).append(entry)
     n+=1
 json.dump(store,open('winamax_snapshots.json','w'),indent=1)

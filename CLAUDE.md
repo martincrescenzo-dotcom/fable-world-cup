@@ -15,10 +15,19 @@ share of correct-outcome pickers who chose that score:
 `>30%:+20 | 20–30%:+30 | 5–20%:+50 | 0.5–5%:+70 | <0.5%:+100`.
 **KO SCORING (user-confirmed 2026-06-27): picks judged on the 120-MINUTE scoreline (ET included, PENALTIES IGNORED)** —
 a pens match scores as its 120' draw line; e.g. 1-1 @90' → 3-1 a.e.t.: a 2-1 pick WINS the result, a 1-1 pick scores ZERO.
-**v6 outputs a 90' distribution → KO needs an ET re-allocation (UNBUILT; build+validate when KO is live):** draw prob FALLS,
-win probs RISE, scores shift HIGHER ⇒ **re-price draws DOWN for KO** (group draw-harvesting does NOT transfer). The market leg
-must be "**result after ET excl. pens**", NOT the "to qualify/advance" line (to-advance counts pens-winners; we score pens as a
-draw — using it is a silent error). See [[ko-scoring-120-minutes]].
+**v6 outputs a 90' distribution → the ET re-allocation is BUILT & LIVE (2026-06-28, `ko_build.py::transform120`,
+red-teamed REVIEW_2026-06-28_ko-et-reallocation.md; first live pick SA-Canada 0-1 = EXACT +50):** draw prob FALLS,
+win probs RISE, scores shift HIGHER ⇒ **draws re-priced DOWN for KO** (group draw-harvesting does NOT transfer).
+Calibration: ρ=0.652 (draw retention, n=132 post-2004 KO matches, CI [0.56,0.73]); φ=0.635 is an ET-INTENSITY multiplier
+(only λ·φ is identified — φ is NOT "P(draw resolves)", that's 1−ρ=0.348). KO runner = `ko_picks_r32.py` (edit its games
+list per round); read-only draw-calibration tracker = `ko_draw_calib.py` (pre-registered gate n≥12, WATCH-ONLY).
+`matchday.py` is 90'-ONLY and now HARD-FAILS on KO-dated matches. The market leg must be "**result after ET excl.
+pens**", NOT the "to qualify/advance" line (to-advance counts pens-winners; we score pens as a draw — using it is a
+silent error). OPEN validation debt (review caveat, unpaid): the market-leg 120' mapping uses the MODEL's ρ and an
+un-attenuated supremacy split (chalk-biased wshare) — pin it against a real "after-ET" draw price when one is liquid.
+See [[ko-scoring-120-minutes]].
+**★ X2 STATUS: SPENT 2026-06-22 (deployed on Senegal, lost the ~70% branch — process sound, outcome unlucky).
+NO boost remains; ignore any X2-candidate framing below (kept for the policy record only).★**
 **X2 boost: ONE per tournament, usable ANYTIME incl. knockouts** — doubles a chosen prediction's total
 points (incl. rarity bonus) if the outcome is correct. **X2 is FREE optionality (costs nothing if the pick
 loses) → the only decision is TIMING/target.** Policy (AUDIT 2026-06-16, flipped): deploy on the best
@@ -34,18 +43,22 @@ answered: **the objective is DISCIPLINED EV-MAX PREDICTION — keep improving th
 objective function.** ("we proved we can do solid score prediction WITHOUT strategizing rank… see how far the approach leads, #6 or #1…
 good independently of rank.") ⇒ NO rank-chasing variance ramp, NO floor-defense distortion. Follow blend-EV-max; decorrelate ONLY when the
 field-thin outcome is ALSO EV-max (free differentiation, taken because it's the right pick); veto model artifacts toward the independent
-market; pure-modal scores (rank-bonus comes naturally from clear-fav margin games). Keep BUILDING (KO ET re-allocation next). Red-team
+market; pure-modal scores (rank-bonus comes naturally from clear-fav margin games). Keep BUILDING (the KO ET re-allocation
+was BUILT 2026-06-28 — G5 fence now CLOSED). Red-team
 killed two errors for good: (i) "chalk bloc ahead" is unmeasurable from good-counts AND directionally wrong (#6/#7 are BELOW us);
 (ii) decorrelation=rank-lever was derived from BELOW the bunch (rank-convex) — MID-bunch it's E[rank]-neutral-to-NEGATIVE, so adding
 outcome-variance for rank is the killed-"inversion" error sign-flipped. This RESTORES the original EV-max core, stripped of rank accretions.
-**STANDING 2026-06-28: USER #3 of 9 shown (Lampadaire83) @3005 (41 good / 9 EXACTS) — jumped #4→#3 (+317 on MD12: 5/6 outcomes
-+ a Panama-England 0-2 EXACT +30; Colombia 1-0 missed result as 0-0, a +70 one goal away — process sound, edge 1.22).** TIGHT 4-way
-bunch: #1 Alex 3169 (+164 runaway) / #2 Nicolas 3021 (+16) / **#3 USER 3005** / #4 AdyFC 2968 (−37, 12 ex) / #5 Alexis 2965 (−40) /
-#6 CrazyBE 2922 (−83) / #7 Hadri 2873 (−132, 11 ex). #2–#5 span 56 pts. KO IS LIVE: South Africa–Canada = first R32 (held). [Prev
-2026-06-27: #4 @2688; #1 Alex 3042 / #2 Nicolas 2761 / #3 Hadri 2689 / #4 USER / #5 AdyFC 2681 / #6 Alexis 2633 / #7 CrazyBE 2605.]
+**STANDING 2026-06-30: USER #2 (Lampadaire83) @3184 (43 good / 10 EXACTS) — jumped #3→#2 (+179; SA-Canada 0-1 EXACT +50 =
+the ET transform's first live KO pick, + Brazil base).** Bunch: #1 Alex 3318 (+134 runaway) / **#2 USER 3184** / #3 Nicolas 3170
+(−14) / #4 AdyFC 3161 (−23, 12 ex) / #5 CrazyBE 3101 / #6 Hadri 3098 (12 ex) / #7 Alexis 3094 (8 ex). #2–#7 span 90 pts. KO R32
+underway; 4 picks submitted 2026-06-30 (Norway 0-1 / France 2-0 / Mexico 1-0 / England 1-0) — results PENDING. See live_updates.md
+RESUME block for the live state. [Prev 2026-06-28: #3 @3005 (41/9); #1 Alex 3169 / #2 Nicolas 3021 / #4 AdyFC 2968 / #5 Alexis 2965 /
+#6 CrazyBE 2922 / #7 Hadri 2873. Prev 2026-06-27: #4 @2688.]
 **★ GUARDRAILS (bias-audit red-team 2026-06-27b, REVIEW addendum) — the reset is an "EV-max-WITH-an-ENDGAME-CLAUSE" doctrine; without
 these it can "honestly finish #6 when #3 was free":** G1 **ENDGAME CLAUSE** — "rank is downstream" holds while horizon is long
-(N ≳ (gap/σ_d)² ≈8-13; true NOW at N≈37). In the LAST ~1-3 slates with standings known AND gap-to-adjacent-rival ≤ one-slate swing
+(N ≳ (gap/σ_d)² ≈8-13; was true at N≈37 when written. **⚠ 2026-07-01: remaining N≈7 for the user's team-path is INSIDE the 8-13
+trigger band and gaps are one-swing-sized (#3 −14, #4 −23) — the G1 re-evaluation REVIEW_2026-06-29 scheduled "at QF" is DUE at the
+next slate; run the arithmetic, do not inherit "long horizon → G1 off" from the RESUME block.**) In the LAST ~1-3 slates with standings known AND gap-to-adjacent-rival ≤ one-slate swing
 (~one exact 50-100) → SWITCH to rank-aware: copy rivals you LEAD, decorrelate from rivals you CHASE, bounded −EV only if it STRICTLY
 raises P(target rank); PRE-REGISTER rival model + arithmetic, red-team-gate it. (Re-instates the true "copying-freezes-the-gap"
 theorem STRICTLY for the endgame — horizon trigger is what separates it from the killed inversion.)
@@ -59,9 +72,10 @@ IF any rival-pick info ever becomes visible (post-lock reveal / shared sheet / t
 (user "wouldn't like #6 but care more about building") → G1 is ON. G3 **PROCESS SCORECARD** — judge the doctrine on CALIBRATION
 (pick log-loss/Brier, market edge-hit-rate, decorrelation discipline), NEVER on points/rank (else "good process, just unlucky" is
 unfalsifiable). G4 **QUARANTINE +568** as ~4σ/n=1 non-evidence; adopted for outcome-INDEPENDENT reasons; "proved we can predict" is
-the user's framing, NOT a statistical claim (n=9 underpowered) — keep the gate hot. G5 **KEEP-BUILDING FENCE** — ONE sanctioned build =
-the KO ET re-allocation (correctness fix, NEW transform on the 90' output, NEVER a refit of frozen attdef.json); URGENT (next slate is KO;
-South Africa-Canada is cross-group = likely the first R32 match, held by user); crowd-mining/engine-refit stay CLOSED. G6 zero-cost rank
+the user's framing, NOT a statistical claim (n=9 underpowered) — keep the gate hot. G5 **KEEP-BUILDING FENCE — CLOSED (build DELIVERED 2026-06-28)**: the ONE sanctioned build (KO ET re-allocation,
+a NEW transform on the 90' output, NOT a refit of frozen attdef.json) shipped as ko_build.py/ko_picks_r32.py and paid on its first
+live pick (SA-Canada 0-1 EXACT). ko_draw_calib.py (2026-06-30) is a READ-ONLY pre-registered tracker, consistent with the fence.
+Crowd-mining/engine-refit stay CLOSED; any further build needs a new user-sanctioned fence. G6 zero-cost rank
 tie-breaks (field-thinner if trailing / thicker if leading; extend to score cell on a bonus-EV tie) + one-shot/timing instruments (X2,
 spent) decided on RANK-SEPARATION not per-match EV. [HISTORICAL rank-target frames below — SUPERSEDED:]
 **OBJECTIVE (superseded) 2026-06-18 → TOP-5 of ~16, BALANCED.**
@@ -169,14 +183,21 @@ Brazil (50v59)/Sweden (42v51)/NL (40v48). Match dates discovered: 6/12 Canada-Bo
 6/13 Qatar-Suisse, Brazil-Morocco, Haiti-Scotland; 6/14 CIV-Ecuador, Sweden-Tunisia, Australia-Turkey,
 NL-Japan. Winamax pct confirmed MATURE money (matches ≤48h away) → 0-0 longshot spikes are a stable
 bettor trait, strengthening the two-population model.
-**Winamax freshness gate:** WINAMAX_VALID_THROUGH in matchday.py (currently 2026-06-13 per user — early
-money unreliable for later matches); every match needs date=; raise the constant when fresh CSVs arrive.
+**Winamax freshness gate (REWRITTEN 2026-07-01 audit):** matchday.py now gates on SNAPSHOT AGE vs the match
+date (`WINAMAX_MAX_AGE_DAYS=2`) — no hand-bumped constant. A snapshot older than 2 days before the match is
+skipped with a printed notice (crowd tiers fall back to model base, lower confidence). Last ingested CSV =
+2026-06-16; nothing fresher exists, so every match since 06-17 has run on model-base tiers (visible, fail-safe).
+Every match still needs date=.
 **Calibration stream source confirmed:** realized tiers come from ORGANIZER EMAILS (first-party; obs#2
 Korea +20 confirmed sound). User CONFIRMED (2026-06-12): tiers accessible for ALL matches (uncensored),
 and rules confirmed = share among correct-winner pickers, NO temporal condition. Ask user for the
 realized tier of every played match.
 
-**Per-match pick procedure → run `matchday.py` (edit its MATCHES list):**
+**Per-match pick procedure — GROUP STAGE: `matchday.py` (edit MATCHES); KO: `ko_picks_r32.py` (edit games; 120'
+transform, market leg = "after ET excl. pens"). matchday.py hard-fails on KO-dated matches. Audit 2026-07-01:
+matchday.py machine pick = argmax blend-EV, ALWAYS (the old auto-swap to the least field-crowded band candidate
+implemented the killed 2026-06-16 policy and is removed — band candidates now print as flags for the red-team);
+both runners print doctrine edge = market_p/reward-implied_p, with edge<1 = AUTO-REJECT flag on KO.**
 -1. **`python preflight.py` (mandatory gate — must print GREEN).** Verifies deployed-engine
    integrity (SHA256 of attdef.json/wc_to_canon.json vs `deployed_params.json` manifest), file
    parses, 48-team resolution, obs dedup, engine smoke test. On artifact hash FAIL: restore with
@@ -197,11 +218,17 @@ realized tier of every played match.
    model-free. Fine E[bonus] optimization RETIRED (crowd model unconverged; tier ranking is noise).
 5. Append pick to `prediction.md`; after the match, log result in `live_updates.md`.
 
-## DECISION-MAKING REFERENCE (consolidated — the math that drives every pick)
-**Objective:** TOP-2 of 13-league, ~88 left, user #10 @374, gap 284 to the #2 line (658). **Behind + must
-climb ⇒ EV-max-FOLLOW is WRONG (freezes the gap, ~3% top-2); the path up is DECORRELATION** (future_sim:
+## DECISION-MAKING REFERENCE (consolidated — the FORMULAS are live; the OBJECTIVE framing here is DEAD)
+**★ SUPERSEDED-OBJECTIVE WARNING (audit 2026-07-01): the "TOP-2 / behind-must-climb / decorrelation-is-the-path-up"
+framing in this section is the pre-2026-06-27 maximand and is DEAD — the live objective is the MAXIMAND RESET in
+ACTIVE TASK (disciplined EV-max; rank is the scoreboard; decorrelate only when field-thin is ALSO EV-max + edge≥1 +
+market-confirmed, via the red-team gate). What remains LIVE from this section: the blend formula, the edge definition,
+the σ-significance test (with the near-circularity caveat when model≈market — see [[ev-tie-and-plurality-correlation]]),
+and the reward-compression finding. Read the formulas, not the strategy.★**
+[Dead framing kept for the record:] TOP-2 of 13-league, ~88 left, user #10 @374, gap 284 to the #2 line (658). Behind + must
+climb ⇒ EV-max-FOLLOW is WRONG (freezes the gap, ~3% top-2); the path up is DECORRELATION (future_sim:
 ~10% top-2). [CORRECTED 2026-06-16 — league_sim2's "variance averages out / pure EV best" was computed on
-stale standings with an independent-rivals strawman; see TWE-AXIS RULE in ACTIVE TASK above.]
+stale standings with an independent-rivals strawman; see TWO-AXIS RULE in ACTIVE TASK above.]
 **Outcome pick = argmaxₒ EV(o),  EV(o)=p_blend(o)·reward(o)**, **p_blend = 0.4·p_v6 + 0.6·p_market**
 (AXIS-A: lean market; the 0.6 weight IS the market-confirmed veto — needs a Polymarket pull to bite).
 **DIFF_BAND_FRAC=0.05** (AXIS-B: among outcomes within ~5% of max blend-EV, take the least field-crowded;
@@ -233,6 +260,7 @@ if >2·σ_diff. MOST per-match gaps are NOT significant (within model-market noi
 on it = correlated = zero rank separation). Target = high-reward (≥~100) + FIELD-UNDERPICKED + market-
 confirmed (the contrarian-but-+EV / Alexandre-NL-draw profile). X2 is free if it loses → only timing matters;
 deploy on the best such spot, group or KO. high-σ model-only picks (Ecuador) remain poor targets (no veto).
+**[X2 SPENT 2026-06-22 — this policy paragraph is historical; there is no boost left to deploy.]**
 **BLEND WEIGHT — RESOLVED to 0.4 model / 0.6 market (2026-06-16).** Was an open ½/½ vs 0.4/0.6 inconsistency;
 fixed to lean market: fair-game logic (market sets fair prices) + ledger (every model-vs-market divergence so
 far — USA, Ecuador — resolved FOR the market). Reviewer Q6 (v6/market ~60% correlated → ½/½ overstates info)
@@ -261,8 +289,11 @@ who's-right question (track ledger log-loss), not a pooling-math question. 88 ma
 ## Crowd model status & architecture (the live workstream)
 Two distinct populations, opposite biases — do NOT conflate:
 - **Prono pickers** (the game): herd onto iconic scores (hard obs: 2-0 >30%, 2-1 >30%). Current model:
-  crowd ∝ plausibility^beta × salience^sal_strength, params `crowd_params.json` (beta=1.6, s=1.5 after
-  violation-refit on 2 obs; Korea cell still 1pt out — coarse-grid residual).
+  crowd ∝ plausibility^beta × salience^sal_strength, params `crowd_params.json` (**deployed NOW: beta=1.0,
+  sal=0.75 — a gated refit fired 2026-06-27 at n≥15**; audit 2026-07-01: at those best-fit params 28/57 obs
+  still violate their tier bands = the form is structurally misfit; treat all crowd-tier numbers as SOFT.
+  register_bonus.py refit is now OPT-IN via `--refit`, registration alone never rewrites params; KO 120'
+  obs are registered but EXCLUDED from the 90'-grid fit).
 - **Winamax bettors**: longshot/value bias (0-0 spikes 45-59% in early money). Their pct is NOT a prono
   proxy. But **pct/odds ≈ French-public perceived probability** (decomposition validated on liquid
   matches: Canada gives 1-0 26%, 1-1 22%, 2-1 22% — iconic shape). Upgrade path when tier obs ≥5-6:

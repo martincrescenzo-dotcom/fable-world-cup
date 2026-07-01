@@ -14,8 +14,10 @@ Pipeline per match:
     crowd_params.json, calibrated by register_bonus.py).
  4. Band-robust bonus EV: tier evaluated at crowd*0.7 / *1.0 / *1.43; expected over scenarios;
     BOUNDARY flag when scenarios disagree.
- 5. Score pick = argmax robust bonus EV within picked outcome.
- 6. X2 evaluation: E_total >= X2_THRESHOLD and no motivation flags -> candidate (logged).
+ 5. Score pick (BONUS_MODE='coarse') = PURE MODAL (highest-p) score within picked outcome.
+ 6. X2 evaluation on the EMITTED pick (X2 was SPENT 2026-06-22 on Senegal — candidate prints suppressed).
+NB GROUP-STAGE ONLY: prices the 90' distribution. KO matches are scored on the 120' line —
+use ko_build.transform120 / ko_picks_r32.py; the input gate hard-fails on KO-dated matches.
 """
 import json, numpy as np
 from scipy.stats import nbinom
@@ -39,26 +41,29 @@ MATCHES = [   # MD12 slate 2026-06-27 (FINAL group matches, Groups J/K/L; fieldp
       market=[.234,.437,.328]),
 ]
 X2_THRESHOLD = 45.0
+X2_SPENT = True             # 2026-06-22: X2 deployed on Senegal, LOST. No boost remains — candidate prints suppressed.
 CONTRARIAN_EDGE = 1.15      # model/implied ratio that marks a contrarian X2 profile
-WINAMAX_VALID_THROUGH = '2026-06-16'   # fresh CSV ingested 2026-06-16 (France-Senegal slate)
-                                       # (Belgium/SaudiArabia/Iran matches); raise on next fresh CSV
+WINAMAX_MAX_AGE_DAYS = 2    # snapshot must be within this many days of the match (late money = real signal);
+                            # replaces the hand-bumped WINAMAX_VALID_THROUGH constant (2026-07-01 audit fix:
+                            # the old gate compared match date vs a constant, never snapshot age vs match —
+                            # bumping the constant would have silently loaded 3-week-old money for a fresh match)
+GROUP_STAGE_END = '2026-06-27'  # last group matchday. KO matches score on the 120' line (pens ignored) —
+                            # this 90'-only pipeline HARD-FAILS on later dates (use ko_build/ko_picks_r32)
 VAR_TIEBREAK_EV = 1.5       # rank strategy: among scores within this EV of the best, prefer LOWER-crowd
-LEAGUE_MODE = True          # objective = TOP-2 of 13-person league over ~100 remaining matches.
-DIFF_BAND_FRAC = 0.05      # AUDIT 2026-06-16: CORRECTED from 0.0. league_sim2 (which set 0.0) was BROKEN:
-                          # (a) ran on STALE standings (user #8 / 115-deficit; actually #10 / 284-deficit),
-                          # (b) modeled the 13 rivals as INDEPENDENT pickers, not the correlated favourite-
-                          #     herd they demonstrably are (top-5 data: 5/5 agreement on 7 matches, 4/5 on
-                          #     most) -> a strawman that erased the value of decorrelation.
-                          # future_sim.py (current standings, rivals=herd, 88-match horizon, P(top-2)
-                          # objective) shows differentiation ~TRIPLES top-2 odds (3.9%->~10%); break-even
-                          # EV cost ~7%. RULE: take field-underpicked + MARKET-CONFIRMED decorrelation up to
-                          # ~5% of per-match EV; never pay more. The 0.6 market lean below is the market-
-                          # confirmed VETO (a model-only contrarian like Ecuador falls outside the band).
-                          # NB this is the AXIS-B lever (you vs the field's picks). AXIS-A (you vs market) =
-                          # FOLLOW the market; no maximin hedges (they cost USA + Haiti winners in MD1).
+LEAGUE_MODE = True          # blend-EV pick layer ON (0.4 model + 0.6 independent market). MAXIMAND RESET
+                          # 2026-06-27 (user-set, Tier-1 red-team): objective = disciplined EV-max prediction;
+                          # rank is the scoreboard, not the objective. Machine pick = argmax blend-EV, ALWAYS.
+DIFF_BAND_FRAC = 0.05      # FLAG-ONLY since 2026-07-01 audit: outcomes within ~5% of max blend-EV are printed
+                          # as DIFF-BAND candidates (field%, edge) for the human/red-team decorrelation decision.
+                          # The pre-reset code AUTO-SWAPPED to the least field-crowded candidate (killed
+                          # 2026-06-16 policy — paid up to 5% EV for field-thinness with no edge>=1 or
+                          # market-confirmed gate). Current doctrine: decorrelate ONLY when the field-thin
+                          # outcome is ALSO EV-max + edge>=1 + market-confirmed — a judgment call that must
+                          # go through the red-team gate, never silent math.
 BONUS_MODE = 'coarse'      # 2026-06-14: crowd model unconverged at n=8 -> RETIRE fine E[bonus] opt (noise+thrash).
-                          # Score = MODAL (highest-p) within outcome = max hit-prob; step off 1-1 ONLY (the one
-                          # cell with rock-solid >30% over-herding, 3/3 obs). Model-free; ignores fine tier rank.
+                          # Score = PURE MODAL (highest-p) within outcome = max hit-prob. The 1-1 STEP-OFF WAS
+                          # RETIRED 2026-06-17 (score_rule_backtest.py: pure modal 190 realized bonus vs 130
+                          # step-off). Model-free; ignores fine tier rank.
 
 # ------------------------------------------------------------------ engine (v6, frozen)
 AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json'))
@@ -102,15 +107,16 @@ def parse_bookie(bk):
     return out
 
 def load_winamax(th,ta):
-    """latest Winamax snapshot for this match, if ingested (winamax_ingest.py)."""
+    """latest Winamax snapshot for this match, if ingested (winamax_ingest.py).
+    Returns (odds_dict, snap_date) or (None, None) — freshness is judged by the CALLER
+    against the match date (snapshot age gate, 2026-07-01 audit fix)."""
     import os
-    if not os.path.exists('winamax_snapshots.json'): return None
+    if not os.path.exists('winamax_snapshots.json'): return None,None
     sn=json.load(open('winamax_snapshots.json'))
     key=f'{th}|{ta}'
-    if key not in sn: return None
+    if key not in sn: return None,None
     s=sn[key][-1]
-    print(f"  [winamax snapshot {s['snap_date']} loaded as plausibility base]")
-    return {sc:o for sc,o in s['odds'].items() if sc!='Autre'}
+    return {sc:o for sc,o in s['odds'].items() if sc!='Autre'}, s['snap_date']
 
 def analyse(m):
     th,ta=m['home'],m['away']; rew=m['rewards']; ov=m.get('overlay',(0,0,0,0))
@@ -119,11 +125,16 @@ def analyse(m):
         mdate=m.get('date')
         if mdate is None:
             print('  !! match has no date= field — cannot check snapshot freshness; SKIPPING winamax auto-load')
-        elif mdate>WINAMAX_VALID_THROUGH:
-            print(f'  [winamax snapshot SKIPPED: match {mdate} beyond freshness cutoff {WINAMAX_VALID_THROUGH} — early money; awaiting fresh CSV]')
         else:
-            wb=load_winamax(th,ta)
-            if wb: m=dict(m,bookie=wb); used_bookie=True
+            wb,sdate=load_winamax(th,ta)
+            if wb:
+                from datetime import date as _date
+                age=(_date.fromisoformat(mdate)-_date.fromisoformat(sdate)).days
+                if age>WINAMAX_MAX_AGE_DAYS:
+                    print(f'  [winamax snapshot {sdate} SKIPPED: {age}d before match {mdate} = stale/early money; awaiting fresh CSV]')
+                else:
+                    print(f'  [winamax snapshot {sdate} loaded as plausibility base ({age}d before match)]')
+                    m=dict(m,bookie=wb); used_bookie=True
     lh,la=lam_pair(th,ta,ov)
     M=np.outer(nbv(lh),nbv(la)); M/=M.sum()
     pm=[float(np.tril(M,-1).sum()),float(np.trace(M)),float(np.triu(M,1).sum())]
@@ -206,24 +217,29 @@ def analyse(m):
                                      maxgap=float(max(abs(pm[i]-pmkt[i]) for i in range(3))))
     except Exception as e:
         print('  (pm_check failed:',repr(e)[:50],')')
-    # LEAGUE MODE: re-select outcome to maximise P(win league) = disciplined differentiation.
-    # blend-EV (0.4 model + 0.6 market = AXIS-A lean-to-market + market-confirmed veto); among outcomes
-    # within DIFF_BAND_FRAC*emax (~5% EV) of max, take least field-crowded (AXIS-B free decorrelation).
+    # LEAGUE MODE (MAXIMAND RESET 2026-06-27): pick = argmax blend-EV (0.4 model + 0.6 independent
+    # market — the AXIS-A lean + market-confirmed veto). Field-thinness NEVER auto-swaps the pick;
+    # near-EV outcomes are surfaced as DIFF-BAND candidates (visible flag) for the red-team decision:
+    # decorrelate only if ALSO EV-max-tied + edge>=1 + market-confirmed.
     res['league']=None
     fp=m.get('fieldpct')
     if LEAGUE_MODE and fp:
-        mkt=m.get('market') or (res['pm_check']['p'] if res.get('pm_check') else pm)  # independent market: manual Kalshi/book line > Polymarket > model fallback
+        mkt=m.get('market') or (res['pm_check']['p'] if res.get('pm_check') else None)  # independent market: manual Kalshi/book line > Polymarket
+        if mkt is None:   # 2026-07-01 audit: the old fallback used the MODEL's own probs as the "market" leg,
+            raise SystemExit(f'{th}-{ta}: no independent market — the market-confirmed veto cannot function; supply market=[H,D,A]')
         res['market_used']=('manual' if m.get('market') else ('polymarket' if res.get('pm_check') else 'NONE(model-fallback)'))
         blend=[0.4*pm[i]+0.6*mkt[i] for i in range(3)]
         bev=[blend[i]*rew[i] for i in range(3)]
         emax=max(bev)
-        band=DIFF_BAND_FRAC*emax
-        cand=[i for i in range(3) if bev[i]>=emax-band]
-        lpick=min(cand,key=lambda i: fp[i])
-        res['league']=dict(blend_ev=bev,cand=cand,fieldpct=fp,prev=pick,pick=lpick,
-                           differentiated=(lpick!=int(np.argmax(bev))))
+        cand=[i for i in range(3) if bev[i]>=emax-DIFF_BAND_FRAC*emax]
+        lpick=int(np.argmax(bev))
+        # edge = market_p / reward-implied_p (the doctrine metric, CLAUDE.md 2026-06-20) — per outcome
+        edges=[float(mkt[i]/imp[i]) for i in range(3)]
+        res['league']=dict(blend_ev=bev,blend=blend,cand=cand,fieldpct=fp,prev=pick,pick=lpick,
+                           edges=edges,mkt=list(mkt))
         res['pick']=lpick
-    # X2 evaluation
+    pick=res['pick']   # refresh — X2 & downstream must evaluate the EMITTED pick (stale-pick bug fixed 2026-07-01)
+    # X2 evaluation (SPENT 2026-06-22 — retained for the record; print gated by X2_SPENT)
     o=res['outcomes'][pick]
     edge=pm[pick]/imp[pick]
     fp_pick=fp[pick] if (LEAGUE_MODE and fp) else None
@@ -233,7 +249,7 @@ def analyse(m):
     prime=(o['total_ev']>=X2_THRESHOLD and fp_pick is not None and fp_pick<0.35 and o['base_ev']>=30)
     res['x2']=dict(candidate=(o['total_ev']>=X2_THRESHOLD and not m.get('flags')),
                    e_total=o['total_ev'],contrarian=contrarian,edge=float(edge),
-                   field_pct=fp_pick,prime=prime)
+                   field_pct=fp_pick,prime=prime,spent=X2_SPENT)
     return res
 
 LBL=lambda m:[m['home'],'Draw',m['away']]
@@ -248,6 +264,9 @@ def _input_gate(matches):
         miss=[k for k in ('rewards','fieldpct','market')
               if not (isinstance(m.get(k),(list,tuple)) and len(m[k])==3)]
         if not m.get('date'): miss.append('date')
+        elif m['date']>GROUP_STAGE_END and not m.get('ko90_ok'):
+            miss.append(f"KO-dated ({m['date']}) — matchday.py prices 90' ONLY; KO scores on the 120' line: "
+                        "use ko_build.transform120 / ko_picks_r32.py (set ko90_ok=True only to deliberately override)")
         mk=m.get('market')
         if isinstance(mk,(list,tuple)) and len(mk)==3 and abs(sum(mk)-1)>0.06:
             miss.append('market-not-devigged(sum!=1)')
@@ -277,10 +296,15 @@ for m in MATCHES:
         oo=r['outcomes'][oi]; tag=' <== PICK' if oi==pick else ''
         fpx=f"  field {lg['fieldpct'][oi]*100:.0f}%  blendEV {lg['blend_ev'][oi]:4.1f}" if lg else ''
         print(f"  {lab[oi]:<24} baseEV {oo['base_ev']:5.1f}  totalEV {oo['total_ev']:5.1f}{fpx}{tag}")
-    if lg and lg['differentiated']:
-        print(f"  >> LEAGUE: differentiated to {lab[lg['pick']]} (field {lg['fieldpct'][lg['pick']]*100:.0f}%) "
-              f"over EV-max {lab[int(__import__('numpy').argmax(lg['blend_ev']))]} — within {DIFF_BAND_FRAC*100:.0f}% EV, less crowded (AXIS-B)")
-    if r['flip_warn']: print('  !! WARNING: bonus EV flipped the outcome pick vs pure base EV — review manually')
+    if lg:
+        print(f"  edge(mkt/reward-implied) of pick = {lg['edges'][pick]:.2f}"
+              +('  !! edge<1: reward line OVER-prices this pick — re-examine' if lg['edges'][pick]<1 else ''))
+        for i in lg['cand']:
+            if i!=pick:
+                print(f"  ~ DIFF-BAND candidate: {lab[i]} (blendEV {lg['blend_ev'][i]:.1f} vs pick {lg['blend_ev'][pick]:.1f}; "
+                      f"field {lg['fieldpct'][i]*100:.0f}% vs {lg['fieldpct'][pick]*100:.0f}%; edge {lg['edges'][i]:.2f}) "
+                      f"— decorrelate ONLY if EV-tied + edge>=1 + market-confirmed (red-team gate, never automatic)")
+    if r['flip_warn'] and not lg: print('  !! WARNING: bonus EV flipped the outcome pick vs pure base EV — review manually')
     a,b=best['score']
     bflag=' [BOUNDARY-tier risk]' if best['boundary'] else ''
     dflag=''
@@ -298,7 +322,7 @@ for m in MATCHES:
         elif gap>0.10:
             print(f"  ~ pm divergence {gap*100:.0f}pts (PM {pmc['ts']}: {['%.2f'%v for v in pmc['p']]}) — pick unchanged but model heat noted")
     x=r['x2']
-    if x['candidate']:
+    if x['candidate'] and not X2_SPENT:
         fpx=f"  field {x['field_pct']*100:.0f}%" if x['field_pct'] is not None else ''
         tag=' ** PRIME (field-underpicked + market-confirmed = max separation, DEPLOY-worthy)' if x['prime'] else (' CONTRARIAN (field misses it -> separation)' if x['contrarian'] else '')
         print(f"  ** X2 CANDIDATE **  E_total={x['e_total']:.1f}{fpx}{tag}")

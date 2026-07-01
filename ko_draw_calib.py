@@ -28,8 +28,8 @@ Update protocol: append played KO matches to LEDGER with observed=0/1; re-run.
 """
 import json, numpy as np
 from scipy.stats import nbinom, poisson
-AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); Q=json.load(open('qualification_v5.json'))
-mug=AD['_meta']['mu_goals']; R=Q['r']; MAXG=14; GAMMA=1.5; PHI=0.635
+AD=json.load(open('attdef.json')); W2C=json.load(open('wc_to_canon.json')); DP=json.load(open('deployed_params.json'))
+mug=AD['_meta']['mu_goals']; R=DP['R']; MAXG=14; GAMMA=DP['GAMMA']; PHI=0.635  # R/GAMMA from deployed_params.json = single source of truth (audit 2026-07-01); MAXG=14 deliberate for the 120' ET grid
 def AT(t): return AD[W2C[t]]['ATT']
 def DF(t): return AD[W2C[t]]['DEF']
 def lam_pair(th,ta):

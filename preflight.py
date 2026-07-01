@@ -20,6 +20,17 @@ try:
 except Exception as e:
     check('deployed_params.json',False,repr(e)); P=None
 
+# 1b. deployed_params.json itself vs frozen copy (it holds the manifest, so it can't hash itself;
+#     byte-compare against frozen/ closes the gap — subtle corruption of R/GAMMA/MAXG previously
+#     sailed through GREEN; audit 2026-07-01)
+try:
+    cur=open('deployed_params.json','rb').read(); frz=open('frozen/deployed_params.json','rb').read()
+    check('deployed_params.json vs frozen',cur==frz,
+          'differs from frozen/deployed_params.json — R/GAMMA/MAXG may have drifted. If the change is '
+          'INTENTIONAL, re-copy to frozen/; else restore: copy frozen\\deployed_params.json deployed_params.json')
+except Exception as e:
+    check('deployed_params.json vs frozen',False,repr(e)[:60])
+
 # 2. live files parse
 for f in ['crowd_params.json','crowd_obs.json','wc_data.json']:
     try: json.load(open(f,encoding='utf-8')); check(f'parse {f}',True,'')
@@ -61,5 +72,6 @@ try:
           'qualification_v5.json regenerated with different r — deployed R unchanged (OK) but investigate',warn=True)
 except Exception: pass
 
-print(f'\\n{"GREEN — safe to pick." if not fails else "RED — fix FAILs before picking."} ({len(fails)} fail, {len(warns)} warn)')
+print()
+print(f'{"GREEN - safe to pick." if not fails else "RED - fix FAILs before picking."} ({len(fails)} fail, {len(warns)} warn)')
 sys.exit(1 if fails else 0)
