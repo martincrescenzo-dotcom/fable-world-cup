@@ -1,6 +1,27 @@
 # Live Tournament Updates — results, model-blind events, pick log
 
-## ⟢ RESUME HERE (last session 2026-06-30) ⟣
+## ⟢ RESUME HERE (last session 2026-07-02) ⟣
+**★ R32 RESULTS 2026-07-01 (user-reported 07-02): 4/4 OUTCOMES, 0 exact — ≈ +236 base (rewards 75/38/84/39; tiers
++ leaderboard PENDING from user):** CIV–Norway **1-2** (pick Norway 0-1 ✓ base) · France–Sweden **3-0** (pick
+France 2-0 ✓ base) · **Mexico–Ecuador 2-0 (pick Mexico 1-0 ✓ base — the Tier-1 red-team OVERTURN of mechanical
+Ecuador PAID; the argmax-EV Ecuador pick scores ZERO here. n=1 branch outcome — process validation, not stat.)** ·
+England–DRC **2-1** (pick England 1-0 ✓ base).
+**R16 bracket implications:** Canada–Morocco + Paraguay–France are next-round ties ⇒ Morocco eliminated NL on pens
+and Paraguay eliminated Germany on pens (both were our 1-1 = 120' draws, consistent). **Belgium–Senegal = the one
+R32 tie absent from the user's upcoming list — status unknown (played unpicked? rescheduled?) — ASK.**
+**★ SLATE 2026-07-02 COMPUTED (9 matches: 7 R32 + 2 R16) — full procedure: preflight GREEN, model-blind scan
+(3 web agents), independent market (Kalshi reg-time/PM/sharp mid, de-vigged, ET-transformed), Tier-1 red-team
+(REVIEW_2026-07-02) on the two contested calls:** USA 1-0 · Spain 2-0 · Portugal 1-0 · **ALGERIA 0-1**
+(house-mispricing EV-max, 44/44 corners, stands) · **AUSTRALIA 1-0** (near-EV-tie on hard divergence; lens-A
+Egypt overturn REJECTED as the killed over-veto — Aus EV-max across honest weight band w_model 0.15–0.40) ·
+Argentina 3-0 · Colombia 2-0 · Morocco 0-1 · France 0-1. G1 re-eval RUN: N≈24 > band 8-13 → OFF (re-arm at QF).
+No overlays. **NEW STRUCTURAL FINDING: house reward line is 90'-shaped, pays at 120' → all 9 KO draw edges
+≤0.69 = draws house-over-priced slate-wide; win-edge>1 near-automatic (+0.12 mean) = weak evidence.** Watch
+pre-lock: Salah start (Egypt ≥.45 → re-check Aus), Amoura out + SUI >.51 (→ re-check Alg). Model-blind: Pulisic
+starts; Spain wide-attacker cluster doubtful (Yamal plays); Messi returns; no suspensions anywhere.
+**Last scanned: 2026-07-02.**
+
+## [prev session 2026-06-30]
 **STATE:** USER = Lampadaire83 **#2 @3184** (43 good / 10 exacts) — jumped #3→#2 (+179). TIGHT bunch:
 #1 Alex 3318 (+134 runaway) / **#2 USER 3184** / #3 Nicolas 3170 (−14) / #4 AdyFC 3161 (−23, 12ex) /
 #5 CrazyBE 3101 / #6 Hadri 3098 (12ex) / #7 Alexis 3094 (8ex). #2–#7 span 90 pts. Long horizon (≈7 KO

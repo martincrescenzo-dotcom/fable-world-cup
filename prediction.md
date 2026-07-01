@@ -388,6 +388,28 @@ Independent market (de-vigged 3-way ML, +115/+230/+260): **NL 44.5 / D 29.0 / Mo
   **★ RED-TEAM CORRECTED FRAMING (Tier-1 3-agent, REVIEW_2026-06-29_nl-morocco-pick.md): this is a NEAR-EV-TIE shaded to NL, not a clean 40.8-vs-38.2 win.** NL wins ~51% but pays only 80; Morocco wins only ~31% but pays 122 → their EVs are nearly equal; the +2.7 gap sits INSIDE model–market noise and leans partly on the draw-reallocation's chalk-biased supremacy split (un-attenuated wshare→favourite, flagged in 567dfbb). Morocco (EV 38.2, edge 1.13) is a genuine close alternative, **correctly rejected only because it's −2.7 EV and 6.4% below max = outside the 5% free-decorrelation band** — NOT vetoed. **STRUCK the earlier "field 39% under-backs NL" line: it was noise (3pp vs the house line, no CI) AND backwards — 39% is the PLURALITY field pick, so NL is CORRELATED with the pack, not decorrelated. NL rests on EV alone (a variance-minimizing hold-station follow for a bunched #3), no phantom field edge.** Residual: the ML line may predate Morocco's lineup confirmation → if so, a small unpriced nudge toward Morocco tightens the tie further (does not flip).
 
 ### R32 — 2026-06-30 slate (label fixed 2026-07-01: Round-of-32, not R16) (KO 120' scoring, pens ignored; φ=0.635). USER #2 @3184, EV-max, X2 spent. NB G1 re-eval due next slate (N≈7 is inside the 8-13 trigger band).
+**RESULT 2026-07-01: 4/4 outcomes ✓ (Norway 1-2, France 3-0, Mexico 2-0, England 2-1), 0 exact, ≈+236 base.
+The Mexico red-team overturn PAID (mechanical Ecuador = 0 pts). Tiers/leaderboard pending.**
+
+### R32+R16 — 2026-07-02 slate (9 matches; KO 120' scoring; φ=0.635; Tier-1 red-team REVIEW_2026-07-02)
+G1 re-eval RUN: N≈24 pickable matches remain (7 R32 + 8 R16 + 4 QF + 2 SF + bronze + final) > trigger band
+8–13 → **G1 OFF** (re-arm at QF). No overlays (nothing confirmed+unpriced: Salah doubt & Morocco/Paraguay
+120'-fatigue post-date the lines; Amoura/Partey unconfirmed). Market legs = Kalshi regulation-time / PM
+moneyline / sharp-book mid, all pulled 2026-07-02, de-vigged, ET-transformed. Preflight GREEN.
+| Match | Pick | Score | blend120 / EV / edge | Basis |
+|---|---|---|---|---|
+| USA–Bosnia | **USA** | **1–0** | 68.9 / 35.8 / 1.26 | follow; mkt above model on USA (documented class); Pulisic starts |
+| Spain–Austria | **Spain** | **2–0** | 80.6 / 33.0 / 1.21 | lock; modal 2-0 (13.0 vs 1-0 12.9) |
+| Portugal–Croatia | **Portugal** | **1–0** | 58.1 / 42.4 / 1.32 | follow; model≈mkt agree; both XIs clean |
+| Switzerland–Algeria | **ALGERIA** | **0–1** | 29.0 / 42.9 / 1.25 | **house-line mispricing EV-max: 44/44 propagation corners (min +3.2), survives FULL shrink-to-market; implied 21.6% vs mkt120 27%.** NOT the σ-test (struck as empty). Field 16% incidental |
+| Australia–Egypt | **AUSTRALIA** | **1–0** | 41.2 / 46.6 / 1.17 | **NEAR-EV-TIE on hard divergence (mkt has Egypt 42.4 fav). Aus EV-max across the honest weight band w_model 0.15–0.40 with either draw-split (+1.3…+16.5, ≤1.2σ); Egypt requires w<0.084 = the killed over-veto. Blend-prob agrees (41.2>37.8), edge>1.** Salah doubt priced; re-check if Egypt ≥.45 pre-lock |
+| Argentina–Cape Verde | **Argentina** | **3–0** | 91.4 / 22.8 / 1.13 | lock; modal 3-0 (13.8 vs 2-0 13.3); Messi returns |
+| Colombia–Ghana | **Colombia** | **2–0** | 81.7 / 53.9 / 1.54 | follow; biggest edge of slate (house 15pts under mkt); model hot (91.6) but same argmax |
+| Canada–Morocco (R16) | **Morocco** | **0–1** | 56.3 / 38.3 / 1.22 | follow; model+mkt agree; Morocco 120'-fatigue priced (line post-dates pens) |
+| Paraguay–France (R16) | **France** | **0–1** | 79.7 / 22.3 / 1.13 | lock; Paraguay fatigue priced; field not yet populated |
+**Slate-wide structural finding (REVIEW_2026-07-02): the house reward line is 90'-shaped but pays at 120' →
+all 9 draw edges ≤0.69 (KO draws house-over-priced) and win-edges>1 near-automatic (mean +0.12). KO draw
+picks off reward-EV are banned without this correction; propagation, not the edge value, is the real gate.**
 Preflight GREEN. Independent market = 90' de-vigged moneylines (ESPN/DraftKings/FanDuel) cross-checked to Kalshi explicit regulation-time line (= our scoring def), ET-transformed to 120'. Model-blind: Norway Haaland/Ødegaard START (4-1 loss was rotation, not form); Sweden CB Hien OUT (immaterial vs France); CIV Singo / France Thuram / Norway Ryerson doubtful w/ cover → skipped; Mexico/Ecuador/England/DRC first XI intact (Ecuador goal-drought qualitative, NOT applied).
 - **Côte d'Ivoire 0-1 Norway** — pick NORWAY. blend120 [CIV 25.6 / D 14.8 / Nor 59.7], EV 44.8, edge 1.34, market-confirmed (Norway fav under model+market 53.5+field 61). Modal away 0-1 (13.6%).
 - **France 2-0 Sweden** — pick FRANCE. blend120 [Fra 83.5 / D 7.5 / Swe 9.0], EV 31.7, edge 1.22. Lock. Modal home 2-0 (12.0%).

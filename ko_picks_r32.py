@@ -7,8 +7,8 @@ mug=AD['_meta']['mu_goals']; R=DP['R']; MAXG=14; GAMMA=DP['GAMMA']; PHI=0.635
 # --- conservative model-blind overlays (halved where market already moved) ---
 def adj(team,datt=0.0,ddef=0.0):
     c=W2C[team]; AD[c]['ATT']+=datt; AD[c]['DEF']+=ddef
-adj('Germany',ddef=-0.05)   # Schlotterbeck out + flagged frailty, MED, halved (market saw Ecuador loss)
-adj('Japan',datt=-0.05)     # Kubo likely out, LOW, halved (conflicting reports)
+# 2026-07-02 slate: NO overlays — nothing confirmed+unpriced (Salah doubt & Morocco/Paraguay 120'-fatigue
+# are in the post-news lines; Amoura/Partey/Spain-wingers unconfirmed at run time). Stakes protocol (b).
 def AT(t): return AD[W2C[t]]['ATT']
 def DF(t): return AD[W2C[t]]['DEF']
 def lam_pair(th,ta):
@@ -40,11 +40,19 @@ def modal_in(M,out):  # out: 0 home(i>j),1 draw,2 away(i<j)
             if reg==out and M[i,j]>best[0]: best=(M[i,j],(i,j))
     return f'{best[1][0]}-{best[1][1]}', best[0]
 
-games=[
- ('South Africa','Canada',[141,121,64],[0.173,0.272,0.555],[0.10,0.15,0.75]),
- ('Brazil','Japan',        [65,121,141],[0.556,0.254,0.190],[0.77,0.12,0.11]),
- ('Germany','Paraguay',    [45,140,169],[0.70,0.19,0.11],   [0.95,0.04,0.01]),
+games=[   # 2026-07-02 slate: 7 R32 + 2 R16. market = de-vigged 90' 1X2 (Kalshi regulation-time / PM moneyline /
+          # sharp-book mid, all pulled 2026-07-02; NOT to-advance). field = Repartition from user.
+ ('United States','Bosnia and Herzegovina',[52,132,157],[0.675,0.209,0.116],[0.85,0.09,0.06]),
+ ('Spain','Austria',        [41,140,182], [0.730,0.175,0.095],[0.95,0.04,0.01]),
+ ('Portugal','Croatia',     [73,114,133], [0.537,0.271,0.192],[0.55,0.28,0.17]),
+ ('Switzerland','Algeria',  [61,122,148], [0.483,0.294,0.224],[0.65,0.19,0.16]),
+ ('Australia','Egypt',      [113,106,92], [0.290,0.330,0.380],[0.14,0.27,0.59]),
+ ('Argentina','Cape Verde', [25,165,213], [0.830,0.120,0.050],[0.89,0.06,0.04]),
+ ('Colombia','Ghana',       [66,114,139], [0.642,0.234,0.124],[0.76,0.15,0.08]),
+ ('Canada','Morocco',       [137,118,68], [0.190,0.280,0.530],[0.09,0.14,0.78]),   # R16
+ ('Paraguay','France',      [202,161,28], [0.050,0.130,0.820],[0.00,0.00,0.00]),   # R16; field not yet populated
 ]
+picked=[]
 for th,ta,rew,mkt,field in games:
     rew=np.array(rew,float); mkt=np.array(mkt,float); field=np.array(field,float)
     Mx,lh,la=joint90(th,ta); m120=transform120(Mx,lh,la)
@@ -72,8 +80,9 @@ for th,ta,rew,mkt,field in games:
     rej='  !! edge<1 = AUTO-REJECT (market says the reward line over-prices this pick) — do NOT submit without a red-team override' if edge[pick]<1 else ''
     print(f"  -> OUTCOME PICK: {lab[pick]}  (EV {ev[pick]:.1f}, edge {edge[pick]:.2f}, field {field[pick]*100:.0f}%){rej}")
     print(f"  -> MODAL 120' SCORE in {lab[pick]}: {sc}  (p={scp*100:.1f}%)   | P(120 draw)={v120[1]*100:.1f}% vs field draw {field[1]*100:.0f}%")
+    picked.append((th,ta,pick))
 
-print("\n\n===== MODAL 120' SCORE DETAIL (top cells) for the DISCIPLINED picks =====")
+print("\n\n===== MODAL 120' SCORE DETAIL (top cells) for the picks =====")
 def topcells(M,out,n=4):
     cells=[]
     for i in range(M.shape[0]):
@@ -81,8 +90,7 @@ def topcells(M,out,n=4):
             reg=0 if i>j else (1 if i==j else 2)
             if reg==out: cells.append((M[i,j],f'{i}-{j}'))
     cells.sort(reverse=True); return cells[:n]
-forced=[('South Africa','Canada',2),('Brazil','Japan',0),('Germany','Paraguay',0)]
-for th,ta,pk in forced:
+for th,ta,pk in picked:
     Mx,lh,la=joint90(th,ta); m120=transform120(Mx,lh,la)
     lab=[th,'Draw',ta]
     print(f"  {th} v {ta} -> pick {lab[pk]}: top scores {[(s,round(p*100,1)) for p,s in topcells(m120,pk)]}")
